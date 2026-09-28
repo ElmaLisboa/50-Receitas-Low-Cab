@@ -1,0 +1,310 @@
+# -*- coding: utf-8 -*-
+# Textos revisados en español neutro LATAM: procedimiento, consejo y sustitución.
+# Cada entrada es (pasos, consejo, sustitución inteligente).
+#
+# Estos textos se redactaron a mano en lugar de generarse por sustitución
+# léxica: el español y el portugués comparten mucho vocabulario, pero no la
+# sintaxis, así que un reemplazo palabra por palabra produce frases híbridas
+# ("enxágue y seque bem", "é obrigatório: sin isso"). Los ingredientes siguen
+# traducidos por mapa en livro_es.py porque son frases nominales cortas.
+OVERRIDES = {
+1: ([
+ "Sofríe la cebolla en el aceite de oliva por 3 minutos, agrega la espinaca y cocina hasta que se evapore el agua.",
+ "Bate los huevos con la crema de leche, la sal, la pimienta y la nuez moscada.",
+ "Mezcla el sofrito y el queso con los huevos.",
+ "Vierte en un refractario pequeño engrasado y hornea a 180 °C por 20-25 minutos, hasta que el centro cuaje.",
+ ], "Prepara dos a la vez: el segundo dura 3 días en el refrigerador y se convierte en el desayuno de mañana.", "Cambia la espinaca por calabacín rallado y exprimido: misma técnica, sabor más neutro."),
+2: ([
+ "Mezcla todo en una taza o en un molde cuadrado engrasado, con un tenedor, hasta que desaparezcan los grumos de harina.",
+ "Lleva al microondas por 90 segundos en potencia alta.",
+ "Desmolda, corta por la mitad y dora en sartén o tostadora 1 minuto por cada lado.",
+ ], "Solo queda rico si lo doras después: el microondas cocina, pero no da color ni textura de pan.", "¿Sin harina de almendras? Usa 1 cda. de harina de linaza dorada más 1 de coco."),
+3: ([
+ "Tritura la banana con un tenedor hasta hacerla puré.",
+ "Agrega los huevos, la avena, la canela y el polvo para hornear, y mezcla bien.",
+ "Calienta la mantequilla a fuego bajo y vierte porciones pequeñas con un cucharón.",
+ "Dora 2 minutos por lado, volteando cuando aparezcan burbujas en la superficie.",
+ ], "La banana debe tener la cáscara manchada de café: es lo que endulza sin azúcar.", "Cambia la banana por 1/2 manzana rallada más 1 cdta. de endulzante para reducir todavía más los carbohidratos."),
+4: ([
+ "Fríe el tocino hasta que dore y escúrrelo sobre papel de cocina.",
+ "Ralla el calabacín, sálalo, espera 5 minutos y exprímelo bien con las manos.",
+ "Bate los huevos, mezcla todos los ingredientes y reparte en moldes para muffins.",
+ "Hornea a 180 °C por 20-25 minutos, hasta que el centro esté firme.",
+ ], "Congélalos en bolsa con cierre y recaliéntalos 30 segundos en el microondas: desayuno listo en medio minuto.", "Cambia el tocino por pollo deshebrado para una versión con menos grasa saturada."),
+5: ([
+ "Bate el huevo con la tapioca, el queso crema y la sal hasta que quede homogéneo.",
+ "Calienta una sartén antiadherente a fuego bajo y vierte la mezcla.",
+ "Cocina 2 minutos, voltea, cubre con queso y tomate y dóblala por la mitad.",
+ "Déjala 1 minuto más con la sartén tapada para que el queso se derrita.",
+ ], "El fuego bajo es el secreto: a fuego alto la tortilla se reseca y se rompe al doblarla.", "Versión dulce: rellénala con 1 cdta. de mantequilla de cacahuate y canela."),
+6: ([
+ "Mezcla todo con un tenedor hasta obtener una masa cremosa.",
+ "Vierte en una sartén pequeña antiadherente engrasada, a fuego bajo.",
+ "Tapa y deja 4 minutos, voltea y deja 3 minutos más.",
+ "Corta por la mitad y rellena todavía caliente.",
+ ], "El almidón de yuca agrio (no el dulce) es el que da la textura elástica característica.", "Relleno comodín: queso crema con orégano, o pollo deshebrado con queso crema."),
+7: ([
+ "Pasa las hojas de col rizada por agua hirviendo 20 segundos y luego por agua helada: así se ablandan sin cocinarse.",
+ "Mezcla el pollo con el queso crema, el limón, la sal y la pimienta.",
+ "Arma sobre la hoja seca: lechuga, zanahoria y el pollo cremoso.",
+ "Enrolla firme como un taco, doblando los extremos, y corta por la mitad.",
+ ], "Seca bien la col rizada con papel de cocina: una hoja mojada hace que el wrap se deshaga en la mano.", "Sustituye la col rizada por hojas de acelga crudas, que son más crujientes y no necesitan choque térmico."),
+8: ([
+ "Bate los huevos con sal y pimienta sin hacer espuma.",
+ "Derrite la mantequilla a fuego bajo, vierte los huevos y espera 20 segundos sin mover.",
+ "Arrastra con una espátula del centro hacia las orillas, repitiendo hasta que queden cremosos y todavía húmedos.",
+ "Sirve de inmediato con el aguacate encima, las semillas y el cebollín.",
+ ], "Retíralos del fuego cuando todavía parezcan demasiado crudos: el calor de la olla termina la cocción.", "¿Sin aguacate? Usa 2 cdas. de crema agria con limón."),
+9: ([
+ "Tuesta los frutos secos con el coco en hojuelas en una sartén seca por 2 minutos, moviendo siempre.",
+ "Sirve el yogur en un tazón y cúbrelo con las fresas.",
+ "Esparce la granola tibia encima y espolvorea la canela.",
+ "Endulza solo si hace falta: la canela ya engaña al paladar.",
+ ], "Nunca tuestes la granola cerca del teléfono: los frutos secos se queman en 30 segundos y amargan todo.", "Granola por lote: triplica la receta y guárdala 15 días en un recipiente cerrado."),
+10: ([
+ "Procesa la coliflor cruda en pulsos cortos hasta obtener granos del tamaño del arroz (o rállala con la parte gruesa del rallador).",
+ "Sofríe el ajo y la cebolla en el aceite de oliva por 2 minutos.",
+ "Agrega la coliflor y sofríe a fuego alto por 5-6 minutos, moviendo.",
+ "Sazona con sal y termina con las hierbas frescas: no la tapes, o se convertirá en puré.",
+ ], "Nunca proceses la coliflor cocida: suelta agua y se hace papilla. Siempre cruda y en pulsos cortos.", "Base neutra: dura 4 días en el refrigerador y acepta cualquier sobrante de proteína encima."),
+11: ([
+ "Prepara la salsa: sofríe cebolla y ajo, agrega el tomate picado y cocina 20 minutos a fuego bajo hasta que espese.",
+ "Corta el calabacín en tiras finas con un pelador o espiralizador.",
+ "Sofríe el calabacín 90 segundos en el aceite caliente: solo para entibiar, nunca para cocinar.",
+ "Junta la salsa, revuelve rápido y termina con albahaca y parmesano.",
+ ], "Sala el calabacín ya espiralizado, déjalo 10 minutos en el colador y sécalo con papel: así eliminas el agua que aligera la salsa.", "Cambia el tomate pelado por una salsa de coliflor licuada con parmesano para una versión todavía más baja en carbohidratos."),
+12: ([
+ "Escurre el palmito y sécalo bien con papel de cocina.",
+ "Calienta el aceite de oliva a fuego bajo y dora el ajo en láminas sin que se queme.",
+ "Agrega el palmito y sofríe 3 minutos a fuego medio-alto para que se evapore el agua.",
+ "Apaga el fuego, mezcla el parmesano, el perejil y la pimienta, y sirve de inmediato.",
+ ], "El palmito y el konjac sueltan mucha agua: secarlos bien antes del sofrito es lo que evita que el plato quede agüado.", "Añade 1 taza de camarones salteados para convertirlo en un plato principal completo."),
+13: ([
+ "Sazona el pollo con sal, pimienta y pimentón, y cocínalo a la plancha 5 minutos por lado.",
+ "Reparte las hojas verdes, el pepino, el tomate y el aguacate en dos tazones.",
+ "Mezcla el yogur con la mostaza, el limón, 1 cda. de aceite de oliva, sal y hierbas.",
+ "Cubre con el pollo tibio y baña con el aderezo al momento de comer.",
+ ], "La ensalada con el aderezo aparte dura 2 días en el recipiente; con el aderezo puesto se marchita en 3 horas.", "Cambia el pollo por atún o garbanzos cocidos (aumenta la porción y suma los carbohidratos)."),
+14: ([
+ "Mezcla la mayonesa con el limón, la mostaza, la sal y la pimienta.",
+ "Agrega el atún, el huevo, el apio y la cebolla, e incorpora con suavidad.",
+ "Termina con perejil y ajusta la sal.",
+ "Sirve sobre hojas verdes, en wrap de col rizada o rellenando un tomate.",
+ ], "El apio es el que da el toque crujiente: sin él, la ensalada queda pastosa.", "Versión para llevar: arma en un frasco de vidrio con las hojas al fondo y la ensalada encima."),
+15: ([
+ "Sofríe la cebolla, el ajo y el pimiento por 4 minutos.",
+ "Añade la carne molida y dórala bien, rompiendo los grumos con la espátula.",
+ "Junta la salsa de tomate y los condimentos, y cocina 8 minutos hasta que se evapore el líquido.",
+ "Sirve en las hojas de lechuga con queso y crema agria.",
+ ], "Seca las hojas de lechuga con papel de cocina: una hoja mojada se rompe al enrollar.", "¿Sin carne molida? Usa pollo deshebrado con los mismos condimentos."),
+16: ([
+ "Cocina la coliflor al vapor hasta que esté suave y lícuala con la mantequilla y el queso crema hasta obtener un puré liso.",
+ "Sofríe la cebolla y el ajo, agrega la carne seca deshebrada y sofríe 5 minutos.",
+ "Arma en un refractario: la carne al fondo, el puré encima y la mozzarella al final.",
+ "Hornea a 200 °C por 20 minutos, hasta que gratine.",
+ ], "Escurre bien la coliflor cocida antes de licuarla: el exceso de agua deja el puré líquido.", "¿Sin carne seca? Usa carne molida sofrita con pimiento, o pollo deshebrado."),
+17: ([
+ "Sala las rebanadas de berenjena, déjalas 20 minutos, enjuágalas y sécalas bien.",
+ "Cocínalas a la plancha en una sartén caliente con un hilo de aceite de oliva, 2 minutos por lado.",
+ "Prepara la salsa: sofríe cebolla y ajo, agrega la carne molida, dórala, añade el tomate y cocina 25 minutos.",
+ "Arma en capas —salsa, berenjena, mozzarella— y termina con salsa y parmesano. Hornea a 190 °C por 35 minutos.",
+ ], "Secar la berenjena es obligatorio: sin ese paso, la lasaña suelta agua y se convierte en sopa dentro del refractario.", "Sustituye la berenjena por rebanadas finas de calabacín, planchándolas menos tiempo."),
+18: ([
+ "Retira parte de la pulpa de las berenjenas, pícala y resérvala.",
+ "Sala las mitades y hornéalas a 180 °C por 15 minutos para que se ablanden.",
+ "Sofríe cebolla y ajo, dora la carne, agrega la pulpa picada y el tomate, y cocina 10 minutos.",
+ "Rellena las berenjenas, cúbrelas con queso y vuelve a hornear 15 minutos.",
+ ], "Hornea las cáscaras antes de rellenarlas: la berenjena cruda en el horno queda dura por dentro y quemada por fuera.", "Cambia la carne molida por atún con queso crema para una versión lista en 25 minutos."),
+19: ([
+ "Fríe el chorizo en una olla grande hasta que dore y reserva parte de la grasa.",
+ "Sofríe la cebolla y el ajo en esa grasa por 3 minutos.",
+ "Agrega la coliflor y el caldo, cocina 15 minutos y licúa hasta que quede cremoso.",
+ "Devuelve a la olla, añade la col rizada en tiras y el chorizo, y cocina 5 minutos sin que la col se ablande demasiado.",
+ ], "La col rizada entra al final y se cocina solo 5 minutos: debe quedar verde brillante, no café.", "Versión sin embutido: cambia el chorizo por pollo deshebrado y añade pimentón ahumado."),
+20: ([
+ "Sofríe la cebolla, el ajo y el jengibre en el aceite de oliva por 3 minutos.",
+ "Agrega la calabaza y el caldo, y cocina 20 minutos hasta que se ablande.",
+ "Licúa con la leche de coco hasta que quede liso.",
+ "Ajusta la sal, calienta sin hervir y termina con cebollín.",
+ ], "La calabaza tiene más carbohidratos que otras verduras: controla la porción si estás en fase de inducción.", "Cambia el jengibre por curry en polvo y termina con cilantro para un perfil tailandés."),
+21: ([
+ "Cocina el pollo en el agua con laurel y sal por 20 minutos, retíralo y deshébralo.",
+ "En ese mismo caldo, sofríe aparte la cebolla y el ajo y devuélvelos a la olla con el tomate.",
+ "Agrega la zanahoria y cocina 8 minutos; después el calabacín, los ejotes y la coliflor por 8 minutos más.",
+ "Incorpora el pollo deshebrado, ajusta la sal y termina con perejil.",
+ ], "Cocina las verduras por orden de dureza: primero la zanahoria, y al final las hojas y el calabacín.", "Congela en recipientes de 500 ml: dura 3 meses y resuelve una cena sin planear."),
+22: ([
+ "Sofríe la cebolla y el ajo en el aceite de oliva hasta que doren.",
+ "Agrega el calabacín y el caldo, y cocina 15 minutos.",
+ "Licúa con el queso crema hasta que quede aterciopelado.",
+ "Devuelve a la olla, sazona con pimienta blanca y nuez moscada y calienta sin hervir.",
+ ], "El queso crema siempre entra con el fuego apagado o bajo: si hierve, la crema se corta y se separa.", "Cambia el queso crema por 100 ml de crema de leche para una versión más ligera."),
+23: ([
+ "Sazona los filetes con sal y pimienta y séllalos en una sartén bien caliente, 4 minutos por lado. Reserva.",
+ "En la misma sartén, derrite la mantequilla y sofríe el ajo 30 segundos.",
+ "Agrega la mostaza, la crema para batir y el tomillo, y reduce 3 minutos hasta que espese.",
+ "Devuelve el pollo a la olla, báñalo con la salsa y sírvelo con verduras salteadas.",
+ ], "No laves la sartén entre el pollo y la salsa: el fondo dorado es lo que da sabor a la base de la crema.", "¿Sin Dijon? Usa mostaza amarilla más 1/2 cdta. de miel o endulzante para equilibrar la acidez."),
+24: ([
+ "Mezcla el aceite de oliva, el jugo y la ralladura de limón, el ajo, el romero, la sal y la pimienta.",
+ "Baña los muslos con la marinada y déjalos reposar 20 minutos (o toda la noche).",
+ "Acomódalos en una bandeja para hornear con la piel hacia arriba, sin encimarlos.",
+ "Hornea a 200 °C por 40-45 minutos, hasta que la piel esté crujiente y el jugo salga transparente.",
+ ], "Piel hacia arriba y sin encimar: así queda crujiente en lugar de cocerse en su propio vapor.", "Añade cebolla y calabacín a la bandeja en los últimos 25 minutos y tendrás la guarnición lista al mismo tiempo."),
+25: ([
+ "Sella el pollo a fuego alto con un hilo de aceite, en dos tandas, hasta que dore. Reserva.",
+ "Sofríe el ajo y el jengibre 30 segundos, agrega los pimientos y el calabacín por 4 minutos.",
+ "Devuelve el pollo, añade la salsa de soya y la fécula disuelta, y revuelve hasta que la salsa cubra todo.",
+ "Termina con los anacardos fuera del fuego para que sigan crujientes.",
+ ], "La salsa de soya tiene sodio y algo de carbohidratos: usa la versión reducida en sodio y cuenta 1 g de carbohidrato por cucharada.", "¿Sin anacardos? Usa cacahuates tostados sin piel: más baratos e igual de crujientes."),
+26: ([
+ "Sazona la carne con sal y pimienta y séllala en una sartén muy caliente, 3 minutos por lado. Reserva.",
+ "En la misma olla, derrite la mantequilla y sofríe los champiñones hasta que doren y suelten el agua.",
+ "Agrega el ajo, el caldo y la crema para batir, y reduce 5 minutos.",
+ "Devuelve la carne, calienta 1 minuto y sirve con la salsa encima.",
+ ], "No amontones los champiñones en la olla: en exceso sueltan agua y se cuecen en lugar de dorarse.", "Versión sin crema: usa 2 cdas. de queso crema diluido en el caldo caliente."),
+27: ([
+ "Sofríe la cebolla y el ajo en el aceite de oliva hasta que se ablanden.",
+ "Agrega la carne molida y dórala bien, sin moverla los primeros 2 minutos para que se forme una costra.",
+ "Añade el tomate pelado y los condimentos, y cocina 10 minutos.",
+ "Junta el calabacín y cocina 8 minutos más, hasta que esté suave pero firme. Termina con las hierbas frescas.",
+ ], "Dorar la carne sin moverla al principio es lo que crea el fondo oscuro y el sabor de olla.", "Sírvela sobre arroz de coliflor o rellenando pimientos y calabacines."),
+28: ([
+ "Sazona los bistecs con sal y pimienta y séllalos en una sartén caliente con aceite de oliva, 3 minutos por lado. Reserva.",
+ "En la misma sartén, dora la cebolla a fuego medio por 8 minutos, hasta que caramelice.",
+ "Agrega la mantequilla y el ajo y cocina 1 minuto, sin quemar el ajo.",
+ "Devuelve los bistecs, cúbrelos con la cebolla, termina con perejil y sirve.",
+ ], "Saca la carne del refrigerador 20 minutos antes: un bistec frío suelta agua y se cuece en lugar de sellarse.", "Añade 1 cda. de salsa de soya a la cebolla para un fondo más oscuro y sabroso."),
+29: ([
+ "Mezcla la carne con el huevo, la harina de almendras, el ajo, el perejil, la sal y la pimienta. Deja reposar 10 minutos.",
+ "Abre porciones en la palma de la mano, coloca un cubo de queso y cierra bien, sin dejar aberturas.",
+ "Sella las albóndigas en una sartén con aceite de oliva hasta que doren por todos lados.",
+ "Cúbrelas con la salsa de tomate caliente y cocina tapado 20 minutos a fuego bajo.",
+ ], "Cierra la albóndiga apretando bien: cualquier abertura es queso que se escapa a la salsa.", "Puedes sustituir la harina de almendras por 2 cdas. de salvado de avena (suma 2 g de carbohidratos por porción)."),
+30: ([
+ "Mezcla las especias con la sal y la pimienta y frótalas en toda la carne, junto con la mostaza.",
+ "Deja marinar al menos 30 minutos (lo ideal: 12 horas en el refrigerador).",
+ "Sella la carne en una olla caliente con aceite de oliva para dorarla por todos lados.",
+ "Cúbrela con papel aluminio y hornéala a 150 °C por 2 h 30 min, o cocínala en olla de presión 45 minutos. Deshébrala con dos tenedores.",
+ ], "Temperatura baja y mucho tiempo: eso es lo que deshebra. El fuego alto solo reseca la superficie.", "Mezcla la carne deshebrada con 2 cdas. de queso crema y sírvela en wraps de lechuga."),
+31: ([
+ "Sazona el salmón con sal y pimienta y acomódalo en un refractario engrasado.",
+ "Mezcla la mantequilla derretida con el ajo, el jugo de limón, la ralladura y el perejil.",
+ "Baña el pescado con la mezcla y déjalo 10 minutos.",
+ "Hornea a 200 °C por 12-15 minutos, hasta que la carne se vuelva opaca y se separe en lascas.",
+ ], "El salmón está listo cuando se separa en lascas al presionarlo con el tenedor: pasarse de punto lo deja seco.", "Cambia el limón por 1 cda. de mostaza Dijon en la mantequilla para un perfil más intenso."),
+32: ([
+ "Sazona los filetes con sal, pimienta y limón, y sécalos bien con papel de cocina.",
+ "Mezcla la harina de almendras con el parmesano y el pimentón.",
+ "Pasa el filete por el huevo y luego por la mezcla seca, presionando para que se adhiera.",
+ "Hornea a 200 °C por 15 minutos en una bandeja engrasada, o fríe en 3 cdas. de aceite de oliva 4 minutos por lado.",
+ ], "Secar el filete antes de empanizarlo es lo que evita que la costra se suelte durante la cocción.", "¿La harina de almendras te resulta cara? Usa harina de linaza dorada con el mismo parmesano."),
+33: ([
+ "Seca los camarones con papel de cocina y sazónalos con sal y pimienta.",
+ "Calienta el aceite de oliva a fuego medio y dora el ajo en láminas sin que se queme.",
+ "Sube el fuego, agrega los camarones y revuelve 2-3 minutos hasta que estén rosados.",
+ "Apaga el fuego, baña con limón y termina con perejil.",
+ ], "El camarón se cocina en 2 minutos: pasado eso, queda chicloso. Retíralo del fuego en cuanto se ponga rosa.", "Añade 1/2 taza de vino blanco y reduce 1 minuto para una versión más sofisticada."),
+34: ([
+ "Blanquea el bacalao 5 minutos, escúrrelo y retira piel y espinas.",
+ "Cocina la coliflor al vapor 6 minutos, dejándola firme.",
+ "Sofríe la cebolla y el ajo en la mitad del aceite de oliva hasta que doren bien.",
+ "Arma en un refractario con el bacalao, la coliflor y las aceitunas, baña con el aceite restante y hornea a 190 °C por 20 minutos.",
+ ], "Desala el bacalao cambiando el agua cada 6 horas, durante 24 a 48 horas en el refrigerador.", "¿Sin bacalao? Usa lascas de pescado blanco firme, como merluza o tilapia, saladas al momento."),
+35: ([
+ "Sazona el pescado con limón, sal y pimienta y déjalo 15 minutos.",
+ "En una olla ancha, sofríe cebolla y ajo, y arma capas de tomate y pimiento.",
+ "Acomoda el pescado encima, cubre con la leche de coco y cocina tapado 15 minutos a fuego bajo.",
+ "Agrega el palmito y el aceite de dendê, cocina 5 minutos más y termina con cilantro.",
+ ], "No revuelvas la cazuela después de poner el pescado: mover la olla deshace los medallones.", "¿Sin dendê? Usa aceite de oliva normal con 1 cdta. de pimentón ahumado para dar color."),
+36: ([
+ "Seca muy bien los anillos de calamar con papel de cocina.",
+ "Calienta una sartén o plancha hasta que esté bien caliente, casi humeando.",
+ "Cocina el calamar 90 segundos por lado, ni un segundo más.",
+ "Sazona con sal, ajo crudo, aceite de oliva, limón y hierbas, y sirve al momento.",
+ ], "El calamar tiene dos ventanas: 90 segundos o 40 minutos en guiso. Entre las dos, queda de hule.", "¿Sin calamar? Usa anillos de pulpo precocido y plánchalos solo para dorarlos."),
+37: ([
+ "Cocina la coliflor procesada al vapor 5 minutos, deja entibiar y exprímela en un paño de cocina hasta sacarle toda el agua.",
+ "Mezcla la coliflor seca con el huevo, los 80 g de mozzarella, la harina de almendras y la sal.",
+ "Extiende la masa en un disco delgado sobre papel para hornear engrasado y hornea a 200 °C por 15 minutos.",
+ "Cubre con salsa, mozzarella y orégano, y vuelve al horno 10-12 minutos. Termina con albahaca.",
+ ], "Exprimir la coliflor no es negociable: una masa húmeda no cuaja y la pizza se deshace al cortarla.", "Congela los discos precocidos separados con papel para hornear y arma la pizza en 12 minutos."),
+38: ([
+ "Sala las rebanadas de berenjena 20 minutos, enjuágalas y sécalas.",
+ "Cocínalas a la plancha en una sartén caliente con un hilo de aceite de oliva, 2 minutos por lado.",
+ "Prepara la salsa sofriendo cebolla y ajo y cocinando el tomate 15 minutos.",
+ "Arma en capas con los quesos y hornea a 190 °C por 25 minutos, hasta que gratine.",
+ ], "Plancharlas antes de armar evita la berenjena esponjosa que se absorbe toda la salsa.", "Añade una capa de carne molida entre las berenjenas para convertirla en plato único completo."),
+39: ([
+ "Desala las carnes saladas durante 12 horas, cambiando el agua.",
+ "Cocina las carnes en agua con laurel por 40 minutos (o 25 en olla de presión) y córtalas en trozos.",
+ "Fríe el tocino, sofríe la cebolla, el ajo y el pimentón ahumado, agrega las carnes y 2 tazas del caldo, y cocina 20 minutos.",
+ "Sirve sobre la coliflor procesada sofrita en mantequilla, con col rizada y naranja.",
+ ], "La coliflor sofrita en la grasa del tocino es lo que reemplaza la textura del frijol en el plato.", "Versión exprés: usa solo chorizo, longaniza y tocino — lista en 40 minutos."),
+40: ([
+ "Derrite la mozzarella en el microondas 40 segundos y mezcla hasta formar una masa.",
+ "Agrega el queso crema, el huevo, el almidón de yuca, el polvo para hornear y la sal, y amasa con las manos engrasadas.",
+ "Forma 12 bolitas y acomódalas en la canasta de la freidora de aire sin que se toquen entre sí.",
+ "Cocina a 180 °C por 12-15 minutos, hasta que doren.",
+ ], "Almidón de yuca agrio, no dulce: el agrio es el que da la costra crujiente y el interior elástico.", "Congela las bolitas crudas y hornéalas directamente del congelador, sumando 3 minutos."),
+41: ([
+ "Corta los calabacines por la mitad y retira el centro con una cuchara, dejando 0,5 cm de pared.",
+ "Mezcla el atún, el queso crema, la cebolla, el tomate, el perejil, la sal y la pimienta.",
+ "Rellena las canoas, rocía con un hilo de aceite de oliva y espolvorea la mozzarella.",
+ "Hornea a 190 °C por 22-25 minutos.",
+ ], "Quítale las semillas al tomate: de ahí sale el agua que deja el relleno líquido.", "¿Sin atún? Usa pollo deshebrado o carne molida ya cocida."),
+42: ([
+ "Corta el pepino en láminas finas y largas con un pelador o mandolina.",
+ "Seca las láminas con papel de cocina y sazónalas con una pizca de sal.",
+ "Esparce el queso crema, coloca el pescado y el aguacate y enrolla como un taco.",
+ "Termina con ajonjolí y sirve con salsa de soya y wasabi.",
+ ], "Sala las láminas de pepino y sécalas: el pepino con agua se suelta en el rollito y lo deshace.", "Versión cocida: cambia el pescado crudo por camarón o surimi deshebrado."),
+43: ([
+ "Cocina la col entera en agua hirviendo 5 minutos y separa las hojas con cuidado.",
+ "Mezcla la carne con el arroz de coliflor, la cebolla picada, el ajo, el huevo y los condimentos.",
+ "Pon 1 cda. de relleno en cada hoja, dobla los lados y enrolla firme.",
+ "Acomódalos en la olla, cubre con el tomate pelado licuado y cocina tapado 35 minutos a fuego bajo.",
+ ], "Retira el tallo grueso de la hoja de col con un cuchillo antes de enrollar: así el rollito cierra sin romperse.", "Congela los rollitos crudos separados con papel y cocínalos directamente del congelador por 50 minutos."),
+44: ([
+ "Licúa el aguacate con el cacao, el endulzante, la vainilla y la sal hasta que quede completamente liso, sin grumos.",
+ "Bate la crema para batir hasta punto de chantilly firme.",
+ "Incorpora el chantilly a la mezcla de chocolate en tres partes, moviendo de abajo hacia arriba.",
+ "Refrigera al menos 30 minutos antes de servir.",
+ ], "El aguacate debe estar bien maduro: uno verde y firme deja sabor vegetal y grumos.", "¿Sin aguacate? Usa 1 taza de crema para batir montada con el cacao y el endulzante, sin la fruta."),
+45: ([
+ "Licúa todos los ingredientes por 1 minuto.",
+ "Vierte en un molde engrasado con aceite de coco.",
+ "Cubre con papel aluminio y hornea a baño María a 180 °C por 45-50 minutos.",
+ "Deja enfriar por completo y refrigera 4 horas antes de desmoldar.",
+ ], "El baño María es obligatorio: sin él, el flan hace burbujas y queda con textura de huevo revuelto.", "Carameliza el fondo del molde con 2 cdas. de xilitol derretido para imitar el caramelo tradicional."),
+46: ([
+ "Mezcla la crema de leche, el cacao, el endulzante y la mantequilla en una olla de fondo grueso.",
+ "Cocina a fuego bajo, moviendo sin parar, por 12-15 minutos.",
+ "El punto es cuando la mezcla se despega del fondo de la olla al inclinarla.",
+ "Apaga el fuego, agrega la sal, pasa a un recipiente y deja enfriar.",
+ ], "Los endulzantes con eritritol no dan el mismo brillo que el azúcar: añade 1 cdta. de aceite de coco al final.", "Para hacer bolitas, refrigera 4 horas y pásalas por cacao en polvo o frutos secos triturados."),
+47: ([
+ "Mezcla la harina de almendras con la mantequilla y forra el fondo de un molde desmontable. Hornea 8 minutos a 180 °C.",
+ "Bate el queso crema con el eritritol hasta que quede liso, agrega los huevos uno por uno, y después el yogur, el limón y la vainilla.",
+ "Vierte sobre la base y hornea a baño María a 160 °C por 50 minutos, hasta que los bordes cuajen y el centro tiemble un poco.",
+ "Apaga el horno y deja enfriar el cheesecake adentro por 1 hora. Cúbrelo con los frutos rojos tibios con 1 cda. de endulzante.",
+ ], "Enfriar dentro del horno apagado evita que el centro se agriete: el choque térmico es el culpable.", "¿Sin molde desmontable? Usa un molde común forrado con papel para hornear cruzado, para poder jalar el cheesecake."),
+48: ([
+ "Mezcla la harina, el eritritol, el polvo para hornear y la sal.",
+ "Agrega el huevo, la mantequilla y la vainilla y mezcla hasta formar una masa húmeda.",
+ "Incorpora el chocolate picado y forma 12 bolitas aplastadas en una bandeja forrada.",
+ "Hornea a 170 °C por 12-14 minutos, hasta que los bordes doren.",
+ ], "Salen suaves del horno y endurecen al enfriarse: no las dejes más tiempo creyendo que están crudas.", "Guárdalas en un recipiente cerrado hasta 5 días, o congela la masa ya formada por 2 meses."),
+49: ([
+ "Derrite el chocolate con el aceite de coco a baño María o en el microondas en pulsos de 20 segundos.",
+ "Agrega la crema de leche, el eritritol, la sal y la vainilla, y mezcla hasta que quede brillante.",
+ "Refrigera 30 minutos, hasta que esté lo suficientemente firme para formar las bolitas.",
+ "Forma bolitas con las manos y pásalas por cacao en polvo.",
+ ], "Derrite el chocolate en pulsos cortos, moviendo cada 20 segundos: a fuego directo se quema y queda arenoso.", "Guárdalas en el refrigerador: a temperatura ambiente el aceite de coco se derrite y la trufa pierde la forma."),
+50: ([
+ "Procesa el cacahuate en pulsos hasta obtener una miga húmeda: cuidado con pasarte y hacer mantequilla.",
+ "Agrega la harina de almendras, el eritritol y la sal, y pulsa 3 veces más.",
+ "Si queda muy seco, añade el aceite de coco y mezcla.",
+ "Presiona la mezcla en moldes pequeños o en un recipiente forrado, corta en cuadrados y deja firmar 15 minutos.",
+ ], "Procesa en pulsos cortos y detente antes: el cacahuate demasiado procesado se vuelve mantequilla y el dulce no cuaja.", "Guárdalo en un recipiente cerrado hasta 10 días en un lugar fresco."),
+}

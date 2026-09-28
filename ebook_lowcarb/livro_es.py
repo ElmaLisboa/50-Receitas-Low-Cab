@@ -3,6 +3,7 @@
 import html as H
 import re
 import livro as pt
+from es_overrides import OVERRIDES
 
 # Los nombres se adaptan a un español neutro latinoamericano. Se conserva "low carb"
 # porque es el término comercial más reconocible en los mercados objetivo.
@@ -77,16 +78,16 @@ PHRASES = [
  ("na marmita", "en el recipiente"), ("grão-de-bico", "garbanzos"),
  ("pimenta-do-reino", "pimienta negra"), ("cheiro-verde", "hierbas frescas picadas"),
  ("couve manteiga", "col rizada"), ("couve-flor", "coliflor"), ("couve", "col rizada"),
- ("abobrinha", "calabacín"), ("berinjela", "berenjena"), ("palmito pupunha", "palmito pupunha"),
- ("tomate pelado", "tomate entero pelado"), ("creme de leite fresco", "crema para batir"),
+ ("abobrinha", "calabacín"), ("berinjela", "berenjena"), ("palmito pupunha", "palmito"),
+ ("tomate pelado", "tomates pelados"), ("creme de leite fresco", "crema para batir"),
  ("creme de leite", "crema de leche"), ("cream cheese", "queso crema"),
- ("requeijão", "queso crema para untar"), ("muçarela", "mozzarella"),
+ ("requeijão", "queso crema"), ("muçarela", "mozzarella"),
  ("queijo parmesão", "queso parmesano"), ("queijo ralado", "queso rallado"),
  ("queijo", "queso"), ("farinha de amêndoas", "harina de almendras"),
  ("farinha de coco", "harina de coco"), ("farinha de linhaça dourada", "harina de linaza dorada"),
  ("polvilho azedo", "almidón de yuca agrio"), ("goma de tapioca", "goma de tapioca"),
  ("leite de coco", "leche de coco"), ("leite condensado", "leche condensada"),
- ("leite em pó", "leche en polvo"), ("carne seca", "carne seca deshebrada"),
+ ("leite em pó", "leche en polvo"), ("carne seca", "carne seca"),
  ("carne moída", "carne molida"), ("frango desfiado", "pollo deshebrado"),
  ("peito de frango", "pechuga de pollo"), ("ovos mexidos", "huevos revueltos"),
  ("ovos cozidos", "huevos cocidos"), ("ovo cozido", "huevo cocido"),
@@ -102,7 +103,8 @@ PHRASES = [
  ("salmão", "salmón"), ("camarão", "camarón"), ("camarões", "camarones"),
  ("atum", "atún"), ("gomo", "gajo"), ("gomos", "gajos"),
  ("tilápia", "tilapia"), ("bacalhau", "bacalao"), ("lula", "calamar"),
- ("costelinha", "costillitas"), ("linguiça", "salchicha"), ("bacon", "tocino"),
+ ("costelinha", "costillitas"), ("linguiça", "longaniza"), ("linguiça portuguesa", "chorizo portugués"),
+ ("calabresa", "longaniza"), ("paio", "chorizo"), ("bacon", "tocino"),
  ("presunto cru", "jamón serrano"), ("presunto", "jamón"), ("iogurte", "yogur"),
  ("azeitona", "aceituna"), ("azeitonas", "aceitunas"), ("azeite", "aceite de oliva"),
  ("vinagre de maçã", "vinagre de manzana"), ("vinagre de vinho tinto", "vinagre de vino tinto"),
@@ -119,7 +121,7 @@ PHRASES = [
  ("sementes de chia", "semillas de chía"), ("sementes", "semillas"),
  ("farinha", "harina"), ("açúcar", "azúcar"), ("adoçante", "endulzante"),
  ("eritritol", "eritritol"), ("xilitol", "xilitol"), ("baunilha", "vainilla"),
- ("essência", "esencia"), ("fermento em pó", "polvo de hornear"),
+ ("essência", "esencia"), ("fermento em pó", "polvo para hornear"),
  ("em pó", "en polvo"), ("sem açúcar", "sin azúcar"), ("sem farinha", "sin harina"),
  ("sem sementes", "sin semillas"), ("sem pele", "sin piel"), ("sem sal", "sin sal"),
  ("sem caroço", "sin semillas"), ("a gosto", "al gusto"), ("para servir", "para servir"),
@@ -139,86 +141,134 @@ PHRASES = [
  ("col.", "cda."), ("L de", "l de"), ("unid.", "unidad"),
 ]
 
-# Verbos e conectores mais comuns nos passos.
-VERBS = [
- ("Não lave", "No laves"), ("Não mexa", "No muevas"), ("Não deixe", "No dejes"),
- ("Leve ao micro-ondas", "Lleva al microondas"), ("Leve ao forno", "Lleva al horno"),
- ("Leve à geladeira", "Lleva al refrigerador"), ("Leve ao congelador", "Lleva al congelador"),
- ("Volte à panela", "Devuelve a la olla"), ("Volte o", "Devuelve el"),
- ("Refogue", "Sofríe"), ("Junte", "Añade"), ("Acrescente", "Añade"),
- ("Bata", "Bate"), ("Misture", "Mezcla"), ("Incorpore", "Incorpora"),
- ("Asse", "Hornea"), ("Cozinhe", "Cocina"), ("Aqueça", "Calienta"),
- ("Despeje", "Vierte"), ("Tempere", "Sazona"), ("Sirva", "Sirve"),
- ("Finalize", "Termina"), ("Reserve", "Reserva"), ("Deixe", "Deja"),
- ("Corte", "Corta"), ("Retire", "Retira"), ("Frite", "Fríe"),
- ("Grelhe", "Cocina a la plancha"), ("Sele", "Sella"), ("Passe", "Pasa"),
- ("Abra", "Abre"), ("Modele", "Forma"), ("Distribua", "Reparte"),
- ("Cubra", "Cubre"), ("Regue", "Rocía"), ("Acomode", "Coloca"),
- ("Processe", "Procesa"), ("Rale", "Ralla"), ("Esprema", "Exprime"),
- ("Poche", "Escalfa"), ("Monte", "Arma"), ("Amasse", "Tritura"),
- ("Doure", "Dora"), ("Derreta", "Derrite"), ("Toste", "Tuesta"),
- ("Salgue", "Sala"), ("Envolva", "Cubre"), ("Aperte", "Presiona"),
- ("Adicione", "Añade"), ("Ajuste", "Ajusta"), ("Mantenha", "Mantén"),
- ("Aguarde", "Espera"), ("Espalhe", "Extiende"), ("Junte", "Añade"),
+# Los pasos, el consejo y la sustitución de cada receta están redactados a mano
+# en es_overrides.py. Motivo: el español y el portugués comparten mucho léxico
+# pero no la sintaxis, así que sustituir palabra por palabra producía frases
+# híbridas invendibles ("enxágue y seque bem", "é obrigatório: sin isso").
+# Este traductor se ocupa SOLO de las listas de ingredientes, que son frases
+# nominales cortas donde un mapa léxico sí funciona.
+# --- Vocabulário acrescentado na revisão: plurais, cortes, utensílios e
+# --- adjetivos que o mapa original não cobria.
+PHRASES += [
+ ("alface americana", "lechuga iceberg"), ("frutas vermelhas", "frutos rojos"),
+ ("pimenta calabresa", "hojuelas de chile"), ("pimenta-branca", "pimienta blanca"),
+ ("noz-moscada", "nuez moscada"), ("sal grosso", "sal gruesa"),
+ ("farelo de aveia", "salvado de avena"), ("amido de milho", "fécula de maíz"),
+ ("azeite de dendê", "aceite de dendê"), ("azeite comum", "aceite de oliva normal"),
+ ("cogumelos paris", "champiñones"), ("filé-mignon", "filete mignon"),
+ ("copa-lombo", "cabeza de lomo"), ("camarão limpo", "camarones limpios"),
+ ("folha de louro", "hoja de laurel"), ("folhas de louro", "hojas de laurel"),
+ ("creme azedo", "crema agria"), ("em temperatura ambiente", "a temperatura ambiente"),
+ ("para cobertura", "para cubrir"), ("para enrolar", "para cubrir"),
+ ("para acompanhar", "para acompañar"), ("ao meio", "por la mitad"),
+ ("em fios", "en tiras"), ("abóbora cabotiá", "calabaza kabocha"),
+ ("pepino japonês", "pepino japonés"), ("couve refogada", "col rizada sofrita"),
+ ("ovos", "huevos"), ("ovo", "huevo"), ("parmesão", "parmesano"),
+ ("berinjelas", "berenjenas"), ("abobrinhas", "calabacines"), ("cebolas", "cebollas"),
+ ("cenouras", "zanahorias"), ("pimentões", "pimientos"), ("limões", "limones"),
+ ("abacates", "aguacates"), ("pepinos", "pepinos"), ("amêndoas", "almendras"),
+ ("amêndoa", "almendra"), ("sobrecoxas", "muslos"), ("sobrecoxa", "muslo"),
+ ("alcatra", "lomo"), ("contrafilé", "sirloin"), ("costelas", "costillas"),
+ ("costela", "costilla"), ("filés", "filetes"), ("filé", "filete"),
+ ("postas", "medallones"), ("posta", "medallón"), ("anéis", "anillos"),
+ ("buquês", "floretes"), ("buquê", "florete"), ("grãos", "granos"),
+ ("ramos", "ramas"), ("ramo", "rama"), ("maço", "manojo"),
+ ("pedaços", "trozos"), ("pedaço", "trozo"), ("raspas", "ralladura"),
+ ("vidros", "frascos"), ("vidro", "frasco"), ("espaguete", "espagueti"),
+ ("fios", "tiras"), ("fatias", "rebanadas"), ("fatia", "rebanada"),
+ ("fatiada", "en rebanadas"), ("fatiado", "en rebanadas"),
+ ("rodelas", "rodajas"), ("rodela", "rodaja"), ("laminados", "en láminas"),
+ ("laminado", "en láminas"), ("amassados", "machacados"), ("amassado", "machacado"),
+ ("lata", "lata"), ("latas", "latas"), ("alface", "lechuga"), ("repolho", "col"),
+ ("espinafre", "espinaca"), ("fermento", "polvo para hornear"),
+ ("farelo", "salvado"), ("aveia", "avena"), ("torresmo", "chicharrón"),
+ ("crouton", "crutones"), ("gergelim", "ajonjolí"), ("hortelã", "menta"),
+ ("tomilho", "tomillo"), ("endro", "eneldo"), ("cominho", "comino"),
+ ("laranja", "naranja"), ("acompanhar", "acompañar"), ("cobertura", "cobertura"),
+ ("badejo", "mero"), ("pescada", "merluza"), ("peixes", "pescados"),
+ ("peixe", "pescado"), ("patinho", "pulpa"), ("acém", "aguja"),
+ ("porco", "cerdo"), ("pele", "piel"), ("folha", "hoja"),
+ ("dessalgadas", "desaladas"), ("dessalgada", "desalada"),
+ ("dessalgado", "desalado"), ("dessalgados", "desalados"),
+ ("refogadas", "sofritas"), ("refogada", "sofrita"), ("refogado", "sofrito"),
+ ("inteiras", "enteras"), ("inteira", "entera"), ("inteiros", "enteros"),
+ ("vermelhas", "rojas"), ("vermelha", "roja"), ("vermelhos", "rojos"),
+ ("vermelho", "rojo"), ("pretas", "negras"), ("preta", "negra"),
+ ("roxa", "morada"), ("roxo", "morado"), ("médias", "medianas"),
+ ("média", "mediana"), ("médios", "medianos"), ("médio", "mediano"),
+ ("pequenas", "pequeñas"), ("pequena", "pequeña"), ("pequenos", "pequeños"),
+ ("pequeno", "pequeño"), ("limpos", "limpios"), ("limpa", "limpia"),
+ ("limpo", "limpio"), ("mix", "mezcla"), ("bem", "bien"), ("pitada", "pizca"),
+ ("processada", "procesada"), ("processado", "procesado"),
+ ("processadas", "procesadas"), ("processados", "procesados"),
 ]
 
 
-def translate_text(value, steps=False):
+OU = "\x00OU\x00"
+
+# Sustituciones que el mapa palabra por palabra no puede resolver porque el
+# español exige otro género, otro número u otro orden que el portugués.
+ING_EXACT = [
+ ("1 xíc. de espinafre picado (fresco ou congelado, espremido)",
+  "1 taza de espinaca picada (fresca o congelada, exprimida)"),
+ ("1/2 xíc. de vagem picada", "1/2 taza de ejotes picados"),
+ ("1/2 xíc. de castanha-de-caju torrada", "1/2 taza de anacardos tostados"),
+ ("5 morangos picados", "5 fresas picadas"),
+ ("400 g de camarão limpo", "400 g de camarones limpios"),
+ ("1 xíc. de frutas vermelhas congeladas", "1 taza de frutos rojos congelados"),
+ ("1/2 abobrinha ralada e espremida", "1/2 calabacín rallado y exprimido"),
+ ("2 col. sopa de cebolinha picada", "2 cdas. de cebollín picado"),
+ ("cebolinha picada, sal e pimenta", "cebollín picado, sal y pimienta"),
+ ("4 xíc. de folhas variadas", "4 tazas de hojas verdes variadas"),
+ ("3 abobrinhas médias", "3 calabacines medianos"),
+ ("sal, pimenta e salsa picada", "sal, pimienta y perejil picado"),
+ ("1 dente de alho ralado, salsa, sal e pimenta",
+  "1 diente de ajo rallado, perejil, sal y pimienta"),
+ ("1 repolho médio", "1 col mediana"),
+ ("2 bifes de alcatra ou contrafilé", "2 bistecs de lomo o sirloin"),
+ ("mix de castanhas picadas (pará, caju, amêndoa)",
+  "mezcla de frutos secos picados (nueces de Brasil, anacardos, almendras)"),
+ ("2 bifes altos de filé-mignon ou alcatra", "2 bistecs gruesos de filete mignon o lomo"),
+ ("1 col. sopa de amido de milho diluído em 3 de água (opcional)",
+  "1 cda. de fécula de maíz disuelta en 3 cdas. de agua (opcional)"),
+ ("1 1/2 xíc. de farinha de amêndoas", "1 1/2 tazas de harina de almendras"),
+ ("1 1/2 xíc. de amendoim torrado sem pele e sem sal",
+  "1 1/2 tazas de cacahuate tostado sin piel y sin sal"),
+]
+
+
+def translate_text(value):
+    """Traduce un ingrediente del portugués al español neutro LATAM."""
     s = str(value)
+    for a, b in ING_EXACT:
+        s = s.replace(a, b)
+    # La conjunción "ou" se protege con un centinela antes de cualquier pasada.
+    # Si se convierte en "o" demasiado pronto, el corrector de género la
+    # confunde con el artículo masculino y produce "mantequilla el aceite de coco".
+    s = re.sub(r"(?<!\w)ou(?!\w)", OU, s, flags=re.IGNORECASE)
+    # Las frases largas van primero para no traducir dentro de otras palabras.
     for a, b in sorted(PHRASES, key=lambda x: len(x[0]), reverse=True):
         s = re.sub(r"(?<!\w)" + re.escape(a) + r"(?!\w)", b, s, flags=re.IGNORECASE)
-    if steps:
-        for a, b in sorted(VERBS, key=lambda x: len(x[0]), reverse=True):
-            s = re.sub(r"^(" + re.escape(a) + r")\b", b, s, flags=re.IGNORECASE)
-        connectors = [
-            (" até ", " hasta "), (" com ", " con "), (" sem ", " sin "),
-            (" em ", " en "), (" no ", " en el "), (" na ", " en la "),
-            (" dos ", " de los "), (" das ", " de las "), (" do ", " del "),
-            (" da ", " de la "), (" e ", " y "), (" ou ", " o "),
-            (" por cima", " por encima"), (" na hora", " al momento"),
-        ]
-        for a, b in connectors:
-            s = s.replace(a, b)
-    # Ajustes de expresiones que suelen aparecer en las notas.
-    fixes = [
-        ("minutos em fogo baixo", "minutos a fuego bajo"), ("minutos de cada lado", "minutos por cada lado"),
-        ("fogo baixo", "fuego bajo"), ("fogo alto", "fuego alto"), ("fogo médio", "fuego medio"),
-        ("até ficar", "hasta que quede"), ("até encorpar", "hasta que espese"),
-        ("até dourar", "hasta que se dore"), ("até firmar", "hasta que cuaje"),
-        ("até secar", "hasta que se evapore"), ("até amaciar", "hasta que se ablande"),
-        ("na geladeira", "en el refrigerador"), ("no forno", "en el horno"),
-        ("no micro-ondas", "en el microondas"), ("no liquidificador", "en la licuadora"),
-        ("com as mãos", "con las manos"), ("a gosto", "al gusto"),
-        ("de um dia para o outro", "de un día para otro"), ("de cada lado", "por cada lado"),
-        ("por no mínimo", "durante al menos"), ("no mínimo", "como mínimo"),
-    ]
-    for a, b in fixes: s = s.replace(a, b)
-    # Segunda pasada: verbos que aparecen después del primer verbo y conectores
-    # que deben traducirse también dentro de las instrucciones.
-    for a, b in sorted(VERBS, key=lambda x: len(x[0]), reverse=True):
-        s = re.sub(r"(?<!\w)" + re.escape(a) + r"(?!\w)", b.lower(), s, flags=re.IGNORECASE)
     for a, b in sorted(WORD_MAP, key=lambda x: len(x[0]), reverse=True):
         s = re.sub(r"(?<!\w)" + re.escape(a) + r"(?!\w)", b, s, flags=re.IGNORECASE)
-    articles = [("do", "del"), ("da", "de la"),
-                ("os", "los"), ("as", "las"), ("uma", "una"), ("duas", "dos"), ("dois", "dos"), ("um", "un"),
+    # Artículos y conectores. "ou" queda fuera: se restituye al final.
+    articles = [("do", "del"), ("da", "de la"), ("os", "los"), ("as", "las"),
+                ("uma", "una"), ("duas", "dos"), ("dois", "dos"), ("um", "un"),
                 ("com", "con"), ("sem", "sin"), ("em", "en"), ("no", "en el"),
-                ("na", "en la"), ("e", "y"), ("ou", "o")]
+                ("na", "en la"), ("e", "y")]
     for a, b in articles:
         s = re.sub(r"(?<!\w)" + re.escape(a) + r"(?!\w)", b, s, flags=re.IGNORECASE)
-    # Artículos que necesitan género después de la traducción de ingredientes.
-    masculinos = "pollo yogur pepino tomate aguacate limón aceite arroz pan queso huevo pimentón calabacín repollo palmito salmón bacalao camarón atún filete cacao jengibre ajo apio segundo refrigerador fuego horno agua calor"
-    femeninos = "salsa mostaza carne mezcla coliflor berenjena cebolla calabaza zanahoria pasta masa receta mantequilla crema ensalada bandeja olla mano porción versión sal"
-    for word in masculinos.split():
-        s = re.sub(r"(?<!\w)o " + re.escape(word) + r"(?!\w)", "el " + word, s, flags=re.IGNORECASE)
-        s = re.sub(r"(?<!\w)a " + re.escape(word) + r"(?!\w)", "el " + word, s, flags=re.IGNORECASE)
-    for word in femeninos.split():
-        s = re.sub(r"(?<!\w)o " + re.escape(word) + r"(?!\w)", "la " + word, s, flags=re.IGNORECASE)
-        s = re.sub(r"(?<!\w)a " + re.escape(word) + r"(?!\w)", "la " + word, s, flags=re.IGNORECASE)
-    s = s.replace("garbanzos cocido", "garbanzos cocidos").replace("carbos", "carbohidratos").replace("dias", "días")
-    s = re.sub(r"(?<!\w)([2-9]\d*) taza\b", r"\1 tazas", s)
-    s = re.sub(r"(?<!\w)([2-9]\d*) cda\.\b", r"\1 cdas.", s)
-    s = re.sub(r"(?<!\w)([2-9]\d*) cdta\.\b", r"\1 cdtas.", s)
+    s = s.replace(OU, "o")
+    # Plurales de medida: "3 cda." -> "3 cdas.".
+    # O lookahead original usava \b depois do ponto, que nunca casava
+    # ("." e " " são ambos não-palavra), então nada era pluralizado.
+    # E (?<!\w) deixava passar o "2" de "1/2 taza", pluralizando frações.
+    s = re.sub(r"(?<![\w/.])([2-9]\d*) taza(?![\w])", r"\1 tazas", s)
+    s = re.sub(r"(?<![\w/.])([2-9]\d*) cda\.", r"\1 cdas.", s)
+    s = re.sub(r"(?<![\w/.])([2-9]\d*) cdta\.", r"\1 cdtas.", s)
+    s = s.replace("g cada)", "g cada uno)")
     return s
+
 
 WORD_MAP = [
  ("faça", "haz"), ("aceita", "acepta"), ("qualquer", "cualquier"), ("tire", "retira"),
@@ -243,18 +293,20 @@ WORD_MAP = [
  ("dificuldade", "dificultad"), ("porção", "porción"), ("gorduras", "grasas"),
 ]
 
-# Recria os dados das receitas com nomes e textos hispanizados.
+# Recria os dados das receitas: nomes e ingredientes traduzidos por mapa,
+# enquanto passos, dica e troca vêm redigidos à mão de es_overrides.py.
 PT_TO_ES = {r["d"][0]: NOMBRES[r["num"] - 1] for r in pt.RECEITAS}
 RECETAS = []
 for r in pt.RECEITAS:
     d = r["d"]
     nome, prep, tot, porc, kcal, carb, prot, gord, ings, passos, dica, troca = d
+    passos_es, dica_es, troca_es = OVERRIDES[r["num"]]
+    assert len(passos_es) == len(passos), (r["num"], len(passos_es), len(passos))
     RECETAS.append({
         "num": r["num"], "id": r["id"], "cat": CAT[r["cat"]][0],
         "d": (PT_TO_ES[nome], prep, tot, porc, kcal, carb, prot, gord,
               [translate_text(x) for x in ings],
-              [translate_text(x, steps=True) for x in passos],
-              translate_text(dica, steps=True), translate_text(troca, steps=True))
+              passos_es, dica_es, troca_es)
     })
 POR_NUM = {r["num"]: r for r in RECETAS}
 
