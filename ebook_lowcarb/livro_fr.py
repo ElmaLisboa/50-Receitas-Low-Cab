@@ -35,86 +35,35 @@ CAT = {
  "Sobremesas sem açúcar": ("Desserts sans sucre", "Un vrai dessert n'a pas besoin de sucre raffiné : cacao, coco, fruits secs et édulcorants qui respectent le goût."),
 }
 
-PHRASES = [
- ("não doce", "non sucré"), ("não dá", "ne donne pas"), ("não é", "n'est pas"),
- ("pimenta-do-reino", "poivre noir"), ("cheiro-verde", "herbes fraîches"), ("couve manteiga", "chou vert"),
- ("couve-flor", "chou-fleur"), ("couve", "chou vert"), ("abobrinha", "courgette"), ("berinjela", "aubergine"),
- ("palmito pupunha", "cœurs de palmier"), ("palmito", "cœurs de palmier"), ("tomate pelado", "tomates entières pelées"),
- ("creme de leite fresco", "crème liquide"), ("creme de leite", "crème liquide"), ("cream cheese", "fromage frais"),
- ("requeijão", "fromage frais"), ("muçarela", "mozzarella"), ("queijo parmesão", "parmesan"), ("queijo", "fromage"),
- ("farinha de amêndoas", "farine d'amande"), ("farinha de coco", "farine de coco"), ("farinha de linhaça dourada", "farine de lin doré"),
- ("polvilho azedo", "fécule de manioc aigre"), ("goma de tapioca", "gomme de tapioca"), ("leite de coco", "lait de coco"),
- ("carne seca", "viande séchée effilochée"), ("carne moída", "bœuf haché"), ("frango desfiado", "poulet effiloché"),
- ("peito de frango", "blanc de poulet"), ("ovos mexidos", "œufs brouillés"), ("ovos cozidos", "œufs durs"),
- ("ovo cozido", "œuf dur"), ("castanha-de-caju", "noix de cajou"), ("castanha do pará", "noix du Brésil"),
- ("castanhas", "fruits secs"), ("manteiga de amendoim", "beurre de cacahuète"), ("pasta de amendoim", "beurre de cacahuète"),
- ("amendoim", "cacahuètes"), ("morangos", "fraises"), ("morango", "fraise"), ("abacate", "avocat"), ("abóbora", "potiron"),
- ("pepino", "concombre"), ("tomate", "tomate"), ("cebola", "oignon"), ("alho", "ail"), ("dentes", "gousses"), ("dente", "gousse"),
- ("salsão", "céleri"), ("vagem", "haricots verts"), ("cenoura", "carotte"), ("pimentão", "poivron"), ("cogumelos", "champignons"),
- ("shimeji", "champignons shimeji"), ("salmão", "saumon"), ("camarão", "crevette"), ("camarões", "crevettes"), ("tilápia", "tilapia"),
- ("bacalhau", "cabillaud"), ("lula", "calamar"), ("costelinha", "travers de porc"), ("linguiça", "saucisse"), ("bacon", "lard fumé"),
- ("presunto cru", "jambon cru"), ("presunto", "jambon"), ("iogurte", "yaourt"), ("azeitona", "olive"), ("azeitonas", "olives"),
- ("azeite", "huile d'olive"), ("vinagre de maçã", "vinaigre de cidre"), ("vinagre de vinho tinto", "vinaigre de vin rouge"),
- ("mostarda dijon", "moutarde de Dijon"), ("mostarda", "moutarde"), ("shoyu", "sauce soja"), ("molho de tomate", "sauce tomate"),
- ("molho", "sauce"), ("caldo de legumes", "bouillon de légumes"), ("caldo de galinha", "bouillon de poulet"), ("caldo de carne", "bouillon de bœuf"),
- ("páprica defumada", "paprika fumé"), ("páprica", "paprika"), ("orégano", "origan"), ("manjericão", "basilic"), ("salsinha", "persil"),
- ("cebolinha", "ciboulette"), ("coentro", "coriandre"), ("alecrim", "romarin"), ("gengibre", "gingembre"), ("canela", "cannelle"),
- ("cacau em pó", "cacao en poudre non sucré"), ("cacau", "cacao"), ("coco ralado", "noix de coco râpée"), ("coco em flocos", "copeaux de coco"),
- ("sementes de girassol", "graines de tournesol"), ("sementes de abóbora", "graines de courge"), ("sementes de chia", "graines de chia"),
- ("sementes", "graines"), ("farinha", "farine"), ("açúcar", "sucre"), ("adoçante", "édulcorant"), ("essência", "extrait"),
- ("fermento em pó", "levure chimique"), ("em pó", "en poudre"), ("sem açúcar", "sans sucre"), ("sem farinha", "sans farine"),
- ("sem sementes", "sans pépins"), ("sem pele", "sans peau"), ("a gosto", "selon le goût"), ("para servir", "pour servir"),
- ("para finalizar", "pour terminer"), ("em cubos", "en dés"), ("em rodelas", "en rondelles"), ("em fatias", "en tranches"),
- ("em tiras", "en lamelles"), ("picada", "hachée"), ("picado", "haché"), ("picadas", "hachées"), ("picados", "hachés"),
- ("ralada", "râpée"), ("ralado", "râpé"), ("raladas", "râpées"), ("ralados", "râpés"), ("escorrido", "égoutté"),
- ("escorrida", "égouttée"), ("escorridas", "égouttées"), ("desfiado", "effiloché"), ("desfiada", "effilochée"),
- ("desfiados", "effilochés"), ("espremida", "pressée"), ("espremido", "pressé"), ("congelado", "surgelé"),
- ("derretida", "fondue"), ("derretido", "fondu"), ("cozida", "cuite"), ("cozido", "cuit"), ("quente", "chaud"),
- ("morno", "tiède"), ("crocante", "croustillant"), ("cremoso", "crémeux"), ("cremosa", "crémeuse"),
- ("xíc.", "tasse"), ("col. sopa", "c. à soupe"), ("col. chá", "c. à café"), ("col.", "c. à soupe")]
+# A tradução francesa NÃO usa substituição lexical. As três restrições do
+# francês — élision ("d'ail"), genre propre ("la tomate", "l'oignon", à
+# l'inverse du portugais) et pluriel figé ("des épinards") — ne peuvent pas
+# être satisfaites ensemble par des règles mot à mot. Tout est donc servi par
+# deux tables finies et révisées à la main, dans fr_overrides :
+#   · INGREDIENTS : correspondance exacte des 258 lignes d'ingrédients ;
+#   · OVERRIDES   : préparation, conseil et remplacement des 50 recettes.
+# Toute ligne absente fait échouer le build au lieu de laisser passer du
+# portugais en silence.
+from fr_overrides import INGREDIENTS, OVERRIDES
 
-VERBS = [("Não lave", "Ne lavez pas"), ("Não mexa", "Ne remuez pas"), ("Não deixe", "Ne laissez pas"),
- ("Leve ao micro-ondas", "Passez au micro-ondes"), ("Leve ao forno", "Enfournez"), ("Leve à geladeira", "Réfrigérez"),
- ("Leve ao congelador", "Placez au congélateur"), ("Volte à panela", "Remettez dans la poêle"), ("Volte o", "Remettez le"),
- ("Refogue", "Faites revenir"), ("Junte", "Ajoutez"), ("Acrescente", "Ajoutez"), ("Bata", "Fouettez"), ("Misture", "Mélangez"),
- ("Incorpore", "Incorporez"), ("Asse", "Faites cuire"), ("Cozinhe", "Faites cuire"), ("Aqueça", "Chauffez"), ("Despeje", "Versez"),
- ("Tempere", "Assaisonnez"), ("Sirva", "Servez"), ("Finalize", "Terminez"), ("Reserve", "Réservez"), ("Deixe", "Laissez"),
- ("Corte", "Coupez"), ("Retire", "Retirez"), ("Frite", "Faites frire"), ("Grelhe", "Faites griller"), ("Sele", "Saisissez"),
- ("Passe", "Passez"), ("Abra", "Ouvrez"), ("Modele", "Formez"), ("Distribua", "Répartissez"), ("Cubra", "Couvrez"),
- ("Regue", "Arrosez"), ("Acomode", "Déposez"), ("Processe", "Mixez"), ("Rale", "Râpez"), ("Esprema", "Pressez"),
- ("Poche", "Pochez"), ("Monte", "Assemblez"), ("Amasse", "Écrasez"), ("Doure", "Faites dorer"), ("Derreta", "Faites fondre"),
- ("Toste", "Faites griller"), ("Salgue", "Salez"), ("Envolva", "Enrobez"), ("Aperte", "Pressez"), ("Ajuste", "Rectifiez"),
- ("Mantenha", "Gardez"), ("Aguarde", "Attendez"), ("Espalhe", "Étalez")]
+def ingredient(line):
+    s = str(line)
+    if s not in INGREDIENTS:
+        raise KeyError("Linha de ingrediente sem tradução francesa: %r" % s)
+    return INGREDIENTS[s]
 
-WORD_MAP = [("ovos", "œufs"), ("ovo", "œuf"), ("sal", "sel"), ("pimenta", "poivre"), ("limão", "citron"), ("ervas", "herbes"), ("refogado", "préparation sautée"), ("queijos", "fromages"), ("especiarias", "épices"), ("torrado", "grillées"), ("barato", "bon marché"), ("igualmente", "également"), ("forrada", "tapissée"), ("papel-manteiga", "papier cuisson"), ("puxar", "tirer"), ("cor", "couleur"), ("aos", "aux"), ("só", "seulement"), ("fica", "devient"), ("você", "vous"), ("assa", "cuit au four"), ("dá", "donne"), ("pão", "pain"), ("use", "utilisez"), ("pronto", "prêt"), ("doce", "sucré"), ("é", "est"), ("puxa-puxa", "élastique"), ("massa", "pâte"), ("azedo", "aigre"), ("ele", "il"), ("pastosa", "pâteuse"), ("suco", "jus"), ("frango", "poulet"), ("carne", "viande"), ("salada", "salade"), ("mesmos", "mêmes"), ("mesma", "même"), ("dourado", "doré"), ("dourada", "dorée"), ("creme", "crème"), ("amarela", "jaune"), ("mel", "miel"), ("assadeira", "plaque"), ("últimos", "dernières"), ("pele", "peau"), ("peixe", "poisson"), ("solta", "libère"), ("lascas", "morceaux"), ("pressionado", "pressé"), ("passar do ponto", "trop cuire"), ("cara", "chère"), ("firme", "ferme"), ("como", "comme"), ("anéis", "anneaux"), ("polvo", "poulpe"), ("balançar", "secouer"), ("em cima", "dessus"), ("camadas", "couches"),
- ("minutos", "minutes"), ("minuto", "minute"), ("pequeno", "petit"), ("pequena", "petite"), ("untado", "graissé"), ("untada", "graissée"),
- ("firmar", "prendre"), ("dura", "se conserve"), ("segundo", "seconde"), ("mesma", "même"), ("técnica", "technique"), ("sabor", "goût"),
- ("gosto", "goût"), ("vez", "fois"), ("dias", "jours"), ("amanhã", "demain"), ("mais", "plus"), ("neutro", "neutre"),
- ("centro", "centre"), ("porção", "portion"), ("atum", "thon"), ("trocando", "en changeant"), ("leve", "léger"), ("faça", "faites"),
- ("qualquer", "n'importe quel"), ("tire", "retirez"), ("geladeira", "réfrigérateur"), ("óleo", "huile"), ("fogo", "feu"),
- ("panela", "poêle"), ("forno", "four"), ("água", "eau"), ("receita", "recette"), ("pote", "bocal"), ("potes", "bocaux"),
- ("depois", "ensuite"), ("ainda", "encore"), ("muita", "beaucoup de"), ("muito", "très"), ("crua", "crue"), ("cru", "cru"),
- ("recheie", "remplissez"), ("rechear", "remplir"), ("escorra", "égouttez"), ("desligue", "éteignez"), ("fervente", "bouillante"), ("não", "ne"), ("fazer", "faire"), ("coloque", "placez"), ("coloca", "placez"), ("congele", "congelez"), ("grelhando", "en grillant"), ("trocando", "en changeant"), ("pré-cuit", "précuit"), ("cuita", "cuite"), ("já", "déjà"), ("arroz", "riz"), ("latas", "boîtes"), ("lata", "boîte"), ("dica", "conseil"), ("troque", "remplacez"), ("caneca", "tasse"), ("duas", "deux"), ("grão-de-bico", "pois chiches")]
-
-def translate_text(value, steps=False):
-    s=str(value)
-    for a,b in sorted(PHRASES,key=lambda x:len(x[0]),reverse=True): s=re.sub(r"(?<!\w)"+re.escape(a)+r"(?!\w)",b,s,flags=re.IGNORECASE)
-    for a,b in sorted(VERBS,key=lambda x:len(x[0]),reverse=True): s=re.sub(r"^("+re.escape(a)+r")\b",b,s,flags=re.IGNORECASE)
-    connectors=[(" até "," jusqu'à "),(" com "," avec "),(" sem "," sans "),(" em "," dans "),(" no "," dans le "),(" na "," dans la "),(" dos "," des "),(" das "," des "),(" do "," du "),(" da "," de la "),(" e "," et "),(" ou "," ou "),(" de "," de "),(" por "," pendant ")]
-    for a,b in sorted(connectors,key=lambda x:len(x[0]),reverse=True):s=s.replace(a,b)
-    fixes=[("minutos em fogo baixo","minutes à feu doux"),("fogo baixo","feu doux"),("fogo alto","feu vif"),("fogo médio","feu moyen"),("até ficar","jusqu'à ce que"),("até dourar","jusqu'à ce que ce soit doré"),("até firmar","jusqu'à ce que ce soit pris"),("até secar","jusqu'à évaporation"),("na geladeira","au réfrigérateur"),("no forno","au four"),("no micro-ondas","au micro-ondes"),("no liquidificador","au mixeur"),("com as mãos","avec les mains"),("de um dia para o outro","toute une nuit"),("por no mínimo","pendant au moins")]
-    for a,b in fixes:s=s.replace(a,b)
-    for a,b in sorted(VERBS,key=lambda x:len(x[0]),reverse=True):s=re.sub(r"(?<!\w)"+re.escape(a)+r"(?!\w)",b.lower(),s,flags=re.IGNORECASE)
-    for a,b in sorted(WORD_MAP,key=lambda x:len(x[0]),reverse=True):s=re.sub(r"(?<!\w)"+re.escape(a)+r"(?!\w)",b,s,flags=re.IGNORECASE)
-    articles=[("dos","des"),("das","des"),("do","du"),("da","de la"),("os","les"),("as","les"),("uma","une"),("duas","deux"),("dois","deux"),("um","un"),("com","avec"),("sem","sans"),("em","dans"),("no","dans le"),("na","dans la"),("e","et"),("ou","ou"),("o","le"),("a","la")]
-    for a,b in articles:s=re.sub(r"(?<!\w)"+re.escape(a)+r"(?!\w)",b,s,flags=re.IGNORECASE)
-    return s
+def override(num):
+    if num not in OVERRIDES:
+        raise KeyError("Receita %d sem texto francês (fr_overrides.OVERRIDES)" % num)
+    return OVERRIDES[num]
 
 PT_TO_FR={r["d"][0]:NAMES[r["num"]-1] for r in pt.RECEITAS}
 RECIPES=[]
 for r in pt.RECEITAS:
  d=r["d"];name,prep,total,servings,kcal,carbs,protein,fat,ingredients,steps,tip,swap=d
- RECIPES.append({"num":r["num"],"id":r["id"],"cat":CAT[r["cat"]][0],"d":(PT_TO_FR[name],prep,total,servings,kcal,carbs,protein,fat,[translate_text(x) for x in ingredients],[translate_text(x,True) for x in steps],translate_text(tip,True),translate_text(swap,True))})
+ passos,dica,troca=override(r["num"])
+ assert len(passos)==len(steps), "receita %d: %d passos em francês para %d em português" % (r["num"],len(passos),len(steps))
+ RECIPES.append({"num":r["num"],"id":r["id"],"cat":CAT[r["cat"]][0],"d":(PT_TO_FR[name],prep,total,servings,kcal,carbs,protein,fat,[ingredient(x) for x in ingredients],passos,dica,troca)})
 SELECTION=[]
 for cat_pt,intro_pt,names in pt.SELECAO:
  cat_fr,intro_fr=CAT[cat_pt];SELECTION.append((cat_fr,intro_fr,[PT_TO_FR[n] for n in names]))
