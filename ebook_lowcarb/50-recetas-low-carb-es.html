@@ -1,0 +1,652 @@
+<!DOCTYPE html><html lang='es'><head><meta charset='utf-8'><style>
+@page { size: 165mm 240mm; margin: 15mm 13mm 10mm 15mm;
+  @bottom-right { content: counter(page); font: 7.5pt 'DejaVu Sans'; color: #8a8a8a; }
+  @bottom-left  { content: "50 Recetas Low Carb para el Día a Día"; font: 7.5pt 'DejaVu Sans'; color: #8a8a8a; } }
+@page capa { margin: 0; @bottom-right { content: none; } @bottom-left { content: none; }
+  background: linear-gradient(rgba(12,17,15,0.78), rgba(12,17,15,0.2) 40%, rgba(12,17,15,0) 52%, rgba(12,17,15,0.45) 90%), url('capa_fundo.jpg') center/cover no-repeat; }
+@page contra { margin: 0; @bottom-right { content: none; } @bottom-left { content: none; } background: #16261e; }
+
+* { box-sizing: border-box; }
+body { font-family: 'DejaVu Sans'; font-size: 8.6pt; line-height: 1.55; color: #26221c; }
+h1, h2, h3 { font-family: 'DejaVu Serif'; color: #1e3d2f; }
+
+/* ---- CAPA ---- */
+.capa { page: capa; }
+.capa .txt { position: absolute; top: 26mm; left: 12mm; right: 12mm; color: #fff; }
+.capa .kicker { font: 700 9pt 'DejaVu Sans'; letter-spacing: 3pt; color: #d9b64a; text-transform: uppercase; }
+.capa h1 { color: #fff; font-size: 30pt; line-height: 1.08; margin: 4mm 0 2mm; font-weight: 700; }
+.capa h1 .hl { color: #d9b64a; }
+.capa .sub { font: 12pt 'DejaVu Serif'; font-style: italic; color: #f2ede2; }
+.capa .faixa { position: absolute; bottom: 22mm; left: 12mm; right: 12mm; border-top: 1px solid rgba(255,255,255,.5); padding-top: 3mm;
+  color: #f2ede2; font: 8.5pt 'DejaVu Sans'; display: flex; justify-content: space-between; }
+.capa .marca { letter-spacing: 2pt; font-weight: 700; }
+
+/* ---- contracapa ---- */
+.contra { page: contra; color: #efe9dc; }
+.contra .in { position: absolute; top: 20mm; left: 15mm; right: 15mm; bottom: 16mm; }
+.contra h2 { color: #d9b64a; font-size: 15pt; margin: 0 0 5mm; }
+.contra p, .contra li { font-size: 9pt; }
+.contra ul { padding-left: 5mm; }
+.contra .marca { margin-top: 8mm; font-weight: 700; letter-spacing: 2pt; font-size: 9pt; color:#d9b64a }
+
+/* ---- frentes de texto ---- */
+.frente { break-before: page; }
+.frente h2 { font-size: 15pt; margin: 0 0 4mm; }
+.frente .filete { width: 22mm; height: 1mm; background: #c9a227; margin: 0 0 5mm; }
+p { margin: 0 0 3mm; }
+.quadro { background: #f4efe3; border-left: 3px solid #c9a227; padding: 4mm 5mm; margin: 4mm 0; }
+.quadro b { color: #1e3d2f; }
+.legal { font-size: 7.6pt; color: #6b675f; }
+table { width: 100%; border-collapse: collapse; font-size: 8.2pt; margin: 3mm 0; }
+th { font-family: 'DejaVu Serif'; color: #1e3d2f; text-align: left; border-bottom: 1.2px solid #1e3d2f; padding: 1.5mm 1mm; }
+td { border-bottom: 0.4px solid #cfc9bb; padding: 1.6mm 1mm; vertical-align: top; }
+td b { color: #1e3d2f; }
+
+/* ---- sumário ---- */
+.sum { margin-top: 3mm; }
+.sum table { width: 100%; border-collapse: collapse; }
+.sum td { border: none; padding: 0 0 1.8mm 0; font-size: 8.3pt; vertical-align: bottom; }
+.sum td.num { color: #c9a227; font-weight: 700; width: 8mm; }
+.sum td.dots { border-bottom: 1px dotted #9a9484; }
+.sum td.pg { text-align: right; font-weight: 700; color: #1e3d2f; width: 9mm; padding-left: 2mm; }
+.sum td.cat { font: 700 10pt 'DejaVu Serif'; color: #1e3d2f; padding: 4mm 0 1.5mm 0; }
+.sum a { text-decoration: none; color: #26221c; }
+.marcador { font-size: 1pt; color: rgba(0,0,0,0); }
+
+/* ---- abertura de categoria ---- */
+.abre { break-before: page; padding-top: 18mm; }
+.abre .capfoto { display: block; width: 125mm; height: 78mm; object-fit: cover; margin: 0 auto 8mm; border-radius: 2mm; border: 0.5px solid #ded8ca; }
+.abre .tag { font: 700 8pt 'DejaVu Sans'; letter-spacing: 2.5pt; color: #c9a227; text-transform: uppercase; }
+.abre h2 { font-size: 21pt; line-height: 1.12; margin: 3mm 0 4mm; }
+.abre .filete { width: 26mm; height: 1.2px; background: #c9a227; margin-bottom: 5mm; }
+.abre p { font-size: 9.5pt; max-width: 118mm; }
+
+/* ---- receita ---- */
+.receita { break-before: page; }
+.receita header { display: flex; align-items: baseline; gap: 4mm; padding: 0; margin: 0 0 3mm; min-height: 0; }
+.receita .num { font: 700 24pt 'DejaVu Serif'; color: #c9a227; line-height: 1; }
+.receita .titulo { flex: 1; min-width: 0; overflow: visible; }
+.receita h3 { font-size: 12.5pt; line-height: 1.2; margin: 0; overflow: visible; word-break: normal; overflow-wrap: normal; }
+.receita .foto { display: block; width: 110mm; height: 66mm; object-fit: cover; margin: 2mm auto 2mm; border-radius: 1.5mm; border: 0.5px solid #ded8ca; }
+.receita .meta { display: flex; justify-content: center; align-items: baseline; gap: 5mm; border-bottom: 1.2px solid #1e3d2f; padding: 0 0 3.5mm; margin: 0 0 4mm; font-size: 8pt; line-height: 1.2; color: #6b675f; text-align: center; }
+.receita .meta span { white-space: nowrap; }
+.receita .meta b { color: #1e3d2f; }
+.receita .corpo { display: grid; grid-template-columns: 52mm 1fr; gap: 6mm; }
+.receita h4 { font: 700 8.2pt 'DejaVu Sans'; letter-spacing: 1.5pt; text-transform: uppercase; color: #1e3d2f; margin: 0 0 2mm; }
+.receita ul.ing { list-style: none; margin: 0; padding: 0; font-size: 8.2pt; }
+.receita ul.ing li { padding: 0 0 1.6mm 4mm; position: relative; }
+.receita ul.ing li::before { content: ""; position: absolute; left: 0; top: 1.9mm; width: 2mm; height: 2mm; background: #c9a227; }
+.receita ol.passos { margin: 0; padding: 0; list-style: none; counter-reset: p; font-size: 8.4pt; }
+.receita ol.passos li { counter-increment: p; padding: 0 0 2.4mm 8mm; position: relative; }
+.receita ol.passos li::before { content: counter(p); position: absolute; left: 0; top: 0.2mm; width: 5.6mm; height: 5.6mm; border-radius: 50%;
+  background: #1e3d2f; color: #fff; font-size: 7.4pt; font-weight: 700; display: flex; align-items: center; justify-content: center; }
+.nutris { display: flex; gap: 2mm; margin: 3.5mm 0; }
+.nutris span { flex: 1; text-align: center; background: #f4efe3; padding: 1.6mm 0; font-size: 7.6pt; }
+.nutris b { display: block; font-size: 9.5pt; color: #1e3d2f; }
+.dica { background: #f4efe3; border-left: 3px solid #c9a227; padding: 2.8mm 3.5mm; font-size: 8pt; margin-top: 2.5mm; }
+.dica b { color: #1e3d2f; }
+.troca { border: 1px dashed #7d947f; border-radius: 2mm; padding: 1.5mm 3.2mm; font-size: 7.7pt; line-height: 1.35; margin-top: 1.5mm; color: #33473a; }
+
+/* ---- bônus ---- */
+.menu td.dia { font-weight: 700; color: #1e3d2f; white-space: nowrap; }
+.lista2 { columns: 2; column-gap: 7mm; font-size: 8.2pt; }
+.lista2 li { margin-bottom: 1.2mm; }
+.check li::marker { color: #c9a227; }
+</style></head><body>
+<section class="capa"><div class="txt">
+    <div class="kicker">Serie Cocina Práctica · vol. 1</div>
+    <h1>50 RECETAS<br><span class="hl">LOW CARB</span></h1>
+    <div class="sub">para el día a día — sin harina, sin azúcar y sin sacrificar el sabor</div>
+  </div>
+  <div class="faixa"><span class="marca">COCINA PRÁCTICA</span><span>menos carbohidratos, más vida real</span></div>
+</section>
+<section class="frente legal">
+  <h2>Créditos y aviso legal</h2><div class="filete"></div>
+  <p><b>50 Recetas Low Carb para el Día a Día</b> — 1.ª edición, 2026.<br>
+  Serie Cocina Práctica · volumen 1.</p>
+  <p>Todos los derechos reservados. Se prohíbe la reproducción total o parcial de este material por cualquier medio sin autorización escrita. Este ebook es un producto digital destinado al comprador: comparte únicamente el enlace oficial de venta.</p>
+  <div class="quadro"><b>AVISO IMPORTANTE:</b> la información nutricional (calorías, carbohidratos, proteínas y grasas) es una <b>estimación por porción</b>, calculada a partir de la lista de ingredientes y tablas de composición de alimentos. Puede variar según la marca, el tamaño de los alimentos y los utensilios. Este libro tiene carácter educativo y <b>no sustituye</b> la orientación de un médico o nutricionista. Las personas con diabetes, enfermedad renal, mujeres embarazadas, en periodo de lactancia o quienes toman medicamentos de forma continua deben consultar a un profesional antes de adoptar una alimentación restringida en carbohidratos. Los endulzantes como eritritol y xilitol son seguros para la mayoría de las personas en cantidades moderadas; en exceso pueden causar molestias digestivas. El xilitol es tóxico para los perros: mantén los postres fuera del alcance de las mascotas.</div>
+  <p><b>Medidas usadas en este libro:</b> 1 taza = 240 ml · 1 cda. = 15 ml · 1 cdta. = 5 ml · 1 cda. rasa = sin montañita · horno siempre precalentado, salvo indicación contraria.</p>
+  <p class="legal">Diagramación y fotografías ilustrativas generadas con fines editoriales.</p>
+</section>
+
+<section class="frente">
+  <h2>Bienvenido a tu cocina low carb</h2><div class="filete"></div>
+  <p>No compraste un libro de dieta. Compraste <b>50 respuestas listas</b> para la pregunta que puede arruinar cualquier cambio de alimentación: <i>“¿qué preparo hoy?”</i>.</p>
+  <p>Comer low carb no significa vivir de ensaladas tristes. Significa disfrutar una omelet cremosa, una lasaña que se corta en porciones, una feijoada de domingo y hasta un cheesecake, cambiando la harina y el azúcar por ingredientes que sacian, sin cocinar dos veces.</p>
+  <p>Las recetas fueron elegidas con tres criterios: <b>ingredientes fáciles de encontrar</b>, <b>tiempo real de una persona ocupada</b> y <b>sobras que resuelven el día siguiente</b>.</p>
+  <div class="quadro"><b>La regla de oro de este libro:</b> el carbohidrato es un acento, no la base del plato. Aparece para aportar sabor y color —tomate, zanahoria, fruta—, mientras la base es siempre proteína, grasa buena y verduras.</div>
+  <p>Prepara una receta nueva al día durante siete semanas y tendrás un repertorio capaz de salvar cualquier lunes. Buen provecho.</p>
+</section>
+
+<section class="frente">
+  <h2>Cómo usar este libro en la práctica</h2><div class="filete"></div>
+  <p><b>1. Empieza por el final.</b> Revisa el bono “Menú de 7 días” y la lista de compras antes de ir al supermercado. Cocinar sin plan es la forma más rápida de pedir comida a domicilio el jueves.</p>
+  <p><b>2. Duplica la receta correcta.</b> Casi todas las recetas de almuerzo y cena rinden dos porciones: la segunda es el almuerzo de mañana.</p>
+  <p><b>3. Usa los recuadros.</b> Cada receta tiene un <b>Consejo de cocina</b> y un <b>Cambio inteligente</b> para adaptar la preparación sin salir del estilo low carb.</p>
+  <p><b>4. No persigas cero carbohidratos.</b> Las cantidades nutricionales están para ayudarte a elegir, no para convertir la comida en una prisión.</p>
+  <p><b>5. Congela sin miedo.</b> Las recetas con indicaciones de congelación fueron pensadas para porciones individuales y recipientes cerrados.</p>
+</section>
+
+<section class="frente">
+  <h2>Sustituciones que salvan cualquier despensa</h2><div class="filete"></div>
+  <p>Comer low carb también es saber hacer cambios. Memoriza esta tabla y nunca volverás a depender de la harina y el azúcar:</p>
+  <table>
+    <tr><th>Retira de la receta</th><th>Usa en su lugar</th><th>Proporción / observación</th></tr>
+    <tr><td>Azúcar refinada</td><td><b>Eritritol o xilitol</b></td><td>1:1; el xilitol endulza un poco más</td></tr>
+    <tr><td>Harina de trigo</td><td><b>Harina de almendras + 1 huevo</b></td><td>usa la mitad de la cantidad; el huevo da estructura</td></tr>
+    <tr><td>Arroz blanco</td><td><b>Coliflor procesada</b></td><td>saltea cruda a fuego alto durante 5–6 minutos</td></tr>
+    <tr><td>Pasta</td><td><b>Calabacín, palmito o konjac</b></td><td>saltea de 90 segundos a 3 minutos</td></tr>
+    <tr><td>Papa</td><td><b>Coliflor, nabo o rábano asado</b></td><td>para purés y caldos; usa la calabaza con moderación</td></tr>
+    <tr><td>Salsa preparada</td><td><b>Tomate entero pelado + condimentos</b></td><td>cocina a fuego bajo durante 20 minutos</td></tr>
+  </table>
+  <h2 style="margin-top:6mm">Despensa comodín</h2>
+  <div class="lista2"><ul>
+    <li>Harina de almendras y coco rallado sin azúcar</li><li>Eritritol o xilitol y cacao 100%</li>
+    <li>Leche y crema de coco sin azúcar</li><li>Aceite de oliva, aceite de coco y mantequilla</li>
+    <li>Huevos y quesos: mozzarella, parmesano, queso crema</li><li>Coliflor, calabacín, berenjena, repollo y col rizada</li>
+    <li>Tomate entero pelado en lata y aceitunas</li><li>Pollo, carne molida, pescado y atún en lata</li>
+    <li>Frutos secos, limones, hierbas frescas y pimentón ahumado</li><li>Semillas de chía y linaza dorada</li>
+  </ul></div>
+</section>
+<section class="frente"><h2>Índice</h2><div class="filete"></div><div class="sum"><table><tr><td class="cat" colspan="4">Desayunos y tentempiés rápidos</td></tr><tr><td class="num">01</td><td><a href="#r01">Omelet al horno con espinaca y queso</a></td><td class="dots"></td><td class="pg">9</td></tr><tr><td class="num">02</td><td><a href="#r02">Pan low carb de microondas (2 minutos)</a></td><td class="dots"></td><td class="pg">10</td></tr><tr><td class="num">03</td><td><a href="#r03">Panqueques de banana con avena (sin harina)</a></td><td class="dots"></td><td class="pg">11</td></tr><tr><td class="num">04</td><td><a href="#r04">Muffins salados de huevo, verduras y tocino</a></td><td class="dots"></td><td class="pg">12</td></tr><tr><td class="num">05</td><td><a href="#r05">Tortilla de tapioca en sartén con queso y tomate</a></td><td class="dots"></td><td class="pg">13</td></tr><tr><td class="num">06</td><td><a href="#r06">Pan de queso en sartén</a></td><td class="dots"></td><td class="pg">14</td></tr><tr><td class="num">07</td><td><a href="#r07">Wrap de col rizada con pollo cremoso</a></td><td class="dots"></td><td class="pg">15</td></tr><tr><td class="num">08</td><td><a href="#r08">Huevos revueltos cremosos con aguacate y semillas</a></td><td class="dots"></td><td class="pg">16</td></tr><tr><td class="num">09</td><td><a href="#r09">Yogur proteico con granola de frutos secos</a></td><td class="dots"></td><td class="pg">17</td></tr><tr><td class="cat" colspan="4">Almuerzos completos</td></tr><tr><td class="num">10</td><td><a href="#r10">Arroz de coliflor sencillo</a></td><td class="dots"></td><td class="pg">19</td></tr><tr><td class="num">11</td><td><a href="#r11">Fideos de calabacín con salsa de tomate casera</a></td><td class="dots"></td><td class="pg">20</td></tr><tr><td class="num">12</td><td><a href="#r12">Espaguetis de palmito al ajillo</a></td><td class="dots"></td><td class="pg">21</td></tr><tr><td class="num">13</td><td><a href="#r13">Ensalada completa de pollo con aderezo de yogur</a></td><td class="dots"></td><td class="pg">22</td></tr><tr><td class="num">14</td><td><a href="#r14">Ensalada de atún con huevo y mayonesa de limón</a></td><td class="dots"></td><td class="pg">23</td></tr><tr><td class="num">15</td><td><a href="#r15">Wrap de lechuga con carne molida picante</a></td><td class="dots"></td><td class="pg">24</td></tr><tr><td class="num">16</td><td><a href="#r16">Pastel de coliflor con carne seca</a></td><td class="dots"></td><td class="pg">25</td></tr><tr><td class="num">17</td><td><a href="#r17">Lasaña de berenjena a la boloñesa</a></td><td class="dots"></td><td class="pg">26</td></tr><tr><td class="num">18</td><td><a href="#r18">Berenjena rellena de carne molida</a></td><td class="dots"></td><td class="pg">27</td></tr><tr><td class="cat" colspan="4">Sopas y caldos</td></tr><tr><td class="num">19</td><td><a href="#r19">Caldo verde low carb (sin papa)</a></td><td class="dots"></td><td class="pg">29</td></tr><tr><td class="num">20</td><td><a href="#r20">Sopa de calabaza con leche de coco y jengibre</a></td><td class="dots"></td><td class="pg">30</td></tr><tr><td class="num">21</td><td><a href="#r21">Sopa de verduras con pollo deshebrado</a></td><td class="dots"></td><td class="pg">31</td></tr><tr><td class="num">22</td><td><a href="#r22">Crema de calabacín con queso crema</a></td><td class="dots"></td><td class="pg">32</td></tr><tr><td class="cat" colspan="4">Carnes y aves</td></tr><tr><td class="num">23</td><td><a href="#r23">Pollo a la plancha con salsa de mostaza y crema</a></td><td class="dots"></td><td class="pg">34</td></tr><tr><td class="num">24</td><td><a href="#r24">Muslos de pollo al horno con limón y romero</a></td><td class="dots"></td><td class="pg">35</td></tr><tr><td class="num">25</td><td><a href="#r25">Pollo salteado estilo oriental low carb</a></td><td class="dots"></td><td class="pg">36</td></tr><tr><td class="num">26</td><td><a href="#r26">Filete con salsa de champiñones</a></td><td class="dots"></td><td class="pg">37</td></tr><tr><td class="num">27</td><td><a href="#r27">Carne molida con calabacín y tomate</a></td><td class="dots"></td><td class="pg">38</td></tr><tr><td class="num">28</td><td><a href="#r28">Bistec encebollado con mantequilla de ajo</a></td><td class="dots"></td><td class="pg">39</td></tr><tr><td class="num">29</td><td><a href="#r29">Albóndigas rellenas de queso en salsa de tomate</a></td><td class="dots"></td><td class="pg">40</td></tr><tr><td class="num">30</td><td><a href="#r30">Costillitas de cerdo deshebradas</a></td><td class="dots"></td><td class="pg">41</td></tr><tr><td class="cat" colspan="4">Pescados y mariscos</td></tr><tr><td class="num">31</td><td><a href="#r31">Salmón al horno con mantequilla de limón</a></td><td class="dots"></td><td class="pg">43</td></tr><tr><td class="num">32</td><td><a href="#r32">Tilapia empanizada con harina de almendras</a></td><td class="dots"></td><td class="pg">44</td></tr><tr><td class="num">33</td><td><a href="#r33">Camarones al ajillo</a></td><td class="dots"></td><td class="pg">45</td></tr><tr><td class="num">34</td><td><a href="#r34">Bacalao con coliflor y aceitunas</a></td><td class="dots"></td><td class="pg">46</td></tr><tr><td class="num">35</td><td><a href="#r35">Cazuela de pescado con leche de coco y palmito</a></td><td class="dots"></td><td class="pg">47</td></tr><tr><td class="num">36</td><td><a href="#r36">Calamares a la plancha con limón y hierbas</a></td><td class="dots"></td><td class="pg">48</td></tr><tr><td class="cat" colspan="4">Cenas listas en hasta 30 minutos</td></tr><tr><td class="num">37</td><td><a href="#r37">Pizza de coliflor con mozzarella y albahaca</a></td><td class="dots"></td><td class="pg">50</td></tr><tr><td class="num">38</td><td><a href="#r38">Berenjena a la parmesana (sin empanizar)</a></td><td class="dots"></td><td class="pg">51</td></tr><tr><td class="num">39</td><td><a href="#r39">Feijoada low carb (sin frijoles)</a></td><td class="dots"></td><td class="pg">52</td></tr><tr><td class="num">40</td><td><a href="#r40">Pan de queso en freidora de aire</a></td><td class="dots"></td><td class="pg">53</td></tr><tr><td class="num">41</td><td><a href="#r41">Calabacín relleno de atún y queso crema</a></td><td class="dots"></td><td class="pg">54</td></tr><tr><td class="num">42</td><td><a href="#r42">Sushi low carb (rollitos de pepino)</a></td><td class="dots"></td><td class="pg">55</td></tr><tr><td class="num">43</td><td><a href="#r43">Rollitos de col rellenos de carne molida</a></td><td class="dots"></td><td class="pg">56</td></tr><tr><td class="cat" colspan="4">Postres sin azúcar</td></tr><tr><td class="num">44</td><td><a href="#r44">Mousse de chocolate con aguacate</a></td><td class="dots"></td><td class="pg">58</td></tr><tr><td class="num">45</td><td><a href="#r45">Flan de coco con eritritol</a></td><td class="dots"></td><td class="pg">59</td></tr><tr><td class="num">46</td><td><a href="#r46">Crema de chocolate tipo brigadeiro</a></td><td class="dots"></td><td class="pg">60</td></tr><tr><td class="num">47</td><td><a href="#r47">Cheesecake low carb de frutos rojos</a></td><td class="dots"></td><td class="pg">61</td></tr><tr><td class="num">48</td><td><a href="#r48">Galletas low carb de nueces y chocolate</a></td><td class="dots"></td><td class="pg">62</td></tr><tr><td class="num">49</td><td><a href="#r49">Trufas de chocolate con aceite de coco</a></td><td class="dots"></td><td class="pg">63</td></tr><tr><td class="num">50</td><td><a href="#r50">Dulce de cacahuate tipo paçoca low carb</a></td><td class="dots"></td><td class="pg">64</td></tr></table></div></section><section class="abre"><img class="capfoto" src="imagens/capitulo-01.jpg" alt="Imagen del capítulo Desayunos y tentempiés rápidos"><div class="tag">Capítulo 01</div><h2>Desayunos y tentempiés rápidos</h2><div class="filete"></div><p>Empieza el día con recetas prácticas y saciantes, sin depender del pan tradicional. Este capítulo reúne huevos, quesos, harinas de almendras o coco y frutas en porciones equilibradas. La mayoría de las opciones requiere hasta 15 minutos de preparación activa.</p></section>
+<section class="receita" id="r01">
+  <header><div class="num">01</div><div class="titulo"><h3>Omelet al horno con espinaca y queso</h3></div></header>
+  <img class="foto" src="imagens/receita-01.jpg" alt="Omelet al horno con espinaca y queso">
+  <div class="meta"><span><b>Preparación</b> 10 min</span><span><b>Total</b> 30 min</span><span><b>Rinde</b> 2</span><span><b>Dificultad</b> fácil</span></div>
+  <div class="nutris"><span><b>385</b>kcal / porción</span><span><b>6 g</b>carbohidratos</span><span><b>27 g</b>proteínas</span><span><b>28 g</b>grasas</span></div>
+  <div class="corpo"><div><h4>Ingredientes</h4><ul class="ing"><li>4 ovos</li><li>1 taza de espinafre picado (fresco o congelado, exprimido)</li><li>50 g de queso mozzarella rallado</li><li>2 cda. de crema de leche</li><li>1/2 cebolla picada</li><li>1 cda. de aceite de oliva</li><li>sal, pimienta negra y noz-moscada al gusto</li></ul></div><div><h4>Modo de preparación</h4><ol class="passos"><li>Sofríe la cebolla en el aceite de oliva por 3 minutos, añade o espinafre y cocina hasta secar el agua.</li><li>Bate los ovos con la crema de leche, sal, pimienta y noz-moscada.</li><li>Mezcla o refogado y el queso aos ovos.</li><li>Vierte en refratário pequeno untado y hornea a 180 °C por 20-25 minutos, hasta o centro firmar.</li></ol></div></div>
+  <div class="dica"><b>CONSEJO DE COCINA:</b> haz dos de una vez: el segundo dura 3 días en la refrigerador y se convierte café de la manhã de amanhã.</div>
+  <div class="troca"><b>↺ CAMBIO INTELIGENTE:</b> cambia o espinafre por calabacín rallada y exprimida — mesma técnica, sabor mais neutro.</div>
+</section>
+<section class="receita" id="r02">
+  <header><div class="num">02</div><div class="titulo"><h3>Pan low carb de microondas (2 minutos)</h3></div></header>
+  <img class="foto" src="imagens/receita-02.jpg" alt="Pan low carb de microondas (2 minutos)">
+  <div class="meta"><span><b>Preparación</b> 5 min</span><span><b>Total</b> 7 min</span><span><b>Rinde</b> 1</span><span><b>Dificultad</b> fácil</span></div>
+  <div class="nutris"><span><b>245</b>kcal / porción</span><span><b>4 g</b>carbohidratos</span><span><b>14 g</b>proteínas</span><span><b>18 g</b>grasas</span></div>
+  <div class="corpo"><div><h4>Ingredientes</h4><ul class="ing"><li>1 ovo</li><li>2 cda. de harina de almendras</li><li>1 cda. de crema de leche</li><li>1/2 cdta. de polvo de hornear</li><li>1 pitada de sal</li><li>1/2 cdta. de mantequilla para untar</li></ul></div><div><h4>Modo de preparación</h4><ol class="passos"><li>Mezcla tudo en una taza o recipiente quadrado untado, con un garfo, hasta sumirem las bolinhas de harina.</li><li>Lleva al microondas por 90 segundos en potência alta.</li><li>Desenforme, corta ao meio y dora en la frigideira o torradeira por 1 minuto por cada lado.</li></ol></div></div>
+  <div class="dica"><b>CONSEJO DE COCINA:</b> Só fica bom se você dorar después — o micro-ondas assa, mas não dá cor nem textura de pão.</div>
+  <div class="troca"><b>↺ CAMBIO INTELIGENTE:</b> sin harina de almendras? Use 1 cda. de harina de linaza dorada + 1 de coco.</div>
+</section>
+<section class="receita" id="r03">
+  <header><div class="num">03</div><div class="titulo"><h3>Panqueques de banana con avena (sin harina)</h3></div></header>
+  <img class="foto" src="imagens/receita-03.jpg" alt="Panqueques de banana con avena (sin harina)">
+  <div class="meta"><span><b>Preparación</b> 8 min</span><span><b>Total</b> 15 min</span><span><b>Rinde</b> 2</span><span><b>Dificultad</b> fácil</span></div>
+  <div class="nutris"><span><b>260</b>kcal / porción</span><span><b>22 g</b>carbohidratos</span><span><b>15 g</b>proteínas</span><span><b>12 g</b>grasas</span></div>
+  <div class="corpo"><div><h4>Ingredientes</h4><ul class="ing"><li>1 banana bem madura</li><li>2 ovos</li><li>3 cda. de farelo de aveia</li><li>1/2 cdta. de canela</li><li>1/2 cdta. de fermento</li><li>1 cdta. de mantequilla el aceite de coco</li></ul></div><div><h4>Modo de preparación</h4><ol class="passos"><li>Tritura a banana con un garfo hasta convertirse purê.</li><li>Añade los ovos, a aveia, a canela y o fermento y mezcla bem.</li><li>Calienta la mantequilla en fuego bajo y vierte conchas pequenas.</li><li>Dora 2 minutos por cada lado, virando quando aparecerem bolhas en la superfície.</li></ol></div></div>
+  <div class="dica"><b>CONSEJO DE COCINA:</b> A banana precisa estar con a casca pintada de marrom: é o que adoça sin azúcar.</div>
+  <div class="troca"><b>↺ CAMBIO INTELIGENTE:</b> cambia a banana por 1/2 maçã rallada + 1 cdta. de endulzante para reduzir aún mais o carbo.</div>
+</section>
+<section class="receita" id="r04">
+  <header><div class="num">04</div><div class="titulo"><h3>Muffins salados de huevo, verduras y tocino</h3></div></header>
+  <img class="foto" src="imagens/receita-04.jpg" alt="Muffins salados de huevo, verduras y tocino">
+  <div class="meta"><span><b>Preparación</b> 15 min</span><span><b>Total</b> 35 min</span><span><b>Rinde</b> 6</span><span><b>Dificultad</b> fácil</span></div>
+  <div class="nutris"><span><b>180</b>kcal / porción</span><span><b>3 g</b>carbohidratos</span><span><b>12 g</b>proteínas</span><span><b>13 g</b>grasas</span></div>
+  <div class="corpo"><div><h4>Ingredientes</h4><ul class="ing"><li>6 ovos</li><li>1/2 tazas de tocino en cubos</li><li>1/2 calabacín rallada y exprimida</li><li>1/2 tazas de queso rallado</li><li>2 cda. de cebollín picada</li><li>sal y pimienta al gusto</li></ul></div><div><h4>Modo de preparación</h4><ol class="passos"><li>Fríe o tocino hasta dorar y escurre en papel-toalha.</li><li>Ralla el calabacín, sala, espere 5 minutos y exprime bem con las mãos.</li><li>Bate los ovos, mezcla todos los ingredientes y reparte en forminhas de muffin.</li><li>Hornea a 180 °C por 20-25 minutos, hasta o centro ficar firme.</li></ol></div></div>
+  <div class="dica"><b>CONSEJO DE COCINA:</b> Congele en saco zip y reaqueça 30 segundos en el micro-ondas: café pronto en meio minuto.</div>
+  <div class="troca"><b>↺ CAMBIO INTELIGENTE:</b> cambia o tocino por pollo deshebrado para una versión con menos gordura saturada.</div>
+</section>
+<section class="receita" id="r05">
+  <header><div class="num">05</div><div class="titulo"><h3>Tortilla de tapioca en sartén con queso y tomate</h3></div></header>
+  <img class="foto" src="imagens/receita-05.jpg" alt="Tortilla de tapioca en sartén con queso y tomate">
+  <div class="meta"><span><b>Preparación</b> 5 min</span><span><b>Total</b> 10 min</span><span><b>Rinde</b> 1</span><span><b>Dificultad</b> fácil</span></div>
+  <div class="nutris"><span><b>290</b>kcal / porción</span><span><b>14 g</b>carbohidratos</span><span><b>18 g</b>proteínas</span><span><b>16 g</b>grasas</span></div>
+  <div class="corpo"><div><h4>Ingredientes</h4><ul class="ing"><li>1 ovo</li><li>1 cda. rasa de goma de tapioca</li><li>1 cda. de queso crema para untar la crema de leche</li><li>2 fatias de queso mozzarella</li><li>3 rodelas finas de tomate</li><li>orégano y sal al gusto</li></ul></div><div><h4>Modo de preparación</h4><ol class="passos"><li>Bate o ovo con a tapioca, el queso crema para untar y la sal hasta ficar homogêneo.</li><li>Calienta una frigideira antiaderente en fuego bajo y vierte a mistura.</li><li>Cocina 2 minutos, vire, cubre con queso y tomate y dobre ao meio.</li><li>Deja mais 1 minuto con a tampa fechada para el queso derreter.</li></ol></div></div>
+  <div class="dica"><b>CONSEJO DE COCINA:</b> fuego baixo é o segredo: en fuego alto a crepioca resseca y racha en la hora de dobrar.</div>
+  <div class="troca"><b>↺ CAMBIO INTELIGENTE:</b> versión doce: rellena con 1 cda. de chá de mantequilla de cacahuate y canela.</div>
+</section>
+<section class="receita" id="r06">
+  <header><div class="num">06</div><div class="titulo"><h3>Pan de queso en sartén</h3></div></header>
+  <img class="foto" src="imagens/receita-06.jpg" alt="Pan de queso en sartén">
+  <div class="meta"><span><b>Preparación</b> 5 min</span><span><b>Total</b> 10 min</span><span><b>Rinde</b> 1</span><span><b>Dificultad</b> fácil</span></div>
+  <div class="nutris"><span><b>275</b>kcal / porción</span><span><b>6 g</b>carbohidratos</span><span><b>16 g</b>proteínas</span><span><b>21 g</b>grasas</span></div>
+  <div class="corpo"><div><h4>Ingredientes</h4><ul class="ing"><li>1 ovo</li><li>2 cda. de almidón de yuca agrio</li><li>2 cda. de queso parmesano o mozzarella rallada</li><li>1 cda. de crema de leche</li><li>1 pitada de sal</li></ul></div><div><h4>Modo de preparación</h4><ol class="passos"><li>Mezcla tudo con un garfo hasta convertirse una massa cremosa.</li><li>Vierte en frigideira pequena antiaderente untada, en fuego bajo.</li><li>Tampe y deja 4 minutos, vire y deja mais 3 minutos.</li><li>Corta ao meio y rellena aún caliente.</li></ol></div></div>
+  <div class="dica"><b>CONSEJO DE COCINA:</b> O almidón de yuca agrio (não o doce) é o que dá o puxa-puxa característico.</div>
+  <div class="troca"><b>↺ CAMBIO INTELIGENTE:</b> Recheio curinga: queso crema para untar con orégano el pollo deshebrado con catupiry.</div>
+</section>
+<section class="receita" id="r07">
+  <header><div class="num">07</div><div class="titulo"><h3>Wrap de col rizada con pollo cremoso</h3></div></header>
+  <img class="foto" src="imagens/receita-07.jpg" alt="Wrap de col rizada con pollo cremoso">
+  <div class="meta"><span><b>Preparación</b> 12 min</span><span><b>Total</b> 20 min</span><span><b>Rinde</b> 2</span><span><b>Dificultad</b> fácil</span></div>
+  <div class="nutris"><span><b>310</b>kcal / porción</span><span><b>9 g</b>carbohidratos</span><span><b>26 g</b>proteínas</span><span><b>19 g</b>grasas</span></div>
+  <div class="corpo"><div><h4>Ingredientes</h4><ul class="ing"><li>4 hojas grandes de col rizada</li><li>1 taza de pollo cocido deshebrado</li><li>3 cda. de queso crema para untar el yogur natural</li><li>1/2 zanahoria rallada</li><li>1/2 tazas de alface picada</li><li>jugo de 1/4 de limón, sal y pimienta</li></ul></div><div><h4>Modo de preparación</h4><ol class="passos"><li>Pasa las hojas de col rizada por agua hirviendo por 20 segundos y después en agua gelada — isso amacia sin cocinar.</li><li>Mezcla el pollo con el queso crema para untar, el limón, sal y pimienta.</li><li>Arma sobre a folha seca: alface, zanahoria y el pollo cremoso.</li><li>Enrole firme como un charuto, dobrando las laterais, y corta ao meio.</li></ol></div></div>
+  <div class="dica"><b>CONSEJO DE COCINA:</b> Seque bem a col rizada con papel-toalha: folha molhada faz o wrap desmontar en la mão.</div>
+  <div class="troca"><b>↺ CAMBIO INTELIGENTE:</b> cambia a col rizada por folha de acelga cruda, que é mais crujiente y não precisa de choque térmico.</div>
+</section>
+<section class="receita" id="r08">
+  <header><div class="num">08</div><div class="titulo"><h3>Huevos revueltos cremosos con aguacate y semillas</h3></div></header>
+  <img class="foto" src="imagens/receita-08.jpg" alt="Huevos revueltos cremosos con aguacate y semillas">
+  <div class="meta"><span><b>Preparación</b> 8 min</span><span><b>Total</b> 10 min</span><span><b>Rinde</b> 1</span><span><b>Dificultad</b> fácil</span></div>
+  <div class="nutris"><span><b>405</b>kcal / porción</span><span><b>8 g</b>carbohidratos</span><span><b>20 g</b>proteínas</span><span><b>33 g</b>grasas</span></div>
+  <div class="corpo"><div><h4>Ingredientes</h4><ul class="ing"><li>2 ovos</li><li>1 cda. de mantequilla</li><li>1/2 aguacate pequeno en rebanadas</li><li>1 cda. de semillas de girasol la calabaza</li><li>cebollín picada, sal y pimienta</li></ul></div><div><h4>Modo de preparación</h4><ol class="passos"><li>Bate los ovos con sal y pimienta sin fazer espuma.</li><li>Derrite la mantequilla en fuego bajo, vierte los ovos y espere 20 segundos sin mexer.</li><li>Arraste con una espátula del centro para las bordas, repetindo hasta ficar cremoso y aún úmido.</li><li>Sirve imediatamente con el aguacate por encima, las semillas y a cebollín.</li></ol></div></div>
+  <div class="dica"><b>CONSEJO DE COCINA:</b> retira del fuego quando aún parecer crudo demais: el calor de la olla termina o cozimento.</div>
+  <div class="troca"><b>↺ CAMBIO INTELIGENTE:</b> sin aguacate? Use 2 cda. de crema de leche azedo con limón.</div>
+</section>
+<section class="receita" id="r09">
+  <header><div class="num">09</div><div class="titulo"><h3>Yogur proteico con granola de frutos secos</h3></div></header>
+  <img class="foto" src="imagens/receita-09.jpg" alt="Yogur proteico con granola de frutos secos">
+  <div class="meta"><span><b>Preparación</b> 5 min</span><span><b>Total</b> 5 min</span><span><b>Rinde</b> 1</span><span><b>Dificultad</b> fácil</span></div>
+  <div class="nutris"><span><b>320</b>kcal / porción</span><span><b>10 g</b>carbohidratos</span><span><b>22 g</b>proteínas</span><span><b>22 g</b>grasas</span></div>
+  <div class="corpo"><div><h4>Ingredientes</h4><ul class="ing"><li>170 g de yogur natural integral</li><li>1/3 tazas de mix de frutos secos picadas (pará, caju, amêndoa)</li><li>1 cda. de coco en hojuelas sin azúcar</li><li>1/2 cdta. de canela</li><li>1 cdta. de endulzante o mel (opcional)</li><li>5 fresas picados</li></ul></div><div><h4>Modo de preparación</h4><ol class="passos"><li>Tuesta las frutos secos con o coco en hojuelas en frigideira seca por 2 minutos, mexendo sempre.</li><li>Arma el yogur en una tigela, cubre con los fresas.</li><li>Extiende a granola morna por encima y polvilhe a canela.</li><li>Adoce só se necessário — a canela já engana o paladar.</li></ol></div></div>
+  <div class="dica"><b>CONSEJO DE COCINA:</b> Nunca tuesta a granola perto del telefone: castanha queima en 30 segundos y amarga tudo.</div>
+  <div class="troca"><b>↺ CAMBIO INTELIGENTE:</b> Granola en lote: triplique la receta y guarde 15 días en recipiente fechado.</div>
+</section><section class="abre"><img class="capfoto" src="imagens/capitulo-02.jpg" alt="Imagen del capítulo Almuerzos completos"><div class="tag">Capítulo 02</div><h2>Almuerzos completos</h2><div class="filete"></div><p>Platos de una sola olla, ensaladas que sostienen toda la tarde y sustitutos del arroz y la pasta, sin aspecto de comida de dieta.</p></section>
+<section class="receita" id="r10">
+  <header><div class="num">10</div><div class="titulo"><h3>Arroz de coliflor sencillo</h3></div></header>
+  <img class="foto" src="imagens/receita-10.jpg" alt="Arroz de coliflor sencillo">
+  <div class="meta"><span><b>Preparación</b> 10 min</span><span><b>Total</b> 15 min</span><span><b>Rinde</b> 4</span><span><b>Dificultad</b> fácil</span></div>
+  <div class="nutris"><span><b>65</b>kcal / porción</span><span><b>5 g</b>carbohidratos</span><span><b>4 g</b>proteínas</span><span><b>3 g</b>grasas</span></div>
+  <div class="corpo"><div><h4>Ingredientes</h4><ul class="ing"><li>1 coliflor média en buquês</li><li>1 cda. de aceite de oliva</li><li>2 dientes de ajo picados</li><li>1/4 de cebolla picada</li><li>sal y hierbas frescas picadas</li></ul></div><div><h4>Modo de preparación</h4><ol class="passos"><li>Procesa la coliflor cruda en pulsos curtos hasta convertirse grãos del tamanho de arroz (o ralla en el ralador grosso).</li><li>Sofríe el ajo y la cebolla en el aceite de oliva por 2 minutos.</li><li>Añade la coliflor y sofríe en fuego alto por 5-6 minutos, mexendo.</li><li>Sazona con sal y termina con hierbas frescas picadas — não tampe, senão se convierte purê.</li></ol></div></div>
+  <div class="dica"><b>CONSEJO DE COCINA:</b> Nunca procesa la coliflor cocida: ela solta agua y se convierte papa. Sempre cruda y en pulsos curtos.</div>
+  <div class="troca"><b>↺ CAMBIO INTELIGENTE:</b> Base neutra: guarda 4 días en la refrigerador y acepta cualquier sobra de proteína por encima.</div>
+</section>
+<section class="receita" id="r11">
+  <header><div class="num">11</div><div class="titulo"><h3>Fideos de calabacín con salsa de tomate casera</h3></div></header>
+  <img class="foto" src="imagens/receita-11.jpg" alt="Fideos de calabacín con salsa de tomate casera">
+  <div class="meta"><span><b>Preparación</b> 12 min</span><span><b>Total</b> 30 min</span><span><b>Rinde</b> 2</span><span><b>Dificultad</b> fácil</span></div>
+  <div class="nutris"><span><b>265</b>kcal / porción</span><span><b>14 g</b>carbohidratos</span><span><b>12 g</b>proteínas</span><span><b>18 g</b>grasas</span></div>
+  <div class="corpo"><div><h4>Ingredientes</h4><ul class="ing"><li>2 abobrinhas grandes</li><li>6 tomates maduros (o 1 lata de tomate entero pelado)</li><li>2 dientes de ajo</li><li>1/2 cebolla</li><li>1 cda. de aceite de oliva</li><li>albahaca, sal y pimienta</li><li>parmesão rallado para terminar</li></ul></div><div><h4>Modo de preparación</h4><ol class="passos"><li>haz la salsa: sofríe cebolla y ajo, añade el tomate picado y cocina 20 minutos en fuego bajo hasta encorpar.</li><li>Corta el calabacín en tiras finas con descascador o espiralizador.</li><li>Sofríe el calabacín por 90 segundos en el aceite de oliva caliente — só para amornar, nunca cocinar.</li><li>Añade la salsa, mexa rapidamente y termina con albahaca y parmesão.</li></ol></div></div>
+  <div class="dica"><b>CONSEJO DE COCINA:</b> Sala el calabacín já espiralizada, deja 10 minutos en el colador y seque con papel: corta el agua que afina la salsa.</div>
+  <div class="troca"><b>↺ CAMBIO INTELIGENTE:</b> cambia el tomate entero pelado por salsa de coliflor batida con parmesão para una versión aún mais baixa en carbo.</div>
+</section>
+<section class="receita" id="r12">
+  <header><div class="num">12</div><div class="titulo"><h3>Espaguetis de palmito al ajillo</h3></div></header>
+  <img class="foto" src="imagens/receita-12.jpg" alt="Espaguetis de palmito al ajillo">
+  <div class="meta"><span><b>Preparación</b> 10 min</span><span><b>Total</b> 20 min</span><span><b>Rinde</b> 2</span><span><b>Dificultad</b> fácil</span></div>
+  <div class="nutris"><span><b>210</b>kcal / porción</span><span><b>7 g</b>carbohidratos</span><span><b>8 g</b>proteínas</span><span><b>17 g</b>grasas</span></div>
+  <div class="corpo"><div><h4>Ingredientes</h4><ul class="ing"><li>1 vidro de palmito pupunha en fios (o espaguete de konjac)</li><li>4 dientes de ajo laminados</li><li>3 cda. de aceite de oliva</li><li>1/4 de taza de parmesão rallado</li><li>perejil, pimienta negra y sal</li></ul></div><div><h4>Modo de preparación</h4><ol class="passos"><li>escurre y seque bem el palmito con papel-toalha.</li><li>Calienta el aceite de oliva en fuego bajo y dora el ajo laminado sin deixar queimar.</li><li>Añade el palmito y sofríe 3 minutos en fuego medio-alto para evaporar el agua.</li><li>apaga, mezcla o parmesão, a perejil y a pimienta y sirve imediatamente.</li></ol></div></div>
+  <div class="dica"><b>CONSEJO DE COCINA:</b> Palmito y konjac sueltan mucha agua: secar bem antes del sofrito é o que impede o prato de ficar aguado.</div>
+  <div class="troca"><b>↺ CAMBIO INTELIGENTE:</b> Añade 1 taza de camarón salteado para convertirse prato principal completo.</div>
+</section>
+<section class="receita" id="r13">
+  <header><div class="num">13</div><div class="titulo"><h3>Ensalada completa de pollo con aderezo de yogur</h3></div></header>
+  <img class="foto" src="imagens/receita-13.jpg" alt="Ensalada completa de pollo con aderezo de yogur">
+  <div class="meta"><span><b>Preparación</b> 15 min</span><span><b>Total</b> 25 min</span><span><b>Rinde</b> 2</span><span><b>Dificultad</b> fácil</span></div>
+  <div class="nutris"><span><b>340</b>kcal / porción</span><span><b>12 g</b>carbohidratos</span><span><b>32 g</b>proteínas</span><span><b>18 g</b>grasas</span></div>
+  <div class="corpo"><div><h4>Ingredientes</h4><ul class="ing"><li>1 pechuga de pollo a la plancha en tiras</li><li>4 tazas de hojas variadas</li><li>1/2 pepino en rodajas</li><li>1 tomate en gajos</li><li>1/4 de aguacate</li><li>170 g de yogur natural</li><li>1 cdta. de mostaza, jugo de 1/2 limón, aceite de oliva, sal y hierbas</li></ul></div><div><h4>Modo de preparación</h4><ol class="passos"><li>Sazona el pollo con sal, pimienta y pimentón y cocina a la plancha 5 minutos por cada lado.</li><li>Arma las hojas, el pepino, el tomate y el aguacate en dos tazones.</li><li>Mezcla el yogur con la mostaza, el limón, 1 cda. de aceite de oliva, sal y hierbas.</li><li>Cubre con el pollo tibio y rocía con la salsa en la hora de comer.</li></ol></div></div>
+  <div class="dica"><b>CONSEJO DE COCINA:</b> ensalada con aderezo por separado dura 2 días en el recipiente; con aderezo junto, se marchita en 3 horas.</div>
+  <div class="troca"><b>↺ CAMBIO INTELIGENTE:</b> cambia el pollo por atún o garbanzos cocidos (aumenta la porción y suma los carbohidratos).</div>
+</section>
+<section class="receita" id="r14">
+  <header><div class="num">14</div><div class="titulo"><h3>Ensalada de atún con huevo y mayonesa de limón</h3></div></header>
+  <img class="foto" src="imagens/receita-14.jpg" alt="Ensalada de atún con huevo y mayonesa de limón">
+  <div class="meta"><span><b>Preparación</b> 12 min</span><span><b>Total</b> 20 min</span><span><b>Rinde</b> 2</span><span><b>Dificultad</b> fácil</span></div>
+  <div class="nutris"><span><b>375</b>kcal / porción</span><span><b>6 g</b>carbohidratos</span><span><b>28 g</b>proteínas</span><span><b>27 g</b>grasas</span></div>
+  <div class="corpo"><div><h4>Ingredientes</h4><ul class="ing"><li>2 latas de atún en agua escurrido</li><li>2 huevos cocidos picados</li><li>1/2 tazas de apio picado</li><li>1/4 de cebolla roxa picada</li><li>3 cda. de mayonesa</li><li>jugo de 1/2 limón</li><li>1 cdta. de mostaza, sal, pimienta y perejil</li></ul></div><div><h4>Modo de preparación</h4><ol class="passos"><li>Mezcla a mayonesa con el limón, la mostaza, sal y pimienta.</li><li>Añade el atún, o ovo, el apio y la cebolla y incorpora delicadamente.</li><li>Termina con perejil y ajusta la sal.</li><li>Sirve sobre hojas, en wrap de col rizada o recheando tomate.</li></ol></div></div>
+  <div class="dica"><b>CONSEJO DE COCINA:</b> el apio é o que dá crocância — sin ele, la ensalada fica pastosa.</div>
+  <div class="troca"><b>↺ CAMBIO INTELIGENTE:</b> versión de recipiente: arma en recipiente de vidro con las hojas en el fundo y la ensalada por encima.</div>
+</section>
+<section class="receita" id="r15">
+  <header><div class="num">15</div><div class="titulo"><h3>Wrap de lechuga con carne molida picante</h3></div></header>
+  <img class="foto" src="imagens/receita-15.jpg" alt="Wrap de lechuga con carne molida picante">
+  <div class="meta"><span><b>Preparación</b> 15 min</span><span><b>Total</b> 25 min</span><span><b>Rinde</b> 3</span><span><b>Dificultad</b> fácil</span></div>
+  <div class="nutris"><span><b>320</b>kcal / porción</span><span><b>8 g</b>carbohidratos</span><span><b>26 g</b>proteínas</span><span><b>21 g</b>grasas</span></div>
+  <div class="corpo"><div><h4>Ingredientes</h4><ul class="ing"><li>1 alface americana (hojas inteiras)</li><li>500 g de carne molida</li><li>1 cebolla picada</li><li>2 dientes de ajo</li><li>1 pimiento pequeno picado</li><li>2 cda. de salsa de tomate</li><li>pimentón ahumado, cominho, pimienta y sal</li><li>queso rallado y creme azedo para servir</li></ul></div><div><h4>Modo de preparación</h4><ol class="passos"><li>Sofríe la cebolla, el ajo y o pimiento por 4 minutos.</li><li>Añade la carne molida y dora bem, quebrando los grumos con a espátula.</li><li>Añade la salsa de tomate y los temperos y cocina 8 minutos hasta secar o líquido.</li><li>Sirve en hojas de alface con queso y creme azedo.</li></ol></div></div>
+  <div class="dica"><b>CONSEJO DE COCINA:</b> Seque las hojas de alface con papel-toalha — folha molhada rasga ao enrolar.</div>
+  <div class="troca"><b>↺ CAMBIO INTELIGENTE:</b> sin carne molida? Use pollo deshebrado con los mesmos temperos.</div>
+</section>
+<section class="receita" id="r16">
+  <header><div class="num">16</div><div class="titulo"><h3>Pastel de coliflor con carne seca</h3></div></header>
+  <img class="foto" src="imagens/receita-16.jpg" alt="Pastel de coliflor con carne seca">
+  <div class="meta"><span><b>Preparación</b> 25 min</span><span><b>Total</b> 60 min</span><span><b>Rinde</b> 6</span><span><b>Dificultad</b> fácil</span></div>
+  <div class="nutris"><span><b>390</b>kcal / porción</span><span><b>13 g</b>carbohidratos</span><span><b>28 g</b>proteínas</span><span><b>25 g</b>grasas</span></div>
+  <div class="corpo"><div><h4>Ingredientes</h4><ul class="ing"><li>1 coliflor grande</li><li>400 g de carne seca deshebrada dessalgada y deshebrada</li><li>2 cda. de queso crema para untar</li><li>2 cda. de mantequilla</li><li>1 cebolla picada</li><li>3 dientes de ajo</li><li>100 g de mozzarella rallada</li><li>hierbas frescas picadas</li></ul></div><div><h4>Modo de preparación</h4><ol class="passos"><li>Cocina la coliflor en el vapor hasta ficar macia y bate con la mantequilla y el queso crema para untar hasta convertirse purê liso.</li><li>Sofríe la cebolla y el ajo, añade la carne seca deshebrada deshebrada y sofríe 5 minutos.</li><li>Arma en refratário: carne en el fundo, purê por encima, mozzarella por último.</li><li>Lleva al horno a 200 °C por 20 minutos, hasta gratinar.</li></ol></div></div>
+  <div class="dica"><b>CONSEJO DE COCINA:</b> escurre bem la coliflor cocida antes de bater: excesso de agua deixa o purê ralo.</div>
+  <div class="troca"><b>↺ CAMBIO INTELIGENTE:</b> sin carne seca deshebrada? Use carne molida refogada con pimiento el pollo deshebrado.</div>
+</section>
+<section class="receita" id="r17">
+  <header><div class="num">17</div><div class="titulo"><h3>Lasaña de berenjena a la boloñesa</h3></div></header>
+  <img class="foto" src="imagens/receita-17.jpg" alt="Lasaña de berenjena a la boloñesa">
+  <div class="meta"><span><b>Preparación</b> 30 min</span><span><b>Total</b> 75 min</span><span><b>Rinde</b> 6</span><span><b>Dificultad</b> fácil</span></div>
+  <div class="nutris"><span><b>355</b>kcal / porción</span><span><b>12 g</b>carbohidratos</span><span><b>30 g</b>proteínas</span><span><b>22 g</b>grasas</span></div>
+  <div class="corpo"><div><h4>Ingredientes</h4><ul class="ing"><li>2 berinjelas grandes en rebanadas finas</li><li>500 g de carne molida</li><li>1 lata de tomate entero pelado</li><li>1 cebolla y 3 dientes de ajo</li><li>200 g de mozzarella fatiada</li><li>100 g de parmesão rallado</li><li>aceite de oliva, orégano, sal y pimienta</li></ul></div><div><h4>Modo de preparación</h4><ol class="passos"><li>Sala las fatias de berenjena, deja 20 minutos, enxágue y seque bem.</li><li>Cocina a la plancha las fatias en frigideira caliente con un fio de aceite de oliva, 2 minutos por cada lado.</li><li>haz la salsa: sofríe cebolla y ajo, añade la carne molida, dora, añade el tomate y cocina 25 minutos.</li><li>Arma en camadas — salsa, berenjena, mozzarella — terminando con salsa y parmesão. hornea a 190 °C por 35 minutos.</li></ol></div></div>
+  <div class="dica"><b>CONSEJO DE COCINA:</b> Secar la berenjena é obrigatório: sin isso, a lasanha solta agua y se convierte sopa en el refratário.</div>
+  <div class="troca"><b>↺ CAMBIO INTELIGENTE:</b> cambia la berenjena por fatias finas de calabacín, grelhando por menos tempo.</div>
+</section>
+<section class="receita" id="r18">
+  <header><div class="num">18</div><div class="titulo"><h3>Berenjena rellena de carne molida</h3></div></header>
+  <img class="foto" src="imagens/receita-18.jpg" alt="Berenjena rellena de carne molida">
+  <div class="meta"><span><b>Preparación</b> 20 min</span><span><b>Total</b> 50 min</span><span><b>Rinde</b> 4</span><span><b>Dificultad</b> fácil</span></div>
+  <div class="nutris"><span><b>330</b>kcal / porción</span><span><b>11 g</b>carbohidratos</span><span><b>26 g</b>proteínas</span><span><b>20 g</b>grasas</span></div>
+  <div class="corpo"><div><h4>Ingredientes</h4><ul class="ing"><li>2 berinjelas cortadas ao meio</li><li>400 g de carne molida</li><li>1 cebolla y 2 dientes de ajo picados</li><li>1 tomate picado</li><li>1/2 tazas de mozzarella rallada</li><li>2 cda. de aceite de oliva</li><li>perejil, sal, pimienta y cominho</li></ul></div><div><h4>Modo de preparación</h4><ol class="passos"><li>Retira parte de la polpa de las berinjelas, pique y reserva.</li><li>Sala las metades y lleva al horno a 180 °C por 15 minutos para amaciar.</li><li>Sofríe cebolla y ajo, dora la carne, añade a polpa picada y el tomate y cocina 10 minutos.</li><li>rellena las berinjelas, cubre con queso y volte ao horno por 15 minutos.</li></ol></div></div>
+  <div class="dica"><b>CONSEJO DE COCINA:</b> Hornea las cascas antes de rellenar: berenjena cruda en el horno fica dura por dentro y queimada por fora.</div>
+  <div class="troca"><b>↺ CAMBIO INTELIGENTE:</b> cambia la carne molida por atún con queso crema para untar para una versión de 25 minutos.</div>
+</section><section class="abre"><img class="capfoto" src="imagens/capitulo-03.jpg" alt="Imagen del capítulo Sopas y caldos"><div class="tag">Capítulo 03</div><h2>Sopas y caldos</h2><div class="filete"></div><p>Para las noches frías y para llevar: cremosidad sin papa y sin harina de trigo.</p></section>
+<section class="receita" id="r19">
+  <header><div class="num">19</div><div class="titulo"><h3>Caldo verde low carb (sin papa)</h3></div></header>
+  <img class="foto" src="imagens/receita-19.jpg" alt="Caldo verde low carb (sin papa)">
+  <div class="meta"><span><b>Preparación</b> 15 min</span><span><b>Total</b> 35 min</span><span><b>Rinde</b> 4</span><span><b>Dificultad</b> fácil</span></div>
+  <div class="nutris"><span><b>195</b>kcal / porción</span><span><b>9 g</b>carbohidratos</span><span><b>14 g</b>proteínas</span><span><b>12 g</b>grasas</span></div>
+  <div class="corpo"><div><h4>Ingredientes</h4><ul class="ing"><li>1 coliflor pequena en buquês</li><li>200 g de salchicha portuguesa o calabresa en rodajas</li><li>1 maço de col rizada en tiras finas</li><li>1 cebolla y 3 dientes de ajo</li><li>1 l de caldo de pollo el agua</li><li>2 cda. de aceite de oliva, sal y pimienta</li></ul></div><div><h4>Modo de preparación</h4><ol class="passos"><li>Fríe a salchicha en olla grande hasta dorar y reserva parte de la gordura.</li><li>Sofríe la cebolla y el ajo nessa gordura por 3 minutos.</li><li>Añade la coliflor y o caldo, cocina 15 minutos y bate en el liquidificador hasta ficar cremoso.</li><li>Devuelve a la olla, añade a col rizada en tiras y a salchicha y cocina 5 minutos, sin deixar a col rizada amolecer demais.</li></ol></div></div>
+  <div class="dica"><b>CONSEJO DE COCINA:</b> A col rizada entra en el final y cocina só 5 minutos — ela deve ficar verde-viva, não marrom.</div>
+  <div class="troca"><b>↺ CAMBIO INTELIGENTE:</b> versión sin embutido: cambia a salchicha por pollo deshebrado y añade pimentón ahumado.</div>
+</section>
+<section class="receita" id="r20">
+  <header><div class="num">20</div><div class="titulo"><h3>Sopa de calabaza con leche de coco y jengibre</h3></div></header>
+  <img class="foto" src="imagens/receita-20.jpg" alt="Sopa de calabaza con leche de coco y jengibre">
+  <div class="meta"><span><b>Preparación</b> 15 min</span><span><b>Total</b> 40 min</span><span><b>Rinde</b> 4</span><span><b>Dificultad</b> fácil</span></div>
+  <div class="nutris"><span><b>180</b>kcal / porción</span><span><b>16 g</b>carbohidratos</span><span><b>5 g</b>proteínas</span><span><b>11 g</b>grasas</span></div>
+  <div class="corpo"><div><h4>Ingredientes</h4><ul class="ing"><li>500 g de calabaza cabotiá en cubos</li><li>200 ml de leche de coco sin azúcar</li><li>1 pedaço de 3 cm de jengibre rallado</li><li>1 cebolla y 2 dientes de ajo</li><li>700 ml de caldo de verduras</li><li>1 cda. de aceite de oliva, sal, pimienta y cebollín</li></ul></div><div><h4>Modo de preparación</h4><ol class="passos"><li>Sofríe la cebolla, el ajo y el jengibre en el aceite de oliva por 3 minutos.</li><li>Añade la calabaza y o caldo y cocina 20 minutos, hasta amaciar.</li><li>Bate en el liquidificador con o leche de coco hasta ficar liso.</li><li>Ajusta la sal, calienta sin ferver y termina con cebollín.</li></ol></div></div>
+  <div class="dica"><b>CONSEJO DE COCINA:</b> calabaza tem mais carbo que outros legumes — controle la porción se estiver en fase de indução.</div>
+  <div class="troca"><b>↺ CAMBIO INTELIGENTE:</b> cambia el jengibre por curry en polvo y termina con cilantro para un perfil thai.</div>
+</section>
+<section class="receita" id="r21">
+  <header><div class="num">21</div><div class="titulo"><h3>Sopa de verduras con pollo deshebrado</h3></div></header>
+  <img class="foto" src="imagens/receita-21.jpg" alt="Sopa de verduras con pollo deshebrado">
+  <div class="meta"><span><b>Preparación</b> 20 min</span><span><b>Total</b> 45 min</span><span><b>Rinde</b> 4</span><span><b>Dificultad</b> fácil</span></div>
+  <div class="nutris"><span><b>240</b>kcal / porción</span><span><b>14 g</b>carbohidratos</span><span><b>24 g</b>proteínas</span><span><b>10 g</b>grasas</span></div>
+  <div class="corpo"><div><h4>Ingredientes</h4><ul class="ing"><li>300 g de pechuga de pollo</li><li>1 calabacín en cubos</li><li>1 zanahoria en cubos</li><li>1/2 tazas de ejotes picada</li><li>1 taza de coliflor en buquês</li><li>1 cebolla, 2 dientes de ajo y 1 tomate</li><li>1,2 l de agua o caldo, aceite de oliva, sal, laurel y perejil</li></ul></div><div><h4>Modo de preparación</h4><ol class="passos"><li>Cocina el pollo en la agua con laurel y sal por 20 minutos, retira y desfie.</li><li>en el mesmo caldo, sofríe cebolla y ajo à parte y devolva à olla con el tomate.</li><li>Añade la zanahoria y cocina 8 minutos, después el calabacín, a ejotes y la coliflor por mais 8 minutos.</li><li>Devuelve el pollo deshebrado, ajusta la sal y termina con perejil.</li></ol></div></div>
+  <div class="dica"><b>CONSEJO DE COCINA:</b> Cocina los legumes en ordem de dureza: zanahoria primeiro, hojas y calabacín por último.</div>
+  <div class="troca"><b>↺ CAMBIO INTELIGENTE:</b> Congele en recipientes de 500 ml: dura 3 meses y resolve jantar sin planejamento.</div>
+</section>
+<section class="receita" id="r22">
+  <header><div class="num">22</div><div class="titulo"><h3>Crema de calabacín con queso crema</h3></div></header>
+  <img class="foto" src="imagens/receita-22.jpg" alt="Crema de calabacín con queso crema">
+  <div class="meta"><span><b>Preparación</b> 12 min</span><span><b>Total</b> 30 min</span><span><b>Rinde</b> 3</span><span><b>Dificultad</b> fácil</span></div>
+  <div class="nutris"><span><b>175</b>kcal / porción</span><span><b>8 g</b>carbohidratos</span><span><b>8 g</b>proteínas</span><span><b>13 g</b>grasas</span></div>
+  <div class="corpo"><div><h4>Ingredientes</h4><ul class="ing"><li>3 abobrinhas grandes en rodajas</li><li>100 g de queso crema</li><li>1 cebolla y 2 dientes de ajo</li><li>600 ml de caldo de verduras</li><li>2 cda. de aceite de oliva</li><li>sal, pimienta-branca y noz-moscada</li><li>torresmo o crouton low carb para servir</li></ul></div><div><h4>Modo de preparación</h4><ol class="passos"><li>Sofríe la cebolla y el ajo en el aceite de oliva hasta dorar.</li><li>Añade el calabacín y o caldo y cocina 15 minutos.</li><li>Bate en el liquidificador con el queso crema hasta ficar aveludado.</li><li>Devuelve a la olla, sazona con pimienta-branca y noz-moscada y calienta sin ferver.</li></ol></div></div>
+  <div class="dica"><b>CONSEJO DE COCINA:</b> queso crema entra sempre con el fuego apagado o baixo: ferver faz o creme talhar y separar.</div>
+  <div class="troca"><b>↺ CAMBIO INTELIGENTE:</b> cambia el queso crema por 100 ml de crema de leche para una versión mais ligera.</div>
+</section><section class="abre"><img class="capfoto" src="imagens/capitulo-04.jpg" alt="Imagen del capítulo Carnes y aves"><div class="tag">Capítulo 04</div><h2>Carnes y aves</h2><div class="filete"></div><p>La proteína es la base de un buen menú low carb: aquí aparece dorada, jugosa y con salsas de verdad; nada de pollo seco de comida preparada.</p></section>
+<section class="receita" id="r23">
+  <header><div class="num">23</div><div class="titulo"><h3>Pollo a la plancha con salsa de mostaza y crema</h3></div></header>
+  <img class="foto" src="imagens/receita-23.jpg" alt="Pollo a la plancha con salsa de mostaza y crema">
+  <div class="meta"><span><b>Preparación</b> 12 min</span><span><b>Total</b> 25 min</span><span><b>Rinde</b> 2</span><span><b>Dificultad</b> fácil</span></div>
+  <div class="nutris"><span><b>385</b>kcal / porción</span><span><b>5 g</b>carbohidratos</span><span><b>38 g</b>proteínas</span><span><b>24 g</b>grasas</span></div>
+  <div class="corpo"><div><h4>Ingredientes</h4><ul class="ing"><li>2 filés de pechuga de pollo (150 g cada)</li><li>2 cda. de mostaza Dijon</li><li>100 ml de crema para batir</li><li>1 diente de ajo picado</li><li>1 cda. de mantequilla</li><li>1 cdta. de tomilho</li><li>sal y pimienta negra</li></ul></div><div><h4>Modo de preparación</h4><ol class="passos"><li>Sazona los filés con sal y pimienta y sella en frigideira bem caliente, 4 minutos por cada lado. reserva.</li><li>en la mesma frigideira, derrite la mantequilla y sofríe el ajo por 30 segundos.</li><li>Añade la mostaza, la crema de leche y o tomilho y reduza por 3 minutos hasta engrossar.</li><li>Devuelve el pollo à olla, banhe con la salsa y sirve con legumes salteados.</li></ol></div></div>
+  <div class="dica"><b>CONSEJO DE COCINA:</b> en el laves a frigideira entre el pollo y la salsa: o fundo dourado é o que dá sabor à base del creme.</div>
+  <div class="troca"><b>↺ CAMBIO INTELIGENTE:</b> sin dijon? Use mostaza amarela + 1/2 cdta. de mel o endulzante para equilibrar a acidez.</div>
+</section>
+<section class="receita" id="r24">
+  <header><div class="num">24</div><div class="titulo"><h3>Muslos de pollo al horno con limón y romero</h3></div></header>
+  <img class="foto" src="imagens/receita-24.jpg" alt="Muslos de pollo al horno con limón y romero">
+  <div class="meta"><span><b>Preparación</b> 10 min</span><span><b>Total</b> 50 min</span><span><b>Rinde</b> 4</span><span><b>Dificultad</b> fácil</span></div>
+  <div class="nutris"><span><b>410</b>kcal / porción</span><span><b>3 g</b>carbohidratos</span><span><b>36 g</b>proteínas</span><span><b>28 g</b>grasas</span></div>
+  <div class="corpo"><div><h4>Ingredientes</h4><ul class="ing"><li>8 sobrecoxas de pollo con pele</li><li>jugo y raspas de 1 limón</li><li>4 ramos de romero</li><li>4 dientes de ajo amassados</li><li>3 cda. de aceite de oliva</li><li>sal grosso y pimienta negra</li></ul></div><div><h4>Modo de preparación</h4><ol class="passos"><li>Mezcla el aceite de oliva, o jugo y las raspas de limón, el ajo, o romero, la sal y a pimienta.</li><li>Cubre las sobrecoxas en la marinada y deja descansar 20 minutos (o de un día para otro).</li><li>Disponha en assadeira con a pele para cima, sin sobrepor.</li><li>Hornea a 200 °C por 40-45 minutos, hasta a pele ficar crujiente y o jugo sair transparente.</li></ol></div></div>
+  <div class="dica"><b>CONSEJO DE COCINA:</b> Pele para cima y sin sobrepor: é assim que ela fica crujiente en vez de cocida en el próprio vapor.</div>
+  <div class="troca"><b>↺ CAMBIO INTELIGENTE:</b> Añade cebolla y calabacín en la assadeira nos últimos 25 minutos para fazer o acompanhamento junto.</div>
+</section>
+<section class="receita" id="r25">
+  <header><div class="num">25</div><div class="titulo"><h3>Pollo salteado estilo oriental low carb</h3></div></header>
+  <img class="foto" src="imagens/receita-25.jpg" alt="Pollo salteado estilo oriental low carb">
+  <div class="meta"><span><b>Preparación</b> 15 min</span><span><b>Total</b> 25 min</span><span><b>Rinde</b> 3</span><span><b>Dificultad</b> fácil</span></div>
+  <div class="nutris"><span><b>320</b>kcal / porción</span><span><b>10 g</b>carbohidratos</span><span><b>30 g</b>proteínas</span><span><b>18 g</b>grasas</span></div>
+  <div class="corpo"><div><h4>Ingredientes</h4><ul class="ing"><li>400 g de pechuga de pollo en cubos</li><li>1 pimiento vermelho y 1 verde en cubos</li><li>1 calabacín en cubos</li><li>1/2 tazas de anacardos torrada</li><li>3 cda. de salsa de soya (o 2 de salsa de soya + agua)</li><li>1 diente de ajo y 1 pedaço pequeno de jengibre rallado</li><li>1 cda. de amido de milho diluído en 3 de agua (opcional)</li></ul></div><div><h4>Modo de preparación</h4><ol class="passos"><li>Sella el pollo en fuego alto con un fio de aceite, en dos levas, hasta dorar. reserva.</li><li>Sofríe el ajo y el jengibre por 30 segundos, añade los pimentões y el calabacín por 4 minutos.</li><li>Devuelve el pollo, añade la salsa de soya y o amido diluído y mexa hasta la salsa envolver tudo.</li><li>Termina con a anacardos fora del fuego, para continuar crujiente.</li></ol></div></div>
+  <div class="dica"><b>CONSEJO DE COCINA:</b> la salsa de soya tem sódio y un pouco de carbo: use la versión con menos sódio y conte 1 g de carbo por colher.</div>
+  <div class="troca"><b>↺ CAMBIO INTELIGENTE:</b> sin anacardos? Use cacahuate torrado sin piel — mais barato y igualmente crujiente.</div>
+</section>
+<section class="receita" id="r26">
+  <header><div class="num">26</div><div class="titulo"><h3>Filete con salsa de champiñones</h3></div></header>
+  <img class="foto" src="imagens/receita-26.jpg" alt="Filete con salsa de champiñones">
+  <div class="meta"><span><b>Preparación</b> 12 min</span><span><b>Total</b> 30 min</span><span><b>Rinde</b> 2</span><span><b>Dificultad</b> fácil</span></div>
+  <div class="nutris"><span><b>430</b>kcal / porción</span><span><b>7 g</b>carbohidratos</span><span><b>38 g</b>proteínas</span><span><b>28 g</b>grasas</span></div>
+  <div class="corpo"><div><h4>Ingredientes</h4><ul class="ing"><li>2 bistecs altos de filé-mignon o alcatra</li><li>200 g de champiñones paris o shimeji</li><li>150 ml de crema para batir</li><li>1/4 de taza de caldo de carne</li><li>1 cda. de mantequilla</li><li>1 diente de ajo y tomilho fresco</li><li>sal y pimienta negra</li></ul></div><div><h4>Modo de preparación</h4><ol class="passos"><li>Sazona la carne con sal y pimienta y sella en frigideira mucho caliente, 3 minutos por cada lado. reserva.</li><li>en la mesma olla, derrite la mantequilla y sofríe los champiñones hasta dorar y secar el agua.</li><li>Añade el ajo, o caldo y la crema de leche y reduza por 5 minutos.</li><li>Volte la carne, calienta por 1 minuto y sirve con la salsa por encima.</li></ol></div></div>
+  <div class="dica"><b>CONSEJO DE COCINA:</b> Não amontoe los champiñones en la olla: en excesso, eles sueltan agua y cozinham en vez de dorar.</div>
+  <div class="troca"><b>↺ CAMBIO INTELIGENTE:</b> versión sin creme: use 2 cda. de queso crema para untar diluído en el caldo caliente.</div>
+</section>
+<section class="receita" id="r27">
+  <header><div class="num">27</div><div class="titulo"><h3>Carne molida con calabacín y tomate</h3></div></header>
+  <img class="foto" src="imagens/receita-27.jpg" alt="Carne molida con calabacín y tomate">
+  <div class="meta"><span><b>Preparación</b> 15 min</span><span><b>Total</b> 30 min</span><span><b>Rinde</b> 4</span><span><b>Dificultad</b> fácil</span></div>
+  <div class="nutris"><span><b>310</b>kcal / porción</span><span><b>9 g</b>carbohidratos</span><span><b>27 g</b>proteínas</span><span><b>19 g</b>grasas</span></div>
+  <div class="corpo"><div><h4>Ingredientes</h4><ul class="ing"><li>500 g de carne molida (patinho o acém)</li><li>2 abobrinhas en cubos</li><li>1 lata de tomate entero pelado</li><li>1 cebolla y 3 dientes de ajo</li><li>1 cda. de aceite de oliva</li><li>orégano, cominho, sal y pimienta</li><li>hierbas frescas picadas y queso rallado</li></ul></div><div><h4>Modo de preparación</h4><ol class="passos"><li>Sofríe la cebolla y el ajo en el aceite de oliva hasta amaciar.</li><li>Añade la carne molida y dora bem, sin mexer nos primeiros 2 minutos para formar crosta.</li><li>Añade el tomate entero pelado, los temperos y cocina 10 minutos.</li><li>Añade el calabacín y cocina mais 8 minutos, hasta ficar macia mas firme. termina con hierbas frescas picadas.</li></ol></div></div>
+  <div class="dica"><b>CONSEJO DE COCINA:</b> dorar la carne sin mexer en el começo é o que cria o fundo escuro y o sabor de olla.</div>
+  <div class="troca"><b>↺ CAMBIO INTELIGENTE:</b> Sirve sobre arroz de coliflor o recheando pimentões y abobrinhas.</div>
+</section>
+<section class="receita" id="r28">
+  <header><div class="num">28</div><div class="titulo"><h3>Bistec encebollado con mantequilla de ajo</h3></div></header>
+  <img class="foto" src="imagens/receita-28.jpg" alt="Bistec encebollado con mantequilla de ajo">
+  <div class="meta"><span><b>Preparación</b> 10 min</span><span><b>Total</b> 20 min</span><span><b>Rinde</b> 2</span><span><b>Dificultad</b> fácil</span></div>
+  <div class="nutris"><span><b>415</b>kcal / porción</span><span><b>5 g</b>carbohidratos</span><span><b>36 g</b>proteínas</span><span><b>27 g</b>grasas</span></div>
+  <div class="corpo"><div><h4>Ingredientes</h4><ul class="ing"><li>2 bistecs de alcatra o contrafilé</li><li>1 cebolla grande en rodajas</li><li>3 dientes de ajo picados</li><li>2 cda. de mantequilla</li><li>1 cda. de aceite de oliva</li><li>sal, pimienta y salsa picada</li></ul></div><div><h4>Modo de preparación</h4><ol class="passos"><li>Sazona los bistecs con sal y pimienta y sella en frigideira caliente con aceite de oliva, 3 minutos por cada lado. reserva.</li><li>en la mesma frigideira, dora la cebolla en fuego medio por 8 minutos, hasta caramelizar.</li><li>Añade la mantequilla y el ajo y cocina 1 minuto, sin queimar el ajo.</li><li>Volte los bistecs, cubre en la cebolla, termina con salsa y sirve.</li></ol></div></div>
+  <div class="dica"><b>CONSEJO DE COCINA:</b> retira la carne de la refrigerador 20 minutos antes: bistec frío solta agua y cocina en vez de selar.</div>
+  <div class="troca"><b>↺ CAMBIO INTELIGENTE:</b> Añade 1 cda. de salsa de soya en la cebolla para un fundo mais escuro y salgado.</div>
+</section>
+<section class="receita" id="r29">
+  <header><div class="num">29</div><div class="titulo"><h3>Albóndigas rellenas de queso en salsa de tomate</h3></div></header>
+  <img class="foto" src="imagens/receita-29.jpg" alt="Albóndigas rellenas de queso en salsa de tomate">
+  <div class="meta"><span><b>Preparación</b> 25 min</span><span><b>Total</b> 50 min</span><span><b>Rinde</b> 4</span><span><b>Dificultad</b> fácil</span></div>
+  <div class="nutris"><span><b>365</b>kcal / porción</span><span><b>8 g</b>carbohidratos</span><span><b>30 g</b>proteínas</span><span><b>24 g</b>grasas</span></div>
+  <div class="corpo"><div><h4>Ingredientes</h4><ul class="ing"><li>500 g de carne molida</li><li>1 ovo</li><li>3 cda. de harina de almendras</li><li>1 diente de ajo rallado, salsa, sal y pimienta</li><li>100 g de mozzarella en cubos para rellenar</li><li>1 lata de tomate entero pelado</li><li>2 cda. de aceite de oliva y albahaca</li></ul></div><div><h4>Modo de preparación</h4><ol class="passos"><li>Mezcla la carne con o ovo, a harina de almendras, el ajo, la salsa, la sal y a pimienta. deja descansar 10 minutos.</li><li>Abre porções en la palma de la mão, coloque un cubo de queso y feche bem, sin deixar frestas.</li><li>Sella las almôndegas en frigideira con aceite de oliva hasta dorar de todos los lados.</li><li>Cubre con la salsa de tomate caliente y cocina tampado por 20 minutos en fuego bajo.</li></ol></div></div>
+  <div class="dica"><b>CONSEJO DE COCINA:</b> Feche a almôndega apertando bem: fresta aberta é queso vazando para la salsa.</div>
+  <div class="troca"><b>↺ CAMBIO INTELIGENTE:</b> A harina de almendras pode ser substituída por 2 cda. de farelo de aveia (suma 2 g de carbo por porción).</div>
+</section>
+<section class="receita" id="r30">
+  <header><div class="num">30</div><div class="titulo"><h3>Costillitas de cerdo deshebradas</h3></div></header>
+  <img class="foto" src="imagens/receita-30.jpg" alt="Costillitas de cerdo deshebradas">
+  <div class="meta"><span><b>Preparación</b> 20 min</span><span><b>Total</b> 180 min</span><span><b>Rinde</b> 6</span><span><b>Dificultad</b> fácil</span></div>
+  <div class="nutris"><span><b>445</b>kcal / porción</span><span><b>6 g</b>carbohidratos</span><span><b>34 g</b>proteínas</span><span><b>32 g</b>grasas</span></div>
+  <div class="corpo"><div><h4>Ingredientes</h4><ul class="ing"><li>1,2 kg de costillitas o copa-lombo de porco</li><li>1 cda. de pimentón ahumado</li><li>1 cdta. de cominho, ajo en polvo, cebolla en polvo</li><li>1 cda. de vinagre de manzana</li><li>2 cda. de mostaza</li><li>sal, pimienta y 2 cda. de aceite de oliva</li></ul></div><div><h4>Modo de preparación</h4><ol class="passos"><li>Mezcla las especiarias con la sal y a pimienta y esfregue en toda la carne, junto con la mostaza.</li><li>Deja marinar por en el mínimo 30 minutos (ideal: 12 horas en la refrigerador).</li><li>Sella la carne en olla caliente con aceite de oliva para dorar todos los lados.</li><li>Cubre con papel-alumínio y hornea a 150 °C por 2h30, o cocina en la pressão por 45 minutos. Desfie con dos garfos.</li></ol></div></div>
+  <div class="dica"><b>CONSEJO DE COCINA:</b> Temperatura baixa y tempo longo: é isso que desfia. fuego alto só resseca a superfície.</div>
+  <div class="troca"><b>↺ CAMBIO INTELIGENTE:</b> Mezcla o deshebrado con 2 cda. de queso crema para untar y sirve en wrap de alface.</div>
+</section><section class="abre"><img class="capfoto" src="imagens/capitulo-05.jpg" alt="Imagen del capítulo Pescados y mariscos"><div class="tag">Capítulo 05</div><h2>Pescados y mariscos</h2><div class="filete"></div><p>Del salmón del domingo a las sardinas del lunes: grasas buenas, preparación rápida y sabor de restaurante.</p></section>
+<section class="receita" id="r31">
+  <header><div class="num">31</div><div class="titulo"><h3>Salmón al horno con mantequilla de limón</h3></div></header>
+  <img class="foto" src="imagens/receita-31.jpg" alt="Salmón al horno con mantequilla de limón">
+  <div class="meta"><span><b>Preparación</b> 8 min</span><span><b>Total</b> 25 min</span><span><b>Rinde</b> 2</span><span><b>Dificultad</b> fácil</span></div>
+  <div class="nutris"><span><b>425</b>kcal / porción</span><span><b>3 g</b>carbohidratos</span><span><b>34 g</b>proteínas</span><span><b>30 g</b>grasas</span></div>
+  <div class="corpo"><div><h4>Ingredientes</h4><ul class="ing"><li>2 postas de salmón (180 g cada)</li><li>2 cda. de mantequilla derretida</li><li>jugo y raspas de 1/2 limón</li><li>2 dientes de ajo picados</li><li>1 cda. de perejil o endro</li><li>sal y pimienta negra</li></ul></div><div><h4>Modo de preparación</h4><ol class="passos"><li>Sazona el salmón con sal y pimienta y coloca en refratário untado.</li><li>Mezcla la mantequilla derretida con el ajo, el limón, las raspas y a perejil.</li><li>Rocía o peixe con a mistura y deja 10 minutos.</li><li>Hornea a 200 °C por 12-15 minutos, hasta la carne opacar y soltar en lascas.</li></ol></div></div>
+  <div class="dica"><b>CONSEJO DE COCINA:</b> salmón pronto solta en lascas quando pressionado con o garfo — passar del ponto deixa seco.</div>
+  <div class="troca"><b>↺ CAMBIO INTELIGENTE:</b> cambia el limón por 1 cda. de mostaza Dijon en la mantequilla para un perfil mais intenso.</div>
+</section>
+<section class="receita" id="r32">
+  <header><div class="num">32</div><div class="titulo"><h3>Tilapia empanizada con harina de almendras</h3></div></header>
+  <img class="foto" src="imagens/receita-32.jpg" alt="Tilapia empanizada con harina de almendras">
+  <div class="meta"><span><b>Preparación</b> 12 min</span><span><b>Total</b> 25 min</span><span><b>Rinde</b> 2</span><span><b>Dificultad</b> fácil</span></div>
+  <div class="nutris"><span><b>390</b>kcal / porción</span><span><b>5 g</b>carbohidratos</span><span><b>34 g</b>proteínas</span><span><b>26 g</b>grasas</span></div>
+  <div class="corpo"><div><h4>Ingredientes</h4><ul class="ing"><li>2 filés de tilapia</li><li>1/2 tazas de harina de almendras</li><li>1 ovo batido</li><li>1/2 tazas de parmesão rallado</li><li>1 cdta. de pimentón</li><li>2 cda. de aceite de oliva</li><li>sal, pimienta y limón</li></ul></div><div><h4>Modo de preparación</h4><ol class="passos"><li>Sazona los filés con sal, pimienta y limón y seque bem con papel-toalha.</li><li>Mezcla a harina de almendras con o parmesão y el pimentón.</li><li>Pasa o filé en el ovo y después en la mistura seca, apertando para aderir.</li><li>Hornea a 200 °C por 15 minutos en assadeira untada, o fríe en 3 cda. de aceite de oliva por 4 minutos por cada lado.</li></ol></div></div>
+  <div class="dica"><b>CONSEJO DE COCINA:</b> Secar o filé antes de empanar é o que impede a casca de soltar durante o cozimento.</div>
+  <div class="troca"><b>↺ CAMBIO INTELIGENTE:</b> harina de almendras cara? Use harina de linaza dorada con o mesmo parmesão.</div>
+</section>
+<section class="receita" id="r33">
+  <header><div class="num">33</div><div class="titulo"><h3>Camarones al ajillo</h3></div></header>
+  <img class="foto" src="imagens/receita-33.jpg" alt="Camarones al ajillo">
+  <div class="meta"><span><b>Preparación</b> 8 min</span><span><b>Total</b> 15 min</span><span><b>Rinde</b> 2</span><span><b>Dificultad</b> fácil</span></div>
+  <div class="nutris"><span><b>280</b>kcal / porción</span><span><b>4 g</b>carbohidratos</span><span><b>30 g</b>proteínas</span><span><b>16 g</b>grasas</span></div>
+  <div class="corpo"><div><h4>Ingredientes</h4><ul class="ing"><li>400 g de camarón limpo</li><li>5 dientes de ajo laminados</li><li>3 cda. de aceite de oliva</li><li>jugo de 1/2 limón</li><li>1 cdta. de pimienta calabresa (opcional)</li><li>perejil, sal y pimienta negra</li></ul></div><div><h4>Modo de preparación</h4><ol class="passos"><li>Seque los camarones con papel-toalha y sazona con sal y pimienta.</li><li>Calienta el aceite de oliva en fuego medio y dora el ajo laminado sin queimar.</li><li>aumenta el fuego y añade los camarones, mexendo por 2-3 minutos hasta ficarem rosados.</li><li>apaga, rocía con limón y termina con perejil.</li></ol></div></div>
+  <div class="dica"><b>CONSEJO DE COCINA:</b> camarón cocina en 2 minutos: passou disso, fica borrachudo. retira del fuego assim que rosar.</div>
+  <div class="troca"><b>↺ CAMBIO INTELIGENTE:</b> Añade 1/2 tazas de vinho branco y reduza por 1 minuto para una versión mais sofisticada.</div>
+</section>
+<section class="receita" id="r34">
+  <header><div class="num">34</div><div class="titulo"><h3>Bacalao con coliflor y aceitunas</h3></div></header>
+  <img class="foto" src="imagens/receita-34.jpg" alt="Bacalao con coliflor y aceitunas">
+  <div class="meta"><span><b>Preparación</b> 20 min</span><span><b>Total</b> 50 min</span><span><b>Rinde</b> 4</span><span><b>Dificultad</b> fácil</span></div>
+  <div class="nutris"><span><b>340</b>kcal / porción</span><span><b>10 g</b>carbohidratos</span><span><b>30 g</b>proteínas</span><span><b>20 g</b>grasas</span></div>
+  <div class="corpo"><div><h4>Ingredientes</h4><ul class="ing"><li>500 g de bacalao dessalgado en lascas</li><li>1 coliflor média en buquês</li><li>1/2 tazas de aceitunas pretas</li><li>1 cebolla en rodajas y 4 dientes de ajo</li><li>1/2 tazas de aceite de oliva</li><li>perejil, pimienta negra y 1 folha de laurel</li></ul></div><div><h4>Modo de preparación</h4><ol class="passos"><li>Afervente el bacalao por 5 minutos, escurre y retira pele y espinhas.</li><li>Cocina la coliflor en el vapor por 6 minutos, mantendo firme.</li><li>Sofríe la cebolla y el ajo en metade del aceite de oliva hasta dorar bem.</li><li>Arma en refratário con el bacalao, la coliflor y las aceitunas, rocía con el aceite de oliva restante y hornea a 190 °C por 20 minutos.</li></ol></div></div>
+  <div class="dica"><b>CONSEJO DE COCINA:</b> Dessalgue el bacalao cambiando el agua a cada 6 horas, por 24 a 48 horas en la refrigerador.</div>
+  <div class="troca"><b>↺ CAMBIO INTELIGENTE:</b> sin bacalao? Use lascas de peixe branco firme, como pescada o tilapia, salgadas en la hora.</div>
+</section>
+<section class="receita" id="r35">
+  <header><div class="num">35</div><div class="titulo"><h3>Cazuela de pescado con leche de coco y palmito</h3></div></header>
+  <img class="foto" src="imagens/receita-35.jpg" alt="Cazuela de pescado con leche de coco y palmito">
+  <div class="meta"><span><b>Preparación</b> 20 min</span><span><b>Total</b> 40 min</span><span><b>Rinde</b> 4</span><span><b>Dificultad</b> fácil</span></div>
+  <div class="nutris"><span><b>310</b>kcal / porción</span><span><b>12 g</b>carbohidratos</span><span><b>28 g</b>proteínas</span><span><b>18 g</b>grasas</span></div>
+  <div class="corpo"><div><h4>Ingredientes</h4><ul class="ing"><li>600 g de peixe firme en postas (badejo, pescada o robalo)</li><li>200 ml de leche de coco sin azúcar</li><li>1 vidro de palmito en rodajas</li><li>2 tomates y 1 pimiento en rodajas</li><li>1 cebolla en rodajas, 3 dientes de ajo</li><li>2 cda. de aceite de oliva de dendê (el aceite de oliva comum)</li><li>cilantro, limón, sal y pimienta</li></ul></div><div><h4>Modo de preparación</h4><ol class="passos"><li>Sazona o peixe con limón, sal y pimienta y deja 15 minutos.</li><li>en olla larga, sofríe cebolla y ajo, arma camadas de tomate y pimiento.</li><li>Coloca o peixe por encima, cubre con o leche de coco y cocina tampado por 15 minutos en fuego bajo.</li><li>Añade el palmito y o dendê, cocina mais 5 minutos y termina con cilantro.</li></ol></div></div>
+  <div class="dica"><b>CONSEJO DE COCINA:</b> en el muevas a moqueca después de colocar o peixe: balançar la olla desmancha las postas.</div>
+  <div class="troca"><b>↺ CAMBIO INTELIGENTE:</b> sin dendê? Use aceite de oliva comum con 1 cdta. de pimentón ahumado para dar cor.</div>
+</section>
+<section class="receita" id="r36">
+  <header><div class="num">36</div><div class="titulo"><h3>Calamares a la plancha con limón y hierbas</h3></div></header>
+  <img class="foto" src="imagens/receita-36.jpg" alt="Calamares a la plancha con limón y hierbas">
+  <div class="meta"><span><b>Preparación</b> 10 min</span><span><b>Total</b> 15 min</span><span><b>Rinde</b> 2</span><span><b>Dificultad</b> fácil</span></div>
+  <div class="nutris"><span><b>240</b>kcal / porción</span><span><b>5 g</b>carbohidratos</span><span><b>26 g</b>proteínas</span><span><b>13 g</b>grasas</span></div>
+  <div class="corpo"><div><h4>Ingredientes</h4><ul class="ing"><li>500 g de anéis de calamar</li><li>jugo de 1 limón</li><li>3 cda. de aceite de oliva</li><li>2 dientes de ajo picados</li><li>1 cda. de perejil y 1 de cebollín</li><li>pimienta calabresa, sal y pimienta negra</li></ul></div><div><h4>Modo de preparación</h4><ol class="passos"><li>Seque mucho bem los anéis de calamar con papel-toalha.</li><li>Calienta una frigideira o grelha hasta ficar bem caliente, quase fumegando.</li><li>Cocina a la plancha a calamar por 90 segundos por cada lado — nem un segundo a mais.</li><li>Sazona con sal, ajo crudo, aceite de oliva, limón y hierbas y sirve en la hora.</li></ol></div></div>
+  <div class="dica"><b>CONSEJO DE COCINA:</b> calamar tem dos janelas: 90 segundos o 40 minutos en cocido. Entre elas, fica borracha.</div>
+  <div class="troca"><b>↺ CAMBIO INTELIGENTE:</b> sin calamar? Use anéis de polvo pré-cocido, grelhando apenas para dorar.</div>
+</section><section class="abre"><img class="capfoto" src="imagens/capitulo-06.jpg" alt="Imagen del capítulo Cenas listas en hasta 30 minutos"><div class="tag">Capítulo 06</div><h2>Cenas listas en hasta 30 minutos</h2><div class="filete"></div><p>La regla de la noche: la cena queda lista antes de que termine el episodio. Recetas de una olla, una bandeja o una freidora de aire.</p></section>
+<section class="receita" id="r37">
+  <header><div class="num">37</div><div class="titulo"><h3>Pizza de coliflor con mozzarella y albahaca</h3></div></header>
+  <img class="foto" src="imagens/receita-37.jpg" alt="Pizza de coliflor con mozzarella y albahaca">
+  <div class="meta"><span><b>Preparación</b> 25 min</span><span><b>Total</b> 50 min</span><span><b>Rinde</b> 2</span><span><b>Dificultad</b> fácil</span></div>
+  <div class="nutris"><span><b>330</b>kcal / porción</span><span><b>12 g</b>carbohidratos</span><span><b>22 g</b>proteínas</span><span><b>22 g</b>grasas</span></div>
+  <div class="corpo"><div><h4>Ingredientes</h4><ul class="ing"><li>1 coliflor média processada en grãos</li><li>1 ovo</li><li>80 g de mozzarella rallada</li><li>4 cda. de harina de almendras</li><li>1/2 tazas de salsa de tomate casera</li><li>150 g de mozzarella para cobertura</li><li>orégano, albahaca y sal</li></ul></div><div><h4>Modo de preparación</h4><ol class="passos"><li>Cocina la coliflor processada en el vapor por 5 minutos, deja amornar y exprime en un paño de cocina hasta sair toda el agua.</li><li>Mezcla la coliflor seca con o ovo, los 80 g de mozzarella, a harina de almendras y la sal.</li><li>Abre a massa en disco fino sobre papel-mantequilla untado y hornea a 200 °C por 15 minutos.</li><li>Cubre con salsa, mozzarella y orégano y volte ao horno por 10-12 minutos. termina con albahaca.</li></ol></div></div>
+  <div class="dica"><b>CONSEJO DE COCINA:</b> Espremer la coliflor é inegociável: massa úmida não firma y a pizza desmancha ao cortar.</div>
+  <div class="troca"><b>↺ CAMBIO INTELIGENTE:</b> Congele los discos pré-assados separados por papel-mantequilla y arma a pizza en 12 minutos.</div>
+</section>
+<section class="receita" id="r38">
+  <header><div class="num">38</div><div class="titulo"><h3>Berenjena a la parmesana (sin empanizar)</h3></div></header>
+  <img class="foto" src="imagens/receita-38.jpg" alt="Berenjena a la parmesana (sin empanizar)">
+  <div class="meta"><span><b>Preparación</b> 20 min</span><span><b>Total</b> 50 min</span><span><b>Rinde</b> 4</span><span><b>Dificultad</b> fácil</span></div>
+  <div class="nutris"><span><b>300</b>kcal / porción</span><span><b>14 g</b>carbohidratos</span><span><b>18 g</b>proteínas</span><span><b>20 g</b>grasas</span></div>
+  <div class="corpo"><div><h4>Ingredientes</h4><ul class="ing"><li>2 berinjelas en rebanadas de 1 cm</li><li>1 lata de tomate entero pelado</li><li>2 dientes de ajo y 1/2 cebolla</li><li>200 g de mozzarella rallada</li><li>1/2 tazas de parmesão rallado</li><li>3 cda. de aceite de oliva, albahaca, sal y pimienta</li></ul></div><div><h4>Modo de preparación</h4><ol class="passos"><li>Sala las fatias de berenjena por 20 minutos, enxágue y seque.</li><li>Cocina a la plancha las fatias en frigideira caliente con un fio de aceite de oliva, 2 minutos por cada lado.</li><li>Prepare la salsa refogando cebolla y ajo y cozinhando el tomate por 15 minutos.</li><li>Arma en camadas con los queijos y hornea a 190 °C por 25 minutos, hasta gratinar.</li></ol></div></div>
+  <div class="dica"><b>CONSEJO DE COCINA:</b> Grelhar antes de montar evita la berenjena esponjosa que absorve todo la salsa.</div>
+  <div class="troca"><b>↺ CAMBIO INTELIGENTE:</b> Añade una camada de carne molida entre las berinjelas para convertirse prato único completo.</div>
+</section>
+<section class="receita" id="r39">
+  <header><div class="num">39</div><div class="titulo"><h3>Feijoada low carb (sin frijoles)</h3></div></header>
+  <img class="foto" src="imagens/receita-39.jpg" alt="Feijoada low carb (sin frijoles)">
+  <div class="meta"><span><b>Preparación</b> 30 min</span><span><b>Total</b> 90 min</span><span><b>Rinde</b> 6</span><span><b>Dificultad</b> fácil</span></div>
+  <div class="nutris"><span><b>420</b>kcal / porción</span><span><b>8 g</b>carbohidratos</span><span><b>34 g</b>proteínas</span><span><b>28 g</b>grasas</span></div>
+  <div class="corpo"><div><h4>Ingredientes</h4><ul class="ing"><li>500 g de carnes variadas (costela, paio, salchicha, carne seca deshebrada)</li><li>1 coliflor grande processada</li><li>200 g de tocino en cubos</li><li>1 cebolla, 4 dientes de ajo y 2 hojas de laurel</li><li>1 cda. de pimentón ahumado</li><li>aceite de oliva, sal y pimienta</li><li>col rizada refogada y laranja para acompanhar</li></ul></div><div><h4>Modo de preparación</h4><ol class="passos"><li>Dessalgue las carnes salgadas por 12 horas, cambiando el agua.</li><li>Cocina las carnes en agua con laurel por 40 minutos (o 25 en la pressão) y corta en pedaços.</li><li>Fríe o tocino, sofríe la cebolla, el ajo y el pimentón, añade las carnes y 2 tazas del caldo y cocina 20 minutos.</li><li>Sirve sobre la coliflor processada refogada en la mantequilla, con col rizada y laranja.</li></ol></div></div>
+  <div class="dica"><b>CONSEJO DE COCINA:</b> la coliflor refogada en la gordura del tocino é o que substitui a textura del feijão en el prato.</div>
+  <div class="troca"><b>↺ CAMBIO INTELIGENTE:</b> versión expressa: use só paio, salchicha y tocino — pronto en 40 minutos.</div>
+</section>
+<section class="receita" id="r40">
+  <header><div class="num">40</div><div class="titulo"><h3>Pan de queso en freidora de aire</h3></div></header>
+  <img class="foto" src="imagens/receita-40.jpg" alt="Pan de queso en freidora de aire">
+  <div class="meta"><span><b>Preparación</b> 10 min</span><span><b>Total</b> 25 min</span><span><b>Rinde</b> 12</span><span><b>Dificultad</b> fácil</span></div>
+  <div class="nutris"><span><b>130</b>kcal / porción</span><span><b>3 g</b>carbohidratos</span><span><b>8 g</b>proteínas</span><span><b>9 g</b>grasas</span></div>
+  <div class="corpo"><div><h4>Ingredientes</h4><ul class="ing"><li>200 g de mozzarella rallada</li><li>1 ovo</li><li>3 cda. de almidón de yuca agrio</li><li>2 cda. de queso crema para untar</li><li>1/2 cdta. de polvo de hornear</li><li>sal al gusto</li></ul></div><div><h4>Modo de preparación</h4><ol class="passos"><li>Derrite a mozzarella en el micro-ondas por 40 segundos y mezcla hasta convertirse massa.</li><li>Añade el queso crema para untar, o ovo, o polvilho, o fermento y la sal y sove con las mãos untadas.</li><li>Forma 12 bolinhas y coloca en la cesta de la airfryer sin encostar una en la outra.</li><li>Hornea a 180 °C por 12-15 minutos, hasta dorar.</li></ol></div></div>
+  <div class="dica"><b>CONSEJO DE COCINA:</b> almidón de yuca agrio, não doce — é o azedo que dá a casca crujiente y o interior elástico.</div>
+  <div class="troca"><b>↺ CAMBIO INTELIGENTE:</b> Congele las bolinhas crudas y hornea direto del congelador, somando 3 minutos.</div>
+</section>
+<section class="receita" id="r41">
+  <header><div class="num">41</div><div class="titulo"><h3>Calabacín relleno de atún y queso crema</h3></div></header>
+  <img class="foto" src="imagens/receita-41.jpg" alt="Calabacín relleno de atún y queso crema">
+  <div class="meta"><span><b>Preparación</b> 15 min</span><span><b>Total</b> 35 min</span><span><b>Rinde</b> 3</span><span><b>Dificultad</b> fácil</span></div>
+  <div class="nutris"><span><b>275</b>kcal / porción</span><span><b>8 g</b>carbohidratos</span><span><b>24 g</b>proteínas</span><span><b>17 g</b>grasas</span></div>
+  <div class="corpo"><div><h4>Ingredientes</h4><ul class="ing"><li>3 abobrinhas médías</li><li>2 latas de atún escurridas</li><li>4 cda. de queso crema para untar</li><li>1/4 de cebolla picada</li><li>1 tomate sin semillas picado</li><li>1/2 tazas de mozzarella rallada</li><li>perejil, aceite de oliva, sal y pimienta</li></ul></div><div><h4>Modo de preparación</h4><ol class="passos"><li>Corta las abobrinhas ao meio y retira o miolo con una colher, deixando 0,5 cm de parede.</li><li>Mezcla el atún, el queso crema para untar, la cebolla, el tomate, a perejil, sal y pimienta.</li><li>rellena las canoas, rocía con un fio de aceite de oliva y polvilhe a mozzarella.</li><li>Hornea a 190 °C por 22-25 minutos.</li></ol></div></div>
+  <div class="dica"><b>CONSEJO DE COCINA:</b> retira las semillas del tomate: é de lá que vem el agua que deixa o recheio ralo.</div>
+  <div class="troca"><b>↺ CAMBIO INTELIGENTE:</b> sin atún? Use pollo deshebrado la carne molida já cocida.</div>
+</section>
+<section class="receita" id="r42">
+  <header><div class="num">42</div><div class="titulo"><h3>Sushi low carb (rollitos de pepino)</h3></div></header>
+  <img class="foto" src="imagens/receita-42.jpg" alt="Sushi low carb (rollitos de pepino)">
+  <div class="meta"><span><b>Preparación</b> 20 min</span><span><b>Total</b> 25 min</span><span><b>Rinde</b> 2</span><span><b>Dificultad</b> fácil</span></div>
+  <div class="nutris"><span><b>235</b>kcal / porción</span><span><b>7 g</b>carbohidratos</span><span><b>22 g</b>proteínas</span><span><b>13 g</b>grasas</span></div>
+  <div class="corpo"><div><h4>Ingredientes</h4><ul class="ing"><li>1 pepino japonês grande</li><li>200 g de salmón crudo el atún en tiras</li><li>3 cda. de queso crema</li><li>1/2 aguacate en tiras</li><li>1 cda. de gergelim</li><li>salsa de soya, wasabi y cebollín</li></ul></div><div><h4>Modo de preparación</h4><ol class="passos"><li>Fatie el pepino en lâminas finas y longas con descascador o mandolina.</li><li>Seque las lâminas con papel-toalha y sazona con una pitada de sal.</li><li>Extiende el queso crema, coloque o peixe y el aguacate y enrole como un charuto.</li><li>Termina con gergelim y sirve con salsa de soya y wasabi.</li></ol></div></div>
+  <div class="dica"><b>CONSEJO DE COCINA:</b> Sala las lâminas de pepino y seque: pepino con agua solta en el rolinho y desmancha.</div>
+  <div class="troca"><b>↺ CAMBIO INTELIGENTE:</b> versión cocida: cambia o peixe crudo por camarón o kani deshebrado.</div>
+</section>
+<section class="receita" id="r43">
+  <header><div class="num">43</div><div class="titulo"><h3>Rollitos de col rellenos de carne molida</h3></div></header>
+  <img class="foto" src="imagens/receita-43.jpg" alt="Rollitos de col rellenos de carne molida">
+  <div class="meta"><span><b>Preparación</b> 25 min</span><span><b>Total</b> 60 min</span><span><b>Rinde</b> 4</span><span><b>Dificultad</b> fácil</span></div>
+  <div class="nutris"><span><b>320</b>kcal / porción</span><span><b>12 g</b>carbohidratos</span><span><b>26 g</b>proteínas</span><span><b>19 g</b>grasas</span></div>
+  <div class="corpo"><div><h4>Ingredientes</h4><ul class="ing"><li>1 repolho médio</li><li>500 g de carne molida</li><li>1/2 tazas de arroz de coliflor crudo</li><li>1 cebolla y 3 dientes de ajo</li><li>1 ovo</li><li>1 lata de tomate entero pelado</li><li>hortelã, cominho, sal y pimienta</li></ul></div><div><h4>Modo de preparación</h4><ol class="passos"><li>Cocina o repolho inteiro en agua hirviendo por 5 minutos y separe las hojas con cuidado.</li><li>Mezcla la carne con el arroz de coliflor, la cebolla picada, el ajo, o ovo y los temperos.</li><li>Coloque 1 cda. de recheio en cada folha, dobre las laterais y enrole firme.</li><li>Coloca en la olla, cubre con el tomate entero pelado batido y cocina tampado por 35 minutos en fuego bajo.</li></ol></div></div>
+  <div class="dica"><b>CONSEJO DE COCINA:</b> Retira o talo grosso de la folha de repolho con una faca antes de enrolar: o charuto fecha sin rasgar.</div>
+  <div class="troca"><b>↺ CAMBIO INTELIGENTE:</b> Congele los charutos crus separados por papel y cocina direto del congelador por 50 minutos.</div>
+</section><section class="abre"><img class="capfoto" src="imagens/capitulo-07.jpg" alt="Imagen del capítulo Postres sin azúcar"><div class="tag">Capítulo 07</div><h2>Postres sin azúcar</h2><div class="filete"></div><p>Un postre de verdad no necesita azúcar refinada: cacao, coco, nueces y endulzantes que no engañan al paladar.</p></section>
+<section class="receita" id="r44">
+  <header><div class="num">44</div><div class="titulo"><h3>Mousse de chocolate con aguacate</h3></div></header>
+  <img class="foto" src="imagens/receita-44.jpg" alt="Mousse de chocolate con aguacate">
+  <div class="meta"><span><b>Preparación</b> 10 min</span><span><b>Total</b> 40 min</span><span><b>Rinde</b> 4</span><span><b>Dificultad</b> fácil</span></div>
+  <div class="nutris"><span><b>265</b>kcal / porción</span><span><b>12 g</b>carbohidratos</span><span><b>6 g</b>proteínas</span><span><b>22 g</b>grasas</span></div>
+  <div class="corpo"><div><h4>Ingredientes</h4><ul class="ing"><li>1 aguacate grande maduro</li><li>3 cda. de cacao en polvo 100%</li><li>200 ml de crema para batir</li><li>3 cda. de endulzante en polvo (eritritol o xilitol)</li><li>1 cdta. de esencia de vainilla</li><li>1 pitada de sal</li></ul></div><div><h4>Modo de preparación</h4><ol class="passos"><li>Bate el aguacate con el cacao, o endulzante, a vainilla y la sal hasta ficar completamente liso, sin grumos.</li><li>Bate la crema de leche en ponto de chantilly firme.</li><li>Incorpora o chantilly à mistura de chocolate en três etapas, mexendo de baixo para cima.</li><li>Lleva al refrigerador por en el mínimo 30 minutos antes de servir.</li></ol></div></div>
+  <div class="dica"><b>CONSEJO DE COCINA:</b> el aguacate precisa estar bem maduro — o verde firme deixal gusto vegetal y grumos.</div>
+  <div class="troca"><b>↺ CAMBIO INTELIGENTE:</b> sin aguacate? Use 1 taza de crema de leche batido con el cacao y o endulzante, sin a fruta.</div>
+</section>
+<section class="receita" id="r45">
+  <header><div class="num">45</div><div class="titulo"><h3>Flan de coco con eritritol</h3></div></header>
+  <img class="foto" src="imagens/receita-45.jpg" alt="Flan de coco con eritritol">
+  <div class="meta"><span><b>Preparación</b> 12 min</span><span><b>Total</b> 55 min</span><span><b>Rinde</b> 8</span><span><b>Dificultad</b> fácil</span></div>
+  <div class="nutris"><span><b>190</b>kcal / porción</span><span><b>6 g</b>carbohidratos</span><span><b>8 g</b>proteínas</span><span><b>15 g</b>grasas</span></div>
+  <div class="corpo"><div><h4>Ingredientes</h4><ul class="ing"><li>4 ovos</li><li>200 ml de leche de coco sin azúcar</li><li>100 ml de crema de leche</li><li>4 cda. de eritritol</li><li>1/2 tazas de coco rallado sin azúcar</li><li>1 cdta. de esencia de vainilla</li><li>1 pitada de sal</li></ul></div><div><h4>Modo de preparación</h4><ol class="passos"><li>Bate todos los ingredientes en el liquidificador por 1 minuto.</li><li>Vierte en forma untada con aceite de coco.</li><li>Cubre con papel-alumínio y hornea en banho-maria a 180 °C por 45-50 minutos.</li><li>Deja esfriar completamente y lleva al refrigerador por 4 horas antes de desenformar.</li></ol></div></div>
+  <div class="dica"><b>CONSEJO DE COCINA:</b> O banho-maria é obrigatório: sin ele, o pudim forma bolhas y fica con textura de ovo mexido.</div>
+  <div class="troca"><b>↺ CAMBIO INTELIGENTE:</b> Caramelize o fundo de la forma con 2 cda. de xilitol derretido para imitar o caramelo tradicional.</div>
+</section>
+<section class="receita" id="r46">
+  <header><div class="num">46</div><div class="titulo"><h3>Crema de chocolate tipo brigadeiro</h3></div></header>
+  <img class="foto" src="imagens/receita-46.jpg" alt="Crema de chocolate tipo brigadeiro">
+  <div class="meta"><span><b>Preparación</b> 8 min</span><span><b>Total</b> 25 min</span><span><b>Rinde</b> 6</span><span><b>Dificultad</b> fácil</span></div>
+  <div class="nutris"><span><b>145</b>kcal / porción</span><span><b>6 g</b>carbohidratos</span><span><b>4 g</b>proteínas</span><span><b>12 g</b>grasas</span></div>
+  <div class="corpo"><div><h4>Ingredientes</h4><ul class="ing"><li>1 lata de crema de leche</li><li>3 cda. de cacao en polvo 100%</li><li>3 cda. de eritritol o xilitol</li><li>1 cda. de mantequilla</li><li>1 pitada de sal</li><li>chocolate 70% picado para terminar (opcional)</li></ul></div><div><h4>Modo de preparación</h4><ol class="passos"><li>Mezcla la crema de leche, el cacao, o endulzante y la mantequilla en olla de fundo grosso.</li><li>Cocina en fuego bajo, mexendo sin parar, por 12-15 minutos.</li><li>O ponto é quando a mistura desgruda del fundo de la olla ao inclinar.</li><li>apaga, añade la sal, transfira para un recipiente y deja esfriar.</li></ol></div></div>
+  <div class="dica"><b>CONSEJO DE COCINA:</b> Adoçantes con eritritol não dão o mesmo brilho del azúcar: añade 1 cda. de chá de aceite de coco en el final.</div>
+  <div class="troca"><b>↺ CAMBIO INTELIGENTE:</b> Para enrolar, lleva al refrigerador por 4 horas y pasa en cacao en polvo o castanha triturada.</div>
+</section>
+<section class="receita" id="r47">
+  <header><div class="num">47</div><div class="titulo"><h3>Cheesecake low carb de frutos rojos</h3></div></header>
+  <img class="foto" src="imagens/receita-47.jpg" alt="Cheesecake low carb de frutos rojos">
+  <div class="meta"><span><b>Preparación</b> 25 min</span><span><b>Total</b> 70 min</span><span><b>Rinde</b> 10</span><span><b>Dificultad</b> fácil</span></div>
+  <div class="nutris"><span><b>285</b>kcal / porción</span><span><b>8 g</b>carbohidratos</span><span><b>9 g</b>proteínas</span><span><b>25 g</b>grasas</span></div>
+  <div class="corpo"><div><h4>Ingredientes</h4><ul class="ing"><li>1 1/2 tazas de harina de almendras</li><li>3 cda. de mantequilla derretida</li><li>500 g de queso crema en temperatura ambiente</li><li>3 ovos</li><li>1/2 tazas de eritritol</li><li>200 g de yogur natural</li><li>1 taza de frutas vermelhas congeladas</li><li>jugo de 1/2 limón y esencia de vainilla</li></ul></div><div><h4>Modo de preparación</h4><ol class="passos"><li>Mezcla a harina de almendras con la mantequilla y forre o fundo de una forma de aro removível. hornea 8 minutos a 180 °C.</li><li>Bate el queso crema con o eritritol hasta ficar liso, añade los ovos un a un, después el yogur, el limón y a vainilla.</li><li>Vierte sobre a base y hornea en banho-maria a 160 °C por 50 minutos, hasta las bordas firmarem y o centro tremer levemente.</li><li>apaga el horno y deja o cheesecake esfriar lá dentro por 1 hora. cubre con las frutas aquecidas con 1 cda. de endulzante.</li></ol></div></div>
+  <div class="dica"><b>CONSEJO DE COCINA:</b> Esfriar dentro del horno apagado evita a rachadura en el centro — choque térmico é o vilão.</div>
+  <div class="troca"><b>↺ CAMBIO INTELIGENTE:</b> sin forma de aro? Use forma comum forrada con papel-mantequilla cruzado para puxar o cheesecake.</div>
+</section>
+<section class="receita" id="r48">
+  <header><div class="num">48</div><div class="titulo"><h3>Galletas low carb de nueces y chocolate</h3></div></header>
+  <img class="foto" src="imagens/receita-48.jpg" alt="Galletas low carb de nueces y chocolate">
+  <div class="meta"><span><b>Preparación</b> 12 min</span><span><b>Total</b> 30 min</span><span><b>Rinde</b> 12</span><span><b>Dificultad</b> fácil</span></div>
+  <div class="nutris"><span><b>130</b>kcal / porción</span><span><b>4 g</b>carbohidratos</span><span><b>4 g</b>proteínas</span><span><b>11 g</b>grasas</span></div>
+  <div class="corpo"><div><h4>Ingredientes</h4><ul class="ing"><li>1 taza de harina de almendras</li><li>1 ovo</li><li>2 cda. de mantequilla derretida</li><li>2 cda. de eritritol</li><li>1/2 cdta. de polvo de hornear</li><li>1/2 tazas de chocolate 70% picado</li><li>1 pitada de sal y vainilla</li></ul></div><div><h4>Modo de preparación</h4><ol class="passos"><li>Mezcla a harina, o eritritol, o fermento y la sal.</li><li>Añade o ovo, la mantequilla y a vainilla y mezcla hasta formar una massa úmida.</li><li>Incorpora o chocolate picado y forma 12 bolinhas achatadas en assadeira forrada.</li><li>Hornea a 170 °C por 12-14 minutos, hasta las bordas dourarem.</li></ol></div></div>
+  <div class="dica"><b>CONSEJO DE COCINA:</b> Eles saem moles del horno y endurecem ao esfriar — en el dejes mais tempo achando que estão crus.</div>
+  <div class="troca"><b>↺ CAMBIO INTELIGENTE:</b> Guarde en recipiente fechado por hasta 5 días o congele a massa modelada por 2 meses.</div>
+</section>
+<section class="receita" id="r49">
+  <header><div class="num">49</div><div class="titulo"><h3>Trufas de chocolate con aceite de coco</h3></div></header>
+  <img class="foto" src="imagens/receita-49.jpg" alt="Trufas de chocolate con aceite de coco">
+  <div class="meta"><span><b>Preparación</b> 10 min</span><span><b>Total</b> 40 min</span><span><b>Rinde</b> 12</span><span><b>Dificultad</b> fácil</span></div>
+  <div class="nutris"><span><b>110</b>kcal / porción</span><span><b>4 g</b>carbohidratos</span><span><b>2 g</b>proteínas</span><span><b>10 g</b>grasas</span></div>
+  <div class="corpo"><div><h4>Ingredientes</h4><ul class="ing"><li>100 g de chocolate 85% picado</li><li>3 cda. de aceite de coco</li><li>2 cda. de crema de leche</li><li>1 cda. de eritritol en polvo</li><li>2 cda. de cacao en polvo para enrolar</li><li>1 pitada de sal y gotas de vainilla</li></ul></div><div><h4>Modo de preparación</h4><ol class="passos"><li>Derrite o chocolate con el aceite de coco en banho-maria o en el micro-ondas en pulsos de 20 segundos.</li><li>Añade la crema de leche, o eritritol, la sal y a vainilla y mezcla hasta ficar brilhante.</li><li>Lleva al refrigerador por 30 minutos, hasta firmar o suficiente para modelar.</li><li>Forma bolinhas con las mãos y pasa en el cacao en polvo.</li></ol></div></div>
+  <div class="dica"><b>CONSEJO DE COCINA:</b> Derrite o chocolate en pulsos curtos, mexendo a cada 20 segundos: en fuego direto ele queima y fica arenoso.</div>
+  <div class="troca"><b>↺ CAMBIO INTELIGENTE:</b> Guarde en la refrigerador — en temperatura ambiente el aceite de coco derrete y a trufa perde a forma.</div>
+</section>
+<section class="receita" id="r50">
+  <header><div class="num">50</div><div class="titulo"><h3>Dulce de cacahuate tipo paçoca low carb</h3></div></header>
+  <img class="foto" src="imagens/receita-50.jpg" alt="Dulce de cacahuate tipo paçoca low carb">
+  <div class="meta"><span><b>Preparación</b> 8 min</span><span><b>Total</b> 20 min</span><span><b>Rinde</b> 12</span><span><b>Dificultad</b> fácil</span></div>
+  <div class="nutris"><span><b>115</b>kcal / porción</span><span><b>4 g</b>carbohidratos</span><span><b>5 g</b>proteínas</span><span><b>10 g</b>grasas</span></div>
+  <div class="corpo"><div><h4>Ingredientes</h4><ul class="ing"><li>1 1/2 tazas de cacahuate torrado sin piel y sin sal</li><li>2 cda. de harina de almendras</li><li>2 cda. de eritritol en polvo</li><li>1 pitada de sal</li><li>1 cdta. de aceite de coco (opcional)</li></ul></div><div><h4>Modo de preparación</h4><ol class="passos"><li>Procesa o cacahuate en pulsos hasta convertirse una farofa úmida — cuidado para não convertirse pasta.</li><li>Añade a harina de almendras, o eritritol y la sal y pulse mais 3 vezes.</li><li>Se estiver mucho seco, añade el aceite de coco y mezcla.</li><li>Presiona a mistura en forminhas o en un recipiente forrado, corta en quadrados y deja firmar por 15 minutos.</li></ol></div></div>
+  <div class="dica"><b>CONSEJO DE COCINA:</b> Procesa en pulsos curtos y pare antes: cacahuate processado demais se convierte mantequilla y a paçoca não firma.</div>
+  <div class="troca"><b>↺ CAMBIO INTELIGENTE:</b> Guarde en recipiente fechado por hasta 10 días en local fresco.</div>
+</section>
+<section class="frente">
+  <h2>Bono 1 — Menú de 7 días</h2><div class="filete"></div>
+  <p>Un plan realista para la primera semana: desayunos completos, almuerzos que se convierten en cena y un postre en el momento adecuado. Los números corresponden a las recetas de este libro.</p>
+  <table>
+    <tr><th>Día</th><th>Desayuno</th><th>Almuerzo</th><th>Tentempié</th><th>Cena</th></tr>
+    <tr><td class="dia">Lun</td><td>01 · Omelet al horno</td><td>10 + 23 · arroz de coliflor con pollo</td><td>09 · yogur con granola</td><td>37 · pizza de coliflor</td></tr>
+    <tr><td class="dia">Mar</td><td>05 · tortilla de tapioca</td><td>17 · lasaña de berenjena</td><td>06 · pan de queso</td><td>31 · salmón + 44 · mousse</td></tr>
+    <tr><td class="dia">Mié</td><td>02 · pan de microondas</td><td>11 · fideos de calabacín</td><td>45 · flan de coco</td><td>35 · cazuela de pescado</td></tr>
+    <tr><td class="dia">Jue</td><td>07 · wrap de col rizada</td><td>13 · ensalada completa de pollo</td><td>08 · huevos con aguacate</td><td>26 · filete con champiñones</td></tr>
+    <tr><td class="dia">Vie</td><td>03 · panqueques de banana</td><td>16 · pastel de coliflor</td><td>09 · yogur con granola</td><td>33 · camarones al ajillo</td></tr>
+    <tr><td class="dia">Sáb</td><td>04 · muffins salados</td><td>18 · berenjena rellena</td><td>46 · crema de chocolate</td><td>42 · sushi low carb</td></tr>
+    <tr><td class="dia">Dom</td><td>06 · pan de queso</td><td>30 · costillitas deshebradas</td><td>47 · cheesecake</td><td>19 · caldo verde + 28 · bistec encebollado</td></tr>
+  </table>
+  <p class="legal">Las porciones deben ajustarse a tus necesidades. Este menú es una sugerencia educativa, no una prescripción.</p>
+</section>
+
+<section class="frente">
+  <h2>Bono 2 — Lista de compras de la primera semana</h2><div class="filete"></div>
+  <p>Imprime esta lista y llévala al supermercado. Está pensada para dos personas:</p>
+  <div class="lista2"><ul class="check">
+    <li>2 docenas de huevos</li><li>1 kg de pechuga de pollo + 8 muslos</li><li>1 kg de carne molida + 500 g de filete</li>
+    <li>600 g de salmón o pescado firme + 400 g de camarones</li><li>2 latas de atún</li><li>500 g de mozzarella + parmesano + queso crema</li>
+    <li>Crema para batir y crema de leche</li><li>2 envases de leche de coco sin azúcar</li><li>Coliflor, calabacín, berenjena, repollo y col rizada</li>
+    <li>Tomates maduros + 2 latas de tomate entero pelado</li><li>Aguacate, bananas, fresas y limones</li><li>Cebolla, ajo, jengibre, hierbas y pimentón ahumado</li>
+    <li>Aceitunas, palmito, frutos secos y cacahuates</li><li>Harina de almendras, coco rallado y chía</li><li>Eritritol o xilitol, cacao 100% y chocolate 85%</li>
+    <li>Aceite de oliva, mantequilla y aceite de coco</li><li>Salsa de soya y mostaza</li>
+  </ul></div>
+  <div class="quadro"><b>Regla del mercado:</b> recorre primero frutas, verduras y carnes; deja los productos empacados para el final y revisa siempre la etiqueta.</div>
+</section>
+
+<section class="frente">
+  <h2>Antes de cerrar la cocina</h2><div class="filete"></div>
+  <p>Ahora tienes 50 recetas pensadas para la vida real: ingredientes fáciles de encontrar, una sola olla y sobras planeadas. Lo que separa este ebook de una semana más organizada es una decisión pequeña: <b>tu próxima comida</b>.</p>
+  <p>Elige una receta para esta noche, prepárala y compártela con alguien. La comida que se comparte se vuelve más fácil de repetir.</p>
+  <div class="quadro"><b>PRÓXIMOS VOLÚMENES DE COCINA PRÁCTICA:</b> Volumen 2 — <i>Comidas low carb para la semana</i> · Volumen 3 — <i>Postres de fiesta sin azúcar</i>.</div>
+</section>
+
+<section class="contra"><div class="in">
+  <h2>Deja de empezar la dieta cada lunes.</h2>
+  <p>Este libro reúne 50 recetas para mantener una rutina low carb sin cocinar dos veces: desayunos que sostienen la mañana, almuerzos que se convierten en cena, sopas para las noches frías y postres que no necesitan disculpas.</p>
+  <ul>
+    <li><b>50 recetas completas</b> con tiempo, rendimiento y macros estimadas por porción;</li>
+    <li><b>Consejo de cocina</b> en cada receta para evitar el error más común;</li>
+    <li><b>Cambio inteligente</b> para adaptar los ingredientes;</li>
+    <li><b>Menú de 7 días</b> y lista de compras lista para imprimir;</li>
+    <li><b>Tabla de sustituciones</b> para harina, azúcar, arroz y pasta.</li>
+  </ul>
+  <p>Ingredientes fáciles de encontrar. Tiempo de una persona ocupada. Sabor de quien no se siente a dieta.</p>
+  <div class="marca">COCINA PRÁCTICA</div>
+</div></section></body></html>
