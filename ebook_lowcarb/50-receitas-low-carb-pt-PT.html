@@ -1,0 +1,966 @@
+<!DOCTYPE html><html lang='pt-PT'><head><meta charset='utf-8'><style>
+@page { size: 165mm 240mm; margin: 15mm 13mm 10mm 15mm;
+  @bottom-right { content: counter(page); font: 7.5pt 'DejaVu Sans'; color: #8a8a8a; }
+  @bottom-left  { content: "50 Receitas Low Carb para o Dia a Dia"; font: 7.5pt 'DejaVu Sans'; color: #8a8a8a; } }
+@page capa { margin: 0; @bottom-right { content: none; } @bottom-left { content: none; }
+  background: linear-gradient(rgba(12,17,15,0.78), rgba(12,17,15,0.2) 40%, rgba(12,17,15,0) 52%, rgba(12,17,15,0.45) 90%), url('capa_fundo.jpg') center/cover no-repeat; }
+@page contra { margin: 0; @bottom-right { content: none; } @bottom-left { content: none; } background: #16261e; }
+
+* { box-sizing: border-box; }
+body { font-family: 'DejaVu Sans'; font-size: 8.6pt; line-height: 1.55; color: #26221c; }
+h1, h2, h3 { font-family: 'DejaVu Serif'; color: #1e3d2f; }
+
+/* ---- CAPA ---- */
+.capa { page: capa; }
+.capa .txt { position: absolute; top: 26mm; left: 12mm; right: 12mm; color: #fff; }
+.capa .kicker { font: 700 9pt 'DejaVu Sans'; letter-spacing: 3pt; color: #d9b64a; text-transform: uppercase; }
+.capa h1 { color: #fff; font-size: 30pt; line-height: 1.08; margin: 4mm 0 2mm; font-weight: 700; }
+.capa h1 .hl { color: #d9b64a; }
+.capa .sub { font: 12pt 'DejaVu Serif'; font-style: italic; color: #f2ede2; }
+.capa .faixa { position: absolute; bottom: 22mm; left: 12mm; right: 12mm; border-top: 1px solid rgba(255,255,255,.5); padding-top: 3mm;
+  color: #f2ede2; font: 8.5pt 'DejaVu Sans'; display: flex; justify-content: space-between; }
+.capa .marca { letter-spacing: 2pt; font-weight: 700; }
+
+/* ---- contracapa ---- */
+.contra { page: contra; color: #efe9dc; }
+.contra .in { position: absolute; top: 20mm; left: 15mm; right: 15mm; bottom: 16mm; }
+.contra h2 { color: #d9b64a; font-size: 15pt; margin: 0 0 5mm; }
+.contra p, .contra li { font-size: 9pt; }
+.contra ul { padding-left: 5mm; }
+.contra .marca { margin-top: 8mm; font-weight: 700; letter-spacing: 2pt; font-size: 9pt; color:#d9b64a }
+
+/* ---- frentes de texto ---- */
+.frente { break-before: page; }
+.frente h2 { font-size: 15pt; margin: 0 0 4mm; }
+.frente .filete { width: 22mm; height: 1mm; background: #c9a227; margin: 0 0 5mm; }
+p { margin: 0 0 3mm; }
+.quadro { background: #f4efe3; border-left: 3px solid #c9a227; padding: 4mm 5mm; margin: 4mm 0; }
+.quadro b { color: #1e3d2f; }
+.legal { font-size: 7.6pt; color: #6b675f; }
+table { width: 100%; border-collapse: collapse; font-size: 8.2pt; margin: 3mm 0; }
+th { font-family: 'DejaVu Serif'; color: #1e3d2f; text-align: left; border-bottom: 1.2px solid #1e3d2f; padding: 1.5mm 1mm; }
+td { border-bottom: 0.4px solid #cfc9bb; padding: 1.6mm 1mm; vertical-align: top; }
+td b { color: #1e3d2f; }
+
+/* ---- sumário ---- */
+.sum { margin-top: 3mm; }
+.sum table { width: 100%; border-collapse: collapse; }
+.sum td { border: none; padding: 0 0 1.8mm 0; font-size: 8.3pt; vertical-align: bottom; }
+.sum td.num { color: #c9a227; font-weight: 700; width: 8mm; }
+.sum td.dots { border-bottom: 1px dotted #9a9484; }
+.sum td.pg { text-align: right; font-weight: 700; color: #1e3d2f; width: 9mm; padding-left: 2mm; }
+.sum td.cat { font: 700 10pt 'DejaVu Serif'; color: #1e3d2f; padding: 4mm 0 1.5mm 0; }
+.sum a { text-decoration: none; color: #26221c; }
+.marcador { font-size: 1pt; color: rgba(0,0,0,0); }
+
+/* ---- abertura de categoria ---- */
+.abre { break-before: page; padding-top: 18mm; }
+.abre .capfoto { display: block; width: 125mm; height: 78mm; object-fit: cover; margin: 0 auto 8mm; border-radius: 2mm; border: 0.5px solid #ded8ca; }
+.abre .tag { font: 700 8pt 'DejaVu Sans'; letter-spacing: 2.5pt; color: #c9a227; text-transform: uppercase; }
+.abre h2 { font-size: 21pt; line-height: 1.12; margin: 3mm 0 4mm; }
+.abre .filete { width: 26mm; height: 1.2px; background: #c9a227; margin-bottom: 5mm; }
+.abre p { font-size: 9.5pt; max-width: 118mm; }
+
+/* ---- receita ---- */
+.receita { break-before: page; }
+.receita header { display: flex; align-items: baseline; gap: 4mm; padding: 0; margin: 0 0 3mm; min-height: 0; }
+.receita .num { font: 700 24pt 'DejaVu Serif'; color: #c9a227; line-height: 1; }
+.receita .titulo { flex: 1; min-width: 0; overflow: visible; }
+.receita h3 { font-size: 12.5pt; line-height: 1.2; margin: 0; overflow: visible; word-break: normal; overflow-wrap: normal; }
+.receita .foto { display: block; width: 110mm; height: 66mm; object-fit: cover; margin: 2mm auto 2mm; border-radius: 1.5mm; border: 0.5px solid #ded8ca; }
+.receita .meta { display: flex; justify-content: center; align-items: baseline; gap: 5mm; border-bottom: 1.2px solid #1e3d2f; padding: 0 0 3.5mm; margin: 0 0 4mm; font-size: 8pt; line-height: 1.2; color: #6b675f; text-align: center; }
+.receita .meta span { white-space: nowrap; }
+.receita .meta b { color: #1e3d2f; }
+.receita .corpo { display: grid; grid-template-columns: 52mm 1fr; gap: 6mm; }
+.receita h4 { font: 700 8.2pt 'DejaVu Sans'; letter-spacing: 1.5pt; text-transform: uppercase; color: #1e3d2f; margin: 0 0 2mm; }
+.receita ul.ing { list-style: none; margin: 0; padding: 0; font-size: 8.2pt; }
+.receita ul.ing li { padding: 0 0 1.6mm 4mm; position: relative; }
+.receita ul.ing li::before { content: ""; position: absolute; left: 0; top: 1.9mm; width: 2mm; height: 2mm; background: #c9a227; }
+.receita ol.passos { margin: 0; padding: 0; list-style: none; counter-reset: p; font-size: 8.4pt; }
+.receita ol.passos li { counter-increment: p; padding: 0 0 2.4mm 8mm; position: relative; }
+.receita ol.passos li::before { content: counter(p); position: absolute; left: 0; top: 0.2mm; width: 5.6mm; height: 5.6mm; border-radius: 50%;
+  background: #1e3d2f; color: #fff; font-size: 7.4pt; font-weight: 700; display: flex; align-items: center; justify-content: center; }
+.nutris { display: flex; gap: 2mm; margin: 3.5mm 0; }
+.nutris span { flex: 1; text-align: center; background: #f4efe3; padding: 1.6mm 0; font-size: 7.6pt; }
+.nutris b { display: block; font-size: 9.5pt; color: #1e3d2f; }
+.dica { background: #f4efe3; border-left: 3px solid #c9a227; padding: 2.8mm 3.5mm; font-size: 8pt; margin-top: 2.5mm; }
+.dica b { color: #1e3d2f; }
+.troca { border: 1px dashed #7d947f; border-radius: 2mm; padding: 1.5mm 3.2mm; font-size: 7.7pt; line-height: 1.35; margin-top: 1.5mm; color: #33473a; }
+
+/* ---- bônus ---- */
+.menu td.dia { font-weight: 700; color: #1e3d2f; white-space: nowrap; }
+.lista2 { columns: 2; column-gap: 7mm; font-size: 8.2pt; }
+.lista2 li { margin-bottom: 1.2mm; }
+.check li::marker { color: #c9a227; }
+</style></head><body>
+<section class="capa">
+  <div class="txt">
+    <div class="kicker">Série Cozinha Prática · vol. 1 · versão de Portugal</div>
+    <h1>50 RECEITAS<br><span class="hl">LOW CARB</span></h1>
+    <div class="sub">para o dia a dia — sem farinha, sem açúcar e sem miséria</div>
+  </div>
+  <div class="faixa"><span class="marca">COZINHA PRÁTICA</span><span>menos hidratos, mais vida real</span></div>
+</section>
+<section class="frente legal">
+  <h2>Créditos e aviso legal</h2><div class="filete"></div>
+  <p><b>50 Receitas Low Carb para o Dia a Dia</b> — 1ª edição, 2026, versão portuguesa de Portugal.<br>
+  Série Cozinha Prática · volume 1.</p>
+  <p>Todos os direitos reservados. É proibida a reprodução total ou parcial deste material por qualquer meio, sem autorização por escrito. Este ebook é um produto digital destinado ao comprador: partilhe apenas o link oficial de venda.</p>
+  <div class="quadro"><b>AVISO IMPORTANTE:</b> as informações nutricionais (kcal, hidratos de carbono, proteínas e gorduras) são <b>estimativas por porção</b>, calculadas a partir da lista de ingredientes e de tabelas de composição de alimentos. Elas variam conforme marca, tamanho dos alimentos e utensílios. Este livro tem caráter educativo e <b>não substitui</b> orientação de médico ou nutricionista. Pessoas com diabetes, doença renal, gestantes, lactantes ou em uso contínuo de medicamentos devem consultar um profissional antes de adotar dieta com restrição de hidratos de carbono. Adoçantes como eritritol e xilitol são seguros para a maioria das pessoas em doses moderadas; em excesso podem causar desconforto digestivo. Xilitol é tóxico para cães — mantenha sobremesas fora do alcance de animais domésticos.</div>
+  <p><b>Medidas usadas neste livro:</b> 1 chávena = 240 ml · 1 c. de sopa = 15 ml · 1 c. de chá = 5 ml · 1 c. de sopa rasa = sem montanha no topo · forno sempre pré-aquecido, salvo indicação contrária.</p>
+  <p class="legal">Diagramação e fotos ilustrativas geradas para fins editoriais.</p>
+</section>
+
+<section class="frente">
+  <h2>Bem-vindo à sua cozinha low carb</h2><div class="filete"></div>
+  <p>Não compraste um livro de dieta. Compraste <b>50 respostas prontas</b> para a pergunta que derruba qualquer reeducação alimentar: <i>“o que vou comer hoje?”</i>.</p>
+  <p>Low carb não é comer salada triste. É comer omelete cremoso, lasanha que corta em fatia, feijoada de domingo e até cheesecake — trocando farinha e açúcar por ingredientes que sustentam, sem passar fome e sem cozinhar duas vezes (uma para ti, outra para a família).</p>
+  <p>As receitas daqui foram escolhidas por três critérios: <b>ingredientes da mercearia do bairro</b> (nada que só exista em loja de importados), <b>tempo real de quem trabalha</b> (a maioria sai em 30 minutos de bancada) e <b>sobra que resolve o dia seguinte</b>.</p>
+  <div class="quadro"><b>A regra de ouro deste livro:</b> hidrato de carbono é tempero, não fundação. Ele entra para dar sabor e cor — tomate, cenoura, fruta — nunca para virar a base do prato. A base é sempre proteína + gordura boa + legume.</div>
+  <p>Cozinha uma receita nova por dia durante sete semanas e, no fim, terás um repertório que nenhuma segunda-feira consegue sabotar. Bom apetite.</p>
+</section>
+
+<section class="frente">
+  <h2>Como usar este livro na prática</h2><div class="filete"></div>
+  <p><b>1. Começa pelo fim.</b> Abre o bónus “Menu de 7 dias” e confere a lista de compras da semana antes de ir ao supermercado. Cozinhar sem plano é o caminho mais rápido para pedir take-away à quinta-feira.</p>
+  <p><b>2. Dobra a receita certa.</b> Quase toda receita de almoço e jantar rende 2 porções: a segunda é o almoço de amanhã. Low carb funciona muito melhor quando o almoço já existe.</p>
+  <p><b>3. Usa as caixas.</b> Cada receita tem uma <b>Dica de quem cozinha</b> (o erro que estraga o prato) e uma <b>Troca inteligente</b> (como adaptar sem sair do low carb). Elas valem mais que a lista de ingredientes.</p>
+  <p><b>4. Não corras atrás de zero hidratos de carbono.</b> O alvo realista é 60–120 g por dia, conforme o teu objetivo. Os macros de cada receita estão ali para somar, não para prender.</p>
+  <p><b>5. Congela sem medo.</b> As receitas marcadas com dica de congelamento foram testadas para isso: porções individuais, pote fechado, etiqueta com data.</p>
+</section>
+
+<section class="frente">
+  <h2>Substituições que salvam qualquer despensa</h2><div class="filete"></div>
+  <p>Low carb é, antes de tudo, um jogo de trocas. Memoriza esta tabela e nunca mais ficas refém da farinha e do açúcar:</p>
+  <table>
+    <tr><th>Tira da receita</th><th>Coloca no lugar</th><th>Proporção / observação</th></tr>
+    <tr><td>Açúcar refinado</td><td><b>Eritritol ou xilitol</b></td><td>1:1; xilitol adoça um pouco mais — usa 20% menos</td></tr>
+    <tr><td>Farinha de trigo</td><td><b>Farinha de amêndoas + 1 ovo</b></td><td>metade da quantidade; o ovo dá a liga</td></tr>
+    <tr><td>Arroz branco</td><td><b>Couve-flor processada</b></td><td>refoga crua, em lume forte, 5–6 min (receita 10)</td></tr>
+    <tr><td>Macarrão</td><td><b>Abobrinha, palmito ou konjac</b></td><td>refogo de 90 s a 3 min; nunca cozinhar demais</td></tr>
+    <tr><td>Batata</td><td><b>Couve-flor, nabo ou rabanete assado</b></td><td>para purês e caldos; abóbora entra com moderação</td></tr>
+    <tr><td>Leite condensado</td><td><b>Leite de coco reduzido + xilitol</b></td><td>ferva 200 ml até reduzir à metade com 3 colheres de xilitol</td></tr>
+    <tr><td>Ketchup / molho pronto</td><td><b>Tomate pelado + temperos</b></td><td>20 min de lume brando; o açúcar do pronto some</td></tr>
+    <tr><td>Molho de soja comum</td><td><b>Molho de soja com menos sódio ou tamari</b></td><td>conta 1 g de hidratos por colher de sopa</td></tr>
+  </table>
+  <h2 style="margin-top:6mm">Despensa coringa: compra uma vez, usa a semana toda</h2>
+  <div class="lista2"><ul>
+    <li>Farinha de amêndoas e coco ralado sem açúcar</li><li>Eritritol / xilitol e cacau 100%</li>
+    <li>Leite e creme de coco sem açúcar</li><li>Azeite, óleo de coco e manteiga</li>
+    <li>Ovos (mínimo 1 dúzia/semana) e queijos: mozzarella, parmesão, queijo creme</li>
+    <li>Nata fresca e queijo creme</li>
+    <li>Couve-flor, abobrinha, beringela, repolho e couve</li>
+    <li>Tomate pelado em lata e azeitonas</li>
+    <li>Frango, carne picada, ovos, peixe e atum em lata</li><li>Castanhas: pará, caju, amêndoa e amendoim</li>
+    <li>Alho, cebola, limão, ervas frescas e páprica defumada</li><li>Sementes de chia e linhaça dourada</li>
+  </ul></div>
+</section>
+<section class="frente"><h2>Sumário</h2><div class="filete"></div><div class="sum"><table><tr><td class="cat" colspan="4">Pequeno-almoço e lanches rápidos</td></tr><tr><td class="num">01</td><td><a href="#r01">Omelete de forno com espinafre e queijo</a></td><td class="dots"></td><td class="pg">10</td></tr><tr><td class="num">02</td><td><a href="#r02">Pão low carb de micro-ondas (2 minutos)</a></td><td class="dots"></td><td class="pg">11</td></tr><tr><td class="num">03</td><td><a href="#r03">Panqueca de banana com aveia (sem farinha)</a></td><td class="dots"></td><td class="pg">12</td></tr><tr><td class="num">04</td><td><a href="#r04">Muffin salgado de ovo, legumes e bacon</a></td><td class="dots"></td><td class="pg">13</td></tr><tr><td class="num">05</td><td><a href="#r05">Crepe de tapioca de frigideira com queijo e tomate</a></td><td class="dots"></td><td class="pg">14</td></tr><tr><td class="num">06</td><td><a href="#r06">Pão de queijo de frigideira</a></td><td class="dots"></td><td class="pg">15</td></tr><tr><td class="num">07</td><td><a href="#r07">Wrap de couve com frango cremoso</a></td><td class="dots"></td><td class="pg">16</td></tr><tr><td class="num">08</td><td><a href="#r08">Ovos mexidos cremosos com abacate e sementes</a></td><td class="dots"></td><td class="pg">17</td></tr><tr><td class="num">09</td><td><a href="#r09">Iogurte proteico com granola de castanhas</a></td><td class="dots"></td><td class="pg">18</td></tr><tr><td class="cat" colspan="4">Almoços completos</td></tr><tr><td class="num">10</td><td><a href="#r10">Arroz de couve-flor simples</a></td><td class="dots"></td><td class="pg">20</td></tr><tr><td class="num">11</td><td><a href="#r11">Macarrão de abobrinha ao molho de tomate caseiro</a></td><td class="dots"></td><td class="pg">21</td></tr><tr><td class="num">12</td><td><a href="#r12">Esparguete de palmito ao alho e óleo</a></td><td class="dots"></td><td class="pg">22</td></tr><tr><td class="num">13</td><td><a href="#r13">Salada completa de frango com molho de iogurte</a></td><td class="dots"></td><td class="pg">23</td></tr><tr><td class="num">14</td><td><a href="#r14">Salada de atum com ovo e maionese de limão</a></td><td class="dots"></td><td class="pg">24</td></tr><tr><td class="num">15</td><td><a href="#r15">Wrap de alface com carne picante</a></td><td class="dots"></td><td class="pg">25</td></tr><tr><td class="num">16</td><td><a href="#r16">Escondidinho low carb de couve-flor com carne seca</a></td><td class="dots"></td><td class="pg">26</td></tr><tr><td class="num">17</td><td><a href="#r17">Lasanha de beringela à bolonhesa</a></td><td class="dots"></td><td class="pg">27</td></tr><tr><td class="num">18</td><td><a href="#r18">Beringela recheada com carne picada</a></td><td class="dots"></td><td class="pg">28</td></tr><tr><td class="cat" colspan="4">Sopas e caldos</td></tr><tr><td class="num">19</td><td><a href="#r19">Caldo verde low carb (sem batata)</a></td><td class="dots"></td><td class="pg">30</td></tr><tr><td class="num">20</td><td><a href="#r20">Sopa de abóbora com leite de coco e gengibre</a></td><td class="dots"></td><td class="pg">31</td></tr><tr><td class="num">21</td><td><a href="#r21">Sopa de legumes com frango desfiado</a></td><td class="dots"></td><td class="pg">32</td></tr><tr><td class="num">22</td><td><a href="#r22">Creme de abobrinha com queijo creme</a></td><td class="dots"></td><td class="pg">33</td></tr><tr><td class="cat" colspan="4">Carnes e aves</td></tr><tr><td class="num">23</td><td><a href="#r23">Frango grelhado ao molho de mostarda e creme</a></td><td class="dots"></td><td class="pg">35</td></tr><tr><td class="num">24</td><td><a href="#r24">Sobrecoxa assada com limão e alecrim</a></td><td class="dots"></td><td class="pg">36</td></tr><tr><td class="num">25</td><td><a href="#r25">Frango xadrez low carb</a></td><td class="dots"></td><td class="pg">37</td></tr><tr><td class="num">26</td><td><a href="#r26">Filé ao molho de cogumelos</a></td><td class="dots"></td><td class="pg">38</td></tr><tr><td class="num">27</td><td><a href="#r27">Carne picada com abobrinha e tomate</a></td><td class="dots"></td><td class="pg">39</td></tr><tr><td class="num">28</td><td><a href="#r28">Bife acebolado com manteiga de alho</a></td><td class="dots"></td><td class="pg">40</td></tr><tr><td class="num">29</td><td><a href="#r29">Almôndegas recheadas com queijo em molho de tomate</a></td><td class="dots"></td><td class="pg">41</td></tr><tr><td class="num">30</td><td><a href="#r30">Costelinha de porco desfiada</a></td><td class="dots"></td><td class="pg">42</td></tr><tr><td class="cat" colspan="4">Peixes e frutos do mar</td></tr><tr><td class="num">31</td><td><a href="#r31">Salmão ao forno com manteiga de limão</a></td><td class="dots"></td><td class="pg">44</td></tr><tr><td class="num">32</td><td><a href="#r32">Tilápia empanada na farinha de amêndoas</a></td><td class="dots"></td><td class="pg">45</td></tr><tr><td class="num">33</td><td><a href="#r33">Camarão ao alho e óleo</a></td><td class="dots"></td><td class="pg">46</td></tr><tr><td class="num">34</td><td><a href="#r34">Bacalhau com couve-flor e azeitonas</a></td><td class="dots"></td><td class="pg">47</td></tr><tr><td class="num">35</td><td><a href="#r35">Moqueca de peixe com leite de coco e palmito</a></td><td class="dots"></td><td class="pg">48</td></tr><tr><td class="num">36</td><td><a href="#r36">Lula grelhada com limão e ervas</a></td><td class="dots"></td><td class="pg">49</td></tr><tr><td class="cat" colspan="4">Jantares em até 30 minutos de bancada</td></tr><tr><td class="num">37</td><td><a href="#r37">Pizza de couve-flor com mozzarella e manjericão</a></td><td class="dots"></td><td class="pg">51</td></tr><tr><td class="num">38</td><td><a href="#r38">Beringela à parmegiana (sem empanar)</a></td><td class="dots"></td><td class="pg">52</td></tr><tr><td class="num">39</td><td><a href="#r39">Feijoada low carb (sem feijão)</a></td><td class="dots"></td><td class="pg">53</td></tr><tr><td class="num">40</td><td><a href="#r40">Pão de queijo de airfryer</a></td><td class="dots"></td><td class="pg">54</td></tr><tr><td class="num">41</td><td><a href="#r41">Abobrinha recheada com atum e queijo creme</a></td><td class="dots"></td><td class="pg">55</td></tr><tr><td class="num">42</td><td><a href="#r42">Sushi low carb (rolinho de pepino)</a></td><td class="dots"></td><td class="pg">56</td></tr><tr><td class="num">43</td><td><a href="#r43">Charuto de repolho com carne picada</a></td><td class="dots"></td><td class="pg">57</td></tr><tr><td class="cat" colspan="4">Sobremesas sem açúcar</td></tr><tr><td class="num">44</td><td><a href="#r44">Mousse de chocolate com abacate</a></td><td class="dots"></td><td class="pg">59</td></tr><tr><td class="num">45</td><td><a href="#r45">Pudim de coco com eritritol</a></td><td class="dots"></td><td class="pg">60</td></tr><tr><td class="num">46</td><td><a href="#r46">Brigadeiro low carb de colher</a></td><td class="dots"></td><td class="pg">61</td></tr><tr><td class="num">47</td><td><a href="#r47">Cheesecake low carb de frutas vermelhas</a></td><td class="dots"></td><td class="pg">62</td></tr><tr><td class="num">48</td><td><a href="#r48">Biscoito low carb de castanhas e chocolate</a></td><td class="dots"></td><td class="pg">63</td></tr><tr><td class="num">49</td><td><a href="#r49">Trufas de chocolate com óleo de coco</a></td><td class="dots"></td><td class="pg">64</td></tr><tr><td class="num">50</td><td><a href="#r50">Paçoca low carb de amendoim</a></td><td class="dots"></td><td class="pg">65</td></tr></table></div></section><section class="abre"><img class="capfoto" src="imagens/capitulo-01.jpg" alt="Imagem do capítulo Pequeno-almoço e lanches rápidos"><div class="tag">Capítulo 01</div><h2>Pequeno-almoço e lanches rápidos</h2><div class="filete"></div><p>Começa o dia com receitas práticas e saciantes, sem depender do pão de todos os dias. Este capítulo junta ovos, queijos, farinhas de amêndoas ou coco e frutas em porções equilibradas. A maioria das opções exige no máximo 15 minutos de preparação.</p></section>
+<section class="receita" id="r01">
+  <header><div class="num">01</div>
+    <div class="titulo"><h3>Omelete de forno com espinafre e queijo</h3></div></header>
+  <img class="foto" src="imagens/receita-01.jpg" alt="Omelete de forno com espinafre e queijo">
+  <div class="meta"><span><b>Preparação</b> 10 min</span><span><b>Total</b> 30 min</span><span><b>Rende</b> 2</span><span><b>Dificuldade</b> fácil</span></div>
+  <div class="nutris">
+    <span><b>385</b>kcal / porção</span><span><b>6 g</b>hidratos de carbono</span>
+    <span><b>27 g</b>proteínas</span><span><b>28 g</b>gorduras boas</span></div>
+  <div class="corpo">
+    <div><h4>Ingredientes</h4><ul class="ing"><li>4 ovos</li><li>1 chávena de espinafre picado (fresco ou congelado, espremido)</li><li>50 g de mozzarella ralada</li><li>2 c. de sopa de nata</li><li>1/2 cebola picada</li><li>1 c. de sopa de azeite</li><li>sal, pimenta-do-reino e noz-moscada a gosto</li></ul></div>
+    <div><h4>Método</h4><ol class="passos"><li>Refoga a cebola no azeite por 3 minutos, junta o espinafre e cozinha até secar a água.</li><li>Bate os ovos com a nata, sal, pimenta e noz-moscada.</li><li>Mistura o refogado e o queijo aos ovos.</li><li>Despeja em refratário pequeno untado e assa a 180 °C por 20-25 minutos, até o centro firmar.</li></ol></div>
+  </div>
+  <div class="dica"><b>DICA DE QUEM COZINHA:</b> Faz dois de uma vez: o segundo dura 3 dias no frigorífico e vira o pequeno-almoço de amanhã.</div>
+  <div class="troca"><b>↺ TROCA INTELIGENTE:</b> Troca o espinafre por abobrinha ralada e espremida — mesma técnica, sabor mais neutro.</div>
+</section>
+<section class="receita" id="r02">
+  <header><div class="num">02</div>
+    <div class="titulo"><h3>Pão low carb de micro-ondas (2 minutos)</h3></div></header>
+  <img class="foto" src="imagens/receita-02.jpg" alt="Pão low carb de micro-ondas (2 minutos)">
+  <div class="meta"><span><b>Preparação</b> 5 min</span><span><b>Total</b> 7 min</span><span><b>Rende</b> 1</span><span><b>Dificuldade</b> fácil</span></div>
+  <div class="nutris">
+    <span><b>245</b>kcal / porção</span><span><b>4 g</b>hidratos de carbono</span>
+    <span><b>14 g</b>proteínas</span><span><b>18 g</b>gorduras boas</span></div>
+  <div class="corpo">
+    <div><h4>Ingredientes</h4><ul class="ing"><li>1 ovo</li><li>2 c. de sopa de farinha de amêndoas</li><li>1 c. de sopa de nata</li><li>1/2 c. de chá de fermento em pó</li><li>1 pitada de sal</li><li>1/2 c. de chá de manteiga para untar</li></ul></div>
+    <div><h4>Método</h4><ol class="passos"><li>Mistura tudo numa caneca ou pote quadrado untado, com um garfo, até sumirem as bolinhas de farinha.</li><li>Leva ao micro-ondas por 90 segundos em potência máxima.</li><li>Desenforma, corta ao meio e aloura na frigideira ou torradeira por 1 minuto de cada lado.</li></ol></div>
+  </div>
+  <div class="dica"><b>DICA DE QUEM COZINHA:</b> Só fica bom se alourares depois — o micro-ondas assa, mas não dá cor nem textura de pão.</div>
+  <div class="troca"><b>↺ TROCA INTELIGENTE:</b> Sem farinha de amêndoas? Usa 1 c. de sopa de farinha de linhaça dourada + 1 de coco.</div>
+</section>
+<section class="receita" id="r03">
+  <header><div class="num">03</div>
+    <div class="titulo"><h3>Panqueca de banana com aveia (sem farinha)</h3></div></header>
+  <img class="foto" src="imagens/receita-03.jpg" alt="Panqueca de banana com aveia (sem farinha)">
+  <div class="meta"><span><b>Preparação</b> 8 min</span><span><b>Total</b> 15 min</span><span><b>Rende</b> 2</span><span><b>Dificuldade</b> fácil</span></div>
+  <div class="nutris">
+    <span><b>260</b>kcal / porção</span><span><b>22 g</b>hidratos de carbono</span>
+    <span><b>15 g</b>proteínas</span><span><b>12 g</b>gorduras boas</span></div>
+  <div class="corpo">
+    <div><h4>Ingredientes</h4><ul class="ing"><li>1 banana bem madura</li><li>2 ovos</li><li>3 c. de sopa de farelo de aveia</li><li>1/2 c. de chá de canela</li><li>1/2 c. de chá de fermento</li><li>1 c. de chá de manteiga ou óleo de coco</li></ul></div>
+    <div><h4>Método</h4><ol class="passos"><li>Amassa a banana com um garfo até virar purê.</li><li>Junta os ovos, a aveia, a canela e o fermento e mistura bem.</li><li>Aquece a manteiga em lume brando e despeja conchas pequenas.</li><li>Aloura 2 minutos de cada lado, virando quando aparecerem bolhas na superfície.</li></ol></div>
+  </div>
+  <div class="dica"><b>DICA DE QUEM COZINHA:</b> A banana precisa de casca castanha: é o que adoça sem açúcar.</div>
+  <div class="troca"><b>↺ TROCA INTELIGENTE:</b> Troca a banana por 1/2 maçã ralada + 1 c. de chá de adoçante para reduzir ainda mais os hidratos.</div>
+</section>
+<section class="receita" id="r04">
+  <header><div class="num">04</div>
+    <div class="titulo"><h3>Muffin salgado de ovo, legumes e bacon</h3></div></header>
+  <img class="foto" src="imagens/receita-04.jpg" alt="Muffin salgado de ovo, legumes e bacon">
+  <div class="meta"><span><b>Preparação</b> 15 min</span><span><b>Total</b> 35 min</span><span><b>Rende</b> 6</span><span><b>Dificuldade</b> fácil</span></div>
+  <div class="nutris">
+    <span><b>180</b>kcal / porção</span><span><b>3 g</b>hidratos de carbono</span>
+    <span><b>12 g</b>proteínas</span><span><b>13 g</b>gorduras boas</span></div>
+  <div class="corpo">
+    <div><h4>Ingredientes</h4><ul class="ing"><li>6 ovos</li><li>1/2 chávena de bacon em cubos</li><li>1/2 abobrinha ralada e espremida</li><li>1/2 chávena de queijo ralado</li><li>2 c. de sopa de cebolinho picado</li><li>sal e pimenta a gosto</li></ul></div>
+    <div><h4>Método</h4><ol class="passos"><li>Frita o bacon até alourar e escorre em papel de cozinha.</li><li>Rala a abobrinha, salga, espera 5 minutos e espreme bem com as mãos.</li><li>Bate os ovos, mistura todos os ingredientes e distribui em forminhas de muffin.</li><li>Asse a 180 °C por 20-25 minutos, até o centro ficar firme.</li></ol></div>
+  </div>
+  <div class="dica"><b>DICA DE QUEM COZINHA:</b> Congela num saco selável e reaquece 30 segundos no micro-ondas: o pequeno-almoço sai em meio minuto.</div>
+  <div class="troca"><b>↺ TROCA INTELIGENTE:</b> Troca o bacon por frango desfiado para uma versão com menos gordura saturada.</div>
+</section>
+<section class="receita" id="r05">
+  <header><div class="num">05</div>
+    <div class="titulo"><h3>Crepe de tapioca de frigideira com queijo e tomate</h3></div></header>
+  <img class="foto" src="imagens/receita-05.jpg" alt="Crepe de tapioca de frigideira com queijo e tomate">
+  <div class="meta"><span><b>Preparação</b> 5 min</span><span><b>Total</b> 10 min</span><span><b>Rende</b> 1</span><span><b>Dificuldade</b> fácil</span></div>
+  <div class="nutris">
+    <span><b>290</b>kcal / porção</span><span><b>14 g</b>hidratos de carbono</span>
+    <span><b>18 g</b>proteínas</span><span><b>16 g</b>gorduras boas</span></div>
+  <div class="corpo">
+    <div><h4>Ingredientes</h4><ul class="ing"><li>1 ovo</li><li>1 c. de sopa rasa de goma de tapioca</li><li>1 c. de sopa de queijo creme ou nata</li><li>2 fatias de mozzarella</li><li>3 rodelas finas de tomate</li><li>orégano e sal a gosto</li></ul></div>
+    <div><h4>Método</h4><ol class="passos"><li>Bate o ovo com a tapioca, o queijo creme e o sal até ficar homogêneo.</li><li>Aquece uma frigideira antiaderente em lume brando e despeja a mistura.</li><li>Cozinha 2 minutos, vira, cubre com queijo e tomate e dobra ao meio.</li><li>Deixa mais 1 minuto com a tampa fechada para o queijo derreter.</li></ol></div>
+  </div>
+  <div class="dica"><b>DICA DE QUEM COZINHA:</b> Lume brando é o segredo: em lume forte o crepe resseca e racha na hora de dobrar.</div>
+  <div class="troca"><b>↺ TROCA INTELIGENTE:</b> Versão doce: recheia com 1 c. de chá de pasta de amendoim e canela.</div>
+</section>
+<section class="receita" id="r06">
+  <header><div class="num">06</div>
+    <div class="titulo"><h3>Pão de queijo de frigideira</h3></div></header>
+  <img class="foto" src="imagens/receita-06.jpg" alt="Pão de queijo de frigideira">
+  <div class="meta"><span><b>Preparação</b> 5 min</span><span><b>Total</b> 10 min</span><span><b>Rende</b> 1</span><span><b>Dificuldade</b> fácil</span></div>
+  <div class="nutris">
+    <span><b>275</b>kcal / porção</span><span><b>6 g</b>hidratos de carbono</span>
+    <span><b>16 g</b>proteínas</span><span><b>21 g</b>gorduras boas</span></div>
+  <div class="corpo">
+    <div><h4>Ingredientes</h4><ul class="ing"><li>1 ovo</li><li>2 c. de sopa de amido de mandioca azedo</li><li>2 c. de sopa de queijo parmesão ou mozzarella ralada</li><li>1 c. de sopa de nata</li><li>1 pitada de sal</li></ul></div>
+    <div><h4>Método</h4><ol class="passos"><li>Mistura tudo com um garfo até virar uma massa cremosa.</li><li>Despeja em frigideira pequena antiaderente untada, em lume brando.</li><li>Tampe e deixa 4 minutos, vira e deixa mais 3 minutos.</li><li>Corta ao meio e recheia ainda quente.</li></ol></div>
+  </div>
+  <div class="dica"><b>DICA DE QUEM COZINHA:</b> O amido de mandioca azedo (não o doce) é o que dá a textura elástica característica.</div>
+  <div class="troca"><b>↺ TROCA INTELIGENTE:</b> Recheio coringa: queijo creme com orégano ou frango desfiado cremoso.</div>
+</section>
+<section class="receita" id="r07">
+  <header><div class="num">07</div>
+    <div class="titulo"><h3>Wrap de couve com frango cremoso</h3></div></header>
+  <img class="foto" src="imagens/receita-07.jpg" alt="Wrap de couve com frango cremoso">
+  <div class="meta"><span><b>Preparação</b> 12 min</span><span><b>Total</b> 20 min</span><span><b>Rende</b> 2</span><span><b>Dificuldade</b> fácil</span></div>
+  <div class="nutris">
+    <span><b>310</b>kcal / porção</span><span><b>9 g</b>hidratos de carbono</span>
+    <span><b>26 g</b>proteínas</span><span><b>19 g</b>gorduras boas</span></div>
+  <div class="corpo">
+    <div><h4>Ingredientes</h4><ul class="ing"><li>4 folhas grandes de couve portuguesa</li><li>1 chávena de frango cozido desfiado</li><li>3 c. de sopa de queijo creme ou iogurte natural</li><li>1/2 cenoura ralada</li><li>1/2 chávena de alface picada</li><li>suco de 1/4 de limão, sal e pimenta</li></ul></div>
+    <div><h4>Método</h4><ol class="passos"><li>Passa as folhas de couve por água fervente por 20 segundos e depois em água gelada — isso amacia sem cozinhar.</li><li>Mistura o frango com o queijo creme, o limão, sal e pimenta.</li><li>Monta sobre a folha seca: alface, cenoura e o frango cremoso.</li><li>Enrola firme como um charuto, dobrando as laterais, e corta ao meio.</li></ol></div>
+  </div>
+  <div class="dica"><b>DICA DE QUEM COZINHA:</b> Seca bem a couve com papel de cozinha: folha molhada faz o wrap desmontar na mão.</div>
+  <div class="troca"><b>↺ TROCA INTELIGENTE:</b> Troca a couve por folha de acelga crua, que é mais crocante e não precisa de choque térmico.</div>
+</section>
+<section class="receita" id="r08">
+  <header><div class="num">08</div>
+    <div class="titulo"><h3>Ovos mexidos cremosos com abacate e sementes</h3></div></header>
+  <img class="foto" src="imagens/receita-08.jpg" alt="Ovos mexidos cremosos com abacate e sementes">
+  <div class="meta"><span><b>Preparação</b> 8 min</span><span><b>Total</b> 10 min</span><span><b>Rende</b> 1</span><span><b>Dificuldade</b> fácil</span></div>
+  <div class="nutris">
+    <span><b>405</b>kcal / porção</span><span><b>8 g</b>hidratos de carbono</span>
+    <span><b>20 g</b>proteínas</span><span><b>33 g</b>gorduras boas</span></div>
+  <div class="corpo">
+    <div><h4>Ingredientes</h4><ul class="ing"><li>2 ovos</li><li>1 c. de sopa de manteiga</li><li>1/2 abacate pequeno em fatias</li><li>1 c. de sopa de sementes de girassol ou abóbora</li><li>cebolinho picado, sal e pimenta</li></ul></div>
+    <div><h4>Método</h4><ol class="passos"><li>Bate os ovos com sal e pimenta sem fazer espuma.</li><li>Derrete a manteiga em lume brando, despeja os ovos e espera 20 segundos sem mexer.</li><li>Arrasta com uma espátula do centro para as bordas, repetindo até ficar cremoso e ainda úmido.</li><li>Serve imediatamente com o abacate por cima, as sementes e o cebolinho.</li></ol></div>
+  </div>
+  <div class="dica"><b>DICA DE QUEM COZINHA:</b> Tira do lume quando ainda parecer cru demais: o calor do tacho termina o cozimento.</div>
+  <div class="troca"><b>↺ TROCA INTELIGENTE:</b> Sem abacate? Usa 2 c. de sopa de creme azedo com limão.</div>
+</section>
+<section class="receita" id="r09">
+  <header><div class="num">09</div>
+    <div class="titulo"><h3>Iogurte proteico com granola de castanhas</h3></div></header>
+  <img class="foto" src="imagens/receita-09.jpg" alt="Iogurte proteico com granola de castanhas">
+  <div class="meta"><span><b>Preparação</b> 5 min</span><span><b>Total</b> 5 min</span><span><b>Rende</b> 1</span><span><b>Dificuldade</b> fácil</span></div>
+  <div class="nutris">
+    <span><b>320</b>kcal / porção</span><span><b>10 g</b>hidratos de carbono</span>
+    <span><b>22 g</b>proteínas</span><span><b>22 g</b>gorduras boas</span></div>
+  <div class="corpo">
+    <div><h4>Ingredientes</h4><ul class="ing"><li>170 g de iogurte natural integral</li><li>1/3 chávena de mix de castanhas (pará, caju e amêndoas) picadas</li><li>1 c. de sopa de coco em flocos sem açúcar</li><li>1/2 c. de chá de canela</li><li>1 c. de chá de adoçante ou mel (opcional)</li><li>5 morangos picados</li></ul></div>
+    <div><h4>Método</h4><ol class="passos"><li>Tosta as castanhas com o coco em flocos em frigideira seca por 2 minutos, mexendo sempre.</li><li>Monta o iogurte numa tigela, cubre com os morangos.</li><li>Espalha a granola morna por cima e polvilha a canela.</li><li>Adoça só se necessário — a canela já engana o paladar.</li></ol></div>
+  </div>
+  <div class="dica"><b>DICA DE QUEM COZINHA:</b> Nunca tosta a granola perto do telefone: castanha queima em 30 segundos e amarga tudo.</div>
+  <div class="troca"><b>↺ TROCA INTELIGENTE:</b> Granola em lote: triplica a receita e guarda 15 dias em pote fechado.</div>
+</section><section class="abre"><img class="capfoto" src="imagens/capitulo-02.jpg" alt="Imagem do capítulo Almoços completos"><div class="tag">Capítulo 02</div><h2>Almoços completos</h2><div class="filete"></div><p>Pratos de tacho único, saladas que seguram a tarde e os substitutos oficiais do arroz e do macarrão — sem cara de dieta.</p></section>
+<section class="receita" id="r10">
+  <header><div class="num">10</div>
+    <div class="titulo"><h3>Arroz de couve-flor simples</h3></div></header>
+  <img class="foto" src="imagens/receita-10.jpg" alt="Arroz de couve-flor simples">
+  <div class="meta"><span><b>Preparação</b> 10 min</span><span><b>Total</b> 15 min</span><span><b>Rende</b> 4</span><span><b>Dificuldade</b> fácil</span></div>
+  <div class="nutris">
+    <span><b>65</b>kcal / porção</span><span><b>5 g</b>hidratos de carbono</span>
+    <span><b>4 g</b>proteínas</span><span><b>3 g</b>gorduras boas</span></div>
+  <div class="corpo">
+    <div><h4>Ingredientes</h4><ul class="ing"><li>1 couve-flor média em buquês</li><li>1 c. de sopa de azeite</li><li>2 dentes de alho picados</li><li>1/4 de cebola picada</li><li>sal e salsa</li></ul></div>
+    <div><h4>Método</h4><ol class="passos"><li>Processa a couve-flor crua em pulsos curtos até virar grãos do tamanho de arroz (ou rala no ralador grosso).</li><li>Refoga o alho e a cebola no azeite por 2 minutos.</li><li>Junta a couve-flor e refoga em lume forte por 5-6 minutos, mexendo.</li><li>Tempera com sal e finaliza com salsa — sem tampar, senão vira purê.</li></ol></div>
+  </div>
+  <div class="dica"><b>DICA DE QUEM COZINHA:</b> A couve-flor nunca deve ser processada cozida: solta água e vira papa. Sempre crua e em pulsos curtos.</div>
+  <div class="troca"><b>↺ TROCA INTELIGENTE:</b> Base neutra: guarda 4 dias no frigorífico e aceita qualquer sobra de proteína por cima.</div>
+</section>
+<section class="receita" id="r11">
+  <header><div class="num">11</div>
+    <div class="titulo"><h3>Macarrão de abobrinha ao molho de tomate caseiro</h3></div></header>
+  <img class="foto" src="imagens/receita-11.jpg" alt="Macarrão de abobrinha ao molho de tomate caseiro">
+  <div class="meta"><span><b>Preparação</b> 12 min</span><span><b>Total</b> 30 min</span><span><b>Rende</b> 2</span><span><b>Dificuldade</b> fácil</span></div>
+  <div class="nutris">
+    <span><b>265</b>kcal / porção</span><span><b>14 g</b>hidratos de carbono</span>
+    <span><b>12 g</b>proteínas</span><span><b>18 g</b>gorduras boas</span></div>
+  <div class="corpo">
+    <div><h4>Ingredientes</h4><ul class="ing"><li>2 abobrinhas grandes</li><li>6 tomates maduros (ou 1 lata de tomate pelado)</li><li>2 dentes de alho</li><li>1/2 cebola</li><li>1 c. de sopa de azeite</li><li>manjericão, sal e pimenta</li><li>parmesão ralado para finalizar</li></ul></div>
+    <div><h4>Método</h4><ol class="passos"><li>Faz o molho: refoga cebola e alho, junta o tomate picado e cozinha 20 minutos em lume brando até encorpar.</li><li>Corta a abobrinha em tiras finas com descascador ou espiralador.</li><li>Refoga a abobrinha por 90 segundos no azeite quente — só para amornar, nunca cozinhar.</li><li>Junta o molho, mexe rapidamente e finaliza com manjericão e parmesão.</li></ol></div>
+  </div>
+  <div class="dica"><b>DICA DE QUEM COZINHA:</b> Salga a abobrinha já espiralizada, deixa 10 minutos no escorredor e seca com papel de cozinha: corta a água que afina o molho.</div>
+  <div class="troca"><b>↺ TROCA INTELIGENTE:</b> Troca o tomate pelado por molho de couve-flor batida com parmesão para uma versão ainda mais baixa em hidratos.</div>
+</section>
+<section class="receita" id="r12">
+  <header><div class="num">12</div>
+    <div class="titulo"><h3>Esparguete de palmito ao alho e óleo</h3></div></header>
+  <img class="foto" src="imagens/receita-12.jpg" alt="Esparguete de palmito ao alho e óleo">
+  <div class="meta"><span><b>Preparação</b> 10 min</span><span><b>Total</b> 20 min</span><span><b>Rende</b> 2</span><span><b>Dificuldade</b> fácil</span></div>
+  <div class="nutris">
+    <span><b>210</b>kcal / porção</span><span><b>7 g</b>hidratos de carbono</span>
+    <span><b>8 g</b>proteínas</span><span><b>17 g</b>gorduras boas</span></div>
+  <div class="corpo">
+    <div><h4>Ingredientes</h4><ul class="ing"><li>1 vidro de palmito em fios (ou esparguete de konjac)</li><li>4 dentes de alho laminados</li><li>3 c. de sopa de azeite</li><li>1/4 de chávena de parmesão ralado</li><li>salsa, pimenta-do-reino e sal</li></ul></div>
+    <div><h4>Método</h4><ol class="passos"><li>Escorra e seque bem o palmito com papel de cozinha.</li><li>Aquece o azeite em lume brando e aloura o alho laminado sem deixar queimar.</li><li>Junta o palmito e refoga 3 minutos em lume médio-forte para evaporar a água.</li><li>Desliga, mistura o parmesão, a salsa e a pimenta e serve imediatamente.</li></ol></div>
+  </div>
+  <div class="dica"><b>DICA DE QUEM COZINHA:</b> Palmito e konjac soltam muita água: secar bem antes do refogo é o que impede o prato de ficar aguado.</div>
+  <div class="troca"><b>↺ TROCA INTELIGENTE:</b> Acrescenta 1 chávena de camarão salteado para virar prato principal completo.</div>
+</section>
+<section class="receita" id="r13">
+  <header><div class="num">13</div>
+    <div class="titulo"><h3>Salada completa de frango com molho de iogurte</h3></div></header>
+  <img class="foto" src="imagens/receita-13.jpg" alt="Salada completa de frango com molho de iogurte">
+  <div class="meta"><span><b>Preparação</b> 15 min</span><span><b>Total</b> 25 min</span><span><b>Rende</b> 2</span><span><b>Dificuldade</b> fácil</span></div>
+  <div class="nutris">
+    <span><b>340</b>kcal / porção</span><span><b>12 g</b>hidratos de carbono</span>
+    <span><b>32 g</b>proteínas</span><span><b>18 g</b>gorduras boas</span></div>
+  <div class="corpo">
+    <div><h4>Ingredientes</h4><ul class="ing"><li>1 peito de frango grelhado em tiras</li><li>4 chávenas de folhas variadas</li><li>1/2 pepino em rodelas</li><li>1 tomate em gomos</li><li>1/4 de abacate</li><li>170 g de iogurte natural</li><li>1 c. de chá de mostarda, suco de 1/2 limão, azeite, sal e ervas</li></ul></div>
+    <div><h4>Método</h4><ol class="passos"><li>Tempera o frango com sal, pimenta e páprica e grelha 5 minutos de cada lado.</li><li>Monta as folhas, o pepino, o tomate e o abacate em duas tigelas.</li><li>Mistura o iogurte com a mostarda, o limão, 1 c. de sopa de azeite, sal e ervas.</li><li>Cobre com o frango morno e rega com o molho na hora de comer.</li></ol></div>
+  </div>
+  <div class="dica"><b>DICA DE QUEM COZINHA:</b> Salada com molho separado dura 2 dias no tupper; com molho junto, murcha em 3 horas.</div>
+  <div class="troca"><b>↺ TROCA INTELIGENTE:</b> Troca o frango por atum ou grão-de-bico cozido (aumenta a porção e soma os hidratos).</div>
+</section>
+<section class="receita" id="r14">
+  <header><div class="num">14</div>
+    <div class="titulo"><h3>Salada de atum com ovo e maionese de limão</h3></div></header>
+  <img class="foto" src="imagens/receita-14.jpg" alt="Salada de atum com ovo e maionese de limão">
+  <div class="meta"><span><b>Preparação</b> 12 min</span><span><b>Total</b> 20 min</span><span><b>Rende</b> 2</span><span><b>Dificuldade</b> fácil</span></div>
+  <div class="nutris">
+    <span><b>375</b>kcal / porção</span><span><b>6 g</b>hidratos de carbono</span>
+    <span><b>28 g</b>proteínas</span><span><b>27 g</b>gorduras boas</span></div>
+  <div class="corpo">
+    <div><h4>Ingredientes</h4><ul class="ing"><li>2 latas de atum em água escorrido</li><li>2 ovos cozidos picados</li><li>1/2 chávena de aipo picado</li><li>1/4 de cebola roxa picada</li><li>3 c. de sopa de maionese</li><li>suco de 1/2 limão</li><li>1 c. de chá de mostarda, sal, pimenta e salsa</li></ul></div>
+    <div><h4>Método</h4><ol class="passos"><li>Mistura a maionese com o limão, a mostarda, sal e pimenta.</li><li>Junta o atum, o ovo, o aipo e a cebola e incorpora delicadamente.</li><li>Finaliza com salsa e ajusta o sal.</li><li>Serve sobre folhas, em wrap de couve ou recheando tomate.</li></ol></div>
+  </div>
+  <div class="dica"><b>DICA DE QUEM COZINHA:</b> O aipo é o que dá crocância — sem ele, a salada fica pastosa.</div>
+  <div class="troca"><b>↺ TROCA INTELIGENTE:</b> Versão para levar: monta em pote de vidro com as folhas no fundo e a salada por cima.</div>
+</section>
+<section class="receita" id="r15">
+  <header><div class="num">15</div>
+    <div class="titulo"><h3>Wrap de alface com carne picante</h3></div></header>
+  <img class="foto" src="imagens/receita-15.jpg" alt="Wrap de alface com carne picante">
+  <div class="meta"><span><b>Preparação</b> 15 min</span><span><b>Total</b> 25 min</span><span><b>Rende</b> 3</span><span><b>Dificuldade</b> fácil</span></div>
+  <div class="nutris">
+    <span><b>320</b>kcal / porção</span><span><b>8 g</b>hidratos de carbono</span>
+    <span><b>26 g</b>proteínas</span><span><b>21 g</b>gorduras boas</span></div>
+  <div class="corpo">
+    <div><h4>Ingredientes</h4><ul class="ing"><li>1 alface americana (folhas inteiras)</li><li>500 g de carne picada</li><li>1 cebola picada</li><li>2 dentes de alho</li><li>1 pimentão pequeno picado</li><li>2 c. de sopa de molho de tomate</li><li>páprica defumada, cominho, pimenta e sal</li><li>queijo ralado e creme azedo para servir</li></ul></div>
+    <div><h4>Método</h4><ol class="passos"><li>Refoga a cebola, o alho e o pimentão por 4 minutos.</li><li>Acrescenta a carne picada e aloura bem, quebrando os grumos com a espátula.</li><li>Junta o molho de tomate e os temperos e cozinha 8 minutos até secar o líquido.</li><li>Serve em folhas de alface com queijo e creme azedo.</li></ol></div>
+  </div>
+  <div class="dica"><b>DICA DE QUEM COZINHA:</b> Seca as folhas de alface com papel de cozinha — folha molhada rasga ao enrolar.</div>
+  <div class="troca"><b>↺ TROCA INTELIGENTE:</b> Sem carne picada? Usa frango desfiado com os mesmos temperos.</div>
+</section>
+<section class="receita" id="r16">
+  <header><div class="num">16</div>
+    <div class="titulo"><h3>Escondidinho low carb de couve-flor com carne seca</h3></div></header>
+  <img class="foto" src="imagens/receita-16.jpg" alt="Escondidinho low carb de couve-flor com carne seca">
+  <div class="meta"><span><b>Preparação</b> 25 min</span><span><b>Total</b> 60 min</span><span><b>Rende</b> 6</span><span><b>Dificuldade</b> fácil</span></div>
+  <div class="nutris">
+    <span><b>390</b>kcal / porção</span><span><b>13 g</b>hidratos de carbono</span>
+    <span><b>28 g</b>proteínas</span><span><b>25 g</b>gorduras boas</span></div>
+  <div class="corpo">
+    <div><h4>Ingredientes</h4><ul class="ing"><li>1 couve-flor grande</li><li>400 g de carne seca dessalgada e desfiada</li><li>2 c. de sopa de queijo creme</li><li>2 c. de sopa de manteiga</li><li>1 cebola picada</li><li>3 dentes de alho</li><li>100 g de mozzarella ralada</li><li>salsa</li></ul></div>
+    <div><h4>Método</h4><ol class="passos"><li>Cozinha a couve-flor no vapor até ficar macia e bata com a manteiga e o queijo creme até virar purê liso.</li><li>Refoga a cebola e o alho, junta a carne seca desfiada e refoga 5 minutos.</li><li>Monta em refratário: carne no fundo, purê por cima, mozzarella por último.</li><li>Leva ao forno a 200 °C por 20 minutos, até gratinar.</li></ol></div>
+  </div>
+  <div class="dica"><b>DICA DE QUEM COZINHA:</b> Escorra bem a couve-flor cozida antes de bater: excesso de água deixa o purê ralo.</div>
+  <div class="troca"><b>↺ TROCA INTELIGENTE:</b> Sem carne seca? Usa carne picada refogada com pimentão ou frango desfiado.</div>
+</section>
+<section class="receita" id="r17">
+  <header><div class="num">17</div>
+    <div class="titulo"><h3>Lasanha de beringela à bolonhesa</h3></div></header>
+  <img class="foto" src="imagens/receita-17.jpg" alt="Lasanha de beringela à bolonhesa">
+  <div class="meta"><span><b>Preparação</b> 30 min</span><span><b>Total</b> 75 min</span><span><b>Rende</b> 6</span><span><b>Dificuldade</b> fácil</span></div>
+  <div class="nutris">
+    <span><b>355</b>kcal / porção</span><span><b>12 g</b>hidratos de carbono</span>
+    <span><b>30 g</b>proteínas</span><span><b>22 g</b>gorduras boas</span></div>
+  <div class="corpo">
+    <div><h4>Ingredientes</h4><ul class="ing"><li>2 beringelas grandes em fatias finas</li><li>500 g de carne picada</li><li>1 lata de tomate pelado</li><li>1 cebola e 3 dentes de alho</li><li>200 g de mozzarella fatiada</li><li>100 g de parmesão ralado</li><li>azeite, orégano, sal e pimenta</li></ul></div>
+    <div><h4>Método</h4><ol class="passos"><li>Salga as fatias de beringela, deixa 20 minutos, enxágua e seca bem.</li><li>Grelha as fatias em frigideira quente com um fio de azeite, 2 minutos de cada lado.</li><li>Faz o molho: refoga cebola e alho, junta a carne picada, aloura, acrescenta o tomate e cozinha 25 minutos.</li><li>Monta em camadas — molho, beringela, mozzarella — terminando com molho e parmesão. Asse a 190 °C por 35 minutos.</li></ol></div>
+  </div>
+  <div class="dica"><b>DICA DE QUEM COZINHA:</b> Secar a beringela é obrigatório: sem isso, a lasanha solta água e vira sopa no refratário.</div>
+  <div class="troca"><b>↺ TROCA INTELIGENTE:</b> Troca a beringela por fatias finas de abobrinha, grelhando por menos tempo.</div>
+</section>
+<section class="receita" id="r18">
+  <header><div class="num">18</div>
+    <div class="titulo"><h3>Beringela recheada com carne picada</h3></div></header>
+  <img class="foto" src="imagens/receita-18.jpg" alt="Beringela recheada com carne picada">
+  <div class="meta"><span><b>Preparação</b> 20 min</span><span><b>Total</b> 50 min</span><span><b>Rende</b> 4</span><span><b>Dificuldade</b> fácil</span></div>
+  <div class="nutris">
+    <span><b>330</b>kcal / porção</span><span><b>11 g</b>hidratos de carbono</span>
+    <span><b>26 g</b>proteínas</span><span><b>20 g</b>gorduras boas</span></div>
+  <div class="corpo">
+    <div><h4>Ingredientes</h4><ul class="ing"><li>2 beringelas cortadas ao meio</li><li>400 g de carne picada</li><li>1 cebola e 2 dentes de alho picados</li><li>1 tomate picado</li><li>1/2 chávena de mozzarella ralada</li><li>2 c. de sopa de azeite</li><li>salsa, sal, pimenta e cominho</li></ul></div>
+    <div><h4>Método</h4><ol class="passos"><li>Retira parte da polpa das beringelas, pica e reserva.</li><li>Salga as metades e leva ao forno a 180 °C por 15 minutos para amaciar.</li><li>Refoga cebola e alho, aloura a carne, junta a polpa picada e o tomate e cozinha 10 minutos.</li><li>Recheia as beringelas, cubre com queijo e volta ao forno por 15 minutos.</li></ol></div>
+  </div>
+  <div class="dica"><b>DICA DE QUEM COZINHA:</b> Asse as cascas antes de rechear: beringela crua no forno fica dura por dentro e queimada por fora.</div>
+  <div class="troca"><b>↺ TROCA INTELIGENTE:</b> Troca a carne picada por atum com queijo creme para uma versão de 25 minutos.</div>
+</section><section class="abre"><img class="capfoto" src="imagens/capitulo-03.jpg" alt="Imagem do capítulo Sopas e caldos"><div class="tag">Capítulo 03</div><h2>Sopas e caldos</h2><div class="filete"></div><p>Para a noite fria e para o pote de levar: cremosidade sem batata e sem farinha de trigo.</p></section>
+<section class="receita" id="r19">
+  <header><div class="num">19</div>
+    <div class="titulo"><h3>Caldo verde low carb (sem batata)</h3></div></header>
+  <img class="foto" src="imagens/receita-19.jpg" alt="Caldo verde low carb (sem batata)">
+  <div class="meta"><span><b>Preparação</b> 15 min</span><span><b>Total</b> 35 min</span><span><b>Rende</b> 4</span><span><b>Dificuldade</b> fácil</span></div>
+  <div class="nutris">
+    <span><b>195</b>kcal / porção</span><span><b>9 g</b>hidratos de carbono</span>
+    <span><b>14 g</b>proteínas</span><span><b>12 g</b>gorduras boas</span></div>
+  <div class="corpo">
+    <div><h4>Ingredientes</h4><ul class="ing"><li>1 couve-flor pequena em buquês</li><li>200 g de linguiça portuguesa ou calabresa em rodelas</li><li>1 maço de couve portuguesa em tiras finas</li><li>1 cebola e 3 dentes de alho</li><li>1 L de caldo de galinha ou água</li><li>2 c. de sopa de azeite, sal e pimenta</li></ul></div>
+    <div><h4>Método</h4><ol class="passos"><li>Frite a linguiça em tacho grande até alourar e reserva parte da gordura.</li><li>Refoga a cebola e o alho nessa gordura por 3 minutos.</li><li>Junta a couve-flor e o caldo, cozinha 15 minutos e bata no liquidificador até ficar cremoso.</li><li>Volta ao tacho, junta a couve em tiras e a linguiça e cozinha 5 minutos, sem deixar a couve amolecer demais.</li></ol></div>
+  </div>
+  <div class="dica"><b>DICA DE QUEM COZINHA:</b> A couve entra no final e cozinha só 5 minutos — deve ficar verde-viva, não castanha.</div>
+  <div class="troca"><b>↺ TROCA INTELIGENTE:</b> Versão sem embutido: troca a linguiça por frango desfiado e acrescenta páprica defumada.</div>
+</section>
+<section class="receita" id="r20">
+  <header><div class="num">20</div>
+    <div class="titulo"><h3>Sopa de abóbora com leite de coco e gengibre</h3></div></header>
+  <img class="foto" src="imagens/receita-20.jpg" alt="Sopa de abóbora com leite de coco e gengibre">
+  <div class="meta"><span><b>Preparação</b> 15 min</span><span><b>Total</b> 40 min</span><span><b>Rende</b> 4</span><span><b>Dificuldade</b> fácil</span></div>
+  <div class="nutris">
+    <span><b>180</b>kcal / porção</span><span><b>16 g</b>hidratos de carbono</span>
+    <span><b>5 g</b>proteínas</span><span><b>11 g</b>gorduras boas</span></div>
+  <div class="corpo">
+    <div><h4>Ingredientes</h4><ul class="ing"><li>500 g de abóbora cabotiá em cubos</li><li>200 ml de leite de coco sem açúcar</li><li>1 pedaço de 3 cm de gengibre ralado</li><li>1 cebola e 2 dentes de alho</li><li>700 ml de caldo de legumes</li><li>1 c. de sopa de azeite, sal, pimenta e cebolinho</li></ul></div>
+    <div><h4>Método</h4><ol class="passos"><li>Refoga a cebola, o alho e o gengibre no azeite por 3 minutos.</li><li>Junta a abóbora e o caldo e cozinha 20 minutos, até amaciar.</li><li>Bate no liquidificador com o leite de coco até ficar liso.</li><li>Ajusta o sal, aquece sem ferver e finaliza com cebolinho.</li></ol></div>
+  </div>
+  <div class="dica"><b>DICA DE QUEM COZINHA:</b> A abóbora tem mais hidratos que outros legumes — controla a porção se estiveres em fase de indução.</div>
+  <div class="troca"><b>↺ TROCA INTELIGENTE:</b> Troca o gengibre por curry em pó e finaliza com coentro para um perfil tailandês.</div>
+</section>
+<section class="receita" id="r21">
+  <header><div class="num">21</div>
+    <div class="titulo"><h3>Sopa de legumes com frango desfiado</h3></div></header>
+  <img class="foto" src="imagens/receita-21.jpg" alt="Sopa de legumes com frango desfiado">
+  <div class="meta"><span><b>Preparação</b> 20 min</span><span><b>Total</b> 45 min</span><span><b>Rende</b> 4</span><span><b>Dificuldade</b> fácil</span></div>
+  <div class="nutris">
+    <span><b>240</b>kcal / porção</span><span><b>14 g</b>hidratos de carbono</span>
+    <span><b>24 g</b>proteínas</span><span><b>10 g</b>gorduras boas</span></div>
+  <div class="corpo">
+    <div><h4>Ingredientes</h4><ul class="ing"><li>300 g de peito de frango</li><li>1 abobrinha em cubos</li><li>1 cenoura em cubos</li><li>1/2 chávena de vagem picada</li><li>1 chávena de couve-flor em buquês</li><li>1 cebola, 2 dentes de alho e 1 tomate</li><li>1,2 L de água ou caldo, azeite, sal, louro e salsa</li></ul></div>
+    <div><h4>Método</h4><ol class="passos"><li>Cozinha o frango na água com louro e sal por 20 minutos, retira e desfie.</li><li>No mesmo caldo, refoga cebola e alho à parte e devolve ao tacho com o tomate.</li><li>Junta a cenoura e cozinha 8 minutos, depois a abobrinha, a vagem e a couve-flor por mais 8 minutos.</li><li>Volta o frango desfiado, ajusta o sal e finaliza com salsa.</li></ol></div>
+  </div>
+  <div class="dica"><b>DICA DE QUEM COZINHA:</b> Cozinha os legumes em ordem de dureza: cenoura primeiro, folhas e abobrinha por último.</div>
+  <div class="troca"><b>↺ TROCA INTELIGENTE:</b> Congela em potes de 500 ml: dura 3 meses e resolve jantar sem planejamento.</div>
+</section>
+<section class="receita" id="r22">
+  <header><div class="num">22</div>
+    <div class="titulo"><h3>Creme de abobrinha com queijo creme</h3></div></header>
+  <img class="foto" src="imagens/receita-22.jpg" alt="Creme de abobrinha com queijo creme">
+  <div class="meta"><span><b>Preparação</b> 12 min</span><span><b>Total</b> 30 min</span><span><b>Rende</b> 3</span><span><b>Dificuldade</b> fácil</span></div>
+  <div class="nutris">
+    <span><b>175</b>kcal / porção</span><span><b>8 g</b>hidratos de carbono</span>
+    <span><b>8 g</b>proteínas</span><span><b>13 g</b>gorduras boas</span></div>
+  <div class="corpo">
+    <div><h4>Ingredientes</h4><ul class="ing"><li>3 abobrinhas grandes em rodelas</li><li>100 g de queijo creme</li><li>1 cebola e 2 dentes de alho</li><li>600 ml de caldo de legumes</li><li>2 c. de sopa de azeite</li><li>sal, pimenta-branca e noz-moscada</li><li>torresmo ou crouton low carb para servir</li></ul></div>
+    <div><h4>Método</h4><ol class="passos"><li>Refoga a cebola e o alho no azeite até alourar.</li><li>Junta a abobrinha e o caldo e cozinha 15 minutos.</li><li>Bate no liquidificador com o queijo creme até ficar aveludado.</li><li>Volta ao tacho, tempera com pimenta-branca e noz-moscada e aquece sem ferver.</li></ol></div>
+  </div>
+  <div class="dica"><b>DICA DE QUEM COZINHA:</b> O queijo creme entra sempre com o lume apagado ou brando: ferver faz o creme talhar e separar.</div>
+  <div class="troca"><b>↺ TROCA INTELIGENTE:</b> Troca o queijo creme por 100 ml de nata para uma versão mais leve.</div>
+</section><section class="abre"><img class="capfoto" src="imagens/capitulo-04.jpg" alt="Imagem do capítulo Carnes e aves"><div class="tag">Capítulo 04</div><h2>Carnes e aves</h2><div class="filete"></div><p>A carne entra sem medo, desde que o molho faça o trabalho: gordura boa, lume bem usado e tempero que não pede desculpa. Aqui ela vem dourada, suculenta e com molho bem feito — nada de frango seco de tupper.</p></section>
+<section class="receita" id="r23">
+  <header><div class="num">23</div>
+    <div class="titulo"><h3>Frango grelhado ao molho de mostarda e creme</h3></div></header>
+  <img class="foto" src="imagens/receita-23.jpg" alt="Frango grelhado ao molho de mostarda e creme">
+  <div class="meta"><span><b>Preparação</b> 12 min</span><span><b>Total</b> 25 min</span><span><b>Rende</b> 2</span><span><b>Dificuldade</b> fácil</span></div>
+  <div class="nutris">
+    <span><b>385</b>kcal / porção</span><span><b>5 g</b>hidratos de carbono</span>
+    <span><b>38 g</b>proteínas</span><span><b>24 g</b>gorduras boas</span></div>
+  <div class="corpo">
+    <div><h4>Ingredientes</h4><ul class="ing"><li>2 filés de peito de frango (150 g cada)</li><li>2 c. de sopa de mostarda Dijon</li><li>100 ml de nata fresca</li><li>1 dente de alho picado</li><li>1 c. de sopa de manteiga</li><li>1 c. de chá de tomilho</li><li>sal e pimenta-do-reino</li></ul></div>
+    <div><h4>Método</h4><ol class="passos"><li>Tempera os filés com sal e pimenta e sela em frigideira bem quente, 4 minutos de cada lado. Reserva.</li><li>Na mesma frigideira, derrete a manteiga e refoga o alho por 30 segundos.</li><li>Junta a mostarda, a nata e o tomilho e reduz por 3 minutos até engrossar.</li><li>Volta o frango ao tacho, banhe com o molho e serve com legumes salteados.</li></ol></div>
+  </div>
+  <div class="dica"><b>DICA DE QUEM COZINHA:</b> Não laves a frigideira entre o frango e o molho: o fundo alourado é o que dá sabor à base do creme.</div>
+  <div class="troca"><b>↺ TROCA INTELIGENTE:</b> Sem Dijon? Usa mostarda amarela + 1/2 c. de chá de mel ou adoçante para equilibrar a acidez.</div>
+</section>
+<section class="receita" id="r24">
+  <header><div class="num">24</div>
+    <div class="titulo"><h3>Sobrecoxa assada com limão e alecrim</h3></div></header>
+  <img class="foto" src="imagens/receita-24.jpg" alt="Sobrecoxa assada com limão e alecrim">
+  <div class="meta"><span><b>Preparação</b> 10 min</span><span><b>Total</b> 50 min</span><span><b>Rende</b> 4</span><span><b>Dificuldade</b> fácil</span></div>
+  <div class="nutris">
+    <span><b>410</b>kcal / porção</span><span><b>3 g</b>hidratos de carbono</span>
+    <span><b>36 g</b>proteínas</span><span><b>28 g</b>gorduras boas</span></div>
+  <div class="corpo">
+    <div><h4>Ingredientes</h4><ul class="ing"><li>8 sobrecoxas de frango com pele</li><li>suco e raspas de 1 limão</li><li>4 ramos de alecrim</li><li>4 dentes de alho amassados</li><li>3 c. de sopa de azeite</li><li>sal grosso e pimenta-do-reino</li></ul></div>
+    <div><h4>Método</h4><ol class="passos"><li>Mistura o azeite, o suco e as raspas de limão, o alho, o alecrim, o sal e a pimenta.</li><li>Envolve as sobrecoxas na marinada e deixa descansar 20 minutos (ou de um dia para o outro).</li><li>Arruma em assadeira com a pele para cima, sem sobrepor.</li><li>Assa a 200 °C por 40-45 minutos, até a pele ficar crocante e o suco sair transparente.</li></ol></div>
+  </div>
+  <div class="dica"><b>DICA DE QUEM COZINHA:</b> Pele para cima e sem sobrepor: é assim que ela fica crocante em vez de cozida no próprio vapor.</div>
+  <div class="troca"><b>↺ TROCA INTELIGENTE:</b> Acrescenta cebola e abobrinha na assadeira nos últimos 25 minutos para fazer o acompanhamento junto.</div>
+</section>
+<section class="receita" id="r25">
+  <header><div class="num">25</div>
+    <div class="titulo"><h3>Frango xadrez low carb</h3></div></header>
+  <img class="foto" src="imagens/receita-25.jpg" alt="Frango xadrez low carb">
+  <div class="meta"><span><b>Preparação</b> 15 min</span><span><b>Total</b> 25 min</span><span><b>Rende</b> 3</span><span><b>Dificuldade</b> fácil</span></div>
+  <div class="nutris">
+    <span><b>320</b>kcal / porção</span><span><b>10 g</b>hidratos de carbono</span>
+    <span><b>30 g</b>proteínas</span><span><b>18 g</b>gorduras boas</span></div>
+  <div class="corpo">
+    <div><h4>Ingredientes</h4><ul class="ing"><li>400 g de peito de frango em cubos</li><li>1 pimentão vermelho e 1 verde em cubos</li><li>1 abobrinha em cubos</li><li>1/2 chávena de castanha-de-caju torrada</li><li>3 c. de sopa de molho de soja (ou 2 de molho de soja + água)</li><li>1 dente de alho e 1 pedaço pequeno de gengibre ralado</li><li>1 c. de sopa de amido de milho diluído em 3 de água (opcional)</li></ul></div>
+    <div><h4>Método</h4><ol class="passos"><li>Sela o frango em lume forte com um fio de óleo, em duas levas, até alourar. Reserva.</li><li>Refoga o alho e o gengibre por 30 segundos, junta os pimentões e a abobrinha por 4 minutos.</li><li>Volta o frango, acrescenta o molho de soja e o amido diluído e mexe até o molho envolver tudo.</li><li>Finaliza com a castanha-de-caju fora do lume, para continuar crocante.</li></ol></div>
+  </div>
+  <div class="dica"><b>DICA DE QUEM COZINHA:</b> O molho de soja tem sódio e um pouco de hidratos: usa a versão com menos sódio e conta 1 g de hidratos por colher.</div>
+  <div class="troca"><b>↺ TROCA INTELIGENTE:</b> Sem castanha-de-caju? Usa amendoim torrado sem pele — mais barato e igualmente crocante.</div>
+</section>
+<section class="receita" id="r26">
+  <header><div class="num">26</div>
+    <div class="titulo"><h3>Filé ao molho de cogumelos</h3></div></header>
+  <img class="foto" src="imagens/receita-26.jpg" alt="Filé ao molho de cogumelos">
+  <div class="meta"><span><b>Preparação</b> 12 min</span><span><b>Total</b> 30 min</span><span><b>Rende</b> 2</span><span><b>Dificuldade</b> fácil</span></div>
+  <div class="nutris">
+    <span><b>430</b>kcal / porção</span><span><b>7 g</b>hidratos de carbono</span>
+    <span><b>38 g</b>proteínas</span><span><b>28 g</b>gorduras boas</span></div>
+  <div class="corpo">
+    <div><h4>Ingredientes</h4><ul class="ing"><li>2 bifes altos de filé-mignon ou alcatra</li><li>200 g de cogumelos paris ou shimeji</li><li>150 ml de nata fresca</li><li>1/4 de chávena de caldo de carne</li><li>1 c. de sopa de manteiga</li><li>1 dente de alho e tomilho fresco</li><li>sal e pimenta-do-reino</li></ul></div>
+    <div><h4>Método</h4><ol class="passos"><li>Tempera a carne com sal e pimenta e sela em frigideira muito quente, 3 minutos de cada lado. Reserva.</li><li>No mesmo tacho, derrete a manteiga e refoga os cogumelos até alourar e secar a água.</li><li>Junta o alho, o caldo e a nata e reduz por 5 minutos.</li><li>Volta a carne, aquece por 1 minuto e serve com o molho por cima.</li></ol></div>
+  </div>
+  <div class="dica"><b>DICA DE QUEM COZINHA:</b> Evita amontoar os cogumelos no tacho: em excesso, soltam água e cozinham em vez de alourar.</div>
+  <div class="troca"><b>↺ TROCA INTELIGENTE:</b> Versão sem creme: usa 2 c. de sopa de queijo creme diluído no caldo quente.</div>
+</section>
+<section class="receita" id="r27">
+  <header><div class="num">27</div>
+    <div class="titulo"><h3>Carne picada com abobrinha e tomate</h3></div></header>
+  <img class="foto" src="imagens/receita-27.jpg" alt="Carne picada com abobrinha e tomate">
+  <div class="meta"><span><b>Preparação</b> 15 min</span><span><b>Total</b> 30 min</span><span><b>Rende</b> 4</span><span><b>Dificuldade</b> fácil</span></div>
+  <div class="nutris">
+    <span><b>310</b>kcal / porção</span><span><b>9 g</b>hidratos de carbono</span>
+    <span><b>27 g</b>proteínas</span><span><b>19 g</b>gorduras boas</span></div>
+  <div class="corpo">
+    <div><h4>Ingredientes</h4><ul class="ing"><li>500 g de carne picada</li><li>2 abobrinhas em cubos</li><li>1 lata de tomate pelado</li><li>1 cebola e 3 dentes de alho</li><li>1 c. de sopa de azeite</li><li>orégano, cominho, sal e pimenta</li><li>salsa e queijo ralado</li></ul></div>
+    <div><h4>Método</h4><ol class="passos"><li>Refoga a cebola e o alho no azeite até amaciar.</li><li>Junta a carne picada e aloura bem, sem mexer nos primeiros 2 minutos para formar crosta.</li><li>Acrescenta o tomate pelado, os temperos e cozinha 10 minutos.</li><li>Junta a abobrinha e cozinha mais 8 minutos, até ficar macia mas firme. Finaliza com salsa.</li></ol></div>
+  </div>
+  <div class="dica"><b>DICA DE QUEM COZINHA:</b> Alourar a carne sem mexer no começo é o que cria o fundo escuro e o sabor de tacho.</div>
+  <div class="troca"><b>↺ TROCA INTELIGENTE:</b> Serve sobre arroz de couve-flor ou recheando pimentões e abobrinhas.</div>
+</section>
+<section class="receita" id="r28">
+  <header><div class="num">28</div>
+    <div class="titulo"><h3>Bife acebolado com manteiga de alho</h3></div></header>
+  <img class="foto" src="imagens/receita-28.jpg" alt="Bife acebolado com manteiga de alho">
+  <div class="meta"><span><b>Preparação</b> 10 min</span><span><b>Total</b> 20 min</span><span><b>Rende</b> 2</span><span><b>Dificuldade</b> fácil</span></div>
+  <div class="nutris">
+    <span><b>415</b>kcal / porção</span><span><b>5 g</b>hidratos de carbono</span>
+    <span><b>36 g</b>proteínas</span><span><b>27 g</b>gorduras boas</span></div>
+  <div class="corpo">
+    <div><h4>Ingredientes</h4><ul class="ing"><li>2 bifes de alcatra ou contrafilé</li><li>1 cebola grande em rodelas</li><li>3 dentes de alho picados</li><li>2 c. de sopa de manteiga</li><li>1 c. de sopa de azeite</li><li>sal, pimenta e salsa picada</li></ul></div>
+    <div><h4>Método</h4><ol class="passos"><li>Tempera os bifes com sal e pimenta e sela em frigideira quente com azeite, 3 minutos de cada lado. Reserva.</li><li>Na mesma frigideira, aloura a cebola em lume médio por 8 minutos, até caramelizar.</li><li>Junta a manteiga e o alho e cozinha 1 minuto, sem queimar o alho.</li><li>Volta os bifes, envolve na cebola, finaliza com salsa e serve.</li></ol></div>
+  </div>
+  <div class="dica"><b>DICA DE QUEM COZINHA:</b> Tira a carne do frigorífico 20 minutos antes: bife gelado solta água e cozinha em vez de selar.</div>
+  <div class="troca"><b>↺ TROCA INTELIGENTE:</b> Acrescenta 1 c. de sopa de molho de soja na cebola para um fundo mais escuro e salgado.</div>
+</section>
+<section class="receita" id="r29">
+  <header><div class="num">29</div>
+    <div class="titulo"><h3>Almôndegas recheadas com queijo em molho de tomate</h3></div></header>
+  <img class="foto" src="imagens/receita-29.jpg" alt="Almôndegas recheadas com queijo em molho de tomate">
+  <div class="meta"><span><b>Preparação</b> 25 min</span><span><b>Total</b> 50 min</span><span><b>Rende</b> 4</span><span><b>Dificuldade</b> fácil</span></div>
+  <div class="nutris">
+    <span><b>365</b>kcal / porção</span><span><b>8 g</b>hidratos de carbono</span>
+    <span><b>30 g</b>proteínas</span><span><b>24 g</b>gorduras boas</span></div>
+  <div class="corpo">
+    <div><h4>Ingredientes</h4><ul class="ing"><li>500 g de carne picada</li><li>1 ovo</li><li>3 c. de sopa de farinha de amêndoas</li><li>1 dente de alho ralado, salsa, sal e pimenta</li><li>100 g de mozzarella em cubos para rechear</li><li>1 lata de tomate pelado</li><li>2 c. de sopa de azeite e manjericão</li></ul></div>
+    <div><h4>Método</h4><ol class="passos"><li>Mistura a carne com o ovo, a farinha de amêndoas, o alho, a salsa, o sal e a pimenta. Deixa descansar 10 minutos.</li><li>Abre porções na palma da mão, coloca um cubo de queijo e fecha bem, sem deixar frestas.</li><li>Sela as almôndegas em frigideira com azeite até alourar de todos os lados.</li><li>Cobre com o molho de tomate quente e cozinha tampado por 20 minutos em lume brando.</li></ol></div>
+  </div>
+  <div class="dica"><b>DICA DE QUEM COZINHA:</b> Fecha a almôndega apertando bem: fresta aberta é queijo vazando para o molho.</div>
+  <div class="troca"><b>↺ TROCA INTELIGENTE:</b> A farinha de amêndoas pode ser substituída por 2 c. de sopa de farelo de aveia (soma 2 g de hidratos por porção).</div>
+</section>
+<section class="receita" id="r30">
+  <header><div class="num">30</div>
+    <div class="titulo"><h3>Costelinha de porco desfiada</h3></div></header>
+  <img class="foto" src="imagens/receita-30.jpg" alt="Costelinha de porco desfiada">
+  <div class="meta"><span><b>Preparação</b> 20 min</span><span><b>Total</b> 180 min</span><span><b>Rende</b> 6</span><span><b>Dificuldade</b> fácil</span></div>
+  <div class="nutris">
+    <span><b>445</b>kcal / porção</span><span><b>6 g</b>hidratos de carbono</span>
+    <span><b>34 g</b>proteínas</span><span><b>32 g</b>gorduras boas</span></div>
+  <div class="corpo">
+    <div><h4>Ingredientes</h4><ul class="ing"><li>1,2 kg de costelinha ou copa-lombo de porco</li><li>1 c. de sopa de páprica defumada</li><li>1 c. de chá de cominho, alho em pó, cebola em pó</li><li>1 c. de sopa de vinagre de maçã</li><li>2 c. de sopa de mostarda</li><li>sal, pimenta e 2 c. de sopa de azeite</li></ul></div>
+    <div><h4>Método</h4><ol class="passos"><li>Mistura as especiarias com o sal e a pimenta e esfrega em toda a carne, junto com a mostarda.</li><li>Deixa marinar por no mínimo 30 minutos (ideal: 12 horas no frigorífico).</li><li>Sela a carne em tacho quente com azeite para alourar todos os lados.</li><li>Cobre com papel de alumínio e assa a 150 °C por 2h30, ou cozinha na pressão por 45 minutos. Desfie com dois garfos.</li></ol></div>
+  </div>
+  <div class="dica"><b>DICA DE QUEM COZINHA:</b> Temperatura baixa e tempo longo: é isso que desfia. Lume forte só resseca a superfície.</div>
+  <div class="troca"><b>↺ TROCA INTELIGENTE:</b> Mistura o desfiado com 2 c. de sopa de queijo creme e serve em wrap de alface.</div>
+</section><section class="abre"><img class="capfoto" src="imagens/capitulo-05.jpg" alt="Imagem do capítulo Peixes e frutos do mar"><div class="tag">Capítulo 05</div><h2>Peixes e frutos do mar</h2><div class="filete"></div><p>Do salmão de domingo ao bacalhau de segunda: gordura boa, preparação rápida e sabor de restaurante.</p></section>
+<section class="receita" id="r31">
+  <header><div class="num">31</div>
+    <div class="titulo"><h3>Salmão ao forno com manteiga de limão</h3></div></header>
+  <img class="foto" src="imagens/receita-31.jpg" alt="Salmão ao forno com manteiga de limão">
+  <div class="meta"><span><b>Preparação</b> 8 min</span><span><b>Total</b> 25 min</span><span><b>Rende</b> 2</span><span><b>Dificuldade</b> fácil</span></div>
+  <div class="nutris">
+    <span><b>425</b>kcal / porção</span><span><b>3 g</b>hidratos de carbono</span>
+    <span><b>34 g</b>proteínas</span><span><b>30 g</b>gorduras boas</span></div>
+  <div class="corpo">
+    <div><h4>Ingredientes</h4><ul class="ing"><li>2 postas de salmão (180 g cada)</li><li>2 c. de sopa de manteiga derretida</li><li>suco e raspas de 1/2 limão</li><li>2 dentes de alho picados</li><li>1 c. de sopa de salsa ou endro</li><li>sal e pimenta-do-reino</li></ul></div>
+    <div><h4>Método</h4><ol class="passos"><li>Tempera o salmão com sal e pimenta e acomoda em refratário untado.</li><li>Mistura a manteiga derretida com o alho, o limão, as raspas e a salsa.</li><li>Rega o peixe com a mistura e deixa 10 minutos.</li><li>Assa a 200 °C por 12-15 minutos, até a carne ficar opaca e soltar em lascas.</li></ol></div>
+  </div>
+  <div class="dica"><b>DICA DE QUEM COZINHA:</b> O salmão pronto solta em lascas quando pressionado com o garfo — passar do ponto deixa seco.</div>
+  <div class="troca"><b>↺ TROCA INTELIGENTE:</b> Troca o limão por 1 c. de sopa de mostarda Dijon na manteiga para um perfil mais intenso.</div>
+</section>
+<section class="receita" id="r32">
+  <header><div class="num">32</div>
+    <div class="titulo"><h3>Tilápia empanada na farinha de amêndoas</h3></div></header>
+  <img class="foto" src="imagens/receita-32.jpg" alt="Tilápia empanada na farinha de amêndoas">
+  <div class="meta"><span><b>Preparação</b> 12 min</span><span><b>Total</b> 25 min</span><span><b>Rende</b> 2</span><span><b>Dificuldade</b> fácil</span></div>
+  <div class="nutris">
+    <span><b>390</b>kcal / porção</span><span><b>5 g</b>hidratos de carbono</span>
+    <span><b>34 g</b>proteínas</span><span><b>26 g</b>gorduras boas</span></div>
+  <div class="corpo">
+    <div><h4>Ingredientes</h4><ul class="ing"><li>2 filés de tilápia</li><li>1/2 chávena de farinha de amêndoas</li><li>1 ovo batido</li><li>1/2 chávena de parmesão ralado</li><li>1 c. de chá de páprica</li><li>2 c. de sopa de azeite</li><li>sal, pimenta e limão</li></ul></div>
+    <div><h4>Método</h4><ol class="passos"><li>Tempera os filés com sal, pimenta e limão e seca bem com papel de cozinha.</li><li>Mistura a farinha de amêndoas com o parmesão e a páprica.</li><li>Passa o filé no ovo e depois na mistura seca, apertando para aderir.</li><li>Asse a 200 °C por 15 minutos em assadeira untada, ou frite em 3 c. de sopa de azeite por 4 minutos de cada lado.</li></ol></div>
+  </div>
+  <div class="dica"><b>DICA DE QUEM COZINHA:</b> Secar o filé antes de empanar é o que impede a casca de soltar durante o cozimento.</div>
+  <div class="troca"><b>↺ TROCA INTELIGENTE:</b> Farinha de amêndoas cara? Usa farinha de linhaça dourada com o mesmo parmesão.</div>
+</section>
+<section class="receita" id="r33">
+  <header><div class="num">33</div>
+    <div class="titulo"><h3>Camarão ao alho e óleo</h3></div></header>
+  <img class="foto" src="imagens/receita-33.jpg" alt="Camarão ao alho e óleo">
+  <div class="meta"><span><b>Preparação</b> 8 min</span><span><b>Total</b> 15 min</span><span><b>Rende</b> 2</span><span><b>Dificuldade</b> fácil</span></div>
+  <div class="nutris">
+    <span><b>280</b>kcal / porção</span><span><b>4 g</b>hidratos de carbono</span>
+    <span><b>30 g</b>proteínas</span><span><b>16 g</b>gorduras boas</span></div>
+  <div class="corpo">
+    <div><h4>Ingredientes</h4><ul class="ing"><li>400 g de camarão limpo</li><li>5 dentes de alho laminados</li><li>3 c. de sopa de azeite</li><li>suco de 1/2 limão</li><li>1 c. de chá de pimenta calabresa (opcional)</li><li>salsa, sal e pimenta-do-reino</li></ul></div>
+    <div><h4>Método</h4><ol class="passos"><li>Seca os camarões com papel de cozinha e tempera com sal e pimenta.</li><li>Aquece o azeite em lume médio e aloura o alho laminado sem queimar.</li><li>Aumenta o lume e junta os camarões, mexendo por 2-3 minutos até ficarem rosados.</li><li>Desliga, rega com limão e finaliza com salsa.</li></ol></div>
+  </div>
+  <div class="dica"><b>DICA DE QUEM COZINHA:</b> O camarão cozinha em 2 minutos: passou disso, fica borrachudo. Tira do lume assim que rosar.</div>
+  <div class="troca"><b>↺ TROCA INTELIGENTE:</b> Acrescenta 1/2 chávena de vinho branco e reduz por 1 minuto para uma versão mais sofisticada.</div>
+</section>
+<section class="receita" id="r34">
+  <header><div class="num">34</div>
+    <div class="titulo"><h3>Bacalhau com couve-flor e azeitonas</h3></div></header>
+  <img class="foto" src="imagens/receita-34.jpg" alt="Bacalhau com couve-flor e azeitonas">
+  <div class="meta"><span><b>Preparação</b> 20 min</span><span><b>Total</b> 50 min</span><span><b>Rende</b> 4</span><span><b>Dificuldade</b> fácil</span></div>
+  <div class="nutris">
+    <span><b>340</b>kcal / porção</span><span><b>10 g</b>hidratos de carbono</span>
+    <span><b>30 g</b>proteínas</span><span><b>20 g</b>gorduras boas</span></div>
+  <div class="corpo">
+    <div><h4>Ingredientes</h4><ul class="ing"><li>500 g de bacalhau dessalgado em lascas</li><li>1 couve-flor média em buquês</li><li>1/2 chávena de azeitonas pretas</li><li>1 cebola em rodelas e 4 dentes de alho</li><li>1/2 chávena de azeite</li><li>salsa, pimenta-do-reino e 1 folha de louro</li></ul></div>
+    <div><h4>Método</h4><ol class="passos"><li>Aferventa o bacalhau por 5 minutos, escorra e retira pele e espinhas.</li><li>Cozinha a couve-flor no vapor por 6 minutos, mantendo firme.</li><li>Refoga a cebola e o alho em metade do azeite até alourar bem.</li><li>Monta em refratário com o bacalhau, a couve-flor e as azeitonas, rega com o azeite restante e asse a 190 °C por 20 minutos.</li></ol></div>
+  </div>
+  <div class="dica"><b>DICA DE QUEM COZINHA:</b> Dessalga o bacalhau trocando a água a cada 6 horas, por 24 a 48 horas no frigorífico.</div>
+  <div class="troca"><b>↺ TROCA INTELIGENTE:</b> Sem bacalhau? Usa lascas de peixe branco firme, como pescada ou tilápia, salgadas na hora.</div>
+</section>
+<section class="receita" id="r35">
+  <header><div class="num">35</div>
+    <div class="titulo"><h3>Moqueca de peixe com leite de coco e palmito</h3></div></header>
+  <img class="foto" src="imagens/receita-35.jpg" alt="Moqueca de peixe com leite de coco e palmito">
+  <div class="meta"><span><b>Preparação</b> 20 min</span><span><b>Total</b> 40 min</span><span><b>Rende</b> 4</span><span><b>Dificuldade</b> fácil</span></div>
+  <div class="nutris">
+    <span><b>310</b>kcal / porção</span><span><b>12 g</b>hidratos de carbono</span>
+    <span><b>28 g</b>proteínas</span><span><b>18 g</b>gorduras boas</span></div>
+  <div class="corpo">
+    <div><h4>Ingredientes</h4><ul class="ing"><li>600 g de peixe firme em postas (badejo, pescada ou robalo)</li><li>200 ml de leite de coco sem açúcar</li><li>1 vidro de palmito em rodelas</li><li>2 tomates e 1 pimentão em rodelas</li><li>1 cebola em rodelas, 3 dentes de alho</li><li>2 c. de sopa de azeite de dendê (ou azeite comum)</li><li>coentro, limão, sal e pimenta</li></ul></div>
+    <div><h4>Método</h4><ol class="passos"><li>Tempera o peixe com limão, sal e pimenta e deixa 15 minutos.</li><li>Em tacho largo, refoga cebola e alho, monta camadas de tomate e pimentão.</li><li>Acomoda o peixe por cima, cubre com o leite de coco e cozinha tampado por 15 minutos em lume brando.</li><li>Junta o palmito e o dendê, cozinha mais 5 minutos e finaliza com coentro.</li></ol></div>
+  </div>
+  <div class="dica"><b>DICA DE QUEM COZINHA:</b> Não mexas na moqueca depois de pôr o peixe: balançar o tacho desmancha as postas.</div>
+  <div class="troca"><b>↺ TROCA INTELIGENTE:</b> Sem dendê? Usa azeite comum com 1 c. de chá de páprica defumada para dar cor.</div>
+</section>
+<section class="receita" id="r36">
+  <header><div class="num">36</div>
+    <div class="titulo"><h3>Lula grelhada com limão e ervas</h3></div></header>
+  <img class="foto" src="imagens/receita-36.jpg" alt="Lula grelhada com limão e ervas">
+  <div class="meta"><span><b>Preparação</b> 10 min</span><span><b>Total</b> 15 min</span><span><b>Rende</b> 2</span><span><b>Dificuldade</b> fácil</span></div>
+  <div class="nutris">
+    <span><b>240</b>kcal / porção</span><span><b>5 g</b>hidratos de carbono</span>
+    <span><b>26 g</b>proteínas</span><span><b>13 g</b>gorduras boas</span></div>
+  <div class="corpo">
+    <div><h4>Ingredientes</h4><ul class="ing"><li>500 g de anéis de lula</li><li>suco de 1 limão</li><li>3 c. de sopa de azeite</li><li>2 dentes de alho picados</li><li>1 c. de sopa de salsa e 1 de cebolinho</li><li>pimenta calabresa, sal e pimenta-do-reino</li></ul></div>
+    <div><h4>Método</h4><ol class="passos"><li>Seca muito bem os anéis de lula com papel de cozinha.</li><li>Aquece uma frigideira ou grelha até ficar bem quente, quase fumegando.</li><li>Grelha a lula por 90 segundos de cada lado — nem um segundo a mais.</li><li>Tempera com sal, alho cru, azeite, limão e ervas e serve na hora.</li></ol></div>
+  </div>
+  <div class="dica"><b>DICA DE QUEM COZINHA:</b> A lula tem duas janelas: 90 segundos ou 40 minutos em cozido. Entre elas, fica borracha.</div>
+  <div class="troca"><b>↺ TROCA INTELIGENTE:</b> Sem lula? Usa anéis de polvo pré-cozido, grelhando apenas para alourar.</div>
+</section><section class="abre"><img class="capfoto" src="imagens/capitulo-06.jpg" alt="Imagem do capítulo Jantares em até 30 minutos de bancada"><div class="tag">Capítulo 06</div><h2>Jantares em até 30 minutos de bancada</h2><div class="filete"></div><p>A regra da noite: o jantar fica pronto antes de a série terminar o episódio. Receitas de um tacho, uma assadeira ou uma airfryer.</p></section>
+<section class="receita" id="r37">
+  <header><div class="num">37</div>
+    <div class="titulo"><h3>Pizza de couve-flor com mozzarella e manjericão</h3></div></header>
+  <img class="foto" src="imagens/receita-37.jpg" alt="Pizza de couve-flor com mozzarella e manjericão">
+  <div class="meta"><span><b>Preparação</b> 25 min</span><span><b>Total</b> 50 min</span><span><b>Rende</b> 2</span><span><b>Dificuldade</b> fácil</span></div>
+  <div class="nutris">
+    <span><b>330</b>kcal / porção</span><span><b>12 g</b>hidratos de carbono</span>
+    <span><b>22 g</b>proteínas</span><span><b>22 g</b>gorduras boas</span></div>
+  <div class="corpo">
+    <div><h4>Ingredientes</h4><ul class="ing"><li>1 couve-flor média processada em grãos</li><li>1 ovo</li><li>80 g de mozzarella ralada</li><li>4 c. de sopa de farinha de amêndoas</li><li>1/2 chávena de molho de tomate caseiro</li><li>150 g de mozzarella para cobertura</li><li>orégano, manjericão e sal</li></ul></div>
+    <div><h4>Método</h4><ol class="passos"><li>Cozinha a couve-flor processada no vapor por 5 minutos, deixa amornar e espreme num pano de prato até sair toda a água.</li><li>Mistura a couve-flor seca com o ovo, os 80 g de mozzarella, a farinha de amêndoas e o sal.</li><li>Abre a massa em disco fino sobre papel vegetal untado e assa a 200 °C por 15 minutos.</li><li>Cobre com molho, mozzarella e orégano e volta ao forno por 10-12 minutos. Finaliza com manjericão.</li></ol></div>
+  </div>
+  <div class="dica"><b>DICA DE QUEM COZINHA:</b> Espremer a couve-flor é inegociável: massa úmida não firma e a pizza desmancha ao cortar.</div>
+  <div class="troca"><b>↺ TROCA INTELIGENTE:</b> Congela os discos pré-assados separados por papel vegetal e monta a pizza em 12 minutos.</div>
+</section>
+<section class="receita" id="r38">
+  <header><div class="num">38</div>
+    <div class="titulo"><h3>Beringela à parmegiana (sem empanar)</h3></div></header>
+  <img class="foto" src="imagens/receita-38.jpg" alt="Beringela à parmegiana (sem empanar)">
+  <div class="meta"><span><b>Preparação</b> 20 min</span><span><b>Total</b> 50 min</span><span><b>Rende</b> 4</span><span><b>Dificuldade</b> fácil</span></div>
+  <div class="nutris">
+    <span><b>300</b>kcal / porção</span><span><b>14 g</b>hidratos de carbono</span>
+    <span><b>18 g</b>proteínas</span><span><b>20 g</b>gorduras boas</span></div>
+  <div class="corpo">
+    <div><h4>Ingredientes</h4><ul class="ing"><li>2 beringelas em fatias de 1 cm</li><li>1 lata de tomate pelado</li><li>2 dentes de alho e 1/2 cebola</li><li>200 g de mozzarella ralada</li><li>1/2 chávena de parmesão ralado</li><li>3 c. de sopa de azeite, manjericão, sal e pimenta</li></ul></div>
+    <div><h4>Método</h4><ol class="passos"><li>Salga as fatias de abobrinha, espera 15 minutos, enxágua e seca uma a uma com papel de cozinha.</li><li>Sela as fatias rapidamente em frigideira quente, 1 minuto de cada lado.</li><li>Monta em camadas: molho, abobrinha, presunto, mozzarella — repetindo até acabar.</li><li>Finaliza com parmesão e orégano e assa a 190 °C por 30 minutos. Descansa 10 minutos antes de cortar.</li></ol></div>
+  </div>
+  <div class="dica"><b>DICA DE QUEM COZINHA:</b> O descanso de 10 minutos depois do forno é o que faz a lasanha cortar em pedaços firmes.</div>
+  <div class="troca"><b>↺ TROCA INTELIGENTE:</b> Troca o presunto por peito de peru ou frango desfiado.</div>
+</section>
+<section class="receita" id="r39">
+  <header><div class="num">39</div>
+    <div class="titulo"><h3>Feijoada low carb (sem feijão)</h3></div></header>
+  <img class="foto" src="imagens/receita-39.jpg" alt="Feijoada low carb (sem feijão)">
+  <div class="meta"><span><b>Preparação</b> 30 min</span><span><b>Total</b> 90 min</span><span><b>Rende</b> 6</span><span><b>Dificuldade</b> fácil</span></div>
+  <div class="nutris">
+    <span><b>420</b>kcal / porção</span><span><b>8 g</b>hidratos de carbono</span>
+    <span><b>34 g</b>proteínas</span><span><b>28 g</b>gorduras boas</span></div>
+  <div class="corpo">
+    <div><h4>Ingredientes</h4><ul class="ing"><li>500 g de carnes variadas (costela, paio, linguiça, carne seca)</li><li>1 couve-flor grande processada</li><li>200 g de bacon em cubos</li><li>1 cebola, 4 dentes de alho e 2 folhas de louro</li><li>1 c. de sopa de páprica defumada</li><li>azeite, sal e pimenta</li><li>couve refogada e laranja para acompanhar</li></ul></div>
+    <div><h4>Método</h4><ol class="passos"><li>Dessalga as carnes salgadas por 12 horas, trocando a água.</li><li>Cozinha as carnes em água com louro por 40 minutos (ou 25 na pressão) e corta em pedaços.</li><li>Frita o bacon, refoga a cebola, o alho e a páprica, junta as carnes e 2 chávenas do caldo e cozinha 20 minutos.</li><li>Serve sobre a couve-flor processada refogada na manteiga, com couve e laranja.</li></ol></div>
+  </div>
+  <div class="dica"><b>DICA DE QUEM COZINHA:</b> A couve-flor refogada na gordura do bacon é o que substitui a textura do feijão no prato.</div>
+  <div class="troca"><b>↺ TROCA INTELIGENTE:</b> Versão expressa: usa só paio, linguiça e bacon — pronto em 40 minutos.</div>
+</section>
+<section class="receita" id="r40">
+  <header><div class="num">40</div>
+    <div class="titulo"><h3>Pão de queijo de airfryer</h3></div></header>
+  <img class="foto" src="imagens/receita-40.jpg" alt="Pão de queijo de airfryer">
+  <div class="meta"><span><b>Preparação</b> 10 min</span><span><b>Total</b> 25 min</span><span><b>Rende</b> 12</span><span><b>Dificuldade</b> fácil</span></div>
+  <div class="nutris">
+    <span><b>130</b>kcal / porção</span><span><b>3 g</b>hidratos de carbono</span>
+    <span><b>8 g</b>proteínas</span><span><b>9 g</b>gorduras boas</span></div>
+  <div class="corpo">
+    <div><h4>Ingredientes</h4><ul class="ing"><li>200 g de mozzarella ralada</li><li>1 ovo</li><li>3 c. de sopa de amido de mandioca azedo</li><li>2 c. de sopa de queijo creme</li><li>1/2 c. de chá de fermento em pó</li><li>sal a gosto</li></ul></div>
+    <div><h4>Método</h4><ol class="passos"><li>Derrete a mozzarella no micro-ondas por 40 segundos e mistura até virar massa.</li><li>Junta o queijo creme, o ovo, o amido de mandioca, o fermento e o sal e sova com as mãos untadas.</li><li>Modela 12 bolinhas e acomoda na cesta da airfryer sem encostar uma na outra.</li><li>Asse a 180 °C por 12-15 minutos, até alourar.</li></ol></div>
+  </div>
+  <div class="dica"><b>DICA DE QUEM COZINHA:</b> Amido de mandioca azedo, não doce — é o azedo que dá a casca crocante e o interior elástico.</div>
+  <div class="troca"><b>↺ TROCA INTELIGENTE:</b> Congela as bolinhas cruas e assa direto do congelador, somando 3 minutos.</div>
+</section>
+<section class="receita" id="r41">
+  <header><div class="num">41</div>
+    <div class="titulo"><h3>Abobrinha recheada com atum e queijo creme</h3></div></header>
+  <img class="foto" src="imagens/receita-41.jpg" alt="Abobrinha recheada com atum e queijo creme">
+  <div class="meta"><span><b>Preparação</b> 15 min</span><span><b>Total</b> 35 min</span><span><b>Rende</b> 3</span><span><b>Dificuldade</b> fácil</span></div>
+  <div class="nutris">
+    <span><b>275</b>kcal / porção</span><span><b>8 g</b>hidratos de carbono</span>
+    <span><b>24 g</b>proteínas</span><span><b>17 g</b>gorduras boas</span></div>
+  <div class="corpo">
+    <div><h4>Ingredientes</h4><ul class="ing"><li>3 abobrinhas médias</li><li>2 latas de atum escorridas</li><li>4 c. de sopa de queijo creme</li><li>1/4 de cebola picada</li><li>1 tomate sem sementes picado</li><li>1/2 chávena de mozzarella ralada</li><li>salsa, azeite, sal e pimenta</li></ul></div>
+    <div><h4>Método</h4><ol class="passos"><li>Corta as abobrinhas ao meio e retira o miolo com uma colher, deixando 0,5 cm de parede.</li><li>Mistura o atum, o queijo creme, a cebola, o tomate, a salsa, sal e pimenta.</li><li>Recheia as canoas, rega com um fio de azeite e polvilha a mozzarella.</li><li>Asse a 190 °C por 22-25 minutos.</li></ol></div>
+  </div>
+  <div class="dica"><b>DICA DE QUEM COZINHA:</b> Tira as sementes do tomate: é de lá que vem a água que deixa o recheio ralo.</div>
+  <div class="troca"><b>↺ TROCA INTELIGENTE:</b> Sem atum? Usa frango desfiado ou carne picada já cozida.</div>
+</section>
+<section class="receita" id="r42">
+  <header><div class="num">42</div>
+    <div class="titulo"><h3>Sushi low carb (rolinho de pepino)</h3></div></header>
+  <img class="foto" src="imagens/receita-42.jpg" alt="Sushi low carb (rolinho de pepino)">
+  <div class="meta"><span><b>Preparação</b> 20 min</span><span><b>Total</b> 25 min</span><span><b>Rende</b> 2</span><span><b>Dificuldade</b> fácil</span></div>
+  <div class="nutris">
+    <span><b>235</b>kcal / porção</span><span><b>7 g</b>hidratos de carbono</span>
+    <span><b>22 g</b>proteínas</span><span><b>13 g</b>gorduras boas</span></div>
+  <div class="corpo">
+    <div><h4>Ingredientes</h4><ul class="ing"><li>1 pepino japonês grande</li><li>200 g de salmão cru ou atum em tiras</li><li>3 c. de sopa de queijo creme</li><li>1/2 abacate em tiras</li><li>1 c. de sopa de gergelim</li><li>molho de soja, wasabi e cebolinho</li></ul></div>
+    <div><h4>Método</h4><ol class="passos"><li>Fatia o pepino em lâminas finas e longas com descascador ou mandolina.</li><li>Seca as lâminas com papel de cozinha e tempera com uma pitada de sal.</li><li>Espalha o queijo creme, coloca o peixe e o abacate e enrola como um charuto.</li><li>Finaliza com gergelim e serve com molho de soja e wasabi.</li></ol></div>
+  </div>
+  <div class="dica"><b>DICA DE QUEM COZINHA:</b> Salga as lâminas de pepino e seca: pepino com água solta no rolinho e desmancha.</div>
+  <div class="troca"><b>↺ TROCA INTELIGENTE:</b> Versão cozida: troca o peixe cru por camarão ou kani desfiado.</div>
+</section>
+<section class="receita" id="r43">
+  <header><div class="num">43</div>
+    <div class="titulo"><h3>Charuto de repolho com carne picada</h3></div></header>
+  <img class="foto" src="imagens/receita-43.jpg" alt="Charuto de repolho com carne picada">
+  <div class="meta"><span><b>Preparação</b> 25 min</span><span><b>Total</b> 60 min</span><span><b>Rende</b> 4</span><span><b>Dificuldade</b> fácil</span></div>
+  <div class="nutris">
+    <span><b>320</b>kcal / porção</span><span><b>12 g</b>hidratos de carbono</span>
+    <span><b>26 g</b>proteínas</span><span><b>19 g</b>gorduras boas</span></div>
+  <div class="corpo">
+    <div><h4>Ingredientes</h4><ul class="ing"><li>1 repolho médio</li><li>500 g de carne picada</li><li>1/2 chávena de arroz de couve-flor cru</li><li>1 cebola e 3 dentes de alho</li><li>1 ovo</li><li>1 lata de tomate pelado</li><li>hortelã, cominho, sal e pimenta</li></ul></div>
+    <div><h4>Método</h4><ol class="passos"><li>Cozinha o repolho inteiro em água fervente por 5 minutos e separa as folhas com cuidado.</li><li>Mistura a carne com o arroz de couve-flor, a cebola picada, o alho, o ovo e os temperos.</li><li>Coloca 1 c. de sopa de recheio em cada folha, dobra as laterais e enrola firme.</li><li>Acomoda no tacho, cobre com o tomate pelado batido e cozinha tampado por 35 minutos em lume brando.</li></ol></div>
+  </div>
+  <div class="dica"><b>DICA DE QUEM COZINHA:</b> Retira o talo grosso da folha de repolho com uma faca antes de enrolar: o charuto fecha sem rasgar.</div>
+  <div class="troca"><b>↺ TROCA INTELIGENTE:</b> Congela os charutos crus separados por papel e cozinha direto do congelador por 50 minutos.</div>
+</section><section class="abre"><img class="capfoto" src="imagens/capitulo-07.jpg" alt="Imagem do capítulo Sobremesas sem açúcar"><div class="tag">Capítulo 07</div><h2>Sobremesas sem açúcar</h2><div class="filete"></div><p>Doce de verdade não precisa de açúcar refinado: cacau, coco, castanhas e adoçantes que não enganam o paladar. A regra é simples — o doce entra em quantidade certa, a proteína e a gordura boa seguram o apetite.</p></section>
+<section class="receita" id="r44">
+  <header><div class="num">44</div>
+    <div class="titulo"><h3>Mousse de chocolate com abacate</h3></div></header>
+  <img class="foto" src="imagens/receita-44.jpg" alt="Mousse de chocolate com abacate">
+  <div class="meta"><span><b>Preparação</b> 10 min</span><span><b>Total</b> 40 min</span><span><b>Rende</b> 4</span><span><b>Dificuldade</b> fácil</span></div>
+  <div class="nutris">
+    <span><b>265</b>kcal / porção</span><span><b>12 g</b>hidratos de carbono</span>
+    <span><b>6 g</b>proteínas</span><span><b>22 g</b>gorduras boas</span></div>
+  <div class="corpo">
+    <div><h4>Ingredientes</h4><ul class="ing"><li>1 abacate grande maduro</li><li>3 c. de sopa de cacau em pó 100%</li><li>200 ml de nata fresca</li><li>3 c. de sopa de adoçante em pó (eritritol ou xilitol)</li><li>1 c. de chá de essência de baunilha</li><li>1 pitada de sal</li></ul></div>
+    <div><h4>Método</h4><ol class="passos"><li>Bate o abacate com o cacau, o adoçante, a baunilha e o sal até ficar completamente liso, sem grumos.</li><li>Bate a nata em ponto de chantilly firme.</li><li>Incorpora o chantilly à mistura de chocolate em três etapas, mexendo de baixo para cima.</li><li>Leva ao frigorífico por no mínimo 30 minutos antes de servir.</li></ol></div>
+  </div>
+  <div class="dica"><b>DICA DE QUEM COZINHA:</b> O abacate precisa de estar bem maduro — o verde firme deixa gosto vegetal e grumos.</div>
+  <div class="troca"><b>↺ TROCA INTELIGENTE:</b> Sem abacate? Usa 1 chávena de nata batida com o cacau e o adoçante, sem a fruta.</div>
+</section>
+<section class="receita" id="r45">
+  <header><div class="num">45</div>
+    <div class="titulo"><h3>Pudim de coco com eritritol</h3></div></header>
+  <img class="foto" src="imagens/receita-45.jpg" alt="Pudim de coco com eritritol">
+  <div class="meta"><span><b>Preparação</b> 12 min</span><span><b>Total</b> 55 min</span><span><b>Rende</b> 8</span><span><b>Dificuldade</b> fácil</span></div>
+  <div class="nutris">
+    <span><b>190</b>kcal / porção</span><span><b>6 g</b>hidratos de carbono</span>
+    <span><b>8 g</b>proteínas</span><span><b>15 g</b>gorduras boas</span></div>
+  <div class="corpo">
+    <div><h4>Ingredientes</h4><ul class="ing"><li>4 ovos</li><li>200 ml de leite de coco sem açúcar</li><li>100 ml de nata</li><li>4 c. de sopa de eritritol</li><li>1/2 chávena de coco ralado sem açúcar</li><li>1 c. de chá de essência de baunilha</li><li>1 pitada de sal</li></ul></div>
+    <div><h4>Método</h4><ol class="passos"><li>Bate todos os ingredientes no liquidificador por 1 minuto.</li><li>Despeja em forma untada com óleo de coco.</li><li>Cobre com papel de alumínio e assa em banho-maria a 180 °C por 45-50 minutos.</li><li>Deixa esfriar completamente e leva ao frigorífico por 4 horas antes de desenformar.</li></ol></div>
+  </div>
+  <div class="dica"><b>DICA DE QUEM COZINHA:</b> O banho-maria é obrigatório: sem ele, o pudim forma bolhas e fica com textura de ovo mexido.</div>
+  <div class="troca"><b>↺ TROCA INTELIGENTE:</b> Caramelize o fundo da forma com 2 c. de sopa de xilitol derretido para imitar o caramelo tradicional.</div>
+</section>
+<section class="receita" id="r46">
+  <header><div class="num">46</div>
+    <div class="titulo"><h3>Brigadeiro low carb de colher</h3></div></header>
+  <img class="foto" src="imagens/receita-46.jpg" alt="Brigadeiro low carb de colher">
+  <div class="meta"><span><b>Preparação</b> 8 min</span><span><b>Total</b> 25 min</span><span><b>Rende</b> 6</span><span><b>Dificuldade</b> fácil</span></div>
+  <div class="nutris">
+    <span><b>145</b>kcal / porção</span><span><b>6 g</b>hidratos de carbono</span>
+    <span><b>4 g</b>proteínas</span><span><b>12 g</b>gorduras boas</span></div>
+  <div class="corpo">
+    <div><h4>Ingredientes</h4><ul class="ing"><li>1 caixinha de nata</li><li>3 c. de sopa de cacau em pó 100%</li><li>3 c. de sopa de eritritol ou xilitol</li><li>1 c. de sopa de manteiga</li><li>1 pitada de sal</li><li>chocolate 70% picado para finalizar (opcional)</li></ul></div>
+    <div><h4>Método</h4><ol class="passos"><li>Mistura a nata, o cacau, o adoçante e a manteiga em tacho de fundo grosso.</li><li>Cozinha em lume brando, mexendo sem parar, por 12-15 minutos.</li><li>O ponto é quando a mistura desgruda do fundo do tacho ao inclinar.</li><li>Desliga, junta o sal, transfere para um pote e deixa esfriar.</li></ol></div>
+  </div>
+  <div class="dica"><b>DICA DE QUEM COZINHA:</b> Adoçantes com eritritol não dão o mesmo brilho do açúcar: acrescenta 1 c. de chá de óleo de coco no final.</div>
+  <div class="troca"><b>↺ TROCA INTELIGENTE:</b> Para enrolar, leva ao frigorífico por 4 horas e passa em cacau em pó ou castanha triturada.</div>
+</section>
+<section class="receita" id="r47">
+  <header><div class="num">47</div>
+    <div class="titulo"><h3>Cheesecake low carb de frutas vermelhas</h3></div></header>
+  <img class="foto" src="imagens/receita-47.jpg" alt="Cheesecake low carb de frutas vermelhas">
+  <div class="meta"><span><b>Preparação</b> 25 min</span><span><b>Total</b> 70 min</span><span><b>Rende</b> 10</span><span><b>Dificuldade</b> fácil</span></div>
+  <div class="nutris">
+    <span><b>285</b>kcal / porção</span><span><b>8 g</b>hidratos de carbono</span>
+    <span><b>9 g</b>proteínas</span><span><b>25 g</b>gorduras boas</span></div>
+  <div class="corpo">
+    <div><h4>Ingredientes</h4><ul class="ing"><li>1 1/2 chávenas de farinha de amêndoas</li><li>3 c. de sopa de manteiga derretida</li><li>500 g de queijo creme à temperatura ambiente</li><li>3 ovos</li><li>1/2 chávena de eritritol</li><li>200 g de iogurte natural</li><li>1 chávena de frutas vermelhas congeladas</li><li>suco de 1/2 limão e essência de baunilha</li></ul></div>
+    <div><h4>Método</h4><ol class="passos"><li>Mistura a farinha de amêndoas com a manteiga e forre o fundo de uma forma de aro removível. Asse 8 minutos a 180 °C.</li><li>Bate o queijo creme com o eritritol até ficar liso, junta os ovos um a um, depois o iogurte, o limão e a baunilha.</li><li>Despeja sobre a base e assa em banho-maria a 160 °C por 50 minutos, até as bordas firmarem e o centro tremer levemente.</li><li>Desliga o forno e deixa o cheesecake esfriar lá dentro por 1 hora. Cobre com as frutas aquecidas com 1 c. de adoçante.</li></ol></div>
+  </div>
+  <div class="dica"><b>DICA DE QUEM COZINHA:</b> Esfriar dentro do forno desligado evita a rachadura no centro — choque térmico é o vilão.</div>
+  <div class="troca"><b>↺ TROCA INTELIGENTE:</b> Sem forma de aro? Usa forma comum forrada com papel vegetal cruzado para puxar o cheesecake.</div>
+</section>
+<section class="receita" id="r48">
+  <header><div class="num">48</div>
+    <div class="titulo"><h3>Biscoito low carb de castanhas e chocolate</h3></div></header>
+  <img class="foto" src="imagens/receita-48.jpg" alt="Biscoito low carb de castanhas e chocolate">
+  <div class="meta"><span><b>Preparação</b> 12 min</span><span><b>Total</b> 30 min</span><span><b>Rende</b> 12</span><span><b>Dificuldade</b> fácil</span></div>
+  <div class="nutris">
+    <span><b>130</b>kcal / porção</span><span><b>4 g</b>hidratos de carbono</span>
+    <span><b>4 g</b>proteínas</span><span><b>11 g</b>gorduras boas</span></div>
+  <div class="corpo">
+    <div><h4>Ingredientes</h4><ul class="ing"><li>1 chávena de farinha de amêndoas</li><li>1 ovo</li><li>2 c. de sopa de manteiga derretida</li><li>2 c. de sopa de eritritol</li><li>1/2 c. de chá de fermento em pó</li><li>1/2 chávena de chocolate 70% picado</li><li>1 pitada de sal e baunilha</li></ul></div>
+    <div><h4>Método</h4><ol class="passos"><li>Mistura a farinha, o eritritol, o fermento e o sal.</li><li>Junta o ovo, a manteiga e a baunilha e mistura até formar uma massa úmida.</li><li>Incorpora o chocolate picado e modela 12 bolinhas achatadas em assadeira forrada.</li><li>Asse a 170 °C por 12-14 minutos, até as bordas alourarem.</li></ol></div>
+  </div>
+  <div class="dica"><b>DICA DE QUEM COZINHA:</b> Saem moles do forno e endurecem ao esfriar — não deixes mais tempo achando que estão crus.</div>
+  <div class="troca"><b>↺ TROCA INTELIGENTE:</b> Guarda em pote fechado por até 5 dias ou congela a massa modelada por 2 meses.</div>
+</section>
+<section class="receita" id="r49">
+  <header><div class="num">49</div>
+    <div class="titulo"><h3>Trufas de chocolate com óleo de coco</h3></div></header>
+  <img class="foto" src="imagens/receita-49.jpg" alt="Trufas de chocolate com óleo de coco">
+  <div class="meta"><span><b>Preparação</b> 10 min</span><span><b>Total</b> 40 min</span><span><b>Rende</b> 12</span><span><b>Dificuldade</b> fácil</span></div>
+  <div class="nutris">
+    <span><b>110</b>kcal / porção</span><span><b>4 g</b>hidratos de carbono</span>
+    <span><b>2 g</b>proteínas</span><span><b>10 g</b>gorduras boas</span></div>
+  <div class="corpo">
+    <div><h4>Ingredientes</h4><ul class="ing"><li>100 g de chocolate 85% picado</li><li>3 c. de sopa de óleo de coco</li><li>2 c. de sopa de nata</li><li>1 c. de sopa de eritritol em pó</li><li>2 c. de sopa de cacau em pó para enrolar</li><li>1 pitada de sal e gotas de baunilha</li></ul></div>
+    <div><h4>Método</h4><ol class="passos"><li>Derrete o chocolate com o óleo de coco em banho-maria ou no micro-ondas em pulsos de 20 segundos.</li><li>Junta a nata, o eritritol, o sal e a baunilha e mistura até ficar brilhante.</li><li>Leva ao frigorífico por 30 minutos, até firmar o suficiente para modelar.</li><li>Modela bolinhas com as mãos e passa no cacau em pó.</li></ol></div>
+  </div>
+  <div class="dica"><b>DICA DE QUEM COZINHA:</b> Derrete o chocolate em pulsos curtos, mexendo a cada 20 segundos: em lume direto ele queima e fica arenoso.</div>
+  <div class="troca"><b>↺ TROCA INTELIGENTE:</b> Guarda no frigorífico — em temperatura ambiente o óleo de coco derrete e a trufa perde a forma.</div>
+</section>
+<section class="receita" id="r50">
+  <header><div class="num">50</div>
+    <div class="titulo"><h3>Paçoca low carb de amendoim</h3></div></header>
+  <img class="foto" src="imagens/receita-50.jpg" alt="Paçoca low carb de amendoim">
+  <div class="meta"><span><b>Preparação</b> 8 min</span><span><b>Total</b> 20 min</span><span><b>Rende</b> 12</span><span><b>Dificuldade</b> fácil</span></div>
+  <div class="nutris">
+    <span><b>115</b>kcal / porção</span><span><b>4 g</b>hidratos de carbono</span>
+    <span><b>5 g</b>proteínas</span><span><b>10 g</b>gorduras boas</span></div>
+  <div class="corpo">
+    <div><h4>Ingredientes</h4><ul class="ing"><li>1 1/2 chávenas de amendoim torrado sem pele e sem sal</li><li>2 c. de sopa de farinha de amêndoas</li><li>2 c. de sopa de eritritol em pó</li><li>1 pitada de sal</li><li>1 c. de chá de óleo de coco (opcional)</li></ul></div>
+    <div><h4>Método</h4><ol class="passos"><li>Processa o amendoim em pulsos até virar uma farofa úmida — cuidado para não virar pasta.</li><li>Junta a farinha de amêndoas, o eritritol e o sal e pulsa mais 3 vezes.</li><li>Se estiver muito seco, acrescenta o óleo de coco e mistura.</li><li>Aperta a mistura em forminhas ou num pote forrado, corta em quadrados e deixa firmar por 15 minutos.</li></ol></div>
+  </div>
+  <div class="dica"><b>DICA DE QUEM COZINHA:</b> Processa em pulsos curtos e pára antes: amendoim processado demais vira manteiga e a paçoca não firma.</div>
+  <div class="troca"><b>↺ TROCA INTELIGENTE:</b> Guarda em pote fechado por até 10 dias em local fresco.</div>
+</section>
+<section class="frente">
+  <h2>Bónus 1 — Menu de 7 dias (com números das receitas)</h2><div class="filete"></div>
+  <p>Um plano realista de primeira semana: pequeno-almoço reforçado, almoço que vira jantar e doce no lugar certo. Os números referem-se às receitas deste livro.</p>
+  <table>
+    <tr><th>Dia</th><th>Pequeno-almoço</th><th>Almoço</th><th>Lanche</th><th>Jantar</th></tr>
+    <tr><td class="dia">Seg</td><td>01 · Omelete de forno</td><td>10 + 23 · arroz de couve-flor com frango com mostarda</td><td>09 · iogurte com granola</td><td>37 · pizza de couve-flor</td></tr>
+    <tr><td class="dia">Ter</td><td>05 · crepe de tapioca</td><td>17 · lasanha de beringela</td><td>06 · pão de queijo</td><td>31 · salmão + 44 · mousse</td></tr>
+    <tr><td class="dia">Qua</td><td>02 · pão de micro-ondas</td><td>11 · macarrão de abobrinha</td><td>45 · pudim de coco</td><td>35 · moqueca</td></tr>
+    <tr><td class="dia">Qui</td><td>07 · wrap de couve</td><td>13 · salada completa de frango</td><td>08 · ovos com abacate</td><td>26 · filé ao molho de cogumelos</td></tr>
+    <tr><td class="dia">Sex</td><td>03 · panqueca de banana</td><td>16 · escondidinho</td><td>09 · iogurte com granola</td><td>33 · camarão ao alho e óleo</td></tr>
+    <tr><td class="dia">Sáb</td><td>04 · muffins salgados</td><td>18 · beringela recheada</td><td>46 · brigadeiro</td><td>42 · sushi low carb</td></tr>
+    <tr><td class="dia">Dom</td><td>06 · pão de queijo</td><td>30 · costelinha desfiada</td><td>47 · cheesecake</td><td>19 · caldo verde + 28 · bife acebolado</td></tr>
+  </table>
+  <p class="legal">As porções devem ser ajustadas ao teu gasto calórico. Este menu é sugestão educativa, não prescrição.</p>
+</section>
+
+<section class="frente">
+  <h2>Bónus 2 — Lista de compras da primeira semana</h2><div class="filete"></div>
+  <p>Imprime e leva ao supermercado. Cobre os menus de segunda a domingo, para 2 pessoas:</p>
+  <div class="lista2"><ul class="check">
+    <li>2 dúzias de ovos</li><li>1 kg de peito de frango + 8 sobrecoxas</li>
+    <li>1 kg de carne picada + 500 g de filé (alcatra/mignon)</li><li>600 g de salmão ou peixe firme + 400 g de camarão</li>
+    <li>2 latas de atum</li>
+    <li>500 g de mozzarella + 200 g de parmesão + queijo creme</li>
+    <li>1 nata fresca (500 ml) + 1 caixinha de nata</li><li>2 vidros de leite de coco sem açúcar</li>
+    <li>2 couve-flores grandes + 6 abobrinhas + 3 beringelas</li><li>1 repolho, 2 alfaces, couve portuguesa, espinafre</li>
+    <li>Tomates maduros + 2 latas de tomate pelado</li>
+    <li>Abacate, bananas maduras, morangos, limões</li>
+    <li>Cebola, alho, gengibre, salsa, manjericão, alecrim</li><li>Azeitonas, palmito, castanhas e amendoim</li>
+    <li>Farinha de amêndoas, coco ralado sem açúcar, chia</li>
+    <li>Eritritol/xilitol, cacau 100%, chocolate 85%</li>
+    <li>Azeite, manteiga, óleo de coco</li>
+    <li>Molho de soja com menos sódio, mostarda, páprica defumada</li>
+  </ul></div>
+  <div class="quadro"><b>Regra da feira:</b> anda primeiro no corredor do hortifrúti e do açougue; os industrializados ficam por último e só entram se o rótulo tiver menos de 5 g de hidratos de carbono por porção.</div>
+</section>
+
+<section class="frente">
+  <h2>Antes de fechar a cozinha</h2><div class="filete"></div>
+  <p>Agora tens 50 receitas testadas na lógica do dia a dia: ingredientes da mercearia do bairro, um tacho só e sobra planejada. O que separa este PDF de uma vida mais leve é uma decisão pequena — <b>a próxima refeição</b>.</p>
+  <p>Escolhe UMA receita desta noite, cozina-a e conta para alguém. Comida boa contada é comida repetida.</p>
+  <div class="quadro"><b>PRÓXIMOS PASSOS DA SÉRIE COZINHA PRÁTICA:</b> Volume 2 — <i>Refeições Low Carb da Semana</i> (congelamento por lote) · Volume 3 — <i>Doces de Festa sem Açúcar</i>. Quem compra este ebook tem desconto de lançamento: usa o código <b>LOWCARB10</b> na página oficial.</div>
+  <p>Fez uma receita? Marque <b>#50LowCarb</b> — as melhores fotos entram na próxima edição com crédito.</p>
+</section>
+
+<section class="contra"><div class="in">
+  <h2>Chega de começar a dieta na segunda-feira.</h2>
+  <p>Este livro reúne as 50 receitas que mantêm uma família inteira no low carb sem cozinhar duas vezes: pequeno-almoço que segura a manhã, almoço que vira jantar, sopa para a noite fria e doce que não pede desculpa.</p>
+  <ul>
+    <li><b>50 receitas completas</b> com tempo, rendimento e macros estimados por porção;</li>
+    <li><b>Dica de quem cozinha</b> em cada receita — o erro que estraga o prato e como evitar;</li>
+    <li><b>Troca inteligente</b> para adaptar sem sair da dieta;</li>
+    <li><b>Menu de 7 dias</b> + lista de compras pronta para imprimir;</li>
+    <li><b>Tabela de substituições</b> de farinha, açúcar, arroz e macarrão.</li>
+  </ul>
+  <p>Ingredientes da mercearia do bairro. Tempo de quem trabalha. Sabor de quem não está “de regime”.</p>
+  <div class="marca">COZINHA PRÁTICA</div>
+</div></section></body></html>
