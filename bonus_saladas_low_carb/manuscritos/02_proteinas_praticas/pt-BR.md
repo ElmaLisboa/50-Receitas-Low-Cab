@@ -123,7 +123,7 @@ As receitas rendem duas porções, salvo indicação contrária. Para facilitar 
 
 ---
 
-## 5. Mini frittatas de espinafre e queijo
+## 5. Mini frittatas de espinafre e queijo — vegetarianas
 
 **Rendimento:** 2 porções (6 unidades, 3 por pessoa)  
 **Tempo de preparo:** 10 minutos  
@@ -132,7 +132,7 @@ As receitas rendem duas porções, salvo indicação contrária. Para facilitar 
 ### Ingredientes
 - 6 ovos
 - 60 g de espinafre fresco, picado
-- 50 g de muçarela ralada
+- 50 g de muçarela ralada, feita com coalho microbiano ou vegetal
 - 15 ml de creme de leite sem açúcar
 - 5 ml de azeite de oliva, para untar
 - 1 g de sal
@@ -198,7 +198,7 @@ As receitas rendem duas porções, salvo indicação contrária. Para facilitar 
 3. Divida em oito porções e modele as almôndegas com as mãos limpas. Disponha-as na assadeira, deixando espaço entre elas.
 4. Asse por 18 a 22 minutos, virando na metade do tempo, até dourarem e atingirem 71 °C no centro.
 
-**Sugestão de uso:** sirva com vegetais assados, abobrinha em tiras ou folhas. Para um molho simples, acompanhe com uma das opções do Caderno de Molhos, sem acrescentar açúcar.  
+**Sugestão de uso:** sirva com vegetais assados, abobrinha em tiras ou folhas.
 **Conservação:** refrigere em recipiente fechado por até 3 dias.
 
 ---
@@ -229,14 +229,14 @@ As receitas rendem duas porções, salvo indicação contrária. Para facilitar 
 
 ---
 
-## 9. Queijo coalho grelhado com orégano
+## 9. Queijo coalho grelhado com orégano — vegetariano
 
 **Rendimento:** 2 porções  
 **Tempo de preparo:** 5 minutos  
 **Tempo de cozimento:** 6 a 8 minutos
 
 ### Ingredientes
-- 200 g de queijo coalho
+- 200 g de queijo coalho feito com coagulante microbiano ou vegetal
 - 1 g de orégano seco
 - 5 ml de azeite de oliva, se necessário para untar a grelha
 - 1 g de raspas de limão, opcional
@@ -253,7 +253,7 @@ As receitas rendem duas porções, salvo indicação contrária. Para facilitar 
 
 ---
 
-## 10. Portobello recheado com ricota e espinafre
+## 10. Portobello recheado com ricota e espinafre — vegetariano
 
 **Rendimento:** 2 porções  
 **Tempo de preparo:** 15 minutos  
@@ -261,9 +261,9 @@ As receitas rendem duas porções, salvo indicação contrária. Para facilitar 
 
 ### Ingredientes
 - 2 cogumelos portobello grandes, cerca de 250 g no total
-- 100 g de ricota amassada
+- 100 g de ricota amassada, feita com coagulante não animal
 - 40 g de espinafre fresco picado
-- 15 g de queijo parmesão ralado
+- 15 g de queijo tipo parmesão vegetariano ralado, feito com coagulante microbiano ou vegetal
 - 2 g de alho picado
 - 5 ml de azeite de oliva
 - 1 g de sal

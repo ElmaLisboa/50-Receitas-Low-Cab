@@ -196,6 +196,34 @@ for _locale, _word in RECIPE_WORDS.items():
 
 SCRIPT_LOCALES = {"hi-IN", "ja-JP", "zh-TW", "zh-CN"}
 CJK_LOCALES = {"ja-JP", "zh-TW", "zh-CN"}
+BONUS_RECIPE_COUNTS = {1: 15, 2: 10}
+BONUS_LABEL_OVERRIDES = {
+    2: {
+        "pt-BR": {
+            "recipes_word": "PREPARAÇÕES",
+            "intro_title": "Sobre este material",
+            "before": "Segurança no preparo e na conservação",
+            "contents_title": "Preparações deste material",
+            "contents_note": "Os números à direita indicam a página da preparação no PDF.",
+            "pairing": "Sugestão de uso:",
+            "cook_time": "Tempo de cozimento:",
+        },
+    },
+}
+
+
+def locale_labels(locale: str, bonus_number: int = 1) -> Dict[str, str]:
+    if bonus_number not in BONUS_RECIPE_COUNTS:
+        raise ValueError(f"Número de bônus não suportado: {bonus_number}")
+    labels = LOCALES[locale].copy()
+    if bonus_number == 1:
+        return labels
+    overrides = BONUS_LABEL_OVERRIDES.get(bonus_number, {})
+    if locale not in overrides:
+        raise ValueError(f"Rótulos do Bônus {bonus_number} ainda não configurados para {locale}.")
+    labels["bonus"] = labels["bonus"].replace("1", str(bonus_number))
+    labels.update(overrides[locale])
+    return labels
 
 
 @dataclass
@@ -208,6 +236,7 @@ class Recipe:
     steps: List[str]
     pairing: str
     storage: str
+    cook_time_text: str = ""
 
 
 @dataclass
@@ -258,11 +287,11 @@ def _read_label(line: str, label: str) -> Optional[str]:
     return None
 
 
-def parse_manuscript(path: Path) -> Manuscript:
+def parse_manuscript(path: Path, bonus_number: int = 1) -> Manuscript:
     locale = path.stem
     if locale not in LOCALES:
         raise ValueError(f"Locale não reconhecido no nome do arquivo: {locale}")
-    labels = LOCALES[locale]
+    labels = locale_labels(locale, bonus_number)
     lines = path.read_text(encoding="utf-8").splitlines()
     title = ""
     subtitle = ""
@@ -300,6 +329,7 @@ def parse_manuscript(path: Path) -> Manuscript:
     yield_label = labels["yield"]
     time_label = labels["time"]
     pairing_label = labels["pairing"]
+    cook_time_label = labels.get("cook_time")
     storage_label = labels["storage"]
     storage_marker = f"**{storage_label}**"
     recipe_headers = [i for i, line in enumerate(lines) if re.match(r"## \d+\.", line)]
@@ -313,6 +343,7 @@ def parse_manuscript(path: Path) -> Manuscript:
         number, recipe_title = int(match.group(1)), match.group(2).strip()
         yield_text = ""
         time_text = ""
+        cook_time_text = ""
         ingredients: List[str] = []
         steps: List[str] = []
         pairing = ""
@@ -336,6 +367,11 @@ def parse_manuscript(path: Path) -> Manuscript:
             if value is not None:
                 time_text = value
                 continue
+            if cook_time_label:
+                value = _read_label(line, cook_time_label)
+                if value is not None:
+                    cook_time_text = value
+                    continue
             value = _read_label(line, pairing_label)
             if value is not None:
                 if storage_marker in value:
@@ -354,11 +390,17 @@ def parse_manuscript(path: Path) -> Manuscript:
                 steps.append(re.sub(r"^\d+\.\s*", "", line).strip())
         if not all((yield_text, time_text, ingredients, steps, pairing, storage)):
             raise ValueError(f"Receita {number} incompleta em {path}: {recipe_title}")
+        if bonus_number == 2 and not cook_time_text:
+            raise ValueError(f"Tempo de cozimento ausente na receita {number} em {path}.")
         recipes.append(Recipe(number, recipe_title, yield_text, time_text,
-                              ingredients, steps, pairing, storage))
+                              ingredients, steps, pairing, storage, cook_time_text))
 
-    if len(recipes) != 15:
-        raise ValueError(f"Esperadas 15 receitas em {path}; encontradas {len(recipes)}.")
+    expected_count = BONUS_RECIPE_COUNTS[bonus_number]
+    if len(recipes) != expected_count:
+        raise ValueError(
+            f"Esperadas {expected_count} receitas no Bônus {bonus_number} em {path}; "
+            f"encontradas {len(recipes)}."
+        )
     return Manuscript(locale, title, subtitle, intro, notes, recipes)
 
 
@@ -494,15 +536,32 @@ def prepare_crop(source: Path, destination: Path, size: tuple[int, int], quality
         image.save(destination, "JPEG", quality=quality, optimize=True, progressive=True)
 
 
-def draw_cover(c, cover_path: Path, manuscript: Manuscript, labels: Dict[str, str],
-               bonus_label: str, edition_label: str, fonts: FontSet, temp_dir: Path) -> None:
-    crop = temp_dir / "cover_a4.jpg"
-    prepare_crop(cover_path, crop, (1240, 1754), 92)
-    c.drawImage(str(crop), 0, 0, width=PAGE_W, height=PAGE_H)
+def draw_cover(c, cover_path: Optional[Path], manuscript: Manuscript,
+               labels: Dict[str, str], bonus_label: str, edition_label: str,
+               fonts: FontSet, temp_dir: Path) -> None:
+    if cover_path is not None:
+        crop = temp_dir / "cover_a4.jpg"
+        prepare_crop(cover_path, crop, (1240, 1754), 92)
+        c.drawImage(str(crop), 0, 0, width=PAGE_W, height=PAGE_H)
+    else:
+        # A restrained premium vector cover lets the review PDF render even
+        # when a dedicated photographic cover has not yet been supplied.
+        c.setFillColor(DARK)
+        c.rect(0, 0, PAGE_W, PAGE_H, fill=1, stroke=0)
+        c.setFillColor(HexColor("#2D4B3E"))
+        c.circle(PAGE_W - 22, 92, 150, fill=1, stroke=0)
+        c.setStrokeColor(GOLD)
+        c.setLineWidth(0.9)
+        c.circle(PAGE_W - 22, 92, 132, fill=0, stroke=1)
+        c.setStrokeColor(HexColor("#496556"))
+        c.setLineWidth(0.6)
+        c.circle(PAGE_W - 22, 92, 112, fill=0, stroke=1)
+        c.setFillColor(GOLD)
+        c.rect(0, PAGE_H - 6, PAGE_W, 6, fill=1, stroke=0)
 
     ivory = HexColor("#F5EBDD")
     antique_gold = HexColor("#D1AE73")
-    if manuscript.locale == "pt-BR":
+    if manuscript.locale == "pt-BR" and bonus_label == LOCALES["pt-BR"]["bonus"]:
         c.setFillColor(antique_gold)
         draw_string(c, 52, PAGE_H - 62, "BÔNUS 1  ·  EDIÇÃO EXCLUSIVA",
                     fonts.bold, 8, fonts)
@@ -543,7 +602,7 @@ def draw_cover(c, cover_path: Path, manuscript: Manuscript, labels: Dict[str, st
 
     c.setFillColor(antique_gold)
     draw_string(c, 53, title_bottom - 21,
-                f"15 {labels['recipes_word']}", fonts.bold, 7.8, fonts)
+                f"{len(manuscript.recipes)} {labels['recipes_word']}", fonts.bold, 7.8, fonts)
     c.setFillColor(ivory)
     draw_string(c, 53, title_bottom - 42, edition_label.upper(),
                 fonts.regular, 7.2, fonts)
@@ -628,7 +687,7 @@ def draw_contents(c, recipes: List[Recipe], labels: Dict[str, str],
     c.circle(medallion_x, medallion_y, 28, stroke=1, fill=0)
     c.setFillColor(GOLD)
     c.setFont(fonts.title, 21)
-    c.drawCentredString(medallion_x, medallion_y - 7, "15")
+    c.drawCentredString(medallion_x, medallion_y - 7, str(len(recipes)))
     # One full-width row per recipe makes the titles easier to scan and uses
     # the available page height without splitting the list into columns.
     list_top = header_bottom - 14
@@ -717,15 +776,17 @@ def numbered_html(items: List[str], fonts: FontSet) -> str:
 
 
 def draw_recipe(c, recipe: Recipe, image_path: Path, page_num: int,
-                labels: Dict[str, str], bonus_label: str, edition_label: str,
-                locale: str, fonts: FontSet, temp_dir: Path) -> None:
+                recipe_count: int, labels: Dict[str, str], bonus_label: str,
+                edition_label: str, locale: str, fonts: FontSet,
+                temp_dir: Path) -> None:
     c.setFillColor(colors.white)
     c.rect(0, 0, PAGE_W, PAGE_H, fill=1, stroke=0)
     c.setFillColor(GREEN)
     c.rect(0, PAGE_H - 7, PAGE_W, 7, fill=1, stroke=0)
     c.setFillColor(GOLD)
     draw_string(c, MARGIN, PAGE_H - 48,
-                f"{bonus_label}  ·  {labels['recipe'].upper()} {recipe.number:02d}/15",
+                f"{bonus_label}  ·  {labels['recipe'].upper()} "
+                f"{recipe.number:02d}/{recipe_count:02d}",
                 fonts.bold, 7.5, fonts)
 
     s = styles(locale, fonts)
@@ -738,18 +799,30 @@ def draw_recipe(c, recipe: Recipe, image_path: Path, page_num: int,
 
     meta_y = title_bottom - 12
     meta_h = 28
-    box_gap = 10
-    box_w = (CONTENT_W - box_gap) / 2
-    for x, label, value in [
-        (MARGIN, labels["yield"].rstrip(":"), recipe.yield_text),
-        (MARGIN + box_w + box_gap, labels["time"].rstrip(":"), recipe.time_text),
-    ]:
+    if recipe.cook_time_text:
+        box_gap = 7
+        box_w = (CONTENT_W - 2 * box_gap) / 3
+        boxes = [
+            (MARGIN, labels["yield"].rstrip(":"), recipe.yield_text),
+            (MARGIN + box_w + box_gap, labels["time"].rstrip(":"), recipe.time_text),
+            (MARGIN + 2 * (box_w + box_gap), labels["cook_time"].rstrip(":"), recipe.cook_time_text),
+        ]
+        value_font_size = 6.8
+    else:
+        box_gap = 10
+        box_w = (CONTENT_W - box_gap) / 2
+        boxes = [
+            (MARGIN, labels["yield"].rstrip(":"), recipe.yield_text),
+            (MARGIN + box_w + box_gap, labels["time"].rstrip(":"), recipe.time_text),
+        ]
+        value_font_size = 7.7
+    for x, label, value in boxes:
         c.setFillColor(SAGE)
         c.roundRect(x, meta_y - meta_h, box_w, meta_h, 6, fill=1, stroke=0)
         c.setFillColor(GREEN)
-        draw_string(c, x + 10, meta_y - 10, label.upper(), fonts.bold, 6.2, fonts)
+        draw_string(c, x + 8, meta_y - 10, label.upper(), fonts.bold, 5.9 if recipe.cook_time_text else 6.2, fonts)
         c.setFillColor(DARK)
-        draw_string(c, x + 10, meta_y - 21, value, fonts.regular, 7.7, fonts)
+        draw_string(c, x + 8, meta_y - 21, value, fonts.regular, value_font_size, fonts)
 
     image_h = 240 if locale == "hi-IN" else (258 if fonts.cjk_wrap else 278)
     image_w = CONTENT_W
@@ -814,6 +887,8 @@ def main() -> None:
     parser.add_argument("--images", required=True, type=Path)
     parser.add_argument("--output", required=True, type=Path)
     parser.add_argument("--cover", type=Path, default=None)
+    parser.add_argument("--bonus-number", type=int, choices=(1, 2), default=1,
+                        help="Número do bônus (1: 15 receitas; 2: 10 preparações).")
     parser.add_argument("--bonus-label", default=None)
     parser.add_argument("--edition-label", default=None)
     parser.add_argument("--font-dir", type=Path,
@@ -827,14 +902,20 @@ def main() -> None:
     locale = args.manuscript.stem
     if locale not in LOCALES:
         raise SystemExit(f"Locale não reconhecido: {locale}. Arquivo deve usar um código da lista do projeto.")
-    labels = LOCALES[locale]
+    try:
+        labels = locale_labels(locale, args.bonus_number)
+    except ValueError as exc:
+        raise SystemExit(str(exc)) from exc
     bonus_label = args.bonus_label or labels["bonus"]
     edition_label = args.edition_label or labels["edition"]
     cover = args.cover or args.images / "capa.jpg"
     if not cover.is_file():
-        raise SystemExit(f"Capa não encontrada: {cover}")
+        if args.bonus_number == 1:
+            raise SystemExit(f"Capa não encontrada: {cover}")
+        print("Aviso: capa fotográfica não encontrada; será usada uma capa gráfica premium.")
+        cover = None
 
-    manuscript = parse_manuscript(args.manuscript)
+    manuscript = parse_manuscript(args.manuscript, args.bonus_number)
     image_paths = {}
     for recipe in manuscript.recipes:
         matches = list(args.images.glob(f"{recipe.number:02d}_*.jpg"))
@@ -856,7 +937,8 @@ def main() -> None:
         draw_contents(c, manuscript.recipes, labels, bonus_label, edition_label, fonts, 3)
         for recipe in manuscript.recipes:
             draw_recipe(c, recipe, image_paths[recipe.number], recipe.number + 3,
-                        labels, bonus_label, edition_label, locale, fonts, temp_dir)
+                        len(manuscript.recipes), labels, bonus_label, edition_label,
+                        locale, fonts, temp_dir)
         c.save()
     print(f"PDF criado: {args.output} ({len(manuscript.recipes) + 3} páginas; {locale})")
 

@@ -39,22 +39,22 @@ manuscritos/
 
 Os manuscritos ainda não finalizados permanecem em rascunho. Status atual:
 
-- **Bônus 1 — Molhos e Vinagretas:** manuscritos e PDFs de revisão completos nas 13 variantes; `pt-BR` aprovado pelo usuário e as outras 12 versões revisadas linguisticamente, aguardando aprovação final do usuário. Os PDFs (18 páginas cada) estão em `pdfs/01_molhos_vinagretas/`. Capa premium e 15 imagens em `imagens/01_molhos_vinagretas/`.
-- **Bônus 2 — Proteínas Práticas (`pt-BR`):** rascunho completo em `manuscritos/02_proteinas_praticas/pt-BR.md`; traduções pendentes.
-- **Bônus 3 — Lanches (`pt-BR`):** rascunho completo em `manuscritos/03_lanches_para_levar/pt-BR.md`; traduções pendentes.
+- **Bônus 1 — Molhos e Vinagretas:** manuscritos e PDFs concluídos nas 13 variantes; o usuário declarou o bônus concluído. Os PDFs (18 páginas cada) estão em `pdfs/01_molhos_vinagretas/`; a capa premium e as 15 imagens estão em `imagens/01_molhos_vinagretas/`. Os registros de aprovação individuais das traduções foram mantidos como estavam.
+- **Bônus 2 — Proteínas Práticas:** base `pt-BR` em `manuscritos/02_proteinas_praticas/pt-BR.md`, ainda em rascunho para revisão. O PDF premium brasileiro de revisão está em `pdfs/02_proteinas_praticas/pt-BR.pdf` (13 páginas, com capa fotográfica). As 10 imagens das receitas e a capa separada estão em `imagens/02_proteinas_praticas/`. As outras 12 variantes continuam como modelos.
+- **Bônus 3 — Lanches (`pt-BR`):** rascunho em `manuscritos/03_lanches_para_levar/pt-BR.md`; ainda não iniciado. As traduções estão pendentes.
 
 ## Fluxo de trabalho recomendado
 
-1. Concluir o **Bônus 1 em todas as 13 variantes**, começando pelo texto-base `pt-BR` e localizando cada idioma restante a partir do conteúdo aprovado.
-2. Revisar e aprovar o conjunto completo do Bônus 1 antes de iniciar outro bônus.
-3. Só depois de concluir o Bônus 1, repetir o processo para o **Bônus 2** e, em seguida, para o **Bônus 3**.
+1. **Bônus 1 concluído** nas 13 variantes, com PDFs gerados.
+2. Concluir o **Bônus 2** nas 13 variantes, revisar os manuscritos, produzir a capa e os PDFs correspondentes.
+3. Iniciar o **Bônus 3** somente depois de concluir todas as 13 variantes do Bônus 2.
 4. Produzir um bônus e um idioma por execução, preservar quantidades e conteúdo e salvar cada versão no arquivo correspondente.
 
 O prompt reutilizável está em [`PROMPT_MESTRE.md`](PROMPT_MESTRE.md). Para evitar respostas truncadas e divergências entre versões, use-o para gerar **um bônus em um idioma por execução**.
 
 ## Renderização de PDF
 
-O gerador está em `tools/render_pdf.py`. Ele identifica o locale pelo nome do manuscrito e traduz capa, sumário e rótulos internos. Instale as dependências listadas em `requirements-pdf.txt` e informe os caminhos do manuscrito, das imagens e do PDF de saída. Exemplo para a versão brasileira do Bônus 1:
+O gerador está em `tools/render_pdf.py`. Ele identifica o locale pelo nome do manuscrito e o bônus pelo parâmetro `--bonus-number`; traduz capa, sumário e rótulos internos. Para o Bônus 2, use `--bonus-number 2`. Se ainda não houver `capa.jpg` para o Bônus 2, o PDF usa uma capa gráfica premium provisória. Instale as dependências listadas em `requirements-pdf.txt` e informe os caminhos do manuscrito, das imagens e do PDF de saída. Exemplo para a versão brasileira do Bônus 1:
 
 ```bash
 python -m pip install -r bonus_saladas_low_carb/requirements-pdf.txt
@@ -62,6 +62,16 @@ python bonus_saladas_low_carb/tools/render_pdf.py \
   --manuscript bonus_saladas_low_carb/manuscritos/01_molhos_vinagretas/pt-BR.md \
   --images bonus_saladas_low_carb/imagens/01_molhos_vinagretas \
   --output bonus_saladas_low_carb/pdfs/01_molhos_vinagretas/pt-BR.pdf
+```
+
+Exemplo para o PDF brasileiro de revisão do Bônus 2:
+
+```bash
+python bonus_saladas_low_carb/tools/render_pdf.py \
+  --bonus-number 2 \
+  --manuscript bonus_saladas_low_carb/manuscritos/02_proteinas_praticas/pt-BR.md \
+  --images bonus_saladas_low_carb/imagens/02_proteinas_praticas \
+  --output bonus_saladas_low_carb/pdfs/02_proteinas_praticas/pt-BR.pdf
 ```
 
 Para `hi-IN`, `ja-JP`, `zh-TW` e `zh-CN`, obtenha as fontes Noto e informe `--script-fonts-dir`; veja as instruções em [`tools/fonts/README.md`](tools/fonts/README.md). A lista de fontes é externa ao repositório, e os PDFs resultantes já incorporam os glifos necessários.
