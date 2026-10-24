@@ -1,6 +1,6 @@
 # Imagens — Bônus 1: Caderno de Molhos e Vinagretas
 
-Estilo visual: fotografia editorial culinária realista, fundo de pedra clara, luz natural suave, louça branca sem marca e enquadramento horizontal 4:3 para as receitas. A capa usa composição vertical sem texto.
+Estilo visual: as fotos das receitas usam fotografia editorial culinária realista, fundo de pedra clara, luz natural suave, louça branca sem marca e enquadramento horizontal para a diagramação. A capa `capa.jpg` tem direção visual premium: fundo verde-floresta escuro, detalhes em dourado envelhecido, taças de cerâmica marfim e espaço superior livre para a tipografia do PDF.
 
 ## Geradas
 

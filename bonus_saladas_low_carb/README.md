@@ -39,7 +39,7 @@ manuscritos/
 
 Os manuscritos ainda não produzidos são modelos vazios. Status atual:
 
-- **Bônus 1 — Molhos e Vinagretas:** rascunhos em `pt-BR`, `pt-PT`, `es` e `nl-NL`; manuscritos em `manuscritos/01_molhos_vinagretas/`. Capa e 15 imagens em `imagens/01_molhos_vinagretas/`. PDF de revisão `pt-BR` em `pdfs/01_molhos_vinagretas/pt-BR.pdf`.
+- **Bônus 1 — Molhos e Vinagretas:** rascunhos em `pt-BR`, `pt-PT`, `es` e `nl-NL`; manuscritos em `manuscritos/01_molhos_vinagretas/`. Capa premium e 15 imagens em `imagens/01_molhos_vinagretas/`. PDF de revisão `pt-BR` atualizado em `pdfs/01_molhos_vinagretas/pt-BR.pdf`.
 - **Bônus 1 — idiomas pendentes:** `en-GB`, `it-IT`, `ja-JP`, `en-US`, `de-DE`, `hi-IN`, `fr-FR`, `zh-TW` e `zh-CN`.
 - **Bônus 2 — Proteínas Práticas (`pt-BR`):** rascunho completo em `manuscritos/02_proteinas_praticas/pt-BR.md`; traduções pendentes.
 - **Bônus 3 — Lanches (`pt-BR`):** rascunho completo em `manuscritos/03_lanches_para_levar/pt-BR.md`; traduções pendentes.

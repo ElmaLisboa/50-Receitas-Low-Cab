@@ -161,13 +161,21 @@ def parse_manuscript(path: Path) -> Manuscript:
 def register_fonts(font_dir: Path) -> None:
     regular = font_dir / "DejaVuSans.ttf"
     bold = font_dir / "DejaVuSans-Bold.ttf"
-    if not regular.exists() or not bold.exists():
-        raise FileNotFoundError("Não encontrei DejaVuSans.ttf e DejaVuSans-Bold.ttf. "
+    serif = font_dir / "DejaVuSerif.ttf"
+    serif_bold = font_dir / "DejaVuSerif-Bold.ttf"
+    required = (regular, bold, serif, serif_bold)
+    if not all(path.exists() for path in required):
+        raise FileNotFoundError("Não encontrei as fontes DejaVu Sans e DejaVu Serif. "
                                 "Use --font-dir para indicar a pasta das fontes.")
     pdfmetrics.registerFont(TTFont("DejaVu", str(regular)))
     pdfmetrics.registerFont(TTFont("DejaVu-Bold", str(bold)))
+    pdfmetrics.registerFont(TTFont("DejaVuSerif", str(serif)))
+    pdfmetrics.registerFont(TTFont("DejaVuSerif-Bold", str(serif_bold)))
     pdfmetrics.registerFontFamily("DejaVu", normal="DejaVu", bold="DejaVu-Bold",
                                   italic="DejaVu", boldItalic="DejaVu-Bold")
+    pdfmetrics.registerFontFamily("DejaVuSerif", normal="DejaVuSerif",
+                                  bold="DejaVuSerif-Bold", italic="DejaVuSerif",
+                                  boldItalic="DejaVuSerif-Bold")
 
 
 def styles():
@@ -225,25 +233,34 @@ def prepare_crop(source: Path, destination: Path, size: tuple[int, int], quality
 def draw_cover(c, cover_path: Path, manuscript: Manuscript,
                bonus_label: str, edition_label: str, temp_dir: Path) -> None:
     crop = temp_dir / "cover_a4.jpg"
-    prepare_crop(cover_path, crop, (1240, 1754), 90)
+    prepare_crop(cover_path, crop, (1240, 1754), 92)
     c.drawImage(str(crop), 0, 0, width=PAGE_W, height=PAGE_H)
-    c.setFillColor(DARK)
-    c.setFont("DejaVu-Bold", 9)
-    c.drawString(52, PAGE_H - 69, f"{bonus_label}  ·  15 RECEITAS")
-    c.setFillColor(GOLD)
-    c.roundRect(52, PAGE_H - 91, 38, 3, 1.5, fill=1, stroke=0)
-    c.setFillColor(DARK)
-    c.setFont("DejaVu-Bold", 24)
-    c.drawString(52, PAGE_H - 140, "CADERNO DE")
-    c.setFont("DejaVu-Bold", 31)
-    c.drawString(52, PAGE_H - 184, "MOLHOS E")
-    c.drawString(52, PAGE_H - 224, "VINAGRETAS")
-    c.setFillColor(MUTED)
-    c.setFont("DejaVu", 10)
-    c.drawString(53, PAGE_H - 251, edition_label.upper())
-    c.setFillColor(DARK)
-    c.setFont("DejaVu", 11)
-    c.drawString(52, PAGE_H - 282, "15 receitas caseiras para dar mais sabor às suas refeições")
+
+    ivory = HexColor("#F5EBDD")
+    antique_gold = HexColor("#D1AE73")
+    c.setFillColor(antique_gold)
+    c.setFont("DejaVu-Bold", 8)
+    c.drawString(52, PAGE_H - 62, f"{bonus_label}  ·  EDIÇÃO EXCLUSIVA")
+    c.setStrokeColor(antique_gold)
+    c.setLineWidth(1.2)
+    c.line(52, PAGE_H - 82, 112, PAGE_H - 82)
+
+    c.setFillColor(ivory)
+    c.setFont("DejaVuSerif", 13)
+    c.drawString(52, PAGE_H - 128, "CADERNO DE")
+    c.setFont("DejaVuSerif-Bold", 29)
+    c.drawString(52, PAGE_H - 171, "MOLHOS &")
+    c.drawString(52, PAGE_H - 207, "VINAGRETAS")
+
+    c.setFillColor(antique_gold)
+    c.setFont("DejaVu-Bold", 8)
+    c.drawString(53, PAGE_H - 235, "LOW CARB  ·  15 RECEITAS")
+    c.setFillColor(ivory)
+    c.setFont("DejaVu", 7.5)
+    c.drawString(53, PAGE_H - 257, edition_label.upper())
+    c.setFont("DejaVu", 9)
+    c.drawString(52, PAGE_H - 280,
+                  "Receitas caseiras para dar mais sabor às suas refeições")
     c.showPage()
 
 
