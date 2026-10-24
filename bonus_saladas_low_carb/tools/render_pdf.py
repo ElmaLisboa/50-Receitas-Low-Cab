@@ -589,42 +589,116 @@ def draw_intro(c, manuscript: Manuscript, labels: Dict[str, str], s,
 def draw_contents(c, recipes: List[Recipe], labels: Dict[str, str],
                   bonus_label: str, edition_label: str, fonts: FontSet,
                   page_num: int) -> None:
-    c.setFillColor(colors.white)
+    """Render a premium, locale-aware table of contents."""
+    header_bottom = PAGE_H - 164
+    c.setFillColor(CREAM)
     c.rect(0, 0, PAGE_W, PAGE_H, fill=1, stroke=0)
-    c.setFillColor(GREEN)
-    c.rect(0, PAGE_H - 7, PAGE_W, 7, fill=1, stroke=0)
+
+    # Deep-green masthead with a restrained gold edge to echo the premium cover.
     c.setFillColor(GOLD)
-    draw_string(c, MARGIN, PAGE_H - 55,
+    c.rect(0, PAGE_H - 6, PAGE_W, 6, fill=1, stroke=0)
+    c.setFillColor(DARK)
+    c.rect(0, header_bottom, PAGE_W, PAGE_H - 6 - header_bottom, fill=1, stroke=0)
+    c.setStrokeColor(GOLD)
+    c.setLineWidth(0.8)
+    c.line(MARGIN, header_bottom, PAGE_W - MARGIN, header_bottom)
+
+    c.setFillColor(GOLD)
+    draw_string(c, MARGIN, PAGE_H - 49,
                 f"{bonus_label}  ·  {labels['contents']}", fonts.bold, 7.5, fonts)
-    s = styles("pt-BR", fonts)
-    y = draw_paragraph(c, clean_inline(labels["contents_title"]), MARGIN,
-                       PAGE_H - 91, CONTENT_W, s["page_title"]) - 24
-    gap = 26
-    col_w = (CONTENT_W - gap) / 2
-    columns = [recipes[:8], recipes[8:]]
+    c.setStrokeColor(GOLD)
+    c.setLineWidth(1.2)
+    c.line(MARGIN, PAGE_H - 62, MARGIN + 36, PAGE_H - 62)
+
     title_style = ParagraphStyle(
-        "toc", fontName=fonts.regular, fontSize=8.4 if fonts.cjk_wrap else 9.0,
-        leading=11.2 if fonts.cjk_wrap else 12.2, textColor=TEXT,
+        "toc_header", fontName=fonts.title,
+        fontSize=22 if fonts.cjk_wrap or fonts.shaping else 24,
+        leading=27 if fonts.cjk_wrap or fonts.shaping else 29,
+        textColor=colors.white, spaceAfter=0, **_style_options(fonts)
+    )
+    draw_paragraph(c, clean_inline(labels["contents_title"]), MARGIN,
+                   PAGE_H - 77, CONTENT_W - 82, title_style)
+
+    # A small edition medallion adds an editorial touch without introducing
+    # untranslated copy or changing the page numbering.
+    medallion_x = PAGE_W - MARGIN - 30
+    medallion_y = PAGE_H - 111
+    c.setStrokeColor(GOLD)
+    c.setLineWidth(1.1)
+    c.circle(medallion_x, medallion_y, 28, stroke=1, fill=0)
+    c.setFillColor(GOLD)
+    c.setFont(fonts.title, 21)
+    c.drawCentredString(medallion_x, medallion_y - 7, "15")
+    # One full-width row per recipe makes the titles easier to scan and uses
+    # the available page height without splitting the list into columns.
+    list_top = header_bottom - 14
+    row_gap = 4
+    title_size = 9.0 if fonts.shaping else (9.2 if fonts.cjk_wrap else 10.0)
+    title_leading = 11.0 if fonts.shaping else (11.4 if fonts.cjk_wrap else 12.2)
+    title_style = ParagraphStyle(
+        "toc_card_title", fontName=fonts.bold, fontSize=title_size,
+        leading=title_leading, textColor=TEXT, spaceAfter=0,
         **_style_options(fonts)
     )
-    for col_index, items in enumerate(columns):
-        x = MARGIN + col_index * (col_w + gap)
-        cy = y
-        for recipe in items:
-            c.setFillColor(GREEN)
-            c.setFont(fonts.bold, 8.5)
-            c.drawString(x, cy - 10, f"{recipe.number:02d}")
-            title_bottom = draw_paragraph(c, clean_inline(recipe.title), x + 25,
-                                          cy, col_w - 57, title_style)
-            c.setFillColor(MUTED)
-            c.setFont(fonts.regular, 7.5)
-            c.drawRightString(x + col_w, cy - 10, str(recipe.number + 3))
-            cy = min(cy - 36, title_bottom - 17)
-    c.setFillColor(MUTED)
-    note_style = ParagraphStyle("toc_note", fontName=fonts.regular, fontSize=7.3,
-                                leading=9, textColor=MUTED, **_style_options(fonts))
-    draw_paragraph(c, clean_inline(labels["contents_note"]), MARGIN, 63,
-                   CONTENT_W, note_style)
+    x = MARGIN
+    row_w = CONTENT_W
+    badge_x = x + 23
+    title_x = x + 47
+    page_w = 26
+    page_x = x + row_w - 8 - page_w
+    title_w = page_x - title_x - 10
+    cy = list_top
+    note_y = 54
+    note_h = 30
+    for recipe in recipes:
+        title = clean_inline(recipe.title)
+        paragraph = Paragraph(title, title_style)
+        _, title_h = paragraph.wrap(title_w, PAGE_H)
+        card_h = max(32, title_h + 16)
+        card_bottom = cy - card_h
+        if card_bottom < note_y + note_h + 8:
+            raise ValueError("O sumário em lista única não cabe na página.")
+
+        c.setFillColor(colors.white)
+        c.setStrokeColor(LINE)
+        c.setLineWidth(0.55)
+        c.roundRect(x, card_bottom, row_w, card_h, 7, stroke=1, fill=1)
+        c.setFillColor(GOLD)
+        c.roundRect(x + 1, card_bottom + 6, 2.2, card_h - 12,
+                    1.1, stroke=0, fill=1)
+
+        badge_y = card_bottom + card_h / 2
+        c.setFillColor(DARK)
+        c.circle(badge_x, badge_y, 11.5, stroke=0, fill=1)
+        c.setFillColor(colors.white)
+        c.setFont(fonts.bold, 7.2)
+        c.drawCentredString(badge_x, badge_y - 2.5,
+                            f"{recipe.number:02d}")
+
+        c.setFillColor(SAGE)
+        c.roundRect(page_x, badge_y - 11, page_w, 22, 7,
+                    stroke=0, fill=1)
+        c.setFillColor(DARK)
+        c.setFont(fonts.bold, 7.2)
+        c.drawCentredString(page_x + page_w / 2, badge_y - 2.5,
+                            str(recipe.number + 3))
+
+        title_top = card_bottom + (card_h + title_h) / 2
+        draw_paragraph(c, title, title_x, title_top, title_w, title_style)
+        cy = card_bottom - row_gap
+
+    # A quiet legend anchors the page while leaving generous breathing room.
+    c.setFillColor(SAGE)
+    c.roundRect(MARGIN, note_y, CONTENT_W, note_h, 8, stroke=0, fill=1)
+    c.setFillColor(GOLD)
+    c.circle(MARGIN + 14, note_y + note_h / 2, 2.1, stroke=0, fill=1)
+    note_style = ParagraphStyle(
+        "toc_note", fontName=fonts.regular, fontSize=6.9,
+        leading=8.5, textColor=MUTED, spaceAfter=0,
+        **_style_options(fonts)
+    )
+    draw_paragraph(c, clean_inline(labels["contents_note"]), MARGIN + 24,
+                   note_y + note_h - 7, CONTENT_W - 34, note_style)
     draw_footer(c, page_num, f"{bonus_label}  ·  {edition_label.upper()}", fonts)
     c.showPage()
 
