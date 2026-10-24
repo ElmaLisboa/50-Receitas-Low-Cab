@@ -37,10 +37,9 @@ manuscritos/
 └── 03_lanches_para_levar/<locale>.md
 ```
 
-Os manuscritos ainda não produzidos são modelos vazios. Status atual:
+Os manuscritos ainda não finalizados permanecem em rascunho. Status atual:
 
-- **Bônus 1 — Molhos e Vinagretas:** rascunhos em `pt-BR`, `pt-PT`, `es` e `nl-NL`; manuscritos em `manuscritos/01_molhos_vinagretas/`. Capa premium e 15 imagens em `imagens/01_molhos_vinagretas/`. PDF de revisão `pt-BR` atualizado em `pdfs/01_molhos_vinagretas/pt-BR.pdf`.
-- **Bônus 1 — idiomas pendentes:** `en-GB`, `it-IT`, `ja-JP`, `en-US`, `de-DE`, `hi-IN`, `fr-FR`, `zh-TW` e `zh-CN`.
+- **Bônus 1 — Molhos e Vinagretas:** manuscritos e PDFs de revisão completos nas 13 variantes; `pt-BR` aprovado pelo usuário e as outras 12 versões revisadas linguisticamente, aguardando aprovação final do usuário. Os PDFs (18 páginas cada) estão em `pdfs/01_molhos_vinagretas/`. Capa premium e 15 imagens em `imagens/01_molhos_vinagretas/`.
 - **Bônus 2 — Proteínas Práticas (`pt-BR`):** rascunho completo em `manuscritos/02_proteinas_praticas/pt-BR.md`; traduções pendentes.
 - **Bônus 3 — Lanches (`pt-BR`):** rascunho completo em `manuscritos/03_lanches_para_levar/pt-BR.md`; traduções pendentes.
 
@@ -55,14 +54,14 @@ O prompt reutilizável está em [`PROMPT_MESTRE.md`](PROMPT_MESTRE.md). Para evi
 
 ## Renderização de PDF
 
-O gerador está em `tools/render_pdf.py`. Instale as dependências listadas em `requirements-pdf.txt` e execute-o com os caminhos do manuscrito, das imagens e do PDF de saída. Exemplo para a versão brasileira do Bônus 1:
+O gerador está em `tools/render_pdf.py`. Ele identifica o locale pelo nome do manuscrito e traduz capa, sumário e rótulos internos. Instale as dependências listadas em `requirements-pdf.txt` e informe os caminhos do manuscrito, das imagens e do PDF de saída. Exemplo para a versão brasileira do Bônus 1:
 
 ```bash
 python -m pip install -r bonus_saladas_low_carb/requirements-pdf.txt
 python bonus_saladas_low_carb/tools/render_pdf.py \
   --manuscript bonus_saladas_low_carb/manuscritos/01_molhos_vinagretas/pt-BR.md \
   --images bonus_saladas_low_carb/imagens/01_molhos_vinagretas \
-  --output bonus_saladas_low_carb/pdfs/01_molhos_vinagretas/pt-BR.pdf \
-  --bonus-label "BÔNUS 1" \
-  --edition-label "Português do Brasil"
+  --output bonus_saladas_low_carb/pdfs/01_molhos_vinagretas/pt-BR.pdf
 ```
+
+Para `hi-IN`, `ja-JP`, `zh-TW` e `zh-CN`, obtenha as fontes Noto e informe `--script-fonts-dir`; veja as instruções em [`tools/fonts/README.md`](tools/fonts/README.md). A lista de fontes é externa ao repositório, e os PDFs resultantes já incorporam os glifos necessários.

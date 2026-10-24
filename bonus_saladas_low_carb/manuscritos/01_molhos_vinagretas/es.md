@@ -1,4 +1,4 @@
-<!-- Estado de producción: borrador para revisión | Variante: español neutro -->
+<!-- Estado de producción: revisión lingüística completada; pendiente de aprobación del usuario | Variante: español neutro -->
 
 # Cuaderno de Salsas y Vinagretas Low Carb
 
@@ -12,20 +12,20 @@ Estas recetas pueden acompañar ensaladas, verduras asadas, huevos, carnes, aves
 
 - Prefiere yogur natural sin azúcar, mostaza sin azúcares añadidos y leche de coco sin azúcar. Revisa las etiquetas de la mayonesa, el tamari y los tomates secos.
 - Lava y seca bien las hierbas frescas. Usa utensilios y recipientes limpios.
-- Como estas salsas llevan ingredientes frescos, guarda las sobras en un recipiente limpio y cerrado, refrigeradas a **4 °C o menos**, y consúmelas en un plazo de **3 días**. La salsa de aguacate es mejor consumirla en un plazo de 2 días.
-- Las salsas con ajo o hierbas frescas mezclados con aceite también deben mantenerse refrigeradas; no las dejes a temperatura ambiente.
+- Como estas salsas llevan ingredientes frescos, guarda las sobras en un recipiente limpio y cerrado, refrigeradas a **4 °C o menos**, y consúmelas en un plazo de **3 días**. Es mejor consumir la salsa de aguacate en un plazo de 2 días.
+- Las salsas preparadas mezclando ajo o hierbas frescas con aceite también deben mantenerse refrigeradas; no las dejes a temperatura ambiente.
 - La cantidad de agua indicada se puede ajustar: agrégala poco a poco hasta alcanzar la consistencia deseada.
 
 ---
 
-## 1. Vinagreta cítrica de mostaza y limón
+## 1. Vinagreta de limón y mostaza
 
 **Rendimiento:** unas 4 porciones  
 **Tiempo de preparación:** 5 minutos
 
 ### Ingredientes
 - 60 ml de aceite de oliva
-- 30 ml de jugo de limón
+- 30 ml de jugo de limón o lima
 - 10 g de mostaza Dijon sin azúcar añadida
 - 15 ml de agua
 - 1 g de ralladura fina de limón, opcional
@@ -42,7 +42,7 @@ Estas recetas pueden acompañar ensaladas, verduras asadas, huevos, carnes, aves
 
 ---
 
-## 2. Crema de aguacate, cilantro y limón
+## 2. Crema de aguacate, cilantro y lima
 
 **Rendimiento:** unas 4 porciones  
 **Tiempo de preparación:** 10 minutos
@@ -50,7 +50,7 @@ Estas recetas pueden acompañar ensaladas, verduras asadas, huevos, carnes, aves
 ### Ingredientes
 - 120 g de pulpa de aguacate maduro
 - 70 g de yogur natural entero, sin azúcar
-- 25 ml de jugo de limón
+- 25 ml de jugo de lima
 - 8 g de hojas de cilantro
 - 10 ml de aceite de oliva
 - 2 g de ajo, sin el germen central, opcional
@@ -58,9 +58,9 @@ Estas recetas pueden acompañar ensaladas, verduras asadas, huevos, carnes, aves
 - 1 g de sal
 
 ### Preparación
-1. Coloca en la licuadora o el procesador el aguacate, el yogur, el jugo de limón, el cilantro, el aceite, el ajo y la sal.
+1. Coloca en la licuadora o el procesador el aguacate, el yogur, el jugo de lima, el cilantro, el aceite, el ajo y la sal.
 2. Procesa hasta obtener una crema. Agrega el agua poco a poco, procesando después de cada adición, hasta alcanzar la consistencia deseada.
-3. Prueba y ajusta la sal o el limón. Para una salsa más lisa, procesa unos segundos más.
+3. Prueba y ajusta la sal o la lima. Para una salsa más lisa, procesa unos segundos más.
 
 **Combina con:** ensaladas con pollo o camarones, pepino, col o distintas hojas frescas.  
 **Conservación:** guarda bien tapada y refrigerada hasta por 2 días. El limón ayuda a retrasar el oscurecimiento, aunque el color puede cambiar de forma natural.
@@ -213,7 +213,7 @@ Estas recetas pueden acompañar ensaladas, verduras asadas, huevos, carnes, aves
 ### Preparación
 1. Mezcla el tamari, el vinagre de arroz, el aceite de sésamo, el aceite de oliva y el agua.
 2. Incorpora el jengibre, el tahini y el ajo, si lo usas. Revuelve hasta que la salsa quede homogénea.
-3. Termina con las semillas de sésamo. Si queda demasiado espesa, agrega agua de 5 ml en 5 ml.
+3. Termina con las semillas de sésamo. Si queda demasiado espesa, agrega agua en porciones de 5 ml.
 
 **Combina con:** col, pepino, hojas verdes, pollo, tofu y salmón.  
 **Conservación:** refrigera en un recipiente cerrado hasta por 3 días. Agita o revuelve antes de usar.
@@ -237,7 +237,7 @@ Estas recetas pueden acompañar ensaladas, verduras asadas, huevos, carnes, aves
 
 ### Preparación
 1. Precalienta el horno a 220 °C. Coloca el pimiento entero en una bandeja y ásalo durante unos 20 a 25 minutos, volteándolo a la mitad del tiempo, hasta que la piel se tueste en varios puntos.
-2. Pasa el pimiento a un tazón, cúbrelo durante 10 minutos y, cuando esté tibio, retira la piel y las semillas.
+2. Pasa el pimiento a un tazón, cúbrelo durante 10 minutos y, cuando se haya enfriado lo suficiente para manipularlo con seguridad, retira la piel y las semillas.
 3. Procesa la pulpa del pimiento con las almendras, el aceite, el limón, el pimentón, el ajo y la sal. Agrega agua poco a poco hasta obtener una consistencia cremosa.
 
 **Combina con:** hojas verdes, pollo, huevos, calabacín y coliflor asados.  
@@ -293,7 +293,7 @@ Estas recetas pueden acompañar ensaladas, verduras asadas, huevos, carnes, aves
 
 ---
 
-## 12. Salsa de curry, coco y limón
+## 12. Salsa de curry, coco y lima
 
 **Rendimiento:** unas 4 porciones  
 **Tiempo de preparación:** 7 minutos
@@ -301,16 +301,16 @@ Estas recetas pueden acompañar ensaladas, verduras asadas, huevos, carnes, aves
 ### Ingredientes
 - 100 ml de leche de coco entera, sin azúcar
 - 50 g de yogur natural entero, sin azúcar
-- 15 ml de jugo de limón
+- 15 ml de jugo de lima
 - 2 g de curry en polvo, sin azúcar ni almidón añadidos
 - 2 g de jengibre fresco rallado
 - 0,5 g de sal
 - 10 a 20 ml de agua, si hace falta
 
 ### Preparación
-1. Mezcla la leche de coco, el yogur y el jugo de limón hasta que quede homogéneo.
+1. Mezcla la leche de coco, el yogur y el jugo de lima hasta que quede homogéneo.
 2. Agrega el curry, el jengibre y la sal. Revuelve bien.
-3. Si quieres una salsa más fluida, añade agua poco a poco. Prueba y ajusta el limón o el curry.
+3. Si quieres una salsa más fluida, añade agua poco a poco. Prueba y ajusta la lima o el curry.
 
 **Combina con:** pollo, camarones, coliflor, col y hojas de sabor suave.  
 **Conservación:** refrigera en un recipiente cerrado hasta por 3 días. Revuelve antes de servir, ya que la leche de coco puede separarse.
@@ -334,7 +334,7 @@ Estas recetas pueden acompañar ensaladas, verduras asadas, huevos, carnes, aves
 ### Preparación
 1. Coloca los tomates secos, el aceite, el vinagre, el agua, la albahaca, el ajo y la pimienta en la licuadora o el procesador.
 2. Procesa hasta obtener una salsa espesa. Para una textura más lisa, procesa unos segundos más; para una textura rústica, usa pulsos cortos.
-3. Si hace falta, agrega agua de 5 ml en 5 ml hasta alcanzar la consistencia deseada.
+3. Si hace falta, agrega agua en porciones de 5 ml hasta alcanzar la consistencia deseada.
 
 **Combina con:** hojas verdes, berenjena, calabacín, pollo y queso fresco.  
 **Conservación:** refrigera en un recipiente cerrado hasta por 3 días.
@@ -395,4 +395,4 @@ Estas recetas pueden acompañar ensaladas, verduras asadas, huevos, carnes, aves
 
 Empieza con una pequeña cantidad y agrega más según tu gusto. Si una salsa se espesa después de refrigerarla, incorpora unas gotas de agua o limón para recuperar la consistencia. Guarda las sobras pronto y usa utensilios limpios para servir.
 
-Con estas 15 opciones puedes variar los sabores de tus comidas con combinaciones cítricas, cremosas, aromáticas y picantes, sin depender de salsas preparadas con azúcar añadida.
+Con estas 15 opciones puedes variar los sabores de tus comidas con combinaciones cítricas, cremosas, aromáticas y picantes, sin depender de salsas comerciales con azúcar añadida.

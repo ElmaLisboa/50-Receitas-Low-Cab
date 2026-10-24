@@ -1,8 +1,8 @@
-<!-- Productiestatus: concept ter controle | Taalvariant: nl-NL -->
+<!-- Productiestatus: taalkundig nagekeken; wacht op goedkeuring van de gebruiker | Taalvariant: nl-NL -->
 
 # Koolhydraatarme sauzen en vinaigrettes
 
-## 15 zelfgemaakte recepten voor extra smaak aan je maaltijden
+## 15 zelfgemaakte recepten om je maaltijden extra smaak te geven
 
 Een zelfgemaakte saus kan de smaak en textuur van een maaltijd veranderen, zonder dat je ingewikkelde technieken nodig hebt. In dit boekje vind je frisse, romige, kruidige, pittige en volle smaken, allemaal gemaakt met eenvoudige ingrediënten en zonder toegevoegde suiker.
 
@@ -13,7 +13,7 @@ De recepten passen bij salades, geroosterde groenten, eieren, vlees, gevogelte, 
 - Kies naturel yoghurt zonder suiker, mosterd zonder toegevoegde suiker en ongezoete kokosmelk. Controleer ook de etiketten van mayonaise, tamari en gedroogde tomaten.
 - Was verse kruiden en droog ze goed af. Gebruik schone keukenspullen en bakjes.
 - Omdat deze sauzen verse ingrediënten bevatten, bewaar je restjes in een schoon, afgesloten bakje in de koelkast bij **4 °C of kouder**. Gebruik ze binnen **3 dagen**. De avocadosaus kun je het best binnen 2 dagen gebruiken.
-- Sauzen met verse knoflook of kruiden in olie moeten ook in de koelkast worden bewaard; laat ze niet op kamertemperatuur staan.
+- Sauzen waarin knoflook of verse kruiden met olie zijn gemengd, moeten ook in de koelkast blijven; laat ze niet op kamertemperatuur staan.
 - De aangegeven hoeveelheid water kun je aanpassen: voeg het beetje bij beetje toe tot de saus de gewenste dikte heeft.
 
 ---
@@ -37,7 +37,7 @@ De recepten passen bij salades, geroosterde groenten, eieren, vlees, gevogelte, 
 2. Klop met een vork of een kleine garde.
 3. Schenk de olijfolie er al kloppend langzaam bij, tot de vinaigrette licht gebonden en glad is. Roer er eventueel de citroenrasp door.
 
-**Lekker bij:** pittige bladgroenten, rucola, komkommer, gegrilde kip en gekookte eieren.  
+**Lekker bij:** licht bittere bladgroenten, rucola, komkommer, gegrilde kip en gekookte eieren.
 **Bewaren:** bewaar maximaal 3 dagen in een afgesloten bakje in de koelkast. Schud voor gebruik.
 
 ---
@@ -189,7 +189,7 @@ De recepten passen bij salades, geroosterde groenten, eieren, vlees, gevogelte, 
 2. Voeg de azijn en het water toe. Roer door en laat 10 minuten rusten.
 3. Voeg de olijfolie en zwarte peper toe. Roer en proef voor het serveren.
 
-**Lekker bij:** rundvlees, kip, champignons, bloemkool en bladgroenten met een krachtige smaak.  
+**Lekker bij:** rundvlees, kip, champignons, bloemkool en bladgroenten met een licht bittere smaak.
 **Bewaren:** omdat de chimichurri verse knoflook en kruiden bevat, bewaar je hem maximaal 3 dagen in een afgesloten bakje in de koelkast. Bewaar hem niet op kamertemperatuur.
 
 ---
@@ -237,7 +237,7 @@ De recepten passen bij salades, geroosterde groenten, eieren, vlees, gevogelte, 
 
 ### Bereiding
 1. Verwarm de oven voor op 220 °C. Leg de hele paprika op een bakplaat en rooster hem ongeveer 20 tot 25 minuten. Keer hem halverwege om, tot de schil op verschillende plekken zwartgeblakerd is.
-2. Doe de paprika in een kom, dek deze 10 minuten af en verwijder de schil en zaadjes zodra de paprika lauwwarm is.
+2. Doe de paprika in een kom, dek deze 10 minuten af en verwijder de schil en zaadjes zodra hij voldoende is afgekoeld om veilig vast te pakken.
 3. Mix het paprikavlees met de amandelen, olijfolie, citroen, het paprikapoeder, de knoflook en het zout. Voeg beetje bij beetje water toe tot de saus romig is.
 
 **Lekker bij:** bladgroenten, kip, eieren, courgette en geroosterde bloemkool.  
@@ -288,7 +288,7 @@ De recepten passen bij salades, geroosterde groenten, eieren, vlees, gevogelte, 
 2. Voeg de yoghurt en het citroensap toe. Roer tot er kleine stukjes kaas zichtbaar zijn, of mix kort voor een gladdere saus.
 3. Voeg beetje bij beetje water toe tot de gewenste dikte is bereikt. Maak af met peper en bieslook.
 
-**Lekker bij:** bladgroenten met een krachtige smaak, komkommer, broccoli, rundvlees en walnoten.  
+**Lekker bij:** bladgroenten met een licht bittere smaak, komkommer, broccoli, rundvlees en walnoten.
 **Bewaren:** bewaar maximaal 3 dagen in een afgesloten bakje in de koelkast.
 
 ---
@@ -395,4 +395,4 @@ De recepten passen bij salades, geroosterde groenten, eieren, vlees, gevogelte, 
 
 Begin met een kleine hoeveelheid en voeg naar smaak meer toe. Als een saus na het koelen dikker wordt, roer er dan enkele druppels water of citroensap door om de gewenste dikte terug te krijgen. Zet restjes snel koud en gebruik schoon keukengerei om op te scheppen.
 
-Met deze 15 recepten kun je maaltijden afwisselen met frisse, romige, kruidige en pittige smaken, zonder afhankelijk te zijn van kant-en-klare sauzen met toegevoegde suiker.
+Met deze 15 recepten kun je maaltijden afwisselen met frisse, romige, kruidige en pittige smaken, zonder afhankelijk te zijn van kant-en-klare sauzen waaraan suiker is toegevoegd.

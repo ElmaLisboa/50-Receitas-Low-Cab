@@ -1,4 +1,4 @@
-<!-- Status de produção: rascunho para revisão | Idioma: pt-BR -->
+<!-- Status de produção: aprovado pelo usuário | Idioma: pt-BR -->
 
 # Caderno de Molhos e Vinagretas Low Carb
 

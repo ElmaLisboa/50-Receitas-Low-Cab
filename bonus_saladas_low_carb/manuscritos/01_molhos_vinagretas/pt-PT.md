@@ -1,4 +1,4 @@
-<!-- Estado de produção: rascunho para revisão | Variante: pt-PT -->
+<!-- Estado de produção: revisão linguística concluída; aguarda aprovação do usuário | Variante: pt-PT -->
 
 # Caderno de Molhos e Vinagretas Low Carb
 
@@ -25,7 +25,7 @@ As receitas podem acompanhar saladas, legumes assados, ovos, carnes, aves, peixe
 
 ### Ingredientes
 - 60 ml de azeite
-- 30 ml de sumo de limão
+- 30 ml de sumo de limão ou lima
 - 10 g de mostarda de Dijon sem açúcar adicionado
 - 15 ml de água
 - 1 g de raspa fina de limão, opcional
@@ -42,7 +42,7 @@ As receitas podem acompanhar saladas, legumes assados, ovos, carnes, aves, peixe
 
 ---
 
-## 2. Creme de abacate, coentros e limão
+## 2. Creme de abacate, coentros e lima
 
 **Rendimento:** cerca de 4 porções  
 **Tempo de preparação:** 10 minutos
@@ -50,7 +50,7 @@ As receitas podem acompanhar saladas, legumes assados, ovos, carnes, aves, peixe
 ### Ingredientes
 - 120 g de polpa de abacate maduro
 - 70 g de iogurte natural gordo, sem açúcar
-- 25 ml de sumo de limão
+- 25 ml de sumo de lima
 - 8 g de folhas de coentros
 - 10 ml de azeite
 - 2 g de alho, sem o gérmen central, opcional
@@ -58,11 +58,11 @@ As receitas podem acompanhar saladas, legumes assados, ovos, carnes, aves, peixe
 - 1 g de sal
 
 ### Preparação
-1. Coloque no liquidificador ou no processador de alimentos o abacate, o iogurte, o sumo de limão, os coentros, o azeite, o alho e o sal.
+1. Coloque no liquidificador ou no processador de alimentos o abacate, o iogurte, o sumo de lima, os coentros, o azeite, o alho e o sal.
 2. Triture até obter um creme. Acrescente a água gradualmente, triturando entre cada adição, até atingir a consistência desejada.
-3. Prove e ajuste o sal ou o limão. Para um molho mais liso, triture por mais alguns segundos.
+3. Prove e ajuste o sal ou a lima. Para um molho mais liso, triture por mais alguns segundos.
 
-**Combina com:** saladas com frango, camarão, pepino, couve-repolho ou folhas frescas.  
+**Combina com:** saladas com frango, camarão, pepino, repolho ou folhas frescas.
 **Conservação:** guarde bem fechado no frigorífico e consuma até 2 dias depois da preparação. O limão ajuda a retardar o escurecimento, mas a cor pode mudar naturalmente.
 
 ---
@@ -215,7 +215,7 @@ As receitas podem acompanhar saladas, legumes assados, ovos, carnes, aves, peixe
 2. Incorpore o gengibre, o tahini e o alho, se utilizar. Mexa até o molho ficar homogéneo.
 3. Finalize com as sementes de sésamo. Se o molho ficar demasiado espesso, acrescente água, 5 ml de cada vez.
 
-**Combina com:** couve-repolho, pepino, folhas, frango, tofu e salmão.  
+**Combina com:** repolho, pepino, folhas, frango, tofu e salmão.
 **Conservação:** guarde no frigorífico, num recipiente fechado, até 3 dias. Agite ou mexa antes de utilizar.
 
 ---
@@ -237,7 +237,7 @@ As receitas podem acompanhar saladas, legumes assados, ovos, carnes, aves, peixe
 
 ### Preparação
 1. Aqueça o forno a 220 °C. Coloque o pimento inteiro num tabuleiro e asse durante cerca de 20 a 25 minutos, virando-o a meio do tempo, até a pele ficar tostada em vários pontos.
-2. Transfira o pimento para uma taça, tape-a durante 10 minutos e, quando estiver morno, retire a pele e as sementes.
+2. Transfira o pimento para uma taça, tape-a durante 10 minutos e, quando o pimento tiver arrefecido o suficiente para o poder manusear, retire a pele e as sementes.
 3. Triture a polpa do pimento com as amêndoas, o azeite, o limão, o pimentão-doce, o alho e o sal. Acrescente água aos poucos até obter um creme.
 
 **Combina com:** folhas, frango, ovos, curgete e couve-flor assadas.  
@@ -293,7 +293,7 @@ As receitas podem acompanhar saladas, legumes assados, ovos, carnes, aves, peixe
 
 ---
 
-## 12. Molho de caril, coco e limão
+## 12. Molho de caril, coco e lima
 
 **Rendimento:** cerca de 4 porções  
 **Tempo de preparação:** 7 minutos
@@ -301,18 +301,18 @@ As receitas podem acompanhar saladas, legumes assados, ovos, carnes, aves, peixe
 ### Ingredientes
 - 100 ml de leite de coco gordo, sem açúcar
 - 50 g de iogurte natural gordo, sem açúcar
-- 15 ml de sumo de limão
+- 15 ml de sumo de lima
 - 2 g de caril em pó, sem açúcar ou amido adicionados
 - 2 g de gengibre fresco ralado
 - 0,5 g de sal
 - 10 a 20 ml de água, se necessário
 
 ### Preparação
-1. Misture o leite de coco, o iogurte e o sumo de limão até obter uma mistura homogénea.
+1. Misture o leite de coco, o iogurte e o sumo de lima até obter uma mistura homogénea.
 2. Acrescente o caril, o gengibre e o sal. Mexa bem.
-3. Para um molho mais fluido, junte água gradualmente. Prove e ajuste o limão ou o caril.
+3. Para um molho mais fluido, junte água gradualmente. Prove e ajuste a lima ou o caril.
 
-**Combina com:** frango, camarão, couve-flor, couve-repolho e folhas de sabor suave.  
+**Combina com:** frango, camarão, couve-flor, repolho e folhas de sabor suave.
 **Conservação:** guarde no frigorífico, num recipiente fechado, até 3 dias. Mexa antes de servir, pois o leite de coco pode separar-se.
 
 ---
@@ -362,7 +362,7 @@ As receitas podem acompanhar saladas, legumes assados, ovos, carnes, aves, peixe
 2. Misture o iogurte, a maionese, o sumo de limão, o pimentão-doce, o alho e o sal.
 3. Incorpore a malagueta e os coentros. Acrescente água gradualmente se preferir um molho mais fluido.
 
-**Combina com:** frango, ovos, couve-repolho, pepino e legumes grelhados.  
+**Combina com:** frango, ovos, repolho, pepino e legumes grelhados.
 **Conservação:** guarde no frigorífico, num recipiente fechado, até 3 dias.
 
 ---
@@ -395,4 +395,4 @@ As receitas podem acompanhar saladas, legumes assados, ovos, carnes, aves, peixe
 
 Comece por usar uma pequena quantidade e acrescente mais de acordo com o seu gosto. Se um molho engrossar depois de estar no frigorífico, misture algumas gotas de água ou de limão até recuperar a consistência. Guarde rapidamente as sobras e utilize utensílios limpos para servir.
 
-Com estas 15 opções pode variar os sabores das refeições com combinações cítricas, cremosas, aromáticas e picantes — sem depender de molhos pré-preparados açucarados.
+Estas 15 opções permitem variar os sabores das refeições com combinações cítricas, cremosas, aromáticas e picantes — sem depender de molhos pré-preparados açucarados.
