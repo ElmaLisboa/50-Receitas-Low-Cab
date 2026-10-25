@@ -1,10 +1,10 @@
-<!-- Productiestatus: vertaaldraft; wacht op controle en goedkeuring door de gebruiker | Variant: nl-NL -->
+<!-- Productiestatus: taalkundig nagekeken vertaaldraft; wacht op definitieve controle en goedkeuring door de gebruiker | Variant: nl-NL -->
 
 # Koolhydraatarme snacks om mee te nemen
 
 ## 10 praktische, lekkere en makkelijk mee te nemen ideeën
 
-Een snack hoeft niet ingewikkeld te zijn. In dit boekje vind je knapperige, romige, hartige en zoete ideeën met eenvoudige ingrediënten en zonder toegevoegde suiker. Elk recept levert porties voor één persoon op, handig om mee te nemen naar je werk, school of een dagje uit. Je kunt de snacks ook vooraf maken en de porties klaarzetten in de koelkast.
+Een snack hoeft niet ingewikkeld te zijn. In dit boekje vind je knapperige, romige, hartige en zoete ideeën met eenvoudige ingrediënten en zonder toegevoegde suiker. Elk recept levert individuele porties op die handig zijn om mee te nemen naar je werk, school of een dagje uit. Je kunt de snacks ook vooraf maken en de porties klaarzetten in de koelkast.
 
 Sommige snacks zijn droog en kunnen in een bakje mee; andere bevatten zuivel of verse ingrediënten en moeten gekoeld blijven. Gebruik voor bederfelijke snacks een koeltas met een herbruikbaar koelelement en laat ze niet langer dan 2 uur buiten de koelkast. Controleer de etiketten van vleeswaren, notenpasta’s, plantaardige dranken en zoetstoffen op toegevoegde suiker of zetmeel.
 
@@ -43,7 +43,7 @@ Sommige snacks zijn droog en kunnen in een bakje mee; andere bevatten zuivel of 
 
 ### Ingrediënten
 - 70 g amandelmeel
-- 30 g gebroken lijnzaad
+- 30 g lijnzaadmeel
 - 10 g sesamzaad
 - 15 ml olijfolie
 - 45 ml water
@@ -52,7 +52,7 @@ Sommige snacks zijn droog en kunnen in een bakje mee; andere bevatten zuivel of 
 
 ### Bereiding
 1. Verwarm de oven voor op 170 °C en bekleed een bakplaat met bakpapier.
-2. Meng het amandelmeel, lijnzaad, sesamzaad, de rozemarijn en het zout. Voeg de olijfolie en het water toe en roer tot een gelijkmatig deeg ontstaat. Is het deeg erg droog, voeg dan beetje bij beetje extra water toe, telkens 5 ml.
+2. Meng het amandelmeel, lijnzaadmeel, sesamzaad, de rozemarijn en het zout. Voeg de olijfolie en het water toe en roer tot een gelijkmatig deeg ontstaat. Is het deeg erg droog, voeg dan beetje bij beetje extra water toe, telkens 5 ml.
 3. Leg het deeg tussen twee vellen bakpapier en rol het uit tot ongeveer 2 mm dik.
 4. Haal het bovenste vel weg, snijd met een mes vierkantjes in het deeg en leg het met het onderste vel op de bakplaat.
 5. Bak 18 tot 22 minuten, tot de randjes goudbruin zijn. Laat volledig afkoelen voordat je de crackers losbreekt.
@@ -183,7 +183,7 @@ Sommige snacks zijn droog en kunnen in een bakje mee; andere bevatten zuivel of 
 - 10 g ongezoet cacaopoeder
 - 15 ml ongezoete kokosroom
 - 1 ml vanille-extract, optioneel
-- Zoetstof voor verhitting zonder suiker of maltodextrine, optioneel en naar smaak
+- Hittebestendige zoetstof zonder suiker of maltodextrine, optioneel en naar smaak
 - Een snufje zout
 
 ### Bereiding
@@ -210,7 +210,7 @@ Sommige snacks zijn droog en kunnen in een bakje mee; andere bevatten zuivel of 
 - 40 g ongezoete naturel Griekse yoghurt
 - 1 ml vanille-extract
 - 40 g verse aardbeien, in stukjes
-- Zoetstof voor verhitting zonder suiker of maltodextrine, optioneel en naar smaak
+- Hittebestendige zoetstof zonder suiker of maltodextrine, optioneel en naar smaak
 
 ### Bereiding
 1. Meng het chiazaad, de amandeldrink, yoghurt en vanille in een kom.

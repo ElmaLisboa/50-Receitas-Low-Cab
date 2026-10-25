@@ -1,10 +1,10 @@
-<!-- État de production : brouillon de traduction ; relecture et approbation en attente | Variante : fr-FR -->
+<!-- État de production : brouillon révisé linguistiquement ; relecture finale et approbation de l’utilisateur en attente | Variante : fr-FR -->
 
-# Encas pauvres en glucides à emporter
+# Encas à faible teneur en glucides à emporter
 
 ## 10 idées pratiques, savoureuses et faciles à transporter
 
-Un encas n’a pas forcément besoin d’être compliqué. Ce carnet rassemble des idées croquantes, crémeuses, salées et sucrées, préparées avec des ingrédients simples et sans sucre ajouté. Chaque recette donne des portions individuelles, pratiques à emporter au travail, à l’école ou en sortie. Vous pouvez aussi les préparer à l’avance et garder les portions prêtes au réfrigérateur.
+Un encas n’a pas forcément besoin d’être compliqué. Ce carnet rassemble des idées croquantes, crémeuses, salées et sucrées, préparées avec des ingrédients simples et sans sucre ajouté. Chaque recette permet de préparer des portions individuelles, faciles à emporter au travail, à l’école ou en sortie. Vous pouvez aussi les préparer à l’avance et les garder prêtes au réfrigérateur.
 
 Certaines options sont sèches et se transportent dans une boîte ; d’autres contiennent des produits laitiers ou des ingrédients frais et doivent rester au frais. Pour les encas périssables, utilisez un sac isotherme avec un pain de glace réutilisable et ne les laissez pas hors du réfrigérateur plus de 2 heures. Vérifiez les étiquettes des charcuteries, purées d’oléagineux, boissons végétales et édulcorants afin d’éviter les produits contenant du sucre ou de l’amidon ajouté.
 
@@ -98,7 +98,7 @@ Certaines options sont sèches et se transportent dans une boîte ; d’autres c
 **Temps de cuisson :** sans cuisson
 
 ### Ingrédients
-- 120 g de tranches de blanc de dinde rôti, sans sucre ajouté
+- 120 g de blanc de dinde rôti en tranches, sans sucre ajouté
 - 60 g de ricotta écrasée
 - 40 g de concombre coupé en bâtonnets fins
 - 5 g de ciboulette ciselée
@@ -142,9 +142,9 @@ Certaines options sont sèches et se transportent dans une boîte ; d’autres c
 
 ---
 
-## 6. Petits biscuits salés aux amandes et au fromage
+## 6. Bouchées salées aux amandes et au fromage
 
-**Pour :** 2 portions (10 petits biscuits)
+**Pour :** 2 portions (10 petites bouchées)
 
 **Temps de préparation :** 10 minutes
 
@@ -163,9 +163,9 @@ Certaines options sont sèches et se transportent dans une boîte ; d’autres c
 1. Préchauffez le four à 180 °C et recouvrez une plaque de papier cuisson.
 2. Mélangez la poudre d’amandes, la mozzarella, le parmesan, la levure, l’origan et le sel.
 3. Ajoutez l’œuf et mélangez jusqu’à obtenir une pâte humide. Divisez-la en 10 portions, formez de petites boules et aplatissez-les légèrement sur la plaque.
-4. Faites cuire 12 à 15 minutes, jusqu’à ce que les biscuits soient fermes et dorés sur les bords. Laissez refroidir avant de les ranger.
+4. Faites cuire 12 à 15 minutes, jusqu’à ce que les bouchées soient fermes et dorées sur les bords. Laissez refroidir avant de les ranger.
 
-**À emporter :** comme ils contiennent de l’œuf et du fromage, gardez-les au réfrigérateur dans une boîte fermée et transportez-les dans un sac isotherme. À consommer sous 3 jours.
+**À emporter :** comme elles contiennent de l’œuf et du fromage, gardez-les au réfrigérateur dans une boîte fermée et transportez-les dans un sac isotherme. À consommer dans les 3 jours.
 
 ---
 
@@ -192,7 +192,7 @@ Certaines options sont sèches et se transportent dans une boîte ; d’autres c
 3. Goûtez et, si vous le souhaitez, ajoutez un peu d’édulcorant. Mélangez de nouveau.
 4. Divisez en 8 portions et formez des boules. Réfrigérez au moins 30 minutes pour les raffermir.
 
-**À emporter :** gardez les truffes au frais et transportez-les dans un sac isotherme, surtout par temps chaud. À consommer sous 3 jours.
+**À emporter :** gardez les truffes au frais et transportez-les dans un sac isotherme, surtout par temps chaud. À consommer dans les 3 jours.
 
 ---
 
@@ -216,9 +216,9 @@ Certaines options sont sèches et se transportent dans une boîte ; d’autres c
 1. Mélangez le chia, la boisson aux amandes, le yaourt et la vanille dans un bol.
 2. Laissez reposer 5 minutes, puis mélangez de nouveau pour défaire les grumeaux.
 3. Répartissez dans deux pots avec couvercle et réfrigérez au moins 4 heures, ou jusqu’à ce que la préparation ait une consistance de pudding.
-4. Si vous le souhaitez, sucrez la préparation avant de la réfrigérer. Répartissez les fraises hachées sur chaque portion juste avant de fermer les pots.
+4. Si vous le souhaitez, ajoutez de l’édulcorant à la préparation avant de la réfrigérer. Répartissez les fraises hachées sur chaque portion juste avant de fermer les pots.
 
-**À emporter :** transportez bien frais dans un sac isotherme avec un pain de glace réutilisable. Gardez au réfrigérateur et consommez sous 2 jours.
+**À emporter :** transportez bien frais dans un sac isotherme avec un pain de glace réutilisable. Gardez au réfrigérateur et consommez dans les 2 jours.
 
 ---
 
@@ -247,7 +247,7 @@ Certaines options sont sèches et se transportent dans une boîte ; d’autres c
 4. Divisez en 8 portions, formez des boules et aplatissez-les sur la plaque.
 5. Faites cuire 10 à 13 minutes. Les cookies seront encore mous à la sortie du four ; laissez-les refroidir complètement pour qu’ils durcissent.
 
-**À emporter :** une fois refroidis, rangez-les dans une boîte fermée. Comme ils contiennent de l’œuf, gardez-les au réfrigérateur et consommez-les sous 3 jours.
+**À emporter :** une fois refroidis, rangez-les dans une boîte fermée. Comme ils contiennent de l’œuf, gardez-les au réfrigérateur et consommez-les dans les 3 jours.
 
 ---
 
@@ -273,7 +273,7 @@ Certaines options sont sèches et se transportent dans une boîte ; d’autres c
 3. Répartissez dans deux petits pots avec couvercle et réfrigérez au moins 1 heure.
 4. Si vous utilisez des fraises, ajoutez-les sur le dessus juste avant de fermer les pots.
 
-**À emporter :** gardez les verrines au frais et transportez-les dans un sac isotherme avec un pain de glace réutilisable. Consommez sous 2 jours.
+**À emporter :** gardez les verrines au frais et transportez-les dans un sac isotherme avec un pain de glace réutilisable. Consommez dans les 2 jours.
 
 ---
 

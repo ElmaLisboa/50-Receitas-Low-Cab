@@ -1,4 +1,4 @@
-<!-- Estado de producción: borrador de traducción; pendiente de revisión y aprobación | Variante: es -->
+<!-- Estado de producción: borrador revisado lingüísticamente; pendiente de revisión final y aprobación del usuario | Variante: es -->
 
 # Snacks bajos en carbohidratos para llevar
 
@@ -52,7 +52,7 @@ Algunas opciones son secas y pueden transportarse en un recipiente; otras llevan
 
 ### Preparación
 1. Calienta el horno a 170 °C y cubre una bandeja con papel para hornear.
-2. Mezcla la harina de almendras, la linaza, el sésamo, el romero y la sal. Añade el aceite y el agua; remueve hasta obtener una masa homogénea. Si está muy seca, agrega más agua poco a poco, 5 ml cada vez.
+2. Mezcla la harina de almendras, la harina de linaza, el sésamo, el romero y la sal. Añade el aceite y el agua; remueve hasta obtener una masa homogénea. Si está muy seca, agrega más agua poco a poco, 5 ml cada vez.
 3. Coloca la masa entre dos hojas de papel para hornear y estírala hasta que tenga unos 2 mm de grosor.
 4. Retira la hoja superior, marca cuadrados con un cuchillo y pasa la masa a la bandeja.
 5. Hornea de 18 a 22 minutos, hasta que los bordes estén dorados. Deja enfriar por completo antes de separar los crackers.
@@ -102,11 +102,11 @@ Algunas opciones son secas y pueden transportarse en un recipiente; otras llevan
 - 60 g de ricota aplastada
 - 40 g de pepino cortado en bastones finos
 - 5 g de cebollino picado
-- 5 ml de zumo de limón
+- 5 ml de jugo de limón
 - Pimienta negra al gusto
 
 ### Preparación
-1. Mezcla la ricota con el cebollino, el zumo de limón y la pimienta.
+1. Mezcla la ricota con el cebollino, el jugo de limón y la pimienta.
 2. Coloca una pequeña porción de la mezcla sobre cada loncha de pavo.
 3. Añade unos bastones de pepino y enrolla con cuidado. Si hace falta, sujeta cada rollito con un palillo.
 4. Mantén los rollitos refrigerados hasta el momento de salir.
@@ -179,15 +179,15 @@ Algunas opciones son secas y pueden transportarse en un recipiente; otras llevan
 
 ### Ingredientes
 - 50 g de coco rallado sin azúcar
-- 40 g de pasta de almendras sin azúcar
+- 40 g de crema de almendras sin azúcar
 - 10 g de cacao en polvo sin azúcar
 - 15 ml de crema de coco sin azúcar
 - 1 ml de extracto de vainilla, opcional
-- Edulcorante culinario sin azúcar ni maltodextrina, opcional y al gusto
+- Edulcorante apto para cocinar, sin azúcar ni maltodextrina, opcional y al gusto
 - Una pizca de sal
 
 ### Preparación
-1. Mezcla el coco, la pasta de almendras, el cacao, la vainilla y la sal.
+1. Mezcla el coco, la crema de almendras, el cacao, la vainilla y la sal.
 2. Añade poco a poco la crema de coco y mezcla hasta que puedas moldear la preparación. Si está seca, agrega otros 5 ml de crema de coco.
 3. Prueba y, si lo deseas, añade una pequeña cantidad de edulcorante. Mezcla de nuevo.
 4. Divide en 8 porciones y forma bolitas. Refrigera durante al menos 30 minutos para que se endurezcan.
@@ -210,19 +210,19 @@ Algunas opciones son secas y pueden transportarse en un recipiente; otras llevan
 - 40 g de yogur griego natural, sin azúcar
 - 1 ml de extracto de vainilla
 - 40 g de fresas frescas picadas
-- Edulcorante culinario sin azúcar ni maltodextrina, opcional y al gusto
+- Edulcorante apto para cocinar, sin azúcar ni maltodextrina, opcional y al gusto
 
 ### Preparación
 1. Mezcla la chía, la bebida de almendras, el yogur y la vainilla en un tazón.
 2. Deja reposar 5 minutos y vuelve a mezclar para deshacer los grumos.
 3. Reparte en dos frascos con tapa y refrigera durante al menos 4 horas, o hasta que la mezcla tenga consistencia de pudín.
-4. Si lo deseas, endulza la mezcla antes de refrigerarla. Distribuye las fresas picadas sobre cada porción justo antes de cerrar los frascos.
+4. Si lo deseas, añade el edulcorante antes de refrigerar la mezcla. Distribuye las fresas picadas sobre cada porción justo antes de cerrar los frascos.
 
 **Para llevar:** transpórtalo bien frío en una bolsa térmica con una placa de hielo reutilizable. Mantenlo refrigerado y consúmelo en un plazo de 2 días.
 
 ---
 
-## 9. Galletas de pasta de maní y cacao
+## 9. Galletas de crema de maní y cacao
 
 **Rendimiento:** 2 porciones (8 galletas pequeñas)
 
@@ -231,7 +231,7 @@ Algunas opciones son secas y pueden transportarse en un recipiente; otras llevan
 **Tiempo de cocción:** 10 a 13 minutos
 
 ### Ingredientes
-- 50 g de pasta de maní 100 %, sin azúcar
+- 50 g de crema de maní 100 %, sin azúcar añadido
 - 40 g de harina de almendras
 - 1 huevo
 - 8 g de cacao en polvo sin azúcar
@@ -242,7 +242,7 @@ Algunas opciones son secas y pueden transportarse en un recipiente; otras llevan
 
 ### Preparación
 1. Calienta el horno a 175 °C y cubre una bandeja con papel para hornear.
-2. Mezcla la pasta de maní, el huevo, la vainilla y el eritritol, si lo usas.
+2. Mezcla la crema de maní, el huevo, la vainilla y el eritritol, si lo usas.
 3. Añade la harina de almendras, el cacao, el polvo para hornear y la sal. Mezcla hasta obtener una masa homogénea.
 4. Divide en 8 porciones, forma bolitas y aplástalas en la bandeja.
 5. Hornea de 10 a 13 minutos. Las galletas aún estarán blandas al salir del horno; déjalas enfriar por completo para que se endurezcan.
@@ -262,14 +262,14 @@ Algunas opciones son secas y pueden transportarse en un recipiente; otras llevan
 ### Ingredientes
 - 80 g de queso crema
 - 60 g de yogur griego natural, sin azúcar
-- 8 ml de zumo de limón
+- 8 ml de jugo de limón
 - 1 g de ralladura fina de limón
 - 10 g de eritritol en polvo, opcional
 - 20 g de fresas picadas, opcionales, para decorar
 
 ### Preparación
 1. Deja el queso crema fuera del refrigerador unos minutos para que se ablande, pero no lo mantengas a temperatura ambiente más de 2 horas.
-2. Bate el queso crema con el yogur, el zumo y la ralladura de limón hasta obtener una crema lisa. Incorpora el eritritol, si lo deseas.
+2. Bate el queso crema con el yogur, el jugo y la ralladura de limón hasta obtener una crema lisa. Incorpora el eritritol, si lo deseas.
 3. Reparte en dos frascos pequeños con tapa y refrigera durante al menos 1 hora.
 4. Si usas fresas, colócalas encima justo antes de cerrar los frascos.
 

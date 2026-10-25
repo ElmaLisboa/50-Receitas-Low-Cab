@@ -1,18 +1,18 @@
-<!-- Stato di produzione: bozza di traduzione; in attesa di revisione e approvazione | Variante: it-IT -->
+<!-- Stato di produzione: bozza rivista linguisticamente; in attesa della revisione finale e dell’approvazione dell’utente | Variante: it-IT -->
 
 # Snack low carb da portare con sé
 
 ## 10 idee pratiche, gustose e facili da trasportare
 
-Uno snack non deve per forza essere complicato. Questo quaderno raccoglie proposte croccanti, cremose, salate e dolci, preparate con ingredienti semplici e senza zuccheri aggiunti. Ogni ricetta offre porzioni singole, pratiche da portare al lavoro, a scuola o durante una gita. Puoi anche prepararle in anticipo e tenere le porzioni pronte in frigorifero.
+Uno snack non deve per forza essere complicato. Questo quaderno raccoglie proposte croccanti, cremose, salate e dolci, preparate con ingredienti semplici e senza zuccheri aggiunti. Ogni ricetta permette di preparare porzioni individuali, comode da portare al lavoro, a scuola o durante una gita. Puoi anche prepararle in anticipo e tenere le porzioni pronte in frigorifero.
 
-Alcune proposte sono secche e si possono trasportare in un contenitore; altre contengono latticini o ingredienti freschi e devono restare refrigerate. Per gli snack deperibili, usa una borsa termica con un ghiaccio riutilizzabile e non lasciarli fuori dal frigorifero per più di 2 ore. Controlla le etichette di salumi, creme di frutta a guscio, bevande vegetali e dolcificanti per verificare che non contengano zuccheri o amidi aggiunti.
+Alcune proposte sono secche e si possono trasportare in un contenitore; altre contengono latticini o ingredienti freschi e devono restare refrigerate. Per gli snack deperibili, usa una borsa termica con una mattonella refrigerante riutilizzabile e non lasciarli fuori dal frigorifero per più di 2 ore. Controlla le etichette di salumi, creme di frutta a guscio, bevande vegetali e dolcificanti per verificare che non contengano zuccheri o amidi aggiunti.
 
 ---
 
 ## 1. Cialde croccanti al parmigiano e origano
 
-**Porzioni:** 2 porzioni (12 cialde)
+**Dosi:** 2 porzioni (12 cialde)
 
 **Tempo di preparazione:** 5 minuti
 
@@ -35,7 +35,7 @@ Alcune proposte sono secche e si possono trasportare in un contenitore; altre co
 
 ## 2. Crackers di mandorle, semi di lino e rosmarino
 
-**Porzioni:** 2 porzioni (circa 20 crackers)
+**Dosi:** 2 porzioni (circa 20 crackers)
 
 **Tempo di preparazione:** 12 minuti
 
@@ -63,7 +63,7 @@ Alcune proposte sono secche e si possono trasportare in un contenitore; altre co
 
 ## 3. Mix croccante di frutta a guscio e semi
 
-**Porzioni:** 2 porzioni
+**Dosi:** 2 porzioni
 
 **Tempo di preparazione:** 5 minuti
 
@@ -91,11 +91,11 @@ Alcune proposte sono secche e si possono trasportare in un contenitore; altre co
 
 ## 4. Involtini di fesa di tacchino, ricotta e cetriolo
 
-**Porzioni:** 2 porzioni (8 involtini)
+**Dosi:** 2 porzioni (8 involtini)
 
 **Tempo di preparazione:** 12 minuti
 
-**Tempo di cottura:** senza cottura
+**Tempo di cottura:** non prevista
 
 ### Ingredienti
 - 120 g di fesa di tacchino arrosto a fette, senza zuccheri aggiunti
@@ -111,17 +111,17 @@ Alcune proposte sono secche e si possono trasportare in un contenitore; altre co
 3. Aggiungi alcuni bastoncini di cetriolo e arrotola con cura. Se necessario, fissa ogni involtino con uno stuzzicadenti.
 4. Tieni gli involtini in frigorifero fino al momento di uscire.
 
-**Da portare:** trasportali in una borsa termica con un ghiaccio riutilizzabile. Tienili refrigerati e consumali in giornata; non lasciarli fuori dal frigorifero per più di 2 ore.
+**Da portare:** trasportali in una borsa termica con una mattonella refrigerante riutilizzabile. Tienili refrigerati e consumali in giornata; non lasciarli fuori dal frigorifero per più di 2 ore.
 
 ---
 
 ## 5. Mini peperoni ripieni di ricotta ed erbe
 
-**Porzioni:** 2 porzioni (6 metà)
+**Dosi:** 2 porzioni (6 metà)
 
 **Tempo di preparazione:** 12 minuti
 
-**Tempo di cottura:** senza cottura
+**Tempo di cottura:** non prevista
 
 ### Ingredienti
 - 3 mini peperoni oppure 2 peperoni piccoli (circa 180 g in totale)
@@ -129,7 +129,7 @@ Alcune proposte sono secche e si possono trasportare in un contenitore; altre co
 - 30 g di yogurt bianco intero, non zuccherato
 - 5 g di prezzemolo tritato
 - 5 g di erba cipollina tritata
-- 1 g di scorza di limone
+- 1 g di scorza di limone grattugiata fine
 - 1 g di sale
 - Pepe nero, quanto basta
 
@@ -138,13 +138,13 @@ Alcune proposte sono secche e si possono trasportare in un contenitore; altre co
 2. Mescola ricotta, yogurt, prezzemolo, erba cipollina, scorza di limone, sale e pepe.
 3. Riempi ogni metà con il composto e disponile in un contenitore con coperchio.
 
-**Da portare:** tieni i peperoni ripieni in frigorifero e trasportali in una borsa termica con un ghiaccio riutilizzabile. Consumali in giornata.
+**Da portare:** tieni i peperoni ripieni in frigorifero e trasportali in una borsa termica con una mattonella refrigerante riutilizzabile. Consumali in giornata.
 
 ---
 
 ## 6. Bocconcini salati di mandorle e formaggio
 
-**Porzioni:** 2 porzioni (10 bocconcini)
+**Dosi:** 2 porzioni (10 bocconcini)
 
 **Tempo di preparazione:** 10 minuti
 
@@ -155,7 +155,7 @@ Alcune proposte sono secche e si possono trasportare in un contenitore; altre co
 - 40 g di mozzarella grattugiata
 - 15 g di parmigiano grattugiato
 - 1 uovo
-- 1 g di lievito in polvere per preparazioni salate
+- 1 g di lievito chimico in polvere
 - 1 g di origano secco
 - 0,5 g di sale
 
@@ -171,11 +171,11 @@ Alcune proposte sono secche e si possono trasportare in un contenitore; altre co
 
 ## 7. Tartufini al cacao e cocco senza zuccheri aggiunti
 
-**Porzioni:** 2 porzioni (8 tartufini)
+**Dosi:** 2 porzioni (8 tartufini)
 
 **Tempo di preparazione:** 15 minuti
 
-**Tempo di cottura:** senza cottura
+**Tempo di cottura:** non prevista
 
 ### Ingredienti
 - 50 g di cocco grattugiato non zuccherato
@@ -198,11 +198,11 @@ Alcune proposte sono secche e si possono trasportare in un contenitore; altre co
 
 ## 8. Budino di chia, fragole e vaniglia
 
-**Porzioni:** 2 vasetti monoporzione
+**Dosi:** 2 vasetti monoporzione
 
 **Tempo di preparazione:** 8 minuti, più il tempo di riposo in frigorifero
 
-**Tempo di cottura:** senza cottura
+**Tempo di cottura:** non prevista
 
 ### Ingredienti
 - 20 g di semi di chia
@@ -218,24 +218,24 @@ Alcune proposte sono secche e si possono trasportare in un contenitore; altre co
 3. Dividi in due vasetti con coperchio e metti in frigorifero per almeno 4 ore, o finché il composto avrà la consistenza di un budino.
 4. Se vuoi, dolcifica il composto prima di refrigerarlo. Distribuisci le fragole tritate su ogni porzione poco prima di chiudere i vasetti.
 
-**Da portare:** trasporta ben freddo in una borsa termica con un ghiaccio riutilizzabile. Tienilo in frigorifero e consumalo entro 2 giorni.
+**Da portare:** trasporta ben freddo in una borsa termica con una mattonella refrigerante riutilizzabile. Tienilo in frigorifero e consumalo entro 2 giorni.
 
 ---
 
 ## 9. Biscotti al burro di arachidi e cacao
 
-**Porzioni:** 2 porzioni (8 biscotti piccoli)
+**Dosi:** 2 porzioni (8 biscotti piccoli)
 
 **Tempo di preparazione:** 10 minuti
 
 **Tempo di cottura:** da 10 a 13 minuti
 
 ### Ingredienti
-- 50 g di crema 100% arachidi, non zuccherata
+- 50 g di burro di arachidi 100%, senza zuccheri aggiunti
 - 40 g di farina di mandorle
 - 1 uovo
 - 8 g di cacao in polvere non zuccherato
-- 1 g di lievito in polvere per preparazioni dolci
+- 1 g di lievito chimico in polvere
 - 10 g di eritritolo, facoltativo
 - 1 ml di estratto di vaniglia, facoltativo
 - Un pizzico di sale
@@ -251,13 +251,13 @@ Alcune proposte sono secche e si possono trasportare in un contenitore; altre co
 
 ---
 
-## 10. Bicchierini cremosi al limone e formaggio
+## 10. Bicchierini cremosi al limone e formaggio spalmabile
 
-**Porzioni:** 2 bicchierini monoporzione
+**Dosi:** 2 bicchierini monoporzione
 
 **Tempo di preparazione:** 10 minuti, più il tempo di riposo in frigorifero
 
-**Tempo di cottura:** senza cottura
+**Tempo di cottura:** non prevista
 
 ### Ingredienti
 - 80 g di formaggio spalmabile tipo cream cheese
@@ -273,10 +273,10 @@ Alcune proposte sono secche e si possono trasportare in un contenitore; altre co
 3. Dividi in due piccoli contenitori con coperchio e metti in frigorifero per almeno 1 ora.
 4. Se usi le fragole, aggiungile sopra poco prima di chiudere i contenitori.
 
-**Da portare:** tieni i bicchierini refrigerati e trasportali in una borsa termica con un ghiaccio riutilizzabile. Consumali entro 2 giorni.
+**Da portare:** tieni i bicchierini refrigerati e trasportali in una borsa termica con una mattonella refrigerante riutilizzabile. Consumali entro 2 giorni.
 
 ---
 
-## Snack pronti per la routine
+## Snack pronti per tutti i giorni
 
 Per facilitare il trasporto, dividi gli snack in porzioni singole e scegli il contenitore in base alla consistenza: contenitori rigidi per gli alimenti croccanti e vasetti con coperchio per quelli cremosi. Gli snack deperibili devono restare refrigerati fino al momento del consumo.

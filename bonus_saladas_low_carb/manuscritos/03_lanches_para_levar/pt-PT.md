@@ -1,12 +1,12 @@
-<!-- Estado de produção: rascunho de tradução; aguarda revisão e aprovação do utilizador | Variante: pt-PT -->
+<!-- Estado de produção: rascunho revisto linguisticamente; aguarda revisão final e aprovação do utilizador | Variante: pt-PT -->
 
 # Lanches com baixo teor de hidratos de carbono para levar
 
 ## 10 ideias práticas, saborosas e fáceis de transportar
 
-Nem todos os lanches têm de ser complicados. Este caderno reúne opções crocantes, cremosas, salgadas e doces, preparadas com ingredientes simples e sem açúcar adicionado. Cada receita rende porções individuais, práticas para levar para o trabalho, para a escola ou num passeio. Também pode prepará-las com antecedência e deixar as porções prontas no frigorífico.
+Nem todos os lanches têm de ser complicados. Este caderno reúne opções crocantes, cremosas, salgadas e doces, preparadas com ingredientes simples e sem açúcar adicionado. Cada receita permite preparar porções individuais, práticas para levar para o trabalho, para a escola ou num passeio. Também pode prepará-las com antecedência e deixar as porções prontas no frigorífico.
 
-Algumas opções são secas e podem ser transportadas num recipiente; outras incluem lacticínios ou ingredientes frescos e têm de se manter refrigeradas. Para lanches perecíveis, use uma bolsa térmica com um acumulador de frio reutilizável e não os deixe fora do frigorífico por mais de 2 horas. Verifique os rótulos dos produtos de charcutaria, das pastas de frutos de casca rija, das bebidas vegetais e dos adoçantes para evitar produtos com açúcar ou amido adicionados.
+Algumas opções são secas e podem ser transportadas num recipiente; outras incluem lacticínios ou ingredientes frescos e têm de se manter refrigeradas. Para lanches perecíveis, use uma saco térmico com um acumulador de frio reutilizável e não os deixe fora do frigorífico por mais de 2 horas. Verifique os rótulos dos produtos de charcutaria, das pastas de frutos de casca rija, das bebidas vegetais e dos adoçantes para evitar produtos com açúcar ou amido adicionados.
 
 ---
 
@@ -95,7 +95,7 @@ Algumas opções são secas e podem ser transportadas num recipiente; outras inc
 
 **Tempo de preparação:** 12 minutos
 
-**Tempo de cozedura:** sem cozedura
+**Tempo de cozedura:** não requer cozedura
 
 ### Ingredientes
 - 120 g de fatias de peito de peru assado, sem açúcar adicionado
@@ -111,7 +111,7 @@ Algumas opções são secas e podem ser transportadas num recipiente; outras inc
 3. Junte alguns palitos de pepino e enrole com cuidado. Se necessário, prenda cada rolinho com um palito.
 4. Mantenha os rolinhos refrigerados até à hora de sair.
 
-**Para levar:** transporte numa bolsa térmica com um acumulador de frio reutilizável. Mantenha refrigerado e consuma no próprio dia; não deixe fora do frigorífico por mais de 2 horas.
+**Para levar:** transporte num saco térmico com um acumulador de frio reutilizável. Mantenha refrigerado e consuma no próprio dia; não deixe fora do frigorífico por mais de 2 horas.
 
 ---
 
@@ -121,7 +121,7 @@ Algumas opções são secas e podem ser transportadas num recipiente; outras inc
 
 **Tempo de preparação:** 12 minutos
 
-**Tempo de cozedura:** sem cozedura
+**Tempo de cozedura:** não requer cozedura
 
 ### Ingredientes
 - 3 minipimentos ou 2 pimentos pequenos (cerca de 180 g no total)
@@ -138,7 +138,7 @@ Algumas opções são secas e podem ser transportadas num recipiente; outras inc
 2. Misture a ricota, o iogurte, a salsa, o cebolinho, a raspa de limão, o sal e a pimenta.
 3. Recheie cada metade com a mistura e coloque-as num recipiente com tampa.
 
-**Para levar:** mantenha os pimentos recheados refrigerados e transporte-os numa bolsa térmica com um acumulador de frio reutilizável. Consuma no próprio dia.
+**Para levar:** mantenha os pimentos recheados refrigerados e transporte-os num saco térmico com um acumulador de frio reutilizável. Consuma no próprio dia.
 
 ---
 
@@ -163,9 +163,9 @@ Algumas opções são secas e podem ser transportadas num recipiente; outras inc
 1. Aqueça o forno a 180 °C e forre um tabuleiro com papel vegetal.
 2. Misture a farinha de amêndoa, a mozzarella, o parmesão, o fermento, os orégãos e o sal.
 3. Junte o ovo e mexa até obter uma massa húmida. Divida em 10 porções, forme bolinhas pequenas e achate-as ligeiramente no tabuleiro.
-4. Leve ao forno durante 12 a 15 minutos, até ficarem firmes e dourados nos bordos. Deixe arrefecer antes de guardar.
+4. Leve ao forno durante 12 a 15 minutos, até ficarem firmes, com os bordos dourados. Deixe arrefecer antes de guardar.
 
-**Para levar:** como contêm ovo e queijo, mantenha-os refrigerados num recipiente fechado e transporte-os numa bolsa térmica. Consuma no prazo de 3 dias.
+**Para levar:** como contêm ovo e queijo, mantenha-os refrigerados num recipiente fechado e transporte-os num saco térmico. Consuma no prazo de 3 dias.
 
 ---
 
@@ -175,7 +175,7 @@ Algumas opções são secas e podem ser transportadas num recipiente; outras inc
 
 **Tempo de preparação:** 15 minutos
 
-**Tempo de cozedura:** sem cozedura
+**Tempo de cozedura:** não requer cozedura
 
 ### Ingredientes
 - 50 g de coco ralado sem açúcar
@@ -183,7 +183,7 @@ Algumas opções são secas e podem ser transportadas num recipiente; outras inc
 - 10 g de cacau em pó sem açúcar
 - 15 ml de creme de coco sem açúcar
 - 1 ml de extrato de baunilha, opcional
-- Adoçante de culinária sem açúcar nem maltodextrina, opcional e a gosto
+- Adoçante próprio para cozinhar, sem açúcar nem maltodextrina, opcional e a gosto
 - Uma pitada de sal
 
 ### Preparação
@@ -192,7 +192,7 @@ Algumas opções são secas e podem ser transportadas num recipiente; outras inc
 3. Prove e, se desejar, adicione uma pequena quantidade de adoçante. Misture de novo.
 4. Divida em 8 porções e molde bolinhas. Leve ao frigorífico durante pelo menos 30 minutos para firmarem.
 
-**Para levar:** mantenha as trufas refrigeradas e transporte-as numa bolsa térmica, sobretudo em dias quentes. Consuma no prazo de 3 dias.
+**Para levar:** mantenha as trufas refrigeradas e transporte-as num saco térmico, sobretudo em dias quentes. Consuma no prazo de 3 dias.
 
 ---
 
@@ -200,9 +200,9 @@ Algumas opções são secas e podem ser transportadas num recipiente; outras inc
 
 **Rendimento:** 2 frascos individuais
 
-**Tempo de preparação:** 8 minutos, mais o tempo de frigorífico
+**Tempo de preparação:** 8 minutos, mais o tempo de refrigeração
 
-**Tempo de cozedura:** sem cozedura
+**Tempo de cozedura:** não requer cozedura
 
 ### Ingredientes
 - 20 g de sementes de chia
@@ -210,15 +210,15 @@ Algumas opções são secas e podem ser transportadas num recipiente; outras inc
 - 40 g de iogurte grego natural, sem açúcar
 - 1 ml de extrato de baunilha
 - 40 g de morangos frescos picados
-- Adoçante de culinária sem açúcar nem maltodextrina, opcional e a gosto
+- Adoçante próprio para cozinhar, sem açúcar nem maltodextrina, opcional e a gosto
 
 ### Preparação
 1. Misture a chia, a bebida de amêndoa, o iogurte e a baunilha numa taça.
 2. Deixe repousar 5 minutos e mexa novamente para desfazer os grumos.
 3. Divida por dois frascos com tampa e leve ao frigorífico durante pelo menos 4 horas, ou até a mistura ficar com consistência de pudim.
-4. Se desejar, adoce a mistura antes de a refrigerar. Distribua os morangos picados por cima de cada porção pouco antes de fechar os frascos.
+4. Se desejar, junte o adoçante à mistura antes de a refrigerar. Distribua os morangos picados por cima de cada porção pouco antes de fechar os frascos.
 
-**Para levar:** transporte bem refrigerado numa bolsa térmica com um acumulador de frio reutilizável. Mantenha no frigorífico e consuma no prazo de 2 dias.
+**Para levar:** transporte bem refrigerado num saco térmico com um acumulador de frio reutilizável. Mantenha no frigorífico e consuma no prazo de 2 dias.
 
 ---
 
@@ -251,16 +251,16 @@ Algumas opções são secas e podem ser transportadas num recipiente; outras inc
 
 ---
 
-## 10. Copinhos cremosos de limão e queijo creme
+## 10. Taças cremosas de limão e queijo creme
 
-**Rendimento:** 2 copinhos individuais
+**Rendimento:** 2 taças individuais
 
-**Tempo de preparação:** 10 minutos, mais o tempo de frigorífico
+**Tempo de preparação:** 10 minutos, mais o tempo de refrigeração
 
-**Tempo de cozedura:** sem cozedura
+**Tempo de cozedura:** não requer cozedura
 
 ### Ingredientes
-- 80 g de queijo creme tipo cream cheese
+- 80 g de queijo creme para barrar
 - 60 g de iogurte grego natural, sem açúcar
 - 8 ml de sumo de limão
 - 1 g de raspa fina de limão
@@ -273,7 +273,7 @@ Algumas opções são secas e podem ser transportadas num recipiente; outras inc
 3. Divida por dois recipientes pequenos com tampa e leve ao frigorífico durante pelo menos 1 hora.
 4. Se utilizar morangos, coloque-os por cima pouco antes de fechar os recipientes.
 
-**Para levar:** mantenha os copinhos refrigerados e transporte-os numa bolsa térmica com um acumulador de frio reutilizável. Consuma no prazo de 2 dias.
+**Para levar:** mantenha as taças refrigeradas e transporte-as num saco térmico com um acumulador de frio reutilizável. Consuma no prazo de 2 dias.
 
 ---
 

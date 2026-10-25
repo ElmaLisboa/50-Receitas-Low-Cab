@@ -1,4 +1,4 @@
-<!-- Produktionsstatus: Übersetzungsentwurf; wartet auf Prüfung und Nutzerfreigabe | Sprachvariante: de-DE -->
+<!-- Produktionsstatus: sprachlich überarbeiteter Übersetzungsentwurf; wartet auf abschließende Nutzerprüfung und Freigabe | Sprachvariante: de-DE -->
 
 # Low-Carb-Snacks zum Mitnehmen
 
@@ -6,7 +6,7 @@
 
 Ein Snack muss nicht kompliziert sein. Dieses Heft versammelt knusprige, cremige, herzhafte und süße Ideen mit einfachen Zutaten und ohne zugesetzten Zucker. Jedes Rezept ergibt einzelne Portionen, die sich gut zur Arbeit, in die Schule oder auf Ausflüge mitnehmen lassen. Du kannst die Snacks auch vorbereiten und die Portionen im Kühlschrank bereithalten.
 
-Manche Varianten sind trocken und lassen sich in einer Dose transportieren; andere enthalten Milchprodukte oder frische Zutaten und müssen gekühlt bleiben. Für verderbliche Snacks eine Kühltasche mit wiederverwendbarem Kühlakku verwenden und sie nicht länger als 2 Stunden ungekühlt lassen. Zutatenlisten von Aufschnitt, Nussmusen, Pflanzendrinks und Süßungsmitteln auf zugesetzten Zucker oder Stärke prüfen.
+Manche Snacks sind trocken und lassen sich in einer Dose transportieren; andere enthalten Milchprodukte oder frische Zutaten und müssen gekühlt bleiben. Verwende für verderbliche Snacks eine Kühltasche mit wiederverwendbarem Kühlakku und lass sie nicht länger als 2 Stunden ungekühlt. Prüfe die Zutatenlisten von Aufschnitt, Nussmus, Pflanzendrinks und Süßungsmitteln auf zugesetzten Zucker oder Stärke.
 
 ---
 
@@ -33,7 +33,7 @@ Manche Varianten sind trocken und lassen sich in einer Dose transportieren; ande
 
 ---
 
-## 2. Mandel-Leinsamen-Rosmarin-Cracker
+## 2. Mandel-Leinsamen-Cracker mit Rosmarin
 
 **Ergibt:** 2 Portionen (etwa 20 Cracker)
 
@@ -95,10 +95,10 @@ Manche Varianten sind trocken und lassen sich in einer Dose transportieren; ande
 
 **Zubereitungszeit:** 12 Minuten
 
-**Garzeit:** ohne Kochen
+**Garzeit:** entfällt (ohne Kochen)
 
 ### Zutaten
-- 120 g Scheiben gebratene Putenbrust, ohne zugesetzten Zucker
+- 120 g gebratene Putenbrust in Scheiben, ohne zugesetzten Zucker
 - 60 g zerdrückter Ricotta
 - 40 g Gurke, in dünne Stifte geschnitten
 - 5 g gehackter Schnittlauch
@@ -121,15 +121,15 @@ Manche Varianten sind trocken und lassen sich in einer Dose transportieren; ande
 
 **Zubereitungszeit:** 12 Minuten
 
-**Garzeit:** ohne Kochen
+**Garzeit:** entfällt (ohne Kochen)
 
 ### Zutaten
 - 3 Mini-Paprika oder 2 kleine Paprikaschoten (insgesamt etwa 180 g)
 - 80 g zerdrückter Ricotta
-- 30 g ungesüßter Naturjoghurt mit Vollfett
+- 30 g ungesüßter Vollfett-Naturjoghurt
 - 5 g gehackte Petersilie
 - 5 g gehackter Schnittlauch
-- 1 g Zitronenschale
+- 1 g fein abgeriebene Zitronenschale
 - 1 g Salz
 - Schwarzer Pfeffer nach Geschmack
 
@@ -175,7 +175,7 @@ Manche Varianten sind trocken und lassen sich in einer Dose transportieren; ande
 
 **Zubereitungszeit:** 15 Minuten
 
-**Garzeit:** ohne Kochen
+**Garzeit:** entfällt (ohne Kochen)
 
 ### Zutaten
 - 50 g ungesüßte Kokosraspel
@@ -202,7 +202,7 @@ Manche Varianten sind trocken und lassen sich in einer Dose transportieren; ande
 
 **Zubereitungszeit:** 8 Minuten, plus Kühlzeit
 
-**Garzeit:** ohne Kochen
+**Garzeit:** entfällt (ohne Kochen)
 
 ### Zutaten
 - 20 g Chiasamen
@@ -222,9 +222,9 @@ Manche Varianten sind trocken und lassen sich in einer Dose transportieren; ande
 
 ---
 
-## 9. Erdnussbutter-Kakao-Cookies
+## 9. Erdnussbutter-Kakao-Kekse
 
-**Ergibt:** 2 Portionen (8 kleine Cookies)
+**Ergibt:** 2 Portionen (8 kleine Kekse)
 
 **Zubereitungszeit:** 10 Minuten
 
@@ -257,7 +257,7 @@ Manche Varianten sind trocken und lassen sich in einer Dose transportieren; ande
 
 **Zubereitungszeit:** 10 Minuten, plus Kühlzeit
 
-**Garzeit:** ohne Kochen
+**Garzeit:** entfällt (ohne Kochen)
 
 ### Zutaten
 - 80 g Frischkäse
