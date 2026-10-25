@@ -40,7 +40,7 @@ manuscritos/
 Os manuscritos ainda não finalizados permanecem em rascunho. Status atual:
 
 - **Bônus 1 — Molhos e Vinagretas:** manuscritos e PDFs concluídos nas 13 variantes; o usuário declarou o bônus concluído. Os PDFs (18 páginas cada) estão em `pdfs/01_molhos_vinagretas/`; a capa premium e as 15 imagens estão em `imagens/01_molhos_vinagretas/`. Os registros de aprovação individuais das traduções foram mantidos como estavam.
-- **Bônus 2 — Proteínas Práticas:** manuscrito `pt-BR` revisado linguisticamente em `manuscritos/02_proteinas_praticas/pt-BR.md`; PDF premium brasileiro atualizado para revisão final em `pdfs/02_proteinas_praticas/pt-BR.pdf` (13 páginas, com capa fotográfica). As 10 imagens das receitas e a capa separada estão em `imagens/02_proteinas_praticas/`. As outras 12 variantes continuam como modelos.
+- **Bônus 2 — Proteínas Práticas:** manuscrito `pt-BR` revisado linguisticamente e aprovado pelo usuário em `manuscritos/02_proteinas_praticas/pt-BR.md`; PDF em `pdfs/02_proteinas_praticas/pt-BR.pdf` (13 páginas, com capa fotográfica). Os outros 12 manuscritos foram traduzidos e revisados linguisticamente, mas continuam pendentes de aprovação; seus PDFs preliminares atualizados (13 páginas cada) estão em `pdfs/02_proteinas_praticas/`. As 10 imagens das receitas e a capa separada estão em `imagens/02_proteinas_praticas/`.
 - **Bônus 3 — Lanches (`pt-BR`):** rascunho em `manuscritos/03_lanches_para_levar/pt-BR.md`; ainda não iniciado. As traduções estão pendentes.
 
 ## Fluxo de trabalho recomendado

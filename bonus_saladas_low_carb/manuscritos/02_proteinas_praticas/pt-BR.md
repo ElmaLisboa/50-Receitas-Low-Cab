@@ -1,4 +1,4 @@
-<!-- Status de produção: revisão linguística concluída | Idioma: pt-BR -->
+<!-- Status de produção: revisão linguística concluída e aprovada pelo usuário | Idioma: pt-BR -->
 
 # Proteínas Práticas para Refeições Low Carb
 
