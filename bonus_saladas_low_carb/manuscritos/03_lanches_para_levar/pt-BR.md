@@ -1,4 +1,4 @@
-<!-- Status de produção: revisão linguística concluída; aguarda aprovação do usuário | Idioma: pt-BR -->
+<!-- Status de produção: aprovado pelo usuário | Idioma: pt-BR -->
 
 # Lanches Low Carb para Levar
 

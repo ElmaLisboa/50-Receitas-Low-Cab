@@ -335,7 +335,7 @@ BONUS_LABEL_OVERRIDES = {
     },
     3: {
         "pt-BR": {
-            "edition": "Português do Brasil · RASCUNHO",
+            "edition": "Português do Brasil",
             "recipes_word": "LANCHES",
             "intro_title": "Sobre este caderno",
             "contents_title": "Lanches deste caderno",
