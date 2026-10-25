@@ -4,9 +4,9 @@
 
 ## 10 ideias práticas, saborosas e fáceis de transportar
 
-Nem todo lanche precisa ser complicado. Este caderno reúne opções crocantes, cremosas, salgadas e doces, preparadas com ingredientes simples e sem açúcar adicionado. As receitas rendem porções individuais, ideais para levar ao trabalho, à escola ou em passeios. Também podem ser preparadas com antecedência e deixadas prontas na geladeira.
+Nem todo lanche precisa ser complicado. Este caderno reúne opções crocantes, cremosas, salgadas e doces, preparadas com ingredientes simples e sem açúcar adicionado. As receitas rendem porções individuais, ideais para levar ao trabalho, à escola ou em passeios. Você também pode prepará-las com antecedência e deixar as porções prontas na geladeira.
 
-Algumas opções são secas e podem ser transportadas em um pote; outras levam laticínios ou ingredientes frescos e precisam permanecer refrigeradas. Para lanches perecíveis, use uma bolsa térmica com gelo reutilizável e não os deixe fora da geladeira por mais de 2 horas. Verifique os rótulos de embutidos, pastas de oleaginosas, bebidas vegetais e adoçantes para evitar produtos com açúcar ou amido adicionados.
+Algumas opções são secas e podem ser transportadas em um pote; outras levam laticínios ou ingredientes frescos e precisam permanecer refrigeradas. Para lanches perecíveis, use uma bolsa térmica com gelo reutilizável e não os deixe fora da geladeira por mais de 2 horas. Verifique os rótulos de embutidos, pastas de castanhas ou amendoim, bebidas vegetais e adoçantes para evitar produtos com açúcar ou amido adicionados.
 
 ---
 
@@ -25,7 +25,7 @@ Algumas opções são secas e podem ser transportadas em um pote; outras levam l
 1. Aqueça o forno a 200 °C e forre uma assadeira com papel-manteiga.
 2. Misture o parmesão com o orégano e a pimenta. Faça 12 montinhos pequenos, deixando espaço entre eles, e achate cada um levemente.
 3. Asse por 5 a 8 minutos, observando de perto, até as bordas ficarem douradas.
-4. Deixe esfriar completamente na assadeira. Os chips ficam mais crocantes ao esfriar.
+4. Espere os chips esfriarem completamente na assadeira; eles ficam mais crocantes depois de frios.
 
 **Para levar:** transporte em pote rígido e seco para evitar que quebrem. Guarde somente depois de frios; a umidade pode amolecê-los.
 
@@ -53,7 +53,7 @@ Algumas opções são secas e podem ser transportadas em um pote; outras levam l
 4. Retire a folha superior, marque quadrados com uma faca e transfira a massa para a assadeira.
 5. Asse por 18 a 22 minutos, até dourar nas bordas. Deixe esfriar totalmente antes de separar os crackers.
 
-**Para levar:** depois de frios, guarde em pote hermético seco. Se perderem a crocância, aqueça por alguns minutos no forno e deixe esfriar novamente antes de guardar.
+**Para levar:** depois de frios, guarde em pote hermético seco. Se os crackers perderem a crocância, aqueça-os por alguns minutos no forno e deixe-os esfriar completamente antes de guardá-los novamente.
 
 ---
 
@@ -87,7 +87,7 @@ Algumas opções são secas e podem ser transportadas em um pote; outras levam l
 
 **Rendimento:** 2 porções (8 rolinhos)  
 **Tempo de preparo:** 12 minutos  
-**Tempo de cozimento:** não requer
+**Tempo de cozimento:** sem cozimento
 
 ### Ingredientes
 - 120 g de fatias de peito de peru assado, sem açúcar adicionado
@@ -101,20 +101,20 @@ Algumas opções são secas e podem ser transportadas em um pote; outras levam l
 1. Misture a ricota com a cebolinha, o suco de limão e a pimenta.
 2. Coloque uma pequena porção da mistura sobre cada fatia de peito de peru.
 3. Acrescente alguns palitos de pepino e enrole com cuidado. Se necessário, prenda cada rolinho com um palito.
-4. Mantenha refrigerado até a hora de sair.
+4. Mantenha os rolinhos refrigerados até a hora de sair.
 
 **Para levar:** transporte em bolsa térmica com gelo reutilizável. Mantenha refrigerado e consuma no mesmo dia; não deixe fora da refrigeração por mais de 2 horas.
 
 ---
 
-## 5. Mini pimentões recheados com ricota e ervas
+## 5. Minipimentões recheados com ricota e ervas
 
 **Rendimento:** 2 porções (6 metades)  
 **Tempo de preparo:** 12 minutos  
-**Tempo de cozimento:** não requer
+**Tempo de cozimento:** sem cozimento
 
 ### Ingredientes
-- 3 mini pimentões ou 2 pimentões pequenos (cerca de 180 g no total)
+- 3 minipimentões ou 2 pimentões pequenos (cerca de 180 g no total)
 - 80 g de ricota amassada
 - 30 g de iogurte natural integral, sem açúcar
 - 5 g de salsinha picada
@@ -128,7 +128,7 @@ Algumas opções são secas e podem ser transportadas em um pote; outras levam l
 2. Misture a ricota, o iogurte, a salsinha, a cebolinha, as raspas de limão, o sal e a pimenta.
 3. Recheie cada metade com a mistura e acomode em um recipiente com tampa.
 
-**Para levar:** mantenha refrigerado e transporte em bolsa térmica com gelo reutilizável. Consuma no mesmo dia.
+**Para levar:** mantenha os pimentões recheados refrigerados e transporte-os em bolsa térmica com gelo reutilizável. Consuma no mesmo dia.
 
 ---
 
@@ -151,7 +151,7 @@ Algumas opções são secas e podem ser transportadas em um pote; outras levam l
 1. Aqueça o forno a 180 °C e forre uma assadeira com papel-manteiga.
 2. Misture a farinha de amêndoas, a muçarela, o parmesão, o fermento, o orégano e o sal.
 3. Junte o ovo e mexa até formar uma massa úmida. Divida em 10 porções e modele bolinhas pequenas; achate-as levemente na assadeira.
-4. Asse por 12 a 15 minutos, até ficarem firmes e douradas nas bordas. Deixe esfriar antes de guardar.
+4. Asse por 12 a 15 minutos, até ficarem firmes, com as bordas douradas. Deixe esfriar antes de guardar.
 
 **Para levar:** como levam ovo e queijo, mantenha refrigerados em recipiente fechado e transporte em bolsa térmica. Consuma em até 3 dias.
 
@@ -161,7 +161,7 @@ Algumas opções são secas e podem ser transportadas em um pote; outras levam l
 
 **Rendimento:** 2 porções (8 unidades)  
 **Tempo de preparo:** 15 minutos  
-**Tempo de cozimento:** não requer
+**Tempo de cozimento:** sem cozimento
 
 ### Ingredientes
 - 50 g de coco ralado sem açúcar
@@ -178,7 +178,7 @@ Algumas opções são secas e podem ser transportadas em um pote; outras levam l
 3. Prove e, se desejar, adicione uma pequena quantidade de adoçante culinário. Misture novamente.
 4. Divida em oito porções e modele bolinhas. Leve à geladeira por pelo menos 30 minutos para firmar.
 
-**Para levar:** mantenha refrigeradas e transporte em bolsa térmica, especialmente em dias quentes. Consuma em até 3 dias.
+**Para levar:** mantenha as trufas refrigeradas e transporte-as em bolsa térmica, especialmente em dias quentes. Consuma em até 3 dias.
 
 ---
 
@@ -186,7 +186,7 @@ Algumas opções são secas e podem ser transportadas em um pote; outras levam l
 
 **Rendimento:** 2 potes individuais  
 **Tempo de preparo:** 8 minutos, mais o tempo de geladeira  
-**Tempo de cozimento:** não requer
+**Tempo de cozimento:** sem cozimento
 
 ### Ingredientes
 - 20 g de sementes de chia
@@ -198,8 +198,8 @@ Algumas opções são secas e podem ser transportadas em um pote; outras levam l
 
 ### Modo de preparo
 1. Misture a chia, a bebida de amêndoas, o iogurte e a baunilha em uma tigela.
-2. Aguarde 5 minutos e mexa novamente para desfazer os grumos.
-3. Divida em dois potes com tampa e leve à geladeira por pelo menos 4 horas, ou até a chia formar um pudim.
+2. Deixe descansar por 5 minutos e mexa novamente para desfazer os grumos.
+3. Divida em dois potes com tampa e leve à geladeira por pelo menos 4 horas, ou até a mistura adquirir consistência de pudim.
 4. Se desejar, adoce a mistura antes de levá-la à geladeira. Distribua os morangos picados sobre cada porção pouco antes de fechar os potes.
 
 **Para levar:** transporte bem refrigerado em bolsa térmica com gelo reutilizável. Mantenha sob refrigeração e consuma em até 2 dias.
@@ -237,7 +237,7 @@ Algumas opções são secas e podem ser transportadas em um pote; outras levam l
 
 **Rendimento:** 2 potes individuais  
 **Tempo de preparo:** 10 minutos, mais o tempo de geladeira  
-**Tempo de cozimento:** não requer
+**Tempo de cozimento:** sem cozimento
 
 ### Ingredientes
 - 80 g de cream cheese
@@ -253,7 +253,7 @@ Algumas opções são secas e podem ser transportadas em um pote; outras levam l
 3. Divida em dois potes pequenos com tampa e leve à geladeira por pelo menos 1 hora.
 4. Se usar morangos, coloque-os por cima pouco antes de fechar os potes.
 
-**Para levar:** mantenha refrigerado e transporte em bolsa térmica com gelo reutilizável. Consuma em até 2 dias.
+**Para levar:** mantenha os copinhos refrigerados e transporte-os em bolsa térmica com gelo reutilizável. Consuma em até 2 dias.
 
 ---
 
