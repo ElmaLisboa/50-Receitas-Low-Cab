@@ -41,7 +41,7 @@ Os manuscritos ainda não finalizados permanecem em rascunho. Status atual:
 
 - **Bônus 1 — Molhos e Vinagretas:** manuscritos e PDFs concluídos nas 13 variantes; o usuário declarou o bônus concluído. Os PDFs (18 páginas cada) estão em `pdfs/01_molhos_vinagretas/`; a capa premium e as 15 imagens estão em `imagens/01_molhos_vinagretas/`. Os registros de aprovação individuais das traduções foram mantidos como estavam.
 - **Bônus 2 — Proteínas Práticas:** manuscrito `pt-BR` revisado linguisticamente e aprovado pelo usuário em `manuscritos/02_proteinas_praticas/pt-BR.md`; PDF em `pdfs/02_proteinas_praticas/pt-BR.pdf` (13 páginas, com capa fotográfica). Os outros 12 manuscritos foram traduzidos e revisados linguisticamente, mas continuam pendentes de aprovação; seus PDFs preliminares atualizados (13 páginas cada) estão em `pdfs/02_proteinas_praticas/`. As 10 imagens das receitas e a capa separada estão em `imagens/02_proteinas_praticas/`.
-- **Bônus 3 — Lanches (`pt-BR`):** rascunho em `manuscritos/03_lanches_para_levar/pt-BR.md`; ainda não iniciado. As traduções estão pendentes.
+- **Bônus 3 — Lanches (`pt-BR`):** manuscrito revisado linguisticamente e aguardando aprovação em `manuscritos/03_lanches_para_levar/pt-BR.md`; capa e 10 fotos das receitas estão em `imagens/03_lanches_para_levar/`; PDF de rascunho com 13 páginas em `pdfs/03_lanches_para_levar/pt-BR.pdf`. As traduções ainda não foram iniciadas.
 
 ## Fluxo de trabalho recomendado
 
@@ -54,7 +54,7 @@ O prompt reutilizável está em [`PROMPT_MESTRE.md`](PROMPT_MESTRE.md). Para evi
 
 ## Renderização de PDF
 
-O gerador está em `tools/render_pdf.py`. Ele identifica o locale pelo nome do manuscrito e o bônus pelo parâmetro `--bonus-number`; traduz capa, sumário e rótulos internos. Para o Bônus 2, use `--bonus-number 2`. Se ainda não houver `capa.jpg` para o Bônus 2, o PDF usa uma capa gráfica premium provisória. Instale as dependências listadas em `requirements-pdf.txt` e informe os caminhos do manuscrito, das imagens e do PDF de saída. Exemplo para a versão brasileira do Bônus 1:
+O gerador está em `tools/render_pdf.py`. Ele identifica o locale pelo nome do manuscrito e o bônus pelo parâmetro `--bonus-number`; traduz capa, sumário e rótulos internos. Use `--bonus-number 2` para o Bônus 2 e `--bonus-number 3` para o Bônus 3. Se ainda não houver uma capa fotográfica, o PDF usa uma capa gráfica premium provisória. Instale as dependências listadas em `requirements-pdf.txt` e informe os caminhos do manuscrito, das imagens e do PDF de saída. Exemplo para a versão brasileira do Bônus 1:
 
 ```bash
 python -m pip install -r bonus_saladas_low_carb/requirements-pdf.txt
@@ -72,6 +72,16 @@ python bonus_saladas_low_carb/tools/render_pdf.py \
   --manuscript bonus_saladas_low_carb/manuscritos/02_proteinas_praticas/pt-BR.md \
   --images bonus_saladas_low_carb/imagens/02_proteinas_praticas \
   --output bonus_saladas_low_carb/pdfs/02_proteinas_praticas/pt-BR.pdf
+```
+
+Exemplo para o PDF brasileiro de rascunho do Bônus 3:
+
+```bash
+python bonus_saladas_low_carb/tools/render_pdf.py \
+  --bonus-number 3 \
+  --manuscript bonus_saladas_low_carb/manuscritos/03_lanches_para_levar/pt-BR.md \
+  --images bonus_saladas_low_carb/imagens/03_lanches_para_levar \
+  --output bonus_saladas_low_carb/pdfs/03_lanches_para_levar/pt-BR.pdf
 ```
 
 Para `hi-IN`, `ja-JP`, `zh-TW` e `zh-CN`, obtenha as fontes Noto e informe `--script-fonts-dir`; veja as instruções em [`tools/fonts/README.md`](tools/fonts/README.md). A lista de fontes é externa ao repositório, e os PDFs resultantes já incorporam os glifos necessários.

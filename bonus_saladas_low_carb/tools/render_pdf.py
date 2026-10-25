@@ -196,7 +196,7 @@ for _locale, _word in RECIPE_WORDS.items():
 
 SCRIPT_LOCALES = {"hi-IN", "ja-JP", "zh-TW", "zh-CN"}
 CJK_LOCALES = {"ja-JP", "zh-TW", "zh-CN"}
-BONUS_RECIPE_COUNTS = {1: 15, 2: 10}
+BONUS_RECIPE_COUNTS = {1: 15, 2: 10, 3: 10}
 BONUS_LABEL_OVERRIDES = {
     2: {
         "pt-BR": {
@@ -331,6 +331,17 @@ BONUS_LABEL_OVERRIDES = {
             "contents_note": "右側數字表示各道料理在 PDF 中的頁碼。",
             "pairing": "食用建議：",
             "cook_time": "烹調時間：",
+        },
+    },
+    3: {
+        "pt-BR": {
+            "edition": "Português do Brasil · RASCUNHO",
+            "recipes_word": "LANCHES",
+            "intro_title": "Sobre este caderno",
+            "contents_title": "Lanches deste caderno",
+            "contents_note": "Os números à direita indicam a página de cada lanche no PDF.",
+            "pairing": "Para levar:",
+            "cook_time": "Tempo de cozimento:",
         },
     },
 }
@@ -512,9 +523,12 @@ def parse_manuscript(path: Path, bonus_number: int = 1) -> Manuscript:
                 ingredients.append(line[2:].strip())
             elif section == "steps" and re.match(r"\d+\.\s", line):
                 steps.append(re.sub(r"^\d+\.\s*", "", line).strip())
-        if not all((yield_text, time_text, ingredients, steps, pairing, storage)):
+        required = (yield_text, time_text, ingredients, steps, pairing)
+        if bonus_number in (1, 2):
+            required += (storage,)
+        if not all(required):
             raise ValueError(f"Receita {number} incompleta em {path}: {recipe_title}")
-        if bonus_number == 2 and not cook_time_text:
+        if bonus_number in (2, 3) and not cook_time_text:
             raise ValueError(f"Tempo de cozimento ausente na receita {number} em {path}.")
         recipes.append(Recipe(number, recipe_title, yield_text, time_text,
                               ingredients, steps, pairing, storage, cook_time_text))
@@ -755,16 +769,17 @@ def draw_intro(c, manuscript: Manuscript, labels: Dict[str, str], s,
     for paragraph in manuscript.intro:
         y = draw_paragraph(c, clean_inline(paragraph), MARGIN, y,
                            CONTENT_W, s["intro"]) - 12
-    y -= 6
-    y = draw_section_label(c, labels["before"], MARGIN, y, CONTENT_W, fonts)
-    bullet_style = ParagraphStyle(
-        "bullet", parent=s["intro"], fontSize=8.8 if fonts.shaping else 9.2,
-        leading=12.2 if fonts.shaping else 13.0,
-        leftIndent=12, firstLineIndent=-10, spaceAfter=6, **_style_options(fonts)
-    )
-    for item in manuscript.notes:
-        bullet = f'<font color="{GREEN.hexval()}">•</font>  {clean_inline(item)}'
-        y = draw_paragraph(c, bullet, MARGIN + 4, y, CONTENT_W - 8, bullet_style) - 3
+    if manuscript.notes:
+        y -= 6
+        y = draw_section_label(c, labels["before"], MARGIN, y, CONTENT_W, fonts)
+        bullet_style = ParagraphStyle(
+            "bullet", parent=s["intro"], fontSize=8.8 if fonts.shaping else 9.2,
+            leading=12.2 if fonts.shaping else 13.0,
+            leftIndent=12, firstLineIndent=-10, spaceAfter=6, **_style_options(fonts)
+        )
+        for item in manuscript.notes:
+            bullet = f'<font color="{GREEN.hexval()}">•</font>  {clean_inline(item)}'
+            y = draw_paragraph(c, bullet, MARGIN + 4, y, CONTENT_W - 8, bullet_style) - 3
     draw_footer(c, page_num, f"{bonus_label}  ·  {edition_label.upper()}", fonts)
     c.showPage()
 
@@ -987,13 +1002,14 @@ def draw_recipe(c, recipe: Recipe, image_path: Path, page_num: int,
     )
     right_y = draw_paragraph(c, numbered_html(recipe.steps, fonts), right_x,
                              right_y, col_w, step_style) - 10
-    right_y = draw_section_label(c, labels["storage"], right_x, right_y, col_w, fonts)
-    storage_style = ParagraphStyle(
-        "storage", parent=s["small"], fontSize=7.4 if locale == "hi-IN" else 7.7,
-        leading=9.7 if locale == "hi-IN" else 10.2, **_style_options(fonts)
-    )
-    right_y = draw_paragraph(c, clean_inline(recipe.storage), right_x,
-                             right_y, col_w, storage_style)
+    if recipe.storage:
+        right_y = draw_section_label(c, labels["storage"], right_x, right_y, col_w, fonts)
+        storage_style = ParagraphStyle(
+            "storage", parent=s["small"], fontSize=7.4 if locale == "hi-IN" else 7.7,
+            leading=9.7 if locale == "hi-IN" else 10.2, **_style_options(fonts)
+        )
+        right_y = draw_paragraph(c, clean_inline(recipe.storage), right_x,
+                                 right_y, col_w, storage_style)
 
     lower = min(left_y, right_y)
     if lower < 38:
@@ -1011,8 +1027,8 @@ def main() -> None:
     parser.add_argument("--images", required=True, type=Path)
     parser.add_argument("--output", required=True, type=Path)
     parser.add_argument("--cover", type=Path, default=None)
-    parser.add_argument("--bonus-number", type=int, choices=(1, 2), default=1,
-                        help="Número do bônus (1: 15 receitas; 2: 10 preparações).")
+    parser.add_argument("--bonus-number", type=int, choices=(1, 2, 3), default=1,
+                        help="Número do bônus (1: 15 receitas; 2 e 3: 10 preparações cada).")
     parser.add_argument("--bonus-label", default=None)
     parser.add_argument("--edition-label", default=None)
     parser.add_argument("--font-dir", type=Path,

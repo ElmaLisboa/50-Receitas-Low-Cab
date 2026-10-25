@@ -1,12 +1,12 @@
-<!-- Status de produção: rascunho para revisão | Idioma: pt-BR -->
+<!-- Status de produção: revisão linguística concluída; aguarda aprovação do usuário | Idioma: pt-BR -->
 
 # Lanches Low Carb para Levar
 
 ## 10 ideias práticas, saborosas e fáceis de transportar
 
-Nem todo lanche precisa ser complicado. Este caderno reúne opções crocantes, cremosas, salgadas e doces, preparadas com ingredientes simples e sem açúcar adicionado. As receitas são porções independentes para levar ao trabalho, à escola, em passeios ou para deixar prontas na geladeira.
+Nem todo lanche precisa ser complicado. Este caderno reúne opções crocantes, cremosas, salgadas e doces, preparadas com ingredientes simples e sem açúcar adicionado. As receitas rendem porções individuais, ideais para levar ao trabalho, à escola ou em passeios. Também podem ser preparadas com antecedência e deixadas prontas na geladeira.
 
-Algumas opções são secas e podem ser transportadas em um pote; outras levam laticínios ou ingredientes frescos e precisam permanecer refrigeradas. Para lanches perecíveis, use uma bolsa térmica com gelo reutilizável e não os deixe fora da geladeira por mais de 2 horas. Confira os rótulos de embutidos, pastas de oleaginosas, bebidas vegetais e adoçantes para evitar açúcar ou amidos adicionados.
+Algumas opções são secas e podem ser transportadas em um pote; outras levam laticínios ou ingredientes frescos e precisam permanecer refrigeradas. Para lanches perecíveis, use uma bolsa térmica com gelo reutilizável e não os deixe fora da geladeira por mais de 2 horas. Verifique os rótulos de embutidos, pastas de oleaginosas, bebidas vegetais e adoçantes para evitar produtos com açúcar ou amido adicionados.
 
 ---
 
@@ -22,7 +22,7 @@ Algumas opções são secas e podem ser transportadas em um pote; outras levam l
 - Pimenta-do-reino a gosto
 
 ### Modo de preparo
-1. Aqueça o forno a 200 °C e forre uma assadeira com papel próprio para forno.
+1. Aqueça o forno a 200 °C e forre uma assadeira com papel-manteiga.
 2. Misture o parmesão com o orégano e a pimenta. Faça 12 montinhos pequenos, deixando espaço entre eles, e achate cada um levemente.
 3. Asse por 5 a 8 minutos, observando de perto, até as bordas ficarem douradas.
 4. Deixe esfriar completamente na assadeira. Os chips ficam mais crocantes ao esfriar.
@@ -47,9 +47,9 @@ Algumas opções são secas e podem ser transportadas em um pote; outras levam l
 - 1 g de sal
 
 ### Modo de preparo
-1. Aqueça o forno a 170 °C e forre uma assadeira com papel próprio para forno.
-2. Misture a farinha de amêndoas, a linhaça, o gergelim, o alecrim e o sal. Junte o azeite e a água; mexa até formar uma massa uniforme. Se estiver muito seca, acrescente água, 5 ml por vez.
-3. Coloque a massa entre duas folhas de papel próprio para forno e abra até ficar com cerca de 2 mm de espessura.
+1. Aqueça o forno a 170 °C e forre uma assadeira com papel-manteiga.
+2. Misture a farinha de amêndoas, a linhaça, o gergelim, o alecrim e o sal. Junte o azeite e a água; mexa até formar uma massa uniforme. Se a massa estiver muito seca, acrescente água aos poucos, 5 ml por vez.
+3. Coloque a massa entre duas folhas de papel-manteiga e abra até ficar com cerca de 2 mm de espessura.
 4. Retire a folha superior, marque quadrados com uma faca e transfira a massa para a assadeira.
 5. Asse por 18 a 22 minutos, até dourar nas bordas. Deixe esfriar totalmente antes de separar os crackers.
 
@@ -74,9 +74,9 @@ Algumas opções são secas e podem ser transportadas em um pote; outras levam l
 - 1 g de sal
 
 ### Modo de preparo
-1. Aqueça o forno a 160 °C e forre uma assadeira pequena com papel próprio para forno.
+1. Aqueça o forno a 160 °C e forre uma assadeira pequena com papel-manteiga.
 2. Misture as amêndoas, as nozes e as sementes de abóbora com o azeite, a páprica, o cominho, a pimenta e o sal.
-3. Espalhe em uma única camada e asse por 12 a 15 minutos, mexendo uma vez na metade do tempo. Retire quando estiver aromático e levemente dourado; as castanhas continuam a tostar um pouco enquanto esfriam.
+3. Espalhe em uma única camada e asse por 12 a 15 minutos, mexendo uma vez na metade do tempo. Retire do forno quando o mix estiver aromático e levemente dourado; as castanhas ainda tostam um pouco enquanto esfriam.
 4. Deixe esfriar completamente antes de dividir em dois potes.
 
 **Para levar:** transporte em recipiente bem fechado e mantenha longe de calor e umidade. O mix contém oleaginosas; não é adequado para pessoas com alergia a esses ingredientes.
@@ -114,7 +114,7 @@ Algumas opções são secas e podem ser transportadas em um pote; outras levam l
 **Tempo de cozimento:** não requer
 
 ### Ingredientes
-- 3 mini pimentões, ou 2 pimentões pequenos, cerca de 180 g no total
+- 3 mini pimentões ou 2 pimentões pequenos (cerca de 180 g no total)
 - 80 g de ricota amassada
 - 30 g de iogurte natural integral, sem açúcar
 - 5 g de salsinha picada
@@ -148,7 +148,7 @@ Algumas opções são secas e podem ser transportadas em um pote; outras levam l
 - 0,5 g de sal
 
 ### Modo de preparo
-1. Aqueça o forno a 180 °C e forre uma assadeira com papel próprio para forno.
+1. Aqueça o forno a 180 °C e forre uma assadeira com papel-manteiga.
 2. Misture a farinha de amêndoas, a muçarela, o parmesão, o fermento, o orégano e o sal.
 3. Junte o ovo e mexa até formar uma massa úmida. Divida em 10 porções e modele bolinhas pequenas; achate-as levemente na assadeira.
 4. Asse por 12 a 15 minutos, até ficarem firmes e douradas nas bordas. Deixe esfriar antes de guardar.
@@ -169,7 +169,7 @@ Algumas opções são secas e podem ser transportadas em um pote; outras levam l
 - 10 g de cacau em pó sem açúcar
 - 15 ml de creme de coco sem açúcar
 - 1 ml de extrato de baunilha, opcional
-- Adoçante culinário sem açúcar ou maltodextrina, opcional e a gosto
+- Adoçante culinário sem açúcar nem maltodextrina (opcional, a gosto)
 - Uma pitada de sal
 
 ### Modo de preparo
@@ -194,13 +194,13 @@ Algumas opções são secas e podem ser transportadas em um pote; outras levam l
 - 40 g de iogurte grego natural, sem açúcar
 - 1 ml de extrato de baunilha
 - 40 g de morangos frescos, picados
-- Adoçante culinário sem açúcar ou maltodextrina, opcional e a gosto
+- Adoçante culinário sem açúcar nem maltodextrina (opcional, a gosto)
 
 ### Modo de preparo
 1. Misture a chia, a bebida de amêndoas, o iogurte e a baunilha em uma tigela.
 2. Aguarde 5 minutos e mexa novamente para desfazer os grumos.
 3. Divida em dois potes com tampa e leve à geladeira por pelo menos 4 horas, ou até a chia formar um pudim.
-4. Antes de levar, distribua os morangos picados sobre cada porção. Adoce a mistura, se desejar, antes de refrigerar.
+4. Se desejar, adoce a mistura antes de levá-la à geladeira. Distribua os morangos picados sobre cada porção pouco antes de fechar os potes.
 
 **Para levar:** transporte bem refrigerado em bolsa térmica com gelo reutilizável. Mantenha sob refrigeração e consuma em até 2 dias.
 
@@ -213,7 +213,7 @@ Algumas opções são secas e podem ser transportadas em um pote; outras levam l
 **Tempo de cozimento:** 10 a 13 minutos
 
 ### Ingredientes
-- 50 g de pasta de amendoim 100%, sem açúcar
+- 50 g de pasta 100% de amendoim, sem açúcar
 - 40 g de farinha de amêndoas
 - 1 ovo
 - 8 g de cacau em pó sem açúcar
@@ -223,7 +223,7 @@ Algumas opções são secas e podem ser transportadas em um pote; outras levam l
 - Uma pitada de sal
 
 ### Modo de preparo
-1. Aqueça o forno a 175 °C e forre uma assadeira com papel próprio para forno.
+1. Aqueça o forno a 175 °C e forre uma assadeira com papel-manteiga.
 2. Misture a pasta de amendoim, o ovo, a baunilha e o eritritol, se usar.
 3. Acrescente a farinha de amêndoas, o cacau, o fermento e o sal. Misture até formar uma massa uniforme.
 4. Divida em oito porções, modele bolinhas e achate-as na assadeira.
@@ -259,4 +259,4 @@ Algumas opções são secas e podem ser transportadas em um pote; outras levam l
 
 ## Lanches prontos para a rotina
 
-Para facilitar o transporte, separe os lanches em porções individuais e escolha a embalagem de acordo com a textura: recipientes rígidos para itens crocantes e potes com tampa para opções cremosas. Os lanches perecíveis devem permanecer frios até a hora de consumir.
+Para facilitar o transporte, separe os lanches em porções individuais e escolha a embalagem de acordo com a textura: recipientes rígidos para itens crocantes e potes com tampa para opções cremosas. Os lanches perecíveis devem permanecer refrigerados até o momento do consumo.
